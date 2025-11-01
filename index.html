@@ -6,14 +6,18 @@
   <title>TaskHub | Free Online Tools</title>
   <meta name="description" content="TaskHub — smart, simple, and fast tools for everyday tasks like file conversion, data cleaning, password generation, and more.">
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" type="image/png" href="./assets/taskhub-logo.svg">
+  <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
+
+  <!-- ✅ Google AdSense Global Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
+      <img src="./assets/taskhub-logo.png" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
       <a href="./index.html" class="brand">TaskHub</a>
     </div>
     <nav>
@@ -26,17 +30,8 @@
   <!-- 🌅 Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <!-- English -->
-      <div id="hero-en">
-        <h1>All your Essential Tools in one place ⚙️</h1>
-        <p>Convert files, compress data, clean spreadsheets, and more instantly, securely, and free.</p>
-      </div>
-
-      <!-- Farsi -->
-      <div id="hero-fa" dir="rtl" style="display:none;">
-        <h1>همه ابزارهای کاربردی شما در یکجا ⚙️</h1>
-        <p>تبدیل فایل‌ها، فشرده‌سازی داده‌ها، پاکسازی صفحات گسترده و ابزارهای بیشتر  سریع، امن و رایگان.</p>
-      </div>
+      <h1>All your Essential Tools in one place ⚙️</h1>
+      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
 
       <!-- ✨ Typing animation tagline -->
       <div class="typing-tagline">
@@ -50,6 +45,19 @@
       </div>
     </div>
   </section>
+
+  <!-- 🧱 Google AdSense Ad (Below Hero) -->
+  <div class="ad-placeholder">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center; margin:1rem auto;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1111111111"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <!-- 🧰 English Tools -->
   <main id="en">
@@ -85,8 +93,18 @@
     </div>
   </main>
 
-  <!-- 📢 Ad placeholder -->
-  <div class="ad-placeholder">Advertisement area</div>
+  <!-- 📢 Ad placeholder (Bottom Ad) -->
+  <div class="ad-placeholder">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center; margin:2rem auto;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="2222222222"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <!-- 🧭 Footer -->
   <footer>
@@ -95,60 +113,38 @@
 
   <!-- 🌐 Language Switch -->
   <script>
-    let lang = 'en';
-    let typingTimeout;
-
-    function setLang(selectedLang) {
-      lang = selectedLang;
+    function setLang(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
-      document.getElementById('hero-en').style.display = (lang === 'en') ? 'block' : 'none';
-      document.getElementById('hero-fa').style.display = (lang === 'fa') ? 'block' : 'none';
       document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
-
-      clearTimeout(typingTimeout);
-      startTyping(); // restart animation with new language
     }
   </script>
 
-  <!-- ✨ Typing Animation (Bilingual) -->
+  <!-- ✨ Typing Animation Script -->
   <script>
-    const words = {
-      en: ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"],
-      fa: ["📄 تبدیل", "🧹 پاکسازی", "📦 فشرده‌سازی", "🔧 ایجاد", "🌐 اشتراک‌گذاری"]
-    };
-
+    const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
     let i = 0, j = 0, isDeleting = false;
     const typingSpeed = 120, deletingSpeed = 60, delayBetweenWords = 1000;
 
     function type() {
       const typingText = document.getElementById("typing-text");
-      const currentWord = words[lang][i];
-
+      const currentWord = words[i];
       if (!isDeleting && j <= currentWord.length) {
         typingText.textContent = currentWord.substring(0, j++);
-        typingTimeout = setTimeout(type, typingSpeed);
+        setTimeout(type, typingSpeed);
       } else if (isDeleting && j >= 0) {
         typingText.textContent = currentWord.substring(0, j--);
-        typingTimeout = setTimeout(type, deletingSpeed);
+        setTimeout(type, deletingSpeed);
       } else if (!isDeleting && j === currentWord.length) {
         isDeleting = true;
-        typingTimeout = setTimeout(type, delayBetweenWords);
+        setTimeout(type, delayBetweenWords);
       } else {
         isDeleting = false;
-        i = (i + 1) % words[lang].length;
-        typingTimeout = setTimeout(type, 200);
+        i = (i + 1) % words.length;
+        setTimeout(type, 200);
       }
     }
-
-    function startTyping() {
-      i = 0; j = 0; isDeleting = false;
-      document.getElementById("typing-text").textContent = "";
-      clearTimeout(typingTimeout);
-      type();
-    }
-
-    document.addEventListener("DOMContentLoaded", startTyping);
+    document.addEventListener("DOMContentLoaded", type);
   </script>
 </body>
 </html>
