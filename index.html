@@ -26,8 +26,17 @@
   <!-- 🌅 Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>All your Essential Tools in one place ⚙️</h1>
-      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
+      <!-- English -->
+      <div id="hero-en">
+        <h1>All your Essential Tools in one place ⚙️</h1>
+        <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.</p>
+      </div>
+
+      <!-- Farsi -->
+      <div id="hero-fa" dir="rtl" style="display:none;">
+        <h1>همه ابزارهای کاربردی شما در یک‌جا ⚙️</h1>
+        <p>تبدیل فایل‌ها، فشرده‌سازی داده‌ها، پاکسازی صفحات گسترده و ابزارهای بیشتر — سریع، امن و رایگان.</p>
+      </div>
 
       <!-- ✨ Typing animation tagline -->
       <div class="typing-tagline">
@@ -86,38 +95,60 @@
 
   <!-- 🌐 Language Switch -->
   <script>
-    function setLang(lang) {
+    let lang = 'en';
+    let typingTimeout;
+
+    function setLang(selectedLang) {
+      lang = selectedLang;
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+      document.getElementById('hero-en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('hero-fa').style.display = (lang === 'fa') ? 'block' : 'none';
       document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+
+      clearTimeout(typingTimeout);
+      startTyping(); // restart animation with new language
     }
   </script>
 
-  <!-- ✨ Typing Animation Script -->
+  <!-- ✨ Typing Animation (Bilingual) -->
   <script>
-    const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
+    const words = {
+      en: ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"],
+      fa: ["📄 تبدیل", "🧹 پاکسازی", "📦 فشرده‌سازی", "🔧 ایجاد", "🌐 اشتراک‌گذاری"]
+    };
+
     let i = 0, j = 0, isDeleting = false;
     const typingSpeed = 120, deletingSpeed = 60, delayBetweenWords = 1000;
 
     function type() {
       const typingText = document.getElementById("typing-text");
-      const currentWord = words[i];
+      const currentWord = words[lang][i];
+
       if (!isDeleting && j <= currentWord.length) {
         typingText.textContent = currentWord.substring(0, j++);
-        setTimeout(type, typingSpeed);
+        typingTimeout = setTimeout(type, typingSpeed);
       } else if (isDeleting && j >= 0) {
         typingText.textContent = currentWord.substring(0, j--);
-        setTimeout(type, deletingSpeed);
+        typingTimeout = setTimeout(type, deletingSpeed);
       } else if (!isDeleting && j === currentWord.length) {
         isDeleting = true;
-        setTimeout(type, delayBetweenWords);
+        typingTimeout = setTimeout(type, delayBetweenWords);
       } else {
         isDeleting = false;
-        i = (i + 1) % words.length;
-        setTimeout(type, 200);
+        i = (i + 1) % words[lang].length;
+        typingTimeout = setTimeout(type, 200);
       }
     }
-    document.addEventListener("DOMContentLoaded", type);
+
+    function startTyping() {
+      i = 0; j = 0; isDeleting = false;
+      document.getElementById("typing-text").textContent = "";
+      clearTimeout(typingTimeout);
+      type();
+    }
+
+    document.addEventListener("DOMContentLoaded", startTyping);
   </script>
 </body>
 </html>
