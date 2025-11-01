@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZIP & Unzip Files | TaskHub</title>
+  <meta name="description" content="Compress or extract files easily with TaskHub — fast, secure, and free online ZIP tool.">
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
+  
   <!-- JSZip & FileSaver -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -15,7 +17,7 @@
   <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="../assets/taskhub-logo.png" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
+      <img src="../assets/taskhub-logo.png" alt="TaskHub Logo" class="nav-logo" width="36" height="36" />
       <a href="../index.html" class="brand">TaskHub</a>
     </div>
     <nav>
@@ -27,19 +29,20 @@
 
   <!-- 📦 Tool Header -->
   <section class="tool-header">
-    <img src="../assets/zip-icon.svg" alt="ZIP Tool Icon" class="tool-icon">
+    <img src="../assets/zip-icon.svg" alt="ZIP Tool Icon" class="tool-icon" />
     <div>
       <h1>ZIP & Unzip Files</h1>
       <p>Compress or extract files easily — fast, secure & free.</p>
     </div>
   </section>
 
+  <!-- 🌐 Language Buttons -->
   <div class="lang-btns">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('fa')">فارسی</button>
+    <button onclick="setLang('en')" aria-label="Switch to English">English</button>
+    <button onclick="setLang('fa')" aria-label="Switch to Persian">فارسی</button>
   </div>
 
-  <!-- 🧰 Tool Box -->
+  <!-- 🧰 Main Tool Box -->
   <div class="tool-box">
     <p>Upload files to compress, or select a ZIP file to extract:</p>
     <input type="file" id="fileInput" multiple />
@@ -52,21 +55,24 @@
 
   <!-- 🧭 Footer -->
   <footer>
-    <p><a href="../privacy.html">Privacy Policy</a> | © 2025 <strong>TaskHub</strong> — Built for simplicity & trust.</p>
+    <p>
+      <a href="../privacy.html">Privacy Policy</a> |
+      © 2025 <strong>TaskHub</strong> — Built for simplicity & trust.
+    </p>
   </footer>
 
   <!-- 🌐 Language Toggle -->
   <script>
     function setLang(lang) {
-      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
     }
   </script>
 
-  <!-- 🧩 Core ZIP / UNZIP Logic -->
+  <!-- 🧩 ZIP / UNZIP Core Logic -->
   <script>
-    // Compress files and download ZIP
+    // Compress and download ZIP
     async function compressFiles() {
-      const input = document.getElementById('fileInput');
+      const input = document.getElementById("fileInput");
       const files = input.files;
       if (!files.length) {
         alert("Please select at least one file to compress.");
@@ -80,16 +86,16 @@
       }
 
       document.getElementById("result").innerHTML = "⏳ Compressing files...";
-
       const blob = await zip.generateAsync({ type: "blob" });
       saveAs(blob, "compressed_files.zip");
 
-      document.getElementById("result").innerHTML = "✅ Files compressed successfully and downloaded!";
+      document.getElementById("result").innerHTML =
+        "✅ Files compressed successfully and downloaded!";
     }
 
-    // Extract ZIP and download its files
+    // Extract and download individual files
     async function extractFiles() {
-      const input = document.getElementById('fileInput');
+      const input = document.getElementById("fileInput");
       const file = input.files[0];
       if (!file || !file.name.endsWith(".zip")) {
         alert("Please upload a valid ZIP file to extract.");
@@ -97,21 +103,26 @@
       }
 
       document.getElementById("result").innerHTML = "⏳ Extracting files...";
-
       try {
         const zip = await JSZip.loadAsync(await file.arrayBuffer());
-        let output = "<h4>📂 Extracted Files:</h4><ul>";
+        const folderName = file.name.replace(".zip", "") || "unzipped_files";
+        let output = `<h4>📂 Extracted Files from: ${folderName}</h4><ul>`;
 
         for (const filename in zip.files) {
-          const fileData = await zip.files[filename].async("blob");
-          saveAs(fileData, filename);
-          output += `<li>💾 ${filename}</li>`;
+          const item = zip.files[filename];
+          if (!item.dir) {
+            const fileData = await item.async("blob");
+            saveAs(fileData, `${folderName}/${filename}`);
+            output += `<li>💾 ${filename}</li>`;
+          }
         }
 
-        output += "</ul><p>✅ All extracted files downloaded successfully!</p>";
+        output += "</ul><p>✅ All extracted files have been downloaded successfully!</p>";
         document.getElementById("result").innerHTML = output;
       } catch (err) {
-        document.getElementById("result").innerHTML = "❌ Error extracting files. Please try again.";
+        console.error(err);
+        document.getElementById("result").innerHTML =
+          "❌ Error extracting files. The file might be corrupted or invalid.";
       }
     }
   </script>
