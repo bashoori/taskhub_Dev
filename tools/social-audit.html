@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Media Audit Tool | TaskHub</title>
+  <meta name="description" content="Audit your social media post quality and engagement with a professional score, tips, and benchmarks.">
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg"/>
+
+  <style>
+    /* Page-specific polish */
+    .tool-header { text-align:center; padding:3rem 1rem 1.5rem; background:linear-gradient(180deg,#f8fbff 0%,#f0f2f5 100%); border-bottom:1px solid #eaeaea; }
+    .tool-header .tool-icon { width:46px; height:46px; margin-bottom:.4rem; }
+    .audit-grid{ max-width:900px; margin:1rem auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .card{ background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05); padding:1rem 1.2rem; }
+    .card h3{ margin:.2rem 0 0.6rem; font-size:1.05rem; }
+    .card label{ display:block; font-size:.92rem; margin:.5rem 0 .25rem; color:#444; }
+    .card input[type="number"], .card input[type="text"], .card textarea, .card select{
+      width:100%; padding:.7rem; border:1px solid #ccc; border-radius:8px; font-size:.95rem; background:#fafafa;
+    }
+    .card textarea{ min-height:120px; resize:vertical; }
+    .hint{ font-size:.82rem; color:#777; margin-top:.25rem; }
+    .actions { text-align:center; margin:1rem auto 0; }
+    .actions button{ padding:.85rem 1.2rem; min-width:220px; font-weight:700; border:none; border-radius:10px; background:var(--primary); color:#fff; cursor:pointer; }
+    .actions button:hover{ background:var(--primary-dark); }
+    .results{ max-width:900px; margin:1.2rem auto 2rem; display:grid; grid-template-columns:1fr; gap:1rem; }
+    .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+    .kpi{ background:#fff; border-radius:12px; padding:1rem 1.2rem; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    .kpi h4{ margin:0 0 .35rem; font-size:.95rem; color:#555; }
+    .kpi .val{ font-size:1.4rem; font-weight:800; }
+    .score-ring{ display:flex; align-items:center; justify-content:center; height:110px; border-radius:12px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    .score-ring .val { font-size:1.8rem; font-weight:900; }
+    .suggestions ul{ margin:.5rem 0 0 1rem; }
+    .suggestions li{ margin:.25rem 0; }
+    .meta{ font-size:.85rem; color:#666; }
+    .pill{ display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#eef5ff; color:#0a58ca; font-size:.8rem; margin:.1rem .25rem 0 0; }
+    .btn-secondary{ background:#fff; color:#333; border:1px solid #ddd; }
+    .btn-secondary:hover{ background:#f6f6f6; }
+    .toolbar{ text-align:center; margin-top:.4rem; }
+    .toolbar button{ margin:.25rem .25rem; padding:.55rem .9rem; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+    .toolbar button:hover{ background:#f6f6f6; }
+    @media (max-width:600px){ .actions button{ min-width:unset; width:100%; } }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="../assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="32" height="32"/>
+      <a href="../index.html" class="brand">TaskHub</a>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <!-- Header -->
+  <section class="tool-header" id="hdr">
+    <img src="../assets/link-icon.svg" alt="Audit Icon" class="tool-icon"/>
+    <h1 id="t_title">Social Media Audit Tool</h1>
+    <p id="t_sub">Get a pro score and specific recommendations for your post & profile setup.</p>
+  </section>
+
+  <div class="lang-btns" style="text-align:center">
+    <button onclick="setLang('en')" aria-label="English">English</button>
+    <button onclick="setLang('fa')" aria-label="فارسی">فارسی</button>
+  </div>
+
+  <!-- Inputs -->
+  <div class="audit-grid">
+    <div class="card">
+      <h3 id="t_postInputs">Post Inputs</h3>
+      <label id="t_captionLabel" for="caption">Post Caption / متن کپشن</label>
+      <textarea id="caption" placeholder="Paste your caption here... / کپشن پست را اینجا قرار دهید"></textarea>
+      <div class="hint" id="t_captionHint">We’ll analyze length, emojis, CTA & readability.</div>
+
+      <label id="t_hashtagsLabel" for="hashtags">Hashtags (comma or space separated)</label>
+      <input id="hashtags" type="text" placeholder="#marketing #seo #social ...">
+      <div class="hint" id="t_hashtagsHint">Instagram allows up to 30; 8–15 usually performs best.</div>
+    </div>
+
+    <div class="card">
+      <h3 id="t_metrics">Metrics</h3>
+      <label id="t_followers" for="followers">Followers</label>
+      <input id="followers" type="number" min="0" placeholder="e.g., 12000">
+      <label id="t_likes" for="likes">Likes</label>
+      <input id="likes" type="number" min="0" placeholder="e.g., 430">
+      <label id="t_comments" for="comments">Comments</label>
+      <input id="comments" type="number" min="0" placeholder="e.g., 28">
+      <label id="t_postsPerWeek" for="ppw">Posts per week</label>
+      <input id="ppw" type="number" min="0" step="0.1" placeholder="e.g., 3">
+    </div>
+
+    <div class="card">
+      <h3 id="t_quality">Quality Signals</h3>
+      <label id="t_cta" for="cta">CTA present? (e.g., “Save this”, “Link in bio”)</label>
+      <select id="cta">
+        <option value="yes">Yes</option>
+        <option value="no" selected>No</option>
+      </select>
+      <label id="t_hook" for="hook">Hook at start? (question, bold claim)</label>
+      <select id="hook">
+        <option value="yes">Yes</option>
+        <option value="no" selected>No</option>
+      </select>
+      <label id="t_brand" for="brand">Brand consistency (colors/fonts/tone)</label>
+      <select id="brand">
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <div class="hint" id="t_qualityHint">Clear CTA + strong hook + consistent brand ↑ engagement.</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="runAudit()" id="t_run">Run Audit</button>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn-secondary" onclick="window.print()" id="t_download">Download report (Print to PDF)</button>
+    <button class="btn-secondary" onclick="resetForm()" id="t_reset">Reset</button>
+  </div>
+
+  <!-- Results -->
+  <section class="results" id="results" style="display:none;">
+    <div class="kpis">
+      <div class="kpi">
+        <h4 id="t_engRate">Engagement Rate</h4>
+        <div class="val" id="engVal">—</div>
+        <div class="meta" id="t_engMeta">Target: 1%–5% for most niches</div>
+      </div>
+      <div class="kpi">
+        <h4 id="t_captionLen">Caption Length</h4>
+        <div class="val"><span id="capChars">0</span> chars</div>
+        <div class="meta" id="t_capMeta">Best: 80–220 chars (short-form), 200–400 (educational)</div>
+      </div>
+      <div class="kpi">
+        <h4 id="t_hashtagCount">Hashtag Count</h4>
+        <div class="val"><span id="hashCount">0</span> tags</div>
+        <div class="meta" id="t_hashMeta">Best: 8–15 relevant tags</div>
+      </div>
+      <div class="score-ring">
+        <div class="val"><span id="score">0</span>/100</div>
+      </div>
+    </div>
+
+    <div class="card suggestions">
+      <h3 id="t_suggestTitle">Recommendations</h3>
+      <ul id="suggestList"></ul>
+      <div class="meta" id="t_disclaimer">This score is heuristic. Always test & iterate for your niche.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="../privacy.html">Privacy Policy</a> | © 2025 <strong>TaskHub</strong> — Built for simplicity & trust.</p>
+  </footer>
+
+  <script>
+    // ===== Bilingual Labels =====
+    let LANG = 'en';
+    const TXT = {
+      en: {
+        title: "Social Media Audit Tool",
+        sub: "Get a pro score and specific recommendations for your post & profile setup.",
+        postInputs: "Post Inputs",
+        captionLabel: "Post Caption",
+        captionHint: "We’ll analyze length, emojis, CTA & readability.",
+        hashtagsLabel: "Hashtags (comma or space separated)",
+        hashtagsHint: "Instagram allows up to 30; 8–15 usually performs best.",
+        metrics: "Metrics",
+        followers: "Followers",
+        likes: "Likes",
+        comments: "Comments",
+        postsPerWeek: "Posts per week",
+        quality: "Quality Signals",
+        cta: "CTA present? (e.g., “Save this”, “Link in bio”)",
+        hook: "Hook at start? (question, bold claim)",
+        brand: "Brand consistency (colors/fonts/tone)",
+        qualityHint: "Clear CTA + strong hook + consistent brand ↑ engagement.",
+        run: "Run Audit",
+        download: "Download report (Print to PDF)",
+        reset: "Reset",
+        engRate: "Engagement Rate",
+        engMeta: "Target: 1%–5% for most niches",
+        captionLen: "Caption Length",
+        capMeta: "Best: 80–220 chars (short-form), 200–400 (educational)",
+        hashtagCount: "Hashtag Count",
+        hashMeta: "Best: 8–15 relevant tags",
+        suggestTitle: "Recommendations",
+        disclaimer: "This score is heuristic. Always test & iterate for your niche.",
+        // suggestions fragments
+        s_lowFollowers: "Consider collaborations to grow followers.",
+        s_engLow: "Engagement is low — test hooks, stronger CTA, and carousels/Reels.",
+        s_engGood: "Good engagement — keep consistency and experiment with timing.",
+        s_captionShort: "Caption is too short — add context or a micro-story.",
+        s_captionLong: "Caption is too long — trim to the core value and 1 CTA.",
+        s_ctaMissing: "Add a clear CTA (Save, Share, Comment, Link in bio).",
+        s_hookMissing: "Start with a hook (question, bold claim, or surprising stat).",
+        s_hashtagLow: "Use 8–15 relevant hashtags.",
+        s_hashtagHigh: "Avoid spammy over-tagging; keep it focused.",
+        s_brandLow: "Unify colors/fonts; add brand cues for recognition.",
+        s_freqLow: "Post 2–5× per week consistently.",
+        s_freqHigh: "Avoid burnout — quality over quantity."
+      },
+      fa: {
+        title: "ابزار ارزیابی حرفه‌ای سوشال‌مدیا",
+        sub: "یک امتیاز حرفه‌ای بگیرید و پیشنهادهای دقیق برای بهبود پست و پروفایل دریافت کنید.",
+        postInputs: "ورودی‌های پست",
+        captionLabel: "متن کپشن پست",
+        captionHint: "طول، اموجی‌ها، CTA و خوانایی بررسی می‌شود.",
+        hashtagsLabel: "هشتگ‌ها (با فاصله یا ویرگول جدا کنید)",
+        hashtagsHint: "تا ۳۰ هشتگ مجاز است؛ ۸ تا ۱۵ تا معمولاً بهترین است.",
+        metrics: "شاخص‌ها",
+        followers: "فالوئر",
+        likes: "لایک",
+        comments: "کامنت",
+        postsPerWeek: "تعداد پست در هفته",
+        quality: "کیفیت محتوا",
+        cta: "CTA دارد؟ (مثل «سیو کن»، «لینک در بیو»)",
+        hook: "هوک ابتدای کپشن دارد؟ (سؤال، ادعای قوی)",
+        brand: "یکپارچگی برند (رنگ‌ها/فونت/لحن)",
+        qualityHint: "CTA واضح + هوک قوی + برند منسجم → تعامل بالاتر.",
+        run: "اجرای ارزیابی",
+        download: "دانلود گزارش (پرینت به PDF)",
+        reset: "ریست",
+        engRate: "نرخ تعامل",
+        engMeta: "هدف: حدود ۱٪ تا ۵٪ در بیشتر نیچ‌ها",
+        captionLen: "طول کپشن",
+        capMeta: "بهینه: ۸۰–۲۲۰ کاراکتر (کوتاه)، ۲۰۰–۴۰۰ (آموزشی)",
+        hashtagCount: "تعداد هشتگ‌ها",
+        hashMeta: "بهینه: ۸ تا ۱۵ هشتگ مرتبط",
+        suggestTitle: "پیشنهادها",
+        disclaimer: "این امتیاز تقریبی است. حتماً برای نیچ خودتان تست و تکرار کنید.",
+        s_lowFollowers: "برای رشد فالوئر، همکاری و کراس‌پروموشن انجام دهید.",
+        s_engLow: "تعامل پایین است — هوک قوی‌تر، CTA واضح و فرمت کاروسل/ریل تست شود.",
+        s_engGood: "تعامل خوب است — همین مسیر را ادامه دهید و زمان‌بندی را بهینه کنید.",
+        s_captionShort: "کپشن خیلی کوتاه است — کمی زمینه یا میکرو‌استوری اضافه کنید.",
+        s_captionLong: "کپشن طولانی است — روی ارزش اصلی و یک CTA متمرکز شوید.",
+        s_ctaMissing: "CTA واضح اضافه کنید (سیو/ارسال/کامنت/لینک بیو).",
+        s_hookMissing: "با یک هوک شروع کنید (سؤال، ادعای جسورانه یا آمار شگفت).",
+        s_hashtagLow: "۸ تا ۱۵ هشتگ مرتبط استفاده کنید.",
+        s_hashtagHigh: "از هشتگ‌های زیاد و اسپمی اجتناب کنید.",
+        s_brandLow: "رنگ/فونت/لحن را یکپارچه کنید تا یادآوری برند تقویت شود.",
+        s_freqLow: "هفته‌ای ۲ تا ۵ پست منظم منتشر کنید.",
+        s_freqHigh: "فرسودگی را مدیریت کنید — کیفیت مهم‌تر از کمیت است."
+      }
+    };
+
+    function setLang(l){
+      LANG = l;
+      document.body.dir = (l === 'fa') ? 'rtl' : 'ltr';
+      const t = TXT[l];
+      document.getElementById('t_title').textContent = t.title;
+      document.getElementById('t_sub').textContent = t.sub;
+      document.getElementById('t_postInputs').textContent = t.postInputs;
+      document.getElementById('t_captionLabel').textContent = t.captionLabel;
+      document.getElementById('t_captionHint').textContent = t.captionHint;
+      document.getElementById('t_hashtagsLabel').textContent = t.hashtagsLabel;
+      document.getElementById('t_hashtagsHint').textContent = t.hashtagsHint;
+      document.getElementById('t_metrics').textContent = t.metrics;
+      document.getElementById('t_followers').textContent = t.followers;
+      document.getElementById('t_likes').textContent = t.likes;
+      document.getElementById('t_comments').textContent = t.comments;
+      document.getElementById('t_postsPerWeek').textContent = t.postsPerWeek;
+      document.getElementById('t_quality').textContent = t.quality;
+      document.getElementById('t_cta').textContent = t.cta;
+      document.getElementById('t_hook').textContent = t.hook;
+      document.getElementById('t_brand').textContent = t.brand;
+      document.getElementById('t_qualityHint').textContent = t.qualityHint;
+      document.getElementById('t_run').textContent = t.run;
+      document.getElementById('t_download').textContent = t.download;
+      document.getElementById('t_reset').textContent = t.reset;
+      document.getElementById('t_engRate').textContent = t.engRate;
+      document.getElementById('t_engMeta').textContent = t.engMeta;
+      document.getElementById('t_captionLen').textContent = t.captionLen;
+      document.getElementById('t_capMeta').textContent = t.capMeta;
+      document.getElementById('t_hashtagCount').textContent = t.hashtagCount;
+      document.getElementById('t_hashMeta').textContent = t.hashMeta;
+      document.getElementById('t_suggestTitle').textContent = t.suggestTitle;
+      document.getElementById('t_disclaimer').textContent = t.disclaimer;
+    }
+
+    // ===== Audit Logic =====
+    function countHashtags(str){
+      if(!str) return 0;
+      // Split by space or comma, count tokens starting with #
+      return str.split(/[\s,]+/).filter(x => x.trim().startsWith('#')).length;
+    }
+
+    function runAudit(){
+      const caption = document.getElementById('caption').value.trim();
+      const hashtags = document.getElementById('hashtags').value.trim();
+      const followers = parseInt(document.getElementById('followers').value || '0', 10);
+      const likes = parseInt(document.getElementById('likes').value || '0', 10);
+      const comments = parseInt(document.getElementById('comments').value || '0', 10);
+      const ppw = parseFloat(document.getElementById('ppw').value || '0');
+      const cta = document.getElementById('cta').value;
+      const hook = document.getElementById('hook').value;
+      const brand = document.getElementById('brand').value;
+
+      // Engagement rate
+      let eng = 0;
+      if(followers > 0) eng = ((likes + comments) / followers) * 100;
+      const engRounded = Math.round(eng * 10) / 10;
+
+      // Caption stats
+      const capLen = caption.length;
+      const hashCount = countHashtags(hashtags);
+
+      // Scoring (0-100) heuristic
+      let score = 0;
+      // Engagement weight (40)
+      if(eng >= 1 && eng < 2) score += 22;
+      else if(eng >= 2 && eng < 4) score += 30;
+      else if(eng >= 4 && eng < 6) score += 36;
+      else if(eng >= 6) score += 40;
+      else if(eng > 0.5) score += 14;
+      else score += 8;
+
+      // Caption length weight (15)
+      if((capLen >= 80 && capLen <= 220) || (capLen >= 200 && capLen <= 400)){
+        score += 15;
+      } else if(capLen >= 40 && capLen < 80){
+        score += 9;
+      } else if(capLen > 400 && capLen <= 800){
+        score += 8;
+      } else {
+        score += 4;
+      }
+
+      // Hashtags weight (15)
+      if(hashCount >= 8 && hashCount <= 15) score += 15;
+      else if(hashCount >= 4 && hashCount < 8) score += 10;
+      else if(hashCount > 15 && hashCount <= 25) score += 7;
+      else score += 4;
+
+      // CTA weight (10)
+      score += (cta === 'yes') ? 10 : 3;
+
+      // Hook weight (8)
+      score += (hook === 'yes') ? 8 : 3;
+
+      // Brand consistency weight (12)
+      if(brand === 'high') score += 12;
+      else if(brand === 'medium') score += 8;
+      else score += 4;
+
+      score = Math.min(100, Math.round(score));
+
+      // Fill KPIs
+      document.getElementById('engVal').textContent = (engRounded || 0) + '%';
+      document.getElementById('capChars').textContent = capLen;
+      document.getElementById('hashCount').textContent = hashCount;
+      document.getElementById('score').textContent = score;
+
+      // Suggestions
+      const t = TXT[LANG];
+      const sug = [];
+      if(followers < 2000) sug.push(t.s_lowFollowers);
+      if(eng < 1.5) sug.push(t.s_engLow); else sug.push(t.s_engGood);
+      if(capLen < 80) sug.push(t.s_captionShort);
+      if(capLen > 400) sug.push(t.s_captionLong);
+      if(cta === 'no') sug.push(t.s_ctaMissing);
+      if(hook === 'no') sug.push(t.s_hookMissing);
+      if(hashCount < 8) sug.push(t.s_hashtagLow);
+      if(hashCount > 15) sug.push(t.s_hashtagHigh);
+      if(brand === 'low') sug.push(t.s_brandLow);
+      if(ppw < 2) sug.push(t.s_freqLow);
+      if(ppw > 7) sug.push(t.s_freqHigh);
+
+      const ul = document.getElementById('suggestList');
+      ul.innerHTML = '';
+      sug.slice(0, 10).forEach(s => {
+        const li = document.createElement('li');
+        li.textContent = s;
+        ul.appendChild(li);
+      });
+
+      document.getElementById('results').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('results').offsetTop - 10, behavior: 'smooth' });
+    }
+
+    function resetForm(){
+      ['caption','hashtags','followers','likes','comments','ppw'].forEach(id => document.getElementById(id).value = '');
+      ['cta','hook','brand'].forEach(id => document.getElementById(id).selectedIndex = 0);
+      document.getElementById('results').style.display = 'none';
+      document.getElementById('suggestList').innerHTML = '';
+    }
+
+    // default language
+    document.addEventListener('DOMContentLoaded', () => setLang('en'));
+  </script>
+</body>
+</html>
