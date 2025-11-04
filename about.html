@@ -3,14 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | TaskHub</title>
-  <meta name="description" content="Learn more about TaskHub — a collection of smart, free, and time-saving online tools built to make digital tasks simpler for everyone.">
+  <title>About | Bita Digital Hub</title>
+  <meta name="description" content="Learn more about Bita Digital Hub — a free collection of simple, smart, and time-saving digital tools built by data engineer Bita Ashoori to make online work easier for everyone.">
+  <meta name="keywords" content="about Bita Digital Hub, Bita Ashoori, free online tools, productivity, file converter, zip tool, password generator, Vancouver">
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" type="image/png" href="./assets/taskhub-logo.svg" />
+  <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
 
-  <!-- ✅ Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossorigin="anonymous"></script>
+  <!-- 📈 Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YHKWTPXDHC');
+  </script>
+
+  <!-- 💰 Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+     crossorigin="anonymous"></script>
+
+  <!-- 🧭 Open Graph -->
+  <meta property="og:title" content="About | Bita Digital Hub">
+  <meta property="og:description" content="Bita Digital Hub — simple and free tools for creators, students, and professionals.">
+  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
+  <meta property="og:url" content="https://bitadigitalhub.com/about.html">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     .about-section {
@@ -21,17 +38,19 @@
       box-shadow: 0 4px 16px rgba(0,0,0,0.05);
       padding: 2.5rem;
       line-height: 1.8;
+      color: #333;
     }
     .about-section h1 {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       color: var(--primary, #0078d7);
+      font-weight: 700;
     }
     .about-section h2 {
       font-size: 1.4rem;
       margin-top: 2rem;
-      color: #222;
+      color: #111;
     }
     .about-section p {
       color: #555;
@@ -44,6 +63,21 @@
     .about-section li {
       margin-bottom: 0.5rem;
     }
+    .lang-switch {
+      text-align: center;
+      margin-top: 1.2rem;
+    }
+    .lang-switch button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      margin: 0 0.3rem;
+    }
+    .lang-switch button:hover {
+      background: #f6f6f6;
+    }
   </style>
 </head>
 
@@ -52,50 +86,67 @@
   <header class="navbar">
     <div class="nav-left">
       <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
-      <a href="./index.html" class="brand">TaskHub</a>
+      <a href="./index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
       <a href="./index.html">Home</a>
       <a href="./privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a> 
+      <a href="mailto:contact@bitadigitalhub.com">Contact</a>
     </nav>
   </header>
 
+  <!-- 🌍 Language Switch -->
+  <div class="lang-switch">
+    <button onclick="window.location.href='./about.html'">English</button>
+    <button onclick="window.location.href='./fa/about-fa.html'">فارسی</button>
+  </div>
+
   <!-- 🧠 About Section -->
   <section class="about-section">
-    <h1>About TaskHub</h1>
-    <p><strong>TaskHub</strong> is a free collection of smart, practical, and time-saving tools built for creators, students, and digital professionals. 
-    Our goal is simple — to make your everyday online tasks easier, faster, and more reliable — all in one place.</p>
+    <h1>About Bita Digital Hub</h1>
+    <p><strong>Bita Digital Hub</strong> is a free collection of smart, practical, and time-saving tools built for creators, students, and digital professionals.
+      Our goal is simple — to make your everyday online tasks easier, faster, and more reliable — all in one place.</p>
 
     <h2>🌍 What We Offer</h2>
-    <p>TaskHub combines essential digital utilities into a single clean platform:</p>
+    <p>Bita Digital Hub combines essential digital utilities into a single clean platform:</p>
     <ul>
       <li>📁 <strong>File Converter</strong> — Convert between PDF, Word, Excel, and image formats easily.</li>
       <li>📦 <strong>ZIP & Unzip</strong> — Compress or extract files online with one click.</li>
       <li>📊 <strong>CSV & Excel Cleaner</strong> — Merge, clean, and format spreadsheet data fast.</li>
       <li>🔐 <strong>Password Generator</strong> — Create strong, unique passwords instantly.</li>
       <li>🌐 <strong>URL Shortener & QR Generator</strong> — Share professional, trackable links.</li>
+      <li>💬 <strong>Social Media Audit</strong> — Analyze your post engagement and caption quality.</li>
     </ul>
 
     <h2>🎯 Our Mission</h2>
-    <p>We believe technology should be simple and accessible. TaskHub was built with the mission to give everyone — from data engineers and marketers to students — 
-    access to reliable digital tools without cost or complexity.</p>
+    <p>We believe technology should be simple and accessible.  
+    Bita Digital Hub was built with the mission to give everyone — from data engineers and marketers to students — access to reliable digital tools without cost or complexity.</p>
 
     <h2>🤝 Who We Are</h2>
-    <p>TaskHub was created by <strong>Bita Ashoori</strong>, a Vancouver-based Data Engineer and digital creator passionate about 
-    building useful tools that empower people to work smarter online.  
-    What started as a small collection of utilities for data and file handling has grown into a full online productivity hub.</p>
+    <p>Bita Digital Hub was created by <strong>Bita Ashoori</strong>, a Vancouver-based Data Engineer and digital creator passionate about building useful tools that empower people to work smarter online.  
+    What started as a small set of utilities for data and file handling has grown into a full online productivity hub serving users worldwide.</p>
 
     <h2>💌 Get in Touch</h2>
     <p>We love feedback, collaboration, and new ideas!  
-    Email us anytime at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a></p>
+    Email us anytime at <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.</p>
   </section>
+
+  <!-- 🧱 AdSense Placement -->
+  <div class="ad-placeholder" style="text-align:center; margin:2rem auto;">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
   <!-- 🧭 Footer -->
   <footer>
     <p>
       <a href="./privacy.html">Privacy Policy</a> |
-      © 2025 <strong>TaskHub</strong> — Fast, Simple, Free Tools
+      © 2025 <strong>Bita Digital Hub</strong> — Fast, Simple, Free Tools
     </p>
   </footer>
 </body>
