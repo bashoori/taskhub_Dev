@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitadigitalhub.com/sitemap.xml
