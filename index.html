@@ -4,23 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🌐 Title & Description -->
   <title>Bita Digital Hub | Free Online Tools for Creators</title>
   <meta name="description" content="Smart, simple, and free online tools for digital creators — convert files, clean data, shorten links, and automate daily tasks.">
   <meta name="keywords" content="online tools, digital marketing, task automation, file converter, zip tool, csv cleaner, password generator">
 
-  <!-- 🎨 Styles & Favicon -->
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
 
-  <!-- 🧭 Open Graph (SEO & Sharing) -->
+  <!-- SEO & Sharing -->
   <meta property="og:title" content="Bita Digital Hub – Free Tools for Creators">
   <meta property="og:description" content="Boost your digital workflow with free tools and resources made for content creators.">
   <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
   <meta property="og:url" content="https://bitadigitalhub.com">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- 📈 Google Analytics (GA4) -->
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -29,13 +27,68 @@
     gtag('config', 'G-YHKWTPXDHC');
   </script>
 
-  <!-- 💰 Google AdSense -->
+  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
+
+  <style>
+    /* Contact Section */
+    .contact-section {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+    .contact-section[dir="rtl"] { text-align: right; }
+    .contact-section h2 {
+      color: var(--primary, #0078d7);
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+    .contact-section p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .contact-section label {
+      display: block;
+      margin: 0.5rem 0 0.3rem;
+      color: #333;
+      font-weight: 500;
+    }
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .contact-section textarea { min-height: 120px; resize: vertical; }
+    .contact-section button {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.9rem;
+      background: var(--primary, #0078d7);
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .contact-section button:hover { background: #005fa3; }
+  </style>
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="nav-left">
       <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
@@ -49,16 +102,14 @@
     </nav>
   </header>
 
-  <!-- 🌅 Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>All your Essential Tools in one place ⚙️</h1>
       <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
 
-      <!-- ✨ Typing animation tagline -->
       <div class="typing-tagline">
-        <span id="typing-text"></span>
-        <span class="cursor">|</span>
+        <span id="typing-text"></span><span class="cursor">|</span>
       </div>
 
       <div class="lang-btns">
@@ -68,7 +119,7 @@
     </div>
   </section>
 
-  <!-- 🧱 AdSense Ad (Below Hero) -->
+  <!-- Ad Below Hero -->
   <div class="ad-placeholder">
     <ins class="adsbygoogle"
          style="display:block; text-align:center; margin:1rem auto;"
@@ -76,37 +127,23 @@
          data-ad-slot="1111111111"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  <!-- 🧰 English Tools -->
+  <!-- English Tools -->
   <main id="en">
     <h2 class="section-title">Our Free Tools</h2>
     <div class="tool-grid">
-      <a href="./tools/file-converter.html" class="tool-card">
-        <img src="./assets/file-icon.svg" width="28" alt="File Converter Icon"> File Converter
-      </a>
-      <a href="./tools/zip-unzip.html" class="tool-card">
-        <img src="./assets/zip-icon.svg" width="28" alt="ZIP Unzip Icon"> ZIP / Unzip
-      </a>
-      <a href="./tools/csv-cleaner.html" class="tool-card">
-        <img src="./assets/csv-icon.svg" width="28" alt="CSV Cleaner Icon"> CSV Cleaner
-      </a>
-      <a href="./tools/password-generator.html" class="tool-card">
-        <img src="./assets/password-icon.svg" width="28" alt="Password Generator Icon"> Password Generator
-      </a>
-      <a href="./tools/url-shortener.html" class="tool-card">
-        <img src="./assets/link-icon.svg" width="28" alt="URL Shortener Icon"> URL Shortener
-      </a>
-      <a href="./tools/social-audit.html" class="tool-card">
-        <img src="./assets/audit-icon.svg" width="28" alt="Social Media Audit Icon"> Social Media Audit
-      </a>
+      <a href="./tools/file-converter.html" class="tool-card">🧾 File Converter</a>
+      <a href="./tools/zip-unzip.html" class="tool-card">📦 ZIP / Unzip</a>
+      <a href="./tools/csv-cleaner.html" class="tool-card">📊 CSV Cleaner</a>
+      <a href="./tools/password-generator.html" class="tool-card">🔐 Password Generator</a>
+      <a href="./tools/url-shortener.html" class="tool-card">🌐 URL Shortener</a>
+      <a href="./tools/social-audit.html" class="tool-card">🧠 Social Media Audit</a>
     </div>
   </main>
 
-  <!-- 🇮🇷 Persian Tools -->
+  <!-- Persian Tools -->
   <main id="fa" dir="rtl" style="display:none;">
     <h2 class="section-title">ابزارهای رایگان ما</h2>
     <div class="tool-grid">
@@ -119,20 +156,39 @@
     </div>
   </main>
 
-  <!-- 📢 Ad placeholder (Bottom Ad) -->
-  <div class="ad-placeholder">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center; margin:2rem auto;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="2222222222"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+  <!-- Contact EN -->
+  <section id="contact-en" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Have feedback, ideas, or collaboration proposals? Send us a quick message below.</p>
+    <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="Your name" required />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Your email" required />
+      <label for="message">Message</label>
+      <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-  <!-- 🧭 Footer -->
+  <!-- Contact FA -->
+  <section id="contact-fa" class="contact-section" dir="rtl" style="display:none;">
+    <h2>تماس با ما</h2>
+    <p>اگر پیشنهاد، همکاری یا پرسشی دارید، از طریق فرم زیر برای ما بنویسید.</p>
+    <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <input type="hidden" name="_subject" value="پیام جدید از Bita Digital Hub">
+      <label for="name-fa">نام</label>
+      <input type="text" name="name" id="name-fa" placeholder="نام شما" required />
+      <label for="email-fa">ایمیل</label>
+      <input type="email" name="email" id="email-fa" placeholder="ایمیل شما" required />
+      <label for="message-fa">پیام</label>
+      <textarea name="message" id="message-fa" placeholder="پیام خود را بنویسید..." required></textarea>
+      <button type="submit">ارسال پیام</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>
       <a href="./privacy.html">Privacy Policy</a> |
@@ -141,16 +197,29 @@
     </p>
   </footer>
 
-  <!-- 🌐 Language Switch -->
+  <!-- Language Switch -->
   <script>
     function setLang(lang) {
       document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
       document.getElementById('fa').style.display = (lang === 'fa') ? 'block' : 'none';
+      document.getElementById('contact-en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.getElementById('contact-fa').style.display = (lang === 'fa') ? 'block' : 'none';
       document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+
+      const heroTitle = document.querySelector('.hero-content h1');
+      const heroDesc = document.querySelector('.hero-content p');
+
+      if (lang === 'fa') {
+        heroTitle.textContent = 'همه ابزارهای ضروری شما در یک جا ⚙️';
+        heroDesc.textContent = 'فایل‌ها را تبدیل کنید، داده‌ها را فشرده کنید، جدول‌ها را تمیز کنید و خیلی کارهای دیگر — فوری، امن و رایگان.';
+      } else {
+        heroTitle.textContent = 'All your Essential Tools in one place ⚙️';
+        heroDesc.textContent = 'Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.';
+      }
     }
   </script>
 
-  <!-- ✨ Typing Animation -->
+  <!-- Typing Animation -->
   <script>
     const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
     let i = 0, j = 0, isDeleting = false;
@@ -176,10 +245,5 @@
     }
     document.addEventListener("DOMContentLoaded", type);
   </script>
-
-  
-
 </body>
-
-
 </html>
