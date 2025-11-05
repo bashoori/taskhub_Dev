@@ -41,6 +41,7 @@
       font-size: 2rem;
       color: var(--primary, #0078d7);
       margin-bottom: 1rem;
+      font-weight: 700;
     }
     .contact-container p {
       font-size: 1rem;
@@ -75,6 +76,7 @@
       border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
     button:hover { background: #005fa3; }
     .lang-switch {
@@ -99,56 +101,44 @@
   <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
-      <a href="./index.html" class="brand">Bita Digital Hub</a>
+      <img src="../assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
+      <a href="../index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="./index.html" class="active">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./privacy.html">Privacy</a>
-      <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
+      <a href="../index.html">خانه</a>
+      <a href="../about-fa.html">درباره ما</a>
+      <a href="../privacy.html">حریم خصوصی</a>
     </nav>
   </header>
 
   <!-- 🌍 Language Switch -->
   <div class="lang-switch">
-    <button onclick="window.location.href='./contact.html'">English</button>
+    <button onclick="window.location.href='../contact.html'">English</button>
     <button onclick="window.location.href='./contact-fa.html'">فارسی</button>
   </div>
 
-   <!-- 🌍 Farsi Version -->
-    <section dir="rtl">
-      <h1>سیاست حفظ حریم خصوصی</h1>
-      <p><em>آخرین بروزرسانی: اکتبر ۲۰۲۵</em></p>
-      <p>به <strong>Bita Digital Hub</strong> خوش آمدید. حفظ حریم خصوصی شما برای ما مهم است. در این صفحه توضیح داده شده که چه اطلاعاتی جمع‌آوری می‌شود و چگونه از آن‌ها استفاده می‌کنیم.</p>
+  <!-- ✉️ Contact Form -->
+  <section class="contact-container">
+    <h1>تماس با ما</h1>
+    <p>خوشحال می‌شویم نظرات، پیشنهادها و سوالات شما را بشنویم.  
+      اگر برای همکاری یا ساخت ابزار جدید ایده دارید، از طریق فرم زیر یا ایمیل مستقیم در تماس باشید.</p>
+    <p><strong>📧 ایمیل:</strong> <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a></p>
 
-      <h2>۱. اطلاعاتی که جمع‌آوری می‌کنیم</h2>
-      <ul>
-        <li>فایل‌های شما به‌صورت دائمی ذخیره نمی‌شوند. تمام پردازش‌ها در مرورگر شما انجام می‌شوند.</li>
-        <li>ممکن است داده‌های غیرشخصی مانند نوع مرورگر و آمار کلی استفاده برای بهبود خدمات جمع‌آوری شود.</li>
-      </ul>
+    <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+      <input type="hidden" name="_subject" value="پیام جدید از فرم تماس Bita Digital Hub">
+      <label for="name">نام</label>
+      <input type="text" id="name" name="name" required placeholder="نام خود را وارد کنید">
 
-      <h2>۲. نحوه استفاده از اطلاعات</h2>
-      <ul>
-        <li>برای بهبود تجربه کاربر و عملکرد سایت.</li>
-        <li>برای نمایش تبلیغات مرتبط از طریق Google AdSense.</li>
-      </ul>
+      <label for="email">ایمیل</label>
+      <input type="email" id="email" name="email" required placeholder="ایمیل خود را وارد کنید">
 
-      <h2>۳. کوکی‌ها</h2>
-      <p>ممکن است از کوکی‌ها برای تحلیل بازدید و تبلیغات استفاده شود. شما می‌توانید کوکی‌ها را از تنظیمات مرورگر خود غیرفعال کنید.</p>
+      <label for="message">پیام شما</label>
+      <textarea id="message" name="message" required placeholder="پیام خود را بنویسید..."></textarea>
 
-      <h2>۴. خدمات شخص ثالث</h2>
-      <p>وب‌سایت ما از Google AdSense و Google Analytics استفاده می‌کند که داده‌های ناشناس ترافیک را برای تبلیغات و تحلیل جمع‌آوری می‌کنند.</p>
+      <button type="submit">ارسال پیام</button>
+    </form>
+  </section>
 
-      <h2>۵. امنیت داده‌ها</h2>
-      <p>اطلاعات شما خصوصی باقی می‌مانند. ما هیچ داده‌ای را به اشتراک نمی‌گذاریم یا نمی‌فروشیم.</p>
-
-      <h2>۶. تماس با ما</h2>
-      <p>در صورت وجود هرگونه سؤال درباره این سیاست، با ما تماس بگیرید:
-        <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
-      </p>
-    </section>
-    
   <!-- 🧱 AdSense -->
   <div style="text-align:center;margin:2rem auto;">
     <ins class="adsbygoogle"
