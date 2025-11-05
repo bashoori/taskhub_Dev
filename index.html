@@ -30,12 +30,8 @@
     }
 
     @media (max-width: 992px) {
-      .page-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .ad-left, .ad-right {
-        display: none;
-      }
+      .page-wrapper { grid-template-columns: 1fr; }
+      .ad-left, .ad-right { display: none; }
     }
 
     .container {
@@ -152,16 +148,24 @@
     }
 
     /* ========== Ads ========== */
+    .ad-left, .ad-right, .ad-mid {
+      background: rgba(241, 245, 249, 0.3);
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
     .ad-left, .ad-right {
       position: sticky;
       top: 80px;
       height: fit-content;
-      text-align: center;
     }
 
     .ad-mid {
       text-align: center;
       margin: 2rem auto;
+      min-height: 100px;
     }
 
     /* ========== Contact Section ========== */
@@ -198,6 +202,24 @@
       background: #1e40af;
     }
 
+    /* ========== Sticky Bottom Ad ========== */
+    .ad-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      border-top: 1px solid #e2e8f0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      z-index: 999;
+      padding: 0.3rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .ad-sticky { padding: 0.1rem 0; }
+    }
+
     /* ========== Footer ========== */
     footer {
       text-align: center;
@@ -205,6 +227,7 @@
       color: #64748b;
       font-size: 0.9rem;
       border-top: 1px solid #e2e8f0;
+      margin-bottom: 3rem; /* space for sticky ad */
     }
   </style>
 </head>
@@ -278,7 +301,18 @@
     <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
   </footer>
 
-  <!-- ⚙️ Dynamic Script -->
+  <!-- 📢 Sticky Bottom Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3215014361489762"
+         data-ad-slot="5555555555"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ⚙️ Dynamic Language Script -->
   <script>
     const texts = {
       en: {
