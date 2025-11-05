@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Generator | Bita Digital Hub</title>
+  <meta name="description" content="Generate custom QR codes for links, text, or contact info instantly — free online tool by Bita Digital Hub." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
+
+  <!-- 💰 Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 🧭 Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
+      <a href="../index.html" class="brand">Bita Digital Hub</a>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="page-wrapper">
+    <!-- 📢 Left Ad -->
+    <aside class="ad-left">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="1111111111"
+        data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+    <!-- 🧰 Main Content -->
+    <main class="container">
+      <section class="tool-header">
+        <h1 id="title">QR Code Generator 🔳</h1>
+        <p id="desc">Generate QR codes for any text, link, or contact info instantly.</p>
+      </section>
+
+      <div class="tool-box">
+        <label for="qrText" id="labelText">Enter text or URL:</label>
+        <input type="text" id="qrText" placeholder="https://example.com" />
+
+        <button id="generateBtn">Generate QR Code</button>
+
+        <div id="qrResult" class="output-box" style="text-align:center; display:none;">
+          <canvas id="qrCanvas"></canvas>
+          <a id="downloadBtn" href="#" download="bita-qr.png">⬇️ Download QR</a>
+        </div>
+      </div>
+
+      <!-- 📢 Mid Ad -->
+      <div class="ad-mid">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3215014361489762"
+          data-ad-slot="3333333333"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- 🌍 Language Toggle -->
+      <div class="lang-btns">
+        <button id="btnEnglish" class="active">🌐 English</button>
+        <button id="btnFarsi">🌐 فارسی</button>
+      </div>
+    </main>
+
+    <!-- 📢 Right Ad -->
+    <aside class="ad-right">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="2222222222"
+        data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+  </div>
+
+  <!-- 🧭 Footer -->
+  <footer>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
+  </footer>
+
+  <!-- 📢 Sticky Ad -->
+  <div class="ad-sticky">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-3215014361489762"
+      data-ad-slot="5555555555"
+      data-ad-format="horizontal"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 🧠 Script -->
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  <script>
+    // --- QR Generator ---
+    const qr = new QRious({ element: document.getElementById('qrCanvas'), size: 220 });
+    const input = document.getElementById('qrText');
+    const resultBox = document.getElementById('qrResult');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    document.getElementById('generateBtn').addEventListener('click', () => {
+      const value = input.value.trim();
+      if (!value) {
+        alert("Please enter a text or URL.");
+        return;
+      }
+      qr.value = value;
+      resultBox.style.display = 'block';
+      downloadBtn.href = qr.toDataURL("image/png");
+    });
+
+    // --- Multilingual Support ---
+    const texts = {
+      en: {
+        title: "QR Code Generator 🔳",
+        desc: "Generate QR codes for any text, link, or contact info instantly.",
+        label: "Enter text or URL:",
+        placeholder: "https://example.com",
+        button: "Generate QR Code"
+      },
+      fa: {
+        title: "تولیدکننده QR 🔳",
+        desc: "کد QR برای هر متن یا لینک را فوراً بسازید.",
+        label: "متن یا لینک را وارد کنید:",
+        placeholder: "https://example.com",
+        button: "تولید کد QR"
+      }
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("desc").innerText = t.desc;
+      document.getElementById("labelText").innerText = t.label;
+      document.getElementById("qrText").placeholder = t.placeholder;
+      document.getElementById("generateBtn").innerText = t.button;
+
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
+    }
+
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+  </script>
+</body>
+</html>
