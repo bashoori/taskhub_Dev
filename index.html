@@ -6,14 +6,14 @@
 
   <title>Bita Digital Hub | Free Online Tools for Creators</title>
   <meta name="description" content="Smart, simple, and free online tools for digital creators — convert files, clean data, shorten links, and automate daily tasks.">
-  <meta name="keywords" content="online tools, digital marketing, task automation, file converter, zip tool, csv cleaner, password generator">
+  <meta name="keywords" content="AI tools, social media audit, bio generator, caption generator, online tools, data cleaning">
 
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
 
   <!-- SEO & Sharing -->
   <meta property="og:title" content="Bita Digital Hub – Free Tools for Creators">
-  <meta property="og:description" content="Boost your digital workflow with free tools and resources made for content creators.">
+  <meta property="og:description" content="Boost your workflow with free tools and AI generators made for digital creators.">
   <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
   <meta property="og:url" content="https://bitadigitalhub.com">
   <meta name="twitter:card" content="summary_large_image">
@@ -22,95 +22,101 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-YHKWTPXDHC');
   </script>
 
   <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+     crossorigin="anonymous"></script>
 
   <style>
-    /* === HEADER CALENDAR FIX === */
-    header {
-      position: relative;
-    }
-    .today-widget-header {
-      position: absolute;
-      top: 50%;
-      right: 1.5rem;
-      transform: translateY(-50%);
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 9999px;
-      padding: 0.25rem 0.8rem;
-      font-size: 0.85rem;
-      color: #475569;
-      white-space: nowrap;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    @media (max-width: 768px) { .today-widget-header { display: none; } }
-
-    /* === TOOL CARDS (Light Grey Style) === */
+    /* 🌈 TOOL CARD LIGHT STYLE */
     .tool-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.8rem;
-      padding: 2.5rem;
-      max-width: 1100px;
-      margin: auto;
+      margin: 2.5rem auto;
+      max-width: 1150px;
+      padding: 0 1rem;
     }
+
     .tool-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 1.8rem 1.5rem;
+      display: block;
+      background: linear-gradient(145deg, #f8fafc, #edf2f7);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.4rem;
       text-decoration: none;
-      color: #1f2937;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+      color: #1e293b;
       transition: all 0.25s ease;
-      height: 180px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
+
     .tool-card:hover {
-      background: #f9fafb;
       transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,120,215,0.12);
+      background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
+
     .tool-title {
-      font-size: 1.15rem;
       font-weight: 700;
+      font-size: 1.2rem;
       margin-bottom: 0.4rem;
-      color: #111827;
     }
+
     .tool-desc {
-      color: #475569;
       font-size: 0.95rem;
+      color: #475569;
       line-height: 1.5;
     }
 
-    /* === CONTACT + FOOTER === */
+    @media (max-width: 900px) {
+      .tool-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+      .tool-card {
+        padding: 1.3rem;
+      }
+      .tool-title { font-size: 1.1rem; }
+      .tool-desc { font-size: 0.85rem; }
+    }
+
+    /* 💌 CONTACT + FOOTER STYLES */
     .contact-section {
       max-width: 720px;
       margin: 3rem auto;
       padding: 2rem;
-      background: rgba(15,23,42,0.9);
+      background: rgba(15,23,42,0.85);
       border-radius: 1.2rem;
       box-shadow: 0 8px 24px rgba(0,0,0,0.25);
       color: #f1f5f9;
+      font-family: system-ui, sans-serif;
     }
+
+    .contact-section[dir="rtl"] { text-align: right; }
+
     .contact-section h2 {
       color: #a5b4fc;
       text-align: center;
       margin-bottom: 0.8rem;
+      font-size: 1.6rem;
     }
+
     .contact-section p {
       text-align: center;
       color: #cbd5e1;
       margin-bottom: 1.8rem;
+      font-size: 0.95rem;
     }
+
+    .contact-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .contact-section input,
     .contact-section textarea {
       width: 100%;
@@ -120,8 +126,21 @@
       background: rgba(30,41,59,0.6);
       color: #f8fafc;
       font-size: 1rem;
-      margin-bottom: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .contact-section input:focus,
+    .contact-section textarea:focus {
+      border-color: #a5b4fc;
+      box-shadow: 0 0 8px rgba(165,180,252,0.3);
+    }
+
+    .contact-section textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
     .contact-section button {
       background: linear-gradient(135deg, #38bdf8, #6366f1);
       border: none;
@@ -130,27 +149,46 @@
       padding: 0.9rem;
       border-radius: 9999px;
       cursor: pointer;
-    }
-    .contact-section button:hover {
-      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
-      transform: translateY(-2px);
+      font-size: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
 
-    footer {
+    .contact-section button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+    }
+
+    /* FOOTER */
+    .site-footer {
       background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(30,41,59,0.95));
       border-top: 1px solid rgba(148,163,184,0.2);
       padding: 2rem 1rem;
+      margin-top: 3rem;
       text-align: center;
       color: #cbd5e1;
+      font-size: 0.95rem;
     }
-    footer a { color: #a5b4fc; text-decoration: none; }
-    footer a:hover { color: #f0f9ff; }
-    footer strong { color: #f9fafb; }
+
+    .site-footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+      transition: color 0.25s ease, text-shadow 0.25s ease;
+    }
+
+    .site-footer a:hover {
+      color: #f0f9ff;
+      text-shadow: 0 0 6px rgba(165,180,252,0.6);
+    }
+
+    .site-footer strong {
+      color: #f9fafb;
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Navbar -->
+  <!-- 🌐 Navbar -->
   <header class="navbar">
     <div class="nav-left">
       <img src="./assets/taskhub-logo.svg" alt="TaskHub Logo" class="nav-logo" width="36" height="36">
@@ -162,21 +200,16 @@
       <a href="./privacy.html">Privacy</a>
       <a href="mailto:contact@bitadigitalhub.com">📩 contact@bitadigitalhub.com</a>
     </nav>
-
-    <!-- 📅 Calendar Widget -->
-    <div id="today-widget" class="today-widget-header"></div>
   </header>
 
-  <!-- Hero -->
+  <!-- 🌄 Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>⚙️ All your Essential Tools in one place</h1>
-      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and for free.</p>
-
+      <p>Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.</p>
       <div class="typing-tagline">
         <span id="typing-text"></span><span class="cursor">|</span>
       </div>
-
       <div class="lang-btns">
         <button onclick="setLang('en')">English</button>
         <button onclick="setLang('fa')">فارسی</button>
@@ -184,13 +217,10 @@
     </div>
   </section>
 
-  <!-- English Tools -->
+  <!-- 🧰 Tools -->
   <main id="en">
     <h2 class="section-title">Our Free Tools</h2>
     <div class="tool-grid">
-      <a href="./tools/file-converter.html" class="tool-card"><div class="tool-title">🧾 File Converter</div><div class="tool-desc">Convert documents, images, and videos instantly online.</div></a>
-      <a href="./tools/zip-unzip.html" class="tool-card"><div class="tool-title">📦 ZIP / Unzip</div><div class="tool-desc">Compress or extract ZIP files securely in seconds.</div></a>
-      <a href="./tools/csv-cleaner.html" class="tool-card"><div class="tool-title">📊 CSV Cleaner</div><div class="tool-desc">Clean, format, and validate messy CSV or Excel data.</div></a>
       <a href="./tools/password-generator.html" class="tool-card"><div class="tool-title">🔐 Password Generator</div><div class="tool-desc">Generate strong, secure passwords instantly.</div></a>
       <a href="./tools/url-shortener.html" class="tool-card"><div class="tool-title">🌐 URL Shortener</div><div class="tool-desc">Create short, trackable links for your campaigns.</div></a>
       <a href="./tools/social-audit.html" class="tool-card"><div class="tool-title">🧠 Social Media Audit</div><div class="tool-desc">Analyze engagement, caption quality, and hashtags.</div></a>
@@ -199,43 +229,46 @@
     </div>
   </main>
 
-  <!-- Contact -->
+  <!-- 💬 Contact -->
   <section id="contact-en" class="contact-section">
     <h2>Contact Us</h2>
     <p>Have feedback, ideas, or collaboration proposals? Send us a quick message below.</p>
     <form action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
       <input type="hidden" name="_subject" value="New message from Bita Digital Hub">
-      <label>Name</label><input type="text" name="name" required>
-      <label>Email</label><input type="email" name="email" required>
-      <label>Message</label><textarea name="message" required></textarea>
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required />
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Your email" required />
+      <label>Message</label>
+      <textarea name="message" placeholder="Write your message here..." required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- 🌙 Footer -->
+  <footer class="site-footer">
     <p><a href="./privacy.html">Privacy Policy</a> | © 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools</p>
     <p>📩 <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a></p>
   </footer>
 
-  <!-- 📅 Today Widget Script -->
+  <!-- 🌐 Language Switch -->
   <script>
-    function getPersianDate() {
-      const now = new Date();
-      return new Intl.DateTimeFormat("fa-IR-u-ca-persian", { year: "numeric", month: "long", day: "numeric" }).format(now);
+    function setLang(lang) {
+      document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
+      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+      const heroTitle = document.querySelector('.hero-content h1');
+      const heroDesc = document.querySelector('.hero-content p');
+      if (lang === 'fa') {
+        heroTitle.textContent = '⚙️ همه ابزارهای ضروری شما در یک جا';
+        heroDesc.textContent = 'فایل‌ها را تبدیل کنید، داده‌ها را فشرده کنید، جدول‌ها را تمیز کنید و خیلی کارهای دیگر — فوری، امن و رایگان.';
+      } else {
+        heroTitle.textContent = '⚙️ All your Essential Tools in one place';
+        heroDesc.textContent = 'Convert files, compress data, clean spreadsheets, and more — instantly, securely, and free.';
+      }
     }
-    function getEnglishDate() {
-      const now = new Date();
-      return new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }).format(now);
-    }
-    function updateTodayWidget() {
-      const widget = document.getElementById("today-widget");
-      if (widget) widget.innerHTML = `📅 ${getEnglishDate()} | <span style="font-family:'Vazirmatn',sans-serif;">${getPersianDate()}</span>`;
-    }
-    document.addEventListener("DOMContentLoaded", updateTodayWidget);
   </script>
 
-  <!-- Typing Animation -->
+  <!-- ⌨️ Typing Animation -->
   <script>
     const words = ["Convert 📄", "Clean 🧹", "Compress 📦", "Create 🔧", "Share 🌐"];
     let i = 0, j = 0, isDeleting = false;
@@ -250,12 +283,16 @@
         typingText.textContent = currentWord.substring(0, j--);
         setTimeout(type, deletingSpeed);
       } else if (!isDeleting && j === currentWord.length) {
-        isDeleting = true; setTimeout(type, delayBetweenWords);
+        isDeleting = true;
+        setTimeout(type, delayBetweenWords);
       } else {
-        isDeleting = false; i = (i + 1) % words.length; setTimeout(type, 200);
+        isDeleting = false;
+        i = (i + 1) % words.length;
+        setTimeout(type, 200);
       }
     }
     document.addEventListener("DOMContentLoaded", type);
   </script>
+
 </body>
 </html>
