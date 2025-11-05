@@ -266,3 +266,49 @@ footer strong {
     padding: 1rem;
   }
 }
+
+/* === ✅ FIX CONTACT FORM COLOR === */
+.contact-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-section h2 {
+  color: #1e40af;
+}
+
+.contact-section p {
+  color: #475569;
+}
+
+/* === ✅ ALIGN LOGO + BRAND NAME IN NAVBAR === */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+}
+
+.navbar .brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.navbar .brand:hover {
+  color: #1e40af;
+}
+
+/* Optional: slightly stronger bottom border for navbar for cleaner separation */
+.navbar {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
