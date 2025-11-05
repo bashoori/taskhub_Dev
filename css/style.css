@@ -382,3 +382,31 @@ footer a:hover {
 #shortResult a:hover {
   color: var(--primary-cyan);
 }
+
+/* ===== Layout Spacing Fix ===== */
+.tool-grid {
+  margin-bottom: 3rem; /* adds clean space before next section */
+}
+
+.contact-section {
+  margin-top: 3rem; /* creates breathing room under tools */
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  text-align: center;
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+}
