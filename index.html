@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <!-- 🔝 Navbar -->
+  <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
       <img src="./assets/taskhub-logo.svg" alt="Logo" class="nav-logo" width="36" height="36" />
@@ -23,31 +23,25 @@
     </nav>
   </header>
 
-  <!-- 🌍 Hero Section -->
+  <!-- 🌍 Hero -->
   <section class="tool-header">
     <h1 id="heroTitle">All Your Essential Tools in One Place ⚙️</h1>
     <p id="heroDesc">Convert files, clean data, compress tables, and do much more — fast, secure, and free.</p>
   </section>
 
-  <!-- 🌐 Language Switch -->
+  <!-- 🌐 Language Toggle -->
   <div class="lang-btns">
     <button id="btnFarsi">فارسی</button>
     <button id="btnEnglish">English</button>
   </div>
 
-  <!-- 🧰 Tool Grid -->
-  <section>
-    <h2 class="section-title" id="toolsTitle">Our Free Tools 🔐</h2>
-    <div class="tool-grid" id="toolsGrid">
-      <!-- Filled dynamically by JS -->
-    </div>
-  </section>
+  <!-- 🧰 Categories + Tools -->
+  <section id="toolCategories" style="margin-top:2rem;"></section>
 
-  <!-- 📬 Contact Section -->
+  <!-- 📬 Contact -->
   <section class="contact-section">
     <h2 id="contactTitle">Get in Touch 💌</h2>
     <p id="contactDesc">We love feedback and ideas! Send us your message below.</p>
-
     <form id="contactForm">
       <input type="text" id="name" placeholder="Your Name" required />
       <input type="email" id="email" placeholder="Your Email" required />
@@ -67,16 +61,30 @@
       en: {
         heroTitle: "All Your Essential Tools in One Place ⚙️",
         heroDesc: "Convert files, clean data, compress tables, and do much more — fast, secure, and free.",
-        toolsTitle: "Our Free Tools 🔐",
-        tools: [
-          { title: "File Converter 📁", desc: "Convert between PDF, Word, Excel, and image formats easily." },
-          { title: "ZIP & Unzip 📦", desc: "Compress or extract files online with one click." },
-          { title: "CSV & Excel Cleaner 📊", desc: "Merge, clean, and format spreadsheet data fast." },
-          { title: "Password Generator 🔒", desc: "Generate strong, secure passwords instantly." },
-          { title: "URL Shortener 🌐", desc: "Create short, trackable links for your campaigns." },
-          { title: "QR Generator 🔗", desc: "Generate QR codes instantly for any link or text." },
-          { title: "Social Media Audit 🧠", desc: "Analyze engagement, caption quality, and hashtags." },
-          { title: "AI Bio Generator ✨", desc: "Generate professional bios for Instagram, LinkedIn, and YouTube in seconds." }
+        categories: [
+          {
+            name: "File Tools 📁",
+            tools: [
+              { title: "File Converter", desc: "Convert between PDF, Word, Excel, and images easily.", link: "./tools/file-converter.html" },
+              { title: "ZIP & Unzip", desc: "Compress or extract files instantly.", link: "./tools/zip-unzip.html" }
+            ]
+          },
+          {
+            name: "Data Tools 📊",
+            tools: [
+              { title: "CSV & Excel Cleaner", desc: "Merge, clean, and format spreadsheet data.", link: "./tools/csv-cleaner.html" },
+              { title: "Password Generator", desc: "Generate strong, secure passwords instantly.", link: "./tools/password-generator.html" }
+            ]
+          },
+          {
+            name: "Social & AI Tools 🤖",
+            tools: [
+              { title: "URL Shortener", desc: "Create short, trackable links for campaigns.", link: "./tools/url-shortener.html" },
+              { title: "QR Generator", desc: "Generate QR codes for links or text.", link: "./tools/qr-generator.html" },
+              { title: "Social Media Audit", desc: "Analyze engagement, caption quality, and hashtags.", link: "./tools/social-audit.html" },
+              { title: "AI Bio Generator", desc: "Generate professional bios for Instagram, LinkedIn, and YouTube.", link: "./tools/ai-bio-generator.html" }
+            ]
+          }
         ],
         contactTitle: "Get in Touch 💌",
         contactDesc: "We love feedback and ideas! Send us your message below.",
@@ -87,20 +95,34 @@
       },
       fa: {
         heroTitle: "🛠️ همه ابزارهای ضروری شما در یک جا",
-        heroDesc: "فایل‌ها را تبدیل کنید، داده‌ها را تمیز و فشرده کنید و خیلی کارهای دیگر — فوری، امن و رایگان.",
-        toolsTitle: "ابزارهای رایگان ما 🔐",
-        tools: [
-          { title: "تبدیل‌گر فایل 📁", desc: "به‌راحتی بین PDF، Word، Excel و فرمت‌های تصویری تبدیل کنید." },
-          { title: "فشرده‌سازی و استخراج 📦", desc: "فایل‌ها را با یک کلیک فشرده یا از حالت فشرده خارج کنید." },
-          { title: "پاک‌کننده CSV و Excel 📊", desc: "داده‌های جدول را سریع تمیز، ادغام و قالب‌بندی کنید." },
-          { title: "تولیدکننده رمز عبور 🔒", desc: "رمزهای قوی و امن را فوراً بسازید." },
-          { title: "کوتاه‌کننده لینک 🌐", desc: "لینک‌های کوتاه و قابل‌ردیابی برای کمپین‌های خود بسازید." },
-          { title: "تولیدکننده QR 🔗", desc: "برای هر لینک یا متن، QR کد بسازید." },
-          { title: "ارزیاب شبکه‌های اجتماعی 🧠", desc: "درگیری، کیفیت کپشن و هشتگ‌ها را تحلیل کنید." },
-          { title: "تولیدکننده بیو هوش مصنوعی ✨", desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب بسازید." }
+        heroDesc: "فایل‌ها را تبدیل کنید، داده‌ها را تمیز و فشرده کنید و کارهای دیگر — فوری، امن و رایگان.",
+        categories: [
+          {
+            name: "ابزارهای فایل 📁",
+            tools: [
+              { title: "تبدیل‌گر فایل", desc: "بین فرمت‌های PDF، Word، Excel و تصویر تبدیل کنید.", link: "./tools/file-converter.html" },
+              { title: "فشرده‌سازی و استخراج", desc: "فایل‌ها را فشرده یا از حالت فشرده خارج کنید.", link: "./tools/zip-unzip.html" }
+            ]
+          },
+          {
+            name: "ابزارهای داده 📊",
+            tools: [
+              { title: "پاک‌کننده CSV و Excel", desc: "داده‌های جدول را تمیز و قالب‌بندی کنید.", link: "./tools/csv-cleaner.html" },
+              { title: "تولیدکننده رمز عبور", desc: "رمزهای قوی و امن ایجاد کنید.", link: "./tools/password-generator.html" }
+            ]
+          },
+          {
+            name: "ابزارهای اجتماعی و هوش مصنوعی 🤖",
+            tools: [
+              { title: "کوتاه‌کننده لینک", desc: "لینک‌های کوتاه و قابل‌ردیابی بسازید.", link: "./tools/url-shortener.html" },
+              { title: "تولیدکننده QR", desc: "برای هر لینک یا متن QR کد بسازید.", link: "./tools/qr-generator.html" },
+              { title: "ارزیاب شبکه‌های اجتماعی", desc: "درگیری و کیفیت کپشن‌ها را تحلیل کنید.", link: "./tools/social-audit.html" },
+              { title: "تولیدکننده بیو هوش مصنوعی", desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب بسازید.", link: "./tools/ai-bio-generator.html" }
+            ]
+          }
         ],
         contactTitle: "تماس با ما 💌",
-        contactDesc: "ما از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را برای ما ارسال کنید.",
+        contactDesc: "ما از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را ارسال کنید.",
         namePlaceholder: "نام شما",
         emailPlaceholder: "ایمیل شما",
         msgPlaceholder: "پیام شما",
@@ -108,48 +130,41 @@
       }
     };
 
-    const grid = document.getElementById("toolsGrid");
-    const elements = {
-      heroTitle: document.getElementById("heroTitle"),
-      heroDesc: document.getElementById("heroDesc"),
-      toolsTitle: document.getElementById("toolsTitle"),
-      contactTitle: document.getElementById("contactTitle"),
-      contactDesc: document.getElementById("contactDesc"),
-      name: document.getElementById("name"),
-      email: document.getElementById("email"),
-      message: document.getElementById("message"),
-      submitBtn: document.getElementById("submitBtn")
-    };
+    const catContainer = document.getElementById("toolCategories");
 
-    function setLang(lang) {
+    function renderLang(lang) {
       const t = texts[lang];
       document.body.dir = lang === "fa" ? "rtl" : "ltr";
+      document.getElementById("heroTitle").innerText = t.heroTitle;
+      document.getElementById("heroDesc").innerText = t.heroDesc;
+      document.getElementById("contactTitle").innerText = t.contactTitle;
+      document.getElementById("contactDesc").innerText = t.contactDesc;
+      document.getElementById("name").placeholder = t.namePlaceholder;
+      document.getElementById("email").placeholder = t.emailPlaceholder;
+      document.getElementById("message").placeholder = t.msgPlaceholder;
+      document.getElementById("submitBtn").innerText = t.submitBtn;
 
-      elements.heroTitle.innerText = t.heroTitle;
-      elements.heroDesc.innerText = t.heroDesc;
-      elements.toolsTitle.innerText = t.toolsTitle;
-      elements.contactTitle.innerText = t.contactTitle;
-      elements.contactDesc.innerText = t.contactDesc;
-      elements.name.placeholder = t.namePlaceholder;
-      elements.email.placeholder = t.emailPlaceholder;
-      elements.message.placeholder = t.msgPlaceholder;
-      elements.submitBtn.innerText = t.submitBtn;
-
-      // Refresh tool cards
-      grid.innerHTML = "";
-      t.tools.forEach(tool => {
-        const card = document.createElement("div");
-        card.className = "tool-card";
-        card.innerHTML = `<h3>${tool.title}</h3><p>${tool.desc}</p>`;
-        grid.appendChild(card);
+      catContainer.innerHTML = "";
+      t.categories.forEach(cat => {
+        const catDiv = document.createElement("div");
+        catDiv.className = "category-box";
+        catDiv.innerHTML = `<h2 class='section-title'>${cat.name}</h2>
+                            <div class='tool-grid'>
+                              ${cat.tools.map(tool => `
+                                <a href="${tool.link}" class="tool-card">
+                                  <h3>${tool.title}</h3>
+                                  <p>${tool.desc}</p>
+                                </a>
+                              `).join("")}
+                            </div>`;
+        catContainer.appendChild(catDiv);
       });
     }
 
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    document.getElementById("btnEnglish").addEventListener("click", () => renderLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => renderLang("fa"));
 
-    // Load English by default
-    setLang("en");
+    renderLang("en"); // Default
   </script>
 </body>
 </html>
