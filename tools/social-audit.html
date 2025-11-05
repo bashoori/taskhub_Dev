@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="icon" type="image/png" href="../assets/taskhub-logo.png"/>
 
-  <!-- 📈 Google Analytics (GA4) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKWTPXDHC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,16 +18,9 @@
     gtag('config', 'G-YHKWTPXDHC');
   </script>
 
-  <!-- 💰 Google AdSense -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
      crossorigin="anonymous"></script>
-
-  <!-- 🧭 Open Graph -->
-  <meta property="og:title" content="Social Media Audit Tool | Bita Digital Hub">
-  <meta property="og:description" content="Get a professional score and recommendations for your social media content.">
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/taskhub-logo.png">
-  <meta property="og:url" content="https://bitadigitalhub.com/tools/social-audit.html">
-  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     .tool-header { text-align:center; padding:3rem 1rem 1.5rem; background:linear-gradient(180deg,#f8fbff 0%,#f0f2f5 100%); border-bottom:1px solid #eaeaea; }
@@ -36,31 +29,18 @@
     .card{ background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05); padding:1rem 1.2rem; }
     .card h3{ margin:.2rem 0 .6rem; font-size:1.05rem; }
     .card label{ display:block; font-size:.92rem; margin:.5rem 0 .25rem; color:#444; }
-    .card input[type="number"], .card input[type="text"], .card textarea, .card select{
+    .card input[type="number"], .card textarea{
       width:100%; padding:.7rem; border:1px solid #ccc; border-radius:8px; font-size:.95rem; background:#fafafa;
     }
-    .card textarea{ min-height:120px; resize:vertical; }
     .hint{ font-size:.82rem; color:#777; margin-top:.25rem; }
     .actions { text-align:center; margin:1rem auto 0; display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; }
-    .actions button{ padding:.85rem 1.2rem; min-width:200px; font-weight:700; border:none; border-radius:10px; background:var(--primary); color:#fff; cursor:pointer; }
-    .actions button:hover{ background:var(--primary-dark); }
+    .actions button{ padding:.85rem 1.2rem; min-width:180px; font-weight:700; border:none; border-radius:10px; background:var(--primary,#0078d7); color:#fff; cursor:pointer; }
+    .actions button:hover{ background:#005fa3; }
     .btn-secondary{ background:#fff; color:#333; border:1px solid #ddd; }
     .btn-secondary:hover{ background:#f6f6f6; }
-    .results{ max-width:900px; margin:1.2rem auto 2rem; display:grid; grid-template-columns:1fr; gap:1rem; }
-    .kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
-    .kpi{ background:#fff; border-radius:12px; padding:1rem 1.2rem; box-shadow:0 4px 12px rgba(0,0,0,.05); }
-    .kpi h4{ margin:0 0 .35rem; font-size:.95rem; color:#555; }
-    .kpi .val{ font-size:1.4rem; font-weight:800; }
-    .score-ring{ display:flex; align-items:center; justify-content:center; height:110px; border-radius:12px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.05); }
-    .score-ring .val { font-size:1.8rem; font-weight:900; }
-    .suggestions ul{ margin:.5rem 0 0 1rem; }
-    .suggestions li{ margin:.25rem 0; }
-    .meta{ font-size:.85rem; color:#666; }
     .lang-btns{ text-align:center; margin-top:1.5rem; }
     .lang-btns button{ padding:.5rem 1rem; border:1px solid #ddd; border-radius:6px; margin:0 .3rem; cursor:pointer; background:#fff; }
     .lang-btns button:hover{ background:#f2f2f2; }
-    .ad-placeholder{ text-align:center; margin:1.2rem auto; max-width:900px; }
-    @media (max-width:600px){ .actions button{ min-width:unset; width:100%; } }
   </style>
 </head>
 <body>
@@ -85,65 +65,112 @@
     <p id="t_sub">Get a pro score and specific recommendations for your post & profile setup.</p>
   </section>
 
-  <!-- 📢 AdSense Below Header -->
-  <div class="ad-placeholder">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="8888888888"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
+  <!-- 🌐 Language Buttons -->
   <div class="lang-btns">
-    <button onclick="setLang('en')" aria-label="English">English</button>
-    <button onclick="setLang('fa')" aria-label="فارسی">فارسی</button>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('fa')">فارسی</button>
   </div>
 
   <!-- 🔍 Inputs -->
   <div class="audit-grid">
-    <!-- Post Inputs, Metrics, Quality (unchanged structure from your version) -->
+    <div class="card">
+      <h3 id="t_captionLabel">Post Caption</h3>
+      <textarea id="caption" placeholder="Write your post caption here..."></textarea>
+      <p class="hint" id="t_captionHint">We’ll analyze caption length, emojis, and CTAs.</p>
+    </div>
+
+    <div class="card">
+      <h3 id="t_hashtagsLabel">Hashtags</h3>
+      <textarea id="hashtags" placeholder="#marketing #growth #branding"></textarea>
+      <p class="hint" id="t_hashtagsHint">Use 8–15 relevant hashtags for best performance.</p>
+    </div>
+
+    <div class="card">
+      <h3 id="t_metrics">Metrics</h3>
+      <label id="t_followers">Followers</label>
+      <input type="number" id="followers" placeholder="1000"/>
+      <label id="t_likes">Likes</label>
+      <input type="number" id="likes" placeholder="50"/>
+      <label id="t_comments">Comments</label>
+      <input type="number" id="comments" placeholder="10"/>
+    </div>
   </div>
 
-  <!-- 🧮 Action Buttons -->
+  <!-- 🧮 Actions -->
   <div class="actions">
-    <button onclick="runAudit()" id="t_run">Run Audit</button>
-    <button class="btn-secondary" onclick="window.print()" id="t_download">Download PDF</button>
-    <button class="btn-secondary" onclick="exportCSV()" id="t_export">Export CSV</button>
-    <button class="btn-secondary" onclick="resetForm()" id="t_reset">Reset</button>
-  </div>
-
-  <!-- 📊 Results Section -->
-  <section class="results" id="results" style="display:none;">
-    <!-- KPIs + Suggestions (kept as in your script) -->
-  </section>
-
-  <!-- 📢 AdSense Above Footer -->
-  <div class="ad-placeholder">
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="9999999999"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <button id="t_run">Run Audit</button>
+    <button class="btn-secondary" id="t_download">Download PDF</button>
+    <button class="btn-secondary" id="t_export">Export CSV</button>
+    <button class="btn-secondary" id="t_reset">Reset</button>
   </div>
 
   <!-- 🧭 Footer -->
   <footer>
     <p>
-      © 2025 <strong>Bita Digital Hub</strong> | Built for simplicity & trust.<br>
-      <a href="../privacy.html">Privacy Policy</a> · 
+      © 2025 <strong>Bita Digital Hub</strong> | <a href="../privacy.html">Privacy</a> · 
       <a href="../about.html">About</a> · 
       <a href="mailto:contact@bitadigitalhub.com">Contact</a>
     </p>
   </footer>
 
-  <!-- ⚙️ Bilingual + Audit Script -->
+  <!-- 🌐 Language + Audit Logic -->
   <script>
-    /* === Your full bilingual + scoring logic preserved === */
-    // (entire original JS block goes here exactly as in your version)
+    const TXT = {
+      en: {
+        title: "Social Media Audit Tool",
+        sub: "Get a pro score and specific recommendations for your post & profile setup.",
+        captionLabel: "Post Caption",
+        captionHint: "We’ll analyze caption length, emojis, and CTAs.",
+        hashtagsLabel: "Hashtags",
+        hashtagsHint: "Use 8–15 relevant hashtags for best performance.",
+        metrics: "Metrics",
+        followers: "Followers",
+        likes: "Likes",
+        comments: "Comments",
+        run: "Run Audit",
+        download: "Download PDF",
+        export: "Export CSV",
+        reset: "Reset"
+      },
+      fa: {
+        title: "ابزار ارزیابی سوشال‌مدیا",
+        sub: "امتیاز حرفه‌ای بگیرید و پیشنهادهای دقیق برای پست و پروفایل خود دریافت کنید.",
+        captionLabel: "متن کپشن پست",
+        captionHint: "طول، اموجی‌ها و CTA بررسی می‌شود.",
+        hashtagsLabel: "هشتگ‌ها",
+        hashtagsHint: "بهترین عملکرد معمولاً با ۸ تا ۱۵ هشتگ مرتبط است.",
+        metrics: "شاخص‌ها",
+        followers: "تعداد فالوئر",
+        likes: "تعداد لایک",
+        comments: "تعداد کامنت",
+        run: "اجرای ارزیابی",
+        download: "دانلود PDF",
+        export: "خروجی CSV",
+        reset: "ریست"
+      }
+    };
+
+    function setLang(lang) {
+      const t = TXT[lang];
+      document.body.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+
+      document.getElementById('t_title').textContent = t.title;
+      document.getElementById('t_sub').textContent = t.sub;
+      document.getElementById('t_captionLabel').textContent = t.captionLabel;
+      document.getElementById('t_captionHint').textContent = t.captionHint;
+      document.getElementById('t_hashtagsLabel').textContent = t.hashtagsLabel;
+      document.getElementById('t_hashtagsHint').textContent = t.hashtagsHint;
+      document.getElementById('t_metrics').textContent = t.metrics;
+      document.getElementById('t_followers').textContent = t.followers;
+      document.getElementById('t_likes').textContent = t.likes;
+      document.getElementById('t_comments').textContent = t.comments;
+      document.getElementById('t_run').textContent = t.run;
+      document.getElementById('t_download').textContent = t.download;
+      document.getElementById('t_export').textContent = t.export;
+      document.getElementById('t_reset').textContent = t.reset;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => setLang('en'));
   </script>
 </body>
 </html>
