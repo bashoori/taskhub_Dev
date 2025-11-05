@@ -7,6 +7,168 @@
   <meta name="description" content="Convert files, clean data, compress tables, and more — fast, secure, and free online tools by Bita Ashoori." />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
+
+  <style>
+    /* Layout Enhancements */
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f9fafb;
+      color: #1e293b;
+      margin: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .navbar {
+      background: #fff;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .brand {
+      font-weight: 600;
+      color: #111;
+      text-decoration: none;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav a.active {
+      font-weight: 600;
+      color: #111;
+    }
+
+    /* Hero */
+    .tool-header {
+      text-align: center;
+      margin: 3rem auto 1rem;
+    }
+    .tool-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .tool-header p {
+      color: #64748b;
+      font-size: 1rem;
+    }
+
+    /* Language Buttons */
+    .lang-btns {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .lang-btns button {
+      margin: 0 0.4rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .lang-btns button:hover {
+      background: #f1f5f9;
+    }
+
+    /* Tools Section */
+    .category-box {
+      margin: 2.5rem auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+    .tool-card {
+      display: block;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.2s ease-in-out;
+      text-decoration: none;
+      color: #111;
+    }
+    .tool-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .tool-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .tool-card p {
+      margin: 0;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      background: #fff;
+      margin: 3rem auto;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      max-width: 700px;
+    }
+    form {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    input, textarea, button {
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+    button:hover {
+      background: #1e40af;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,7 +186,7 @@
   </header>
 
   <!-- 🌍 Hero -->
-  <section class="tool-header">
+  <section class="tool-header container">
     <h1 id="heroTitle">All Your Essential Tools in One Place ⚙️</h1>
     <p id="heroDesc">Convert files, clean data, compress tables, and do much more — fast, secure, and free.</p>
   </section>
@@ -35,13 +197,14 @@
     <button id="btnEnglish">English</button>
   </div>
 
-  <!-- 🧰 Categories + Tools -->
-  <section id="toolCategories" style="margin-top:2rem;"></section>
+  <!-- 🧰 Tools Section -->
+  <section id="toolCategories" class="container"></section>
 
   <!-- 📬 Contact -->
-  <section class="contact-section">
+  <section class="contact-section container">
     <h2 id="contactTitle">Get in Touch 💌</h2>
     <p id="contactDesc">We love feedback and ideas! Send us your message below.</p>
+
     <form id="contactForm">
       <input type="text" id="name" placeholder="Your Name" required />
       <input type="email" id="email" placeholder="Your Email" required />
@@ -52,10 +215,10 @@
 
   <!-- 🧭 Footer -->
   <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> | Smart, Simple, Free Tools.</p>
+    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
   </footer>
 
-  <!-- ⚙️ Script -->
+  <!-- ⚙️ Language Script -->
   <script>
     const texts = {
       en: {
@@ -130,7 +293,7 @@
       }
     };
 
-    const catContainer = document.getElementById("toolCategories");
+    const container = document.getElementById("toolCategories");
 
     function renderLang(lang) {
       const t = texts[lang];
@@ -144,27 +307,27 @@
       document.getElementById("message").placeholder = t.msgPlaceholder;
       document.getElementById("submitBtn").innerText = t.submitBtn;
 
-      catContainer.innerHTML = "";
+      container.innerHTML = "";
       t.categories.forEach(cat => {
-        const catDiv = document.createElement("div");
-        catDiv.className = "category-box";
-        catDiv.innerHTML = `<h2 class='section-title'>${cat.name}</h2>
-                            <div class='tool-grid'>
-                              ${cat.tools.map(tool => `
-                                <a href="${tool.link}" class="tool-card">
-                                  <h3>${tool.title}</h3>
-                                  <p>${tool.desc}</p>
-                                </a>
-                              `).join("")}
-                            </div>`;
-        catContainer.appendChild(catDiv);
+        const section = document.createElement("section");
+        section.className = "category-box";
+        section.innerHTML = `
+          <h2 class="section-title">${cat.name}</h2>
+          <div class="tool-grid">
+            ${cat.tools.map(tool => `
+              <a href="${tool.link}" class="tool-card">
+                <h3>${tool.title}</h3>
+                <p>${tool.desc}</p>
+              </a>
+            `).join("")}
+          </div>`;
+        container.appendChild(section);
       });
     }
 
     document.getElementById("btnEnglish").addEventListener("click", () => renderLang("en"));
     document.getElementById("btnFarsi").addEventListener("click", () => renderLang("fa"));
-
-    renderLang("en"); // Default
+    renderLang("en");
   </script>
 </body>
 </html>
