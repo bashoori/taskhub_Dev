@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
+
 <body>
   <!-- 🧭 Navbar -->
   <header class="navbar">
@@ -21,21 +22,30 @@
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
+
+      <!-- 🌐 Language Dropdown -->
+      <div class="lang-switch">
+        <button id="langBtn" class="lang-toggle">
+          🌐 <span id="selectedLang"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾</span>
+        </button>
+        <ul id="langMenu" class="lang-menu">
+          <li data-lang="en"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</li>
+          <li data-lang="fa"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <!-- 🌐 Language Buttons -->
-  <div class="lang-btns" style="margin-top:1rem;text-align:center;">
-    <button id="btnEnglish" class="active">English</button>
-    <button id="btnFarsi">فارسی</button>
-  </div>
-
   <!-- 🌟 Hero Section -->
-  <section class="tool-header" style="margin-top:3rem;">
-    <h1 id="hero-title">Innovative Digital Solutions for Creators & Data Professionals</h1>
-    <p id="hero-desc">We help you automate workflows, build smart data systems, and launch your online business with clarity and confidence.</p>
-    <div style="margin-top:1.5rem;">
-      <a id="btnServices" href="services.html" class="btn-primary" style="margin-right:0.5rem;">View Services →</a>
+  <section class="hero-section">
+    <div class="hero-badge">✨ Digital Transformation</div>
+    <h1 id="hero-title" class="hero-title">Innovative Digital Solutions</h1>
+    <p id="hero-desc" class="hero-subtitle">
+      Bita Digital Hub empowers creators and businesses to automate, scale, and grow 
+      using Data, Cloud, and AI-powered systems.
+    </p>
+    <div class="hero-buttons">
+      <a id="btnServices" href="services.html" class="btn-primary">View Services →</a>
       <a id="btnContact" href="contact.html" class="btn-secondary">Book a Call</a>
     </div>
   </section>
@@ -141,12 +151,32 @@
     </div>
   </footer>
 
-  <!-- 🌐 Language Toggle Script -->
+  <!-- 🌐 Language Script -->
   <script>
+    const langBtn = document.getElementById("langBtn");
+    const langMenu = document.getElementById("langMenu");
+    const selectedLang = document.getElementById("selectedLang");
+
+    langBtn.addEventListener("click", () => langMenu.classList.toggle("show"));
+    document.addEventListener("click", e => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) langMenu.classList.remove("show");
+    });
+
+    langMenu.querySelectorAll("li").forEach(item => {
+      item.addEventListener("click", () => {
+        const lang = item.dataset.lang;
+        const flagSrc = item.querySelector("img").src;
+        const langText = item.textContent.trim();
+        selectedLang.innerHTML = `<img src="${flagSrc}" alt="flag" /> ${langText} ▾`;
+        langMenu.classList.remove("show");
+        switchLanguage(lang);
+      });
+    });
+
     const texts = {
       en: {
-        heroTitle: "Innovative Digital Solutions for Creators & Data Professionals",
-        heroDesc: "We help you automate workflows, build smart data systems, and launch your online business with clarity and confidence.",
+        heroTitle: "Innovative Digital Solutions",
+        heroDesc: "Bita Digital Hub empowers creators and businesses to automate, scale, and grow using Data, Cloud, and AI-powered systems.",
         btnServices: "View Services →",
         btnContact: "Book a Call",
         servicesTitle: "What We Help You Build",
@@ -167,8 +197,8 @@
         footerBottom: "© 2025 Bita Digital Hub — Smart, Simple, Human."
       },
       fa: {
-        heroTitle: "راهکارهای دیجیتال نوآورانه برای کریتور‌ها و متخصصان دیتا",
-        heroDesc: "ما به تو کمک می‌کنیم سیستم‌های هوشمند، اتوماسیون و کسب‌وکار آنلاین خودت را بسازی.",
+        heroTitle: "راهکارهای دیجیتال نوآورانه",
+        heroDesc: "بیتا دیجیتال هاب به کسب‌وکارها و کریتور‌ها کمک می‌کند تا با هوش مصنوعی، دیتا و اتوماسیون رشد کنند.",
         btnServices: "مشاهده خدمات →",
         btnContact: "رزرو جلسه",
         servicesTitle: "ما چه چیزهایی می‌سازیم",
@@ -193,33 +223,20 @@
     function setLang(lang) {
       const t = texts[lang];
       document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("hero-title").innerText = t.heroTitle;
-      document.getElementById("hero-desc").innerText = t.heroDesc;
-      document.getElementById("btnServices").innerText = t.btnServices;
-      document.getElementById("btnContact").innerText = t.btnContact;
-      document.getElementById("services-title").innerText = t.servicesTitle;
-      document.getElementById("srv1-title").innerText = t.srv1Title;
-      document.getElementById("srv1-desc").innerText = t.srv1Desc;
-      document.getElementById("srv2-title").innerText = t.srv2Title;
-      document.getElementById("srv2-desc").innerText = t.srv2Desc;
-      document.getElementById("srv3-title").innerText = t.srv3Title;
-      document.getElementById("srv3-desc").innerText = t.srv3Desc;
-      document.getElementById("projects-title").innerText = t.projectsTitle;
-      document.getElementById("cta-title").innerText = t.ctaTitle;
-      document.getElementById("cta-desc").innerText = t.ctaDesc;
-      document.getElementById("cta-btn").innerText = t.ctaBtn;
-      document.getElementById("footer-desc").innerText = t.footerDesc;
-      document.getElementById("footer-quicklinks").innerText = t.footerQuick;
-      document.getElementById("footer-services").innerText = t.footerServices;
-      document.getElementById("footer-contact").innerText = t.footerContact;
-      document.getElementById("footer-bottom-text").innerText = t.footerBottom;
-
-      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
-      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
+      document.querySelectorAll("[id]").forEach(el => {
+        const key = el.id.replace(/-/g, "");
+        if (t[key]) el.textContent = t[key];
+      });
     }
 
-    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    function switchLanguage(lang) {
+      document.body.classList.add("fade-text");
+      setTimeout(() => {
+        setLang(lang);
+        document.body.classList.remove("fade-text");
+      }, 250);
+    }
+
     setLang("en");
   </script>
 </body>
