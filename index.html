@@ -3,453 +3,224 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bita Digital Hub | Smart, Simple, Free Tools</title>
-  <meta name="description" content="Convert files, clean data, compress tables, and more — fast, secure, and free online tools by Bita Ashoori." />
-  <link rel="icon" type="image/png" href="./assets/taskhub-logo.png" />
-
-  <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-     crossorigin="anonymous"></script>
-
-  <style>
-    /* ========== Global Layout ========== */
-    body {
-      font-family: system-ui, sans-serif;
-      color: #1e293b;
-      background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
-      background-attachment: fixed;
-      margin: 0;
-    }
-
-    .page-wrapper {
-      display: grid;
-      grid-template-columns: 160px 1fr 160px;
-      gap: 1rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 992px) {
-      .page-wrapper { grid-template-columns: 1fr; }
-      .ad-left, .ad-right { display: none; }
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* ========== Navbar ========== */
-    .navbar {
-      background: #fff;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .brand {
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-    }
-    nav a {
-      margin-left: 1.2rem;
-      color: #475569;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    nav a.active {
-      font-weight: 600;
-      color: #111;
-    }
-
-    /* ========== Hero Section ========== */
-    .tool-header {
-      text-align: center;
-      margin: 3rem auto 1rem;
-    }
-    .tool-header h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .tool-header p {
-      color: #64748b;
-      font-size: 1rem;
-    }
-
-    /* ========== Language Buttons ========== */
-   
-    .lang-btns {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.8rem;
-      margin: 1.5rem auto 0;
-    }
-
-    .lang-btns button {
-      background: #ffffff;
-      color: var(--text-dark);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 1.4rem;
-      min-width: 100px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    }
-
-    .lang-btns button:hover {
-      background: #f1f5f9;
-      border-color: var(--primary-blue);
-      color: var(--primary-blue);
-      transform: translateY(-1px);
-    }
-
-    /* ========== Tool Cards ========== */
-    .category-box {
-      margin: 2.5rem auto;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 1.2rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-    .tool-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.2rem;
-    }
-    .tool-card {
-      display: block;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      text-decoration: none;
-      color: #111;
-      transition: 0.2s ease-in-out;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
-    }
-    .tool-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    }
-    .tool-card h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .tool-card p {
-      margin: 0;
-      color: #475569;
-      font-size: 0.95rem;
-    }
-
-    /* ========== Ads ========== */
-    .ad-left, .ad-right, .ad-mid {
-      background: rgba(241, 245, 249, 0.3);
-      border: 1px dashed #cbd5e1;
-      border-radius: 6px;
-      text-align: center;
-      padding: 0.5rem;
-    }
-
-    .ad-left, .ad-right {
-      position: sticky;
-      top: 80px;
-      height: fit-content;
-    }
-
-    .ad-mid {
-      text-align: center;
-      margin: 2rem auto;
-      min-height: 100px;
-    }
-
-    /* ========== Contact Section ========== */
-    .contact-section {
-      text-align: center;
-      background: #fff;
-      margin: 3rem auto;
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-      max-width: 700px;
-    }
-    form {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    input, textarea, button {
-      padding: 0.7rem;
-      border-radius: 6px;
-      border: 1px solid #cbd5e1;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-    button {
-      background: #2563eb;
-      color: white;
-      cursor: pointer;
-      transition: 0.2s;
-      font-weight: 500;
-    }
-    button:hover {
-      background: #1e40af;
-    }
-
-    /* ========== Sticky Bottom Ad ========== */
-    .ad-sticky {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      border-top: 1px solid #e2e8f0;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-      text-align: center;
-      z-index: 999;
-      padding: 0.3rem 0;
-    }
-
-    @media (max-width: 768px) {
-      .ad-sticky { padding: 0.1rem 0; }
-    }
-
-    /* ========== Footer ========== */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #64748b;
-      font-size: 0.9rem;
-      border-top: 1px solid #e2e8f0;
-      margin-bottom: 3rem; /* space for sticky ad */
-    }
-  </style>
+  <title>Bita Digital Hub | Digital Solutions & Online Business</title>
+  <meta name="description" content="Bita Digital Hub helps creators, data professionals, and entrepreneurs build digital systems — from data pipelines and AI tools to online business automation." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 </head>
-
 <body>
+  <!-- 🧭 Navbar -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="./assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
-      <a href="./index.html" class="brand">Bita Digital Hub</a>
+      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
+      <a href="index.html" class="brand">Bita Digital Hub</a>
     </div>
     <nav>
-      <a href="./index.html" class="active">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./privacy.html">Privacy</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <div class="page-wrapper">
-    <!-- 🧭 Left Ad -->
-    <aside class="ad-left">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="1111111111"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
+  <!-- 🌐 Language Buttons -->
+  <div class="lang-btns" style="margin-top:1rem;text-align:center;">
+    <button id="btnEnglish" class="active">English</button>
+    <button id="btnFarsi">فارسی</button>
+  </div>
 
-    <!-- 🌍 Main Content -->
-    <main>
-      <section class="tool-header container">
-        <h1 id="heroTitle">All Your Essential Tools in One Place ⚙️</h1>
-        <p id="heroDesc">Convert files, clean data, compress tables, and do much more — fast, secure, and free.</p>
-      </section>
+  <!-- 🌟 Hero Section -->
+  <section class="tool-header" style="margin-top:3rem;">
+    <h1 id="hero-title">Innovative Digital Solutions for Creators & Data Professionals</h1>
+    <p id="hero-desc">We help you automate workflows, build smart data systems, and launch your online business with clarity and confidence.</p>
+    <div style="margin-top:1.5rem;">
+      <a id="btnServices" href="services.html" class="btn-primary" style="margin-right:0.5rem;">View Services →</a>
+      <a id="btnContact" href="contact.html" class="btn-secondary">Book a Call</a>
+    </div>
+  </section>
 
-      <div class="lang-btns">
-        <button id="btnFarsi">فارسی</button>
-        <button id="btnEnglish">English</button>
+  <!-- ⚙️ Services -->
+  <section class="container" style="margin-top:3rem;">
+    <h2 class="section-title" id="services-title">What We Help You Build</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="services.html#digital-marketing">
+        <h3 id="srv1-title">Digital Marketing Systems</h3>
+        <p id="srv1-desc">Landing pages, lead magnets, and automated funnels with AI-powered content creation.</p>
+      </a>
+      <a class="tool-card" href="services.html#data-engineering">
+        <h3 id="srv2-title">Data & Automation</h3>
+        <p id="srv2-desc">ETL/ELT pipelines, dashboards, and Azure data integrations for smarter decisions.</p>
+      </a>
+      <a class="tool-card" href="tools/online-business.html">
+        <h3 id="srv3-title">Online Business Model</h3>
+        <p id="srv3-desc">Learn the 3-pillar model: proven system + high-paying partners + mentorship.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 🚀 Projects -->
+  <section class="container" style="margin-top:3rem;">
+    <h2 class="section-title" id="projects-title">Recent Projects</h2>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3 id="prj1-title">Marketing Data Hub</h3>
+        <p id="prj1-desc">Automated ingestion from Google Ads & GA into a centralized analytics warehouse.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="prj2-title">AI Content Toolkit</h3>
+        <p id="prj2-desc">Set of smart tools — caption, bio, QR, and file converter — designed for creators.</p>
+      </div>
+      <div class="tool-card">
+        <h3 id="prj3-title">Online Course Funnel</h3>
+        <p id="prj3-desc">Landing page + Google Form + automated email follow-up for coaching programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 Call to Action -->
+  <section class="contact-section">
+    <h2 id="cta-title">Ready to Launch Your Digital System?</h2>
+    <p id="cta-desc">Tell us your idea — we’ll help you choose the right tools and stack to make it real.</p>
+    <a href="contact.html" class="btn-primary" id="cta-btn" style="display:inline-block;text-align:center;">Contact Me</a>
+  </section>
+
+  <!-- ⚫ Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
+          <h3>Bita Digital Hub</h3>
+          <p id="footer-desc">Empowering creators and data-driven entrepreneurs with automation, analytics, and online-business solutions.</p>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
+            <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
+            <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
+          </div>
+        </div>
       </div>
 
-      <section id="toolCategories" class="container"></section>
+      <div class="footer-col">
+        <h4 id="footer-quicklinks">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" id="lnk-home">Home</a></li>
+          <li><a href="about.html" id="lnk-about">About</a></li>
+          <li><a href="services.html" id="lnk-services">Services</a></li>
+          <li><a href="projects.html" id="lnk-projects">Projects</a></li>
+          <li><a href="contact.html" id="lnk-contact">Contact</a></li>
+        </ul>
+      </div>
 
-      <!-- 📬 Contact -->
-      <section class="contact-section container">
-        <h2 id="contactTitle">Get in Touch 💌</h2>
-        <p id="contactDesc">We love feedback and ideas! Send us your message below.</p>
-        <form id="contactForm">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="Your Email" required />
-          <textarea id="message" placeholder="Your Message"></textarea>
-          <button type="submit" id="submitBtn">Send Message</button>
-        </form>
-      </section>
-    </main>
+      <div class="footer-col">
+        <h4 id="footer-services">Services</h4>
+        <ul>
+          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+          <li><a href="services.html#data-engineering">Data & Automation</a></li>
+          <li><a href="tools/online-business.html">Online Business</a></li>
+        </ul>
+      </div>
 
-    <!-- 🧭 Right Ad -->
-    <aside class="ad-right">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-  </div>
+      <div class="footer-col">
+        <h4 id="footer-contact">Contact</h4>
+        <ul>
+          <li><strong>Email:</strong> bitadigitalhub@gmail.com</li>
+          <li><strong>Phone:</strong> +1 (604) 724-6960</li>
+          <li><strong>Location:</strong> Vancouver, Canada</li>
+        </ul>
+      </div>
+    </div>
 
-  <!-- 🧭 Footer -->
-  <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
+    <div class="footer-bottom">
+      <p id="footer-bottom-text">© 2025 Bita Digital Hub — Smart, Simple, Human.</p>
+      <div>
+        <a href="privacy.html" id="lnk-privacy">Privacy</a> | 
+        <a href="terms.html" id="lnk-terms">Terms</a> | 
+        <a href="cookies.html" id="lnk-cookies">Cookies</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- 📢 Sticky Bottom Ad -->
-  <div class="ad-sticky">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="5555555555"
-         data-ad-format="horizontal"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- ⚙️ Dynamic Language Script -->
+  <!-- 🌐 Language Toggle Script -->
   <script>
     const texts = {
       en: {
-        heroTitle: "All Your Essential Tools in One Place ⚙️",
-        heroDesc: "Convert files, clean data, compress tables, and do much more — fast, secure, and free.",
-        categories: [
-          {
-            name: "File Tools 📁",
-            tools: [
-              { title: "File Converter", desc: "Convert between PDF, Word, Excel, and images easily.", link: "./tools/file-converter.html" },
-              { title: "ZIP & Unzip", desc: "Compress or extract files instantly.", link: "./tools/zip-unzip.html" }
-            ]
-          },
-          {
-            name: "Data Tools 📊",
-            tools: [
-              { title: "CSV & Excel Cleaner", desc: "Merge, clean, and format spreadsheet data.", link: "./tools/csv-cleaner.html" },
-              { title: "Password Generator", desc: "Generate strong, secure passwords instantly.", link: "./tools/password-generator.html" }
-            ]
-          },
-          {
-            name: "Social & AI Tools 🤖",
-            tools: [
-              { title: "URL Shortener", desc: "Create short, trackable links for campaigns.", link: "./tools/url-shortener.html" },
-              { title: "QR Generator", desc: "Generate QR codes for links or text.", link: "./tools/qr-generator.html" },
-              { title: "Social Media Audit", desc: "Analyze engagement, caption quality, and hashtags.", link: "./tools/social-audit.html" },
-              { title: "AI Bio Generator", desc: "Generate professional bios for Instagram, LinkedIn, and YouTube.", link: "./tools/ai-bio-generator.html" }
-            ]
-          }
-        ],
-        contactTitle: "Get in Touch 💌",
-        contactDesc: "We love feedback and ideas! Send us your message below.",
-        namePlaceholder: "Your Name",
-        emailPlaceholder: "Your Email",
-        msgPlaceholder: "Your Message",
-        submitBtn: "Send Message"
+        heroTitle: "Innovative Digital Solutions for Creators & Data Professionals",
+        heroDesc: "We help you automate workflows, build smart data systems, and launch your online business with clarity and confidence.",
+        btnServices: "View Services →",
+        btnContact: "Book a Call",
+        servicesTitle: "What We Help You Build",
+        srv1Title: "Digital Marketing Systems",
+        srv1Desc: "Landing pages, lead magnets, and automated funnels with AI-powered content creation.",
+        srv2Title: "Data & Automation",
+        srv2Desc: "ETL/ELT pipelines, dashboards, and Azure data integrations for smarter decisions.",
+        srv3Title: "Online Business Model",
+        srv3Desc: "Learn the 3-pillar model: proven system + high-paying partners + mentorship.",
+        projectsTitle: "Recent Projects",
+        ctaTitle: "Ready to Launch Your Digital System?",
+        ctaDesc: "Tell us your idea — we’ll help you choose the right tools and stack to make it real.",
+        ctaBtn: "Contact Me",
+        footerDesc: "Empowering creators and data-driven entrepreneurs with automation, analytics, and online-business solutions.",
+        footerQuick: "Quick Links",
+        footerServices: "Services",
+        footerContact: "Contact",
+        footerBottom: "© 2025 Bita Digital Hub — Smart, Simple, Human."
       },
       fa: {
-        heroTitle: "🛠️ همه ابزارهای ضروری شما در یک جا",
-        heroDesc: "فایل‌ها را تبدیل کنید، داده‌ها را تمیز و فشرده کنید و کارهای دیگر — فوری، امن و رایگان.",
-        categories: [
-          {
-            name: "ابزارهای فایل 📁",
-            tools: [
-              { title: "تبدیل‌گر فایل", desc: "بین فرمت‌های PDF، Word، Excel و تصویر تبدیل کنید.", link: "./tools/file-converter.html" },
-              { title: "فشرده‌سازی و استخراج", desc: "فایل‌ها را فشرده یا از حالت فشرده خارج کنید.", link: "./tools/zip-unzip.html" }
-            ]
-          },
-          {
-            name: "ابزارهای داده 📊",
-            tools: [
-              { title: "پاک‌کننده CSV و Excel", desc: "داده‌های جدول را تمیز و قالب‌بندی کنید.", link: "./tools/csv-cleaner.html" },
-              { title: "تولیدکننده رمز عبور", desc: "رمزهای قوی و امن ایجاد کنید.", link: "./tools/password-generator.html" }
-            ]
-          },
-          {
-            name: "ابزارهای اجتماعی و هوش مصنوعی 🤖",
-            tools: [
-              { title: "کوتاه‌کننده لینک", desc: "لینک‌های کوتاه و قابل‌ردیابی بسازید.", link: "./tools/url-shortener.html" },
-              { title: "تولیدکننده QR", desc: "برای هر لینک یا متن QR کد بسازید.", link: "./tools/qr-generator.html" },
-              { title: "ارزیاب شبکه‌های اجتماعی", desc: "درگیری و کیفیت کپشن‌ها را تحلیل کنید.", link: "./tools/social-audit.html" },
-              { title: "تولیدکننده بیو هوش مصنوعی", desc: "بیوهای حرفه‌ای برای اینستاگرام، لینکدین و یوتیوب بسازید.", link: "./tools/ai-bio-generator.html" }
-            ]
-          }
-        ],
-        contactTitle: "تماس با ما 💌",
-        contactDesc: "ما از نظرات و ایده‌های شما استقبال می‌کنیم! پیام خود را ارسال کنید.",
-        namePlaceholder: "نام شما",
-        emailPlaceholder: "ایمیل شما",
-        msgPlaceholder: "پیام شما",
-        submitBtn: "ارسال پیام"
+        heroTitle: "راهکارهای دیجیتال نوآورانه برای کریتور‌ها و متخصصان دیتا",
+        heroDesc: "ما به تو کمک می‌کنیم سیستم‌های هوشمند، اتوماسیون و کسب‌وکار آنلاین خودت را بسازی.",
+        btnServices: "مشاهده خدمات →",
+        btnContact: "رزرو جلسه",
+        servicesTitle: "ما چه چیزهایی می‌سازیم",
+        srv1Title: "سیستم‌های دیجیتال مارکتینگ",
+        srv1Desc: "صفحه فرود، قیف فروش و محتوای خودکار با هوش مصنوعی.",
+        srv2Title: "دیتا و اتوماسیون",
+        srv2Desc: "ایجاد پایپ‌لاین‌های دیتا، داشبوردهای تحلیلی و یکپارچه‌سازی با Azure.",
+        srv3Title: "مدل کسب‌وکار آنلاین",
+        srv3Desc: "مدل سه‌ستون موفقیت: سیستم + شرکت‌های پردرآمد + منتورشیپ.",
+        projectsTitle: "پروژه‌های اخیر",
+        ctaTitle: "آماده‌ای سیستم دیجیتال خودت را راه‌اندازی کنی؟",
+        ctaDesc: "ایده‌ات را بگو تا با هم بهترین ابزار و استک را برایش انتخاب کنیم.",
+        ctaBtn: "تماس با من",
+        footerDesc: "کمک به کارآفرینان دیجیتال برای ساخت سیستم‌های خودکار و کسب درآمد آنلاین.",
+        footerQuick: "لینک‌های سریع",
+        footerServices: "خدمات",
+        footerContact: "ارتباط",
+        footerBottom: "© ۲۰۲۵ بیتا دیجیتال هاب — هوشمند، ساده، انسانی."
       }
     };
 
-    const container = document.getElementById("toolCategories");
-
-    function renderLang(lang) {
+    function setLang(lang) {
       const t = texts[lang];
       document.body.dir = lang === "fa" ? "rtl" : "ltr";
-      document.getElementById("heroTitle").innerText = t.heroTitle;
-      document.getElementById("heroDesc").innerText = t.heroDesc;
-      document.getElementById("contactTitle").innerText = t.contactTitle;
-      document.getElementById("contactDesc").innerText = t.contactDesc;
-      document.getElementById("name").placeholder = t.namePlaceholder;
-      document.getElementById("email").placeholder = t.emailPlaceholder;
-      document.getElementById("message").placeholder = t.msgPlaceholder;
-      document.getElementById("submitBtn").innerText = t.submitBtn;
+      document.getElementById("hero-title").innerText = t.heroTitle;
+      document.getElementById("hero-desc").innerText = t.heroDesc;
+      document.getElementById("btnServices").innerText = t.btnServices;
+      document.getElementById("btnContact").innerText = t.btnContact;
+      document.getElementById("services-title").innerText = t.servicesTitle;
+      document.getElementById("srv1-title").innerText = t.srv1Title;
+      document.getElementById("srv1-desc").innerText = t.srv1Desc;
+      document.getElementById("srv2-title").innerText = t.srv2Title;
+      document.getElementById("srv2-desc").innerText = t.srv2Desc;
+      document.getElementById("srv3-title").innerText = t.srv3Title;
+      document.getElementById("srv3-desc").innerText = t.srv3Desc;
+      document.getElementById("projects-title").innerText = t.projectsTitle;
+      document.getElementById("cta-title").innerText = t.ctaTitle;
+      document.getElementById("cta-desc").innerText = t.ctaDesc;
+      document.getElementById("cta-btn").innerText = t.ctaBtn;
+      document.getElementById("footer-desc").innerText = t.footerDesc;
+      document.getElementById("footer-quicklinks").innerText = t.footerQuick;
+      document.getElementById("footer-services").innerText = t.footerServices;
+      document.getElementById("footer-contact").innerText = t.footerContact;
+      document.getElementById("footer-bottom-text").innerText = t.footerBottom;
 
-      container.innerHTML = "";
-      t.categories.forEach((cat, index) => {
-        const section = document.createElement("section");
-        section.className = "category-box";
-        section.innerHTML = `
-          <h2 class="section-title">${cat.name}</h2>
-          <div class="tool-grid">
-            ${cat.tools.map(tool => `
-              <a href="${tool.link}" class="tool-card">
-                <h3>${tool.title}</h3>
-                <p>${tool.desc}</p>
-              </a>
-            `).join("")}
-          </div>
-        `;
-        container.appendChild(section);
-
-        if ((index + 1) % 2 === 0) {
-          const ad = document.createElement("div");
-          ad.className = "ad-mid";
-          ad.innerHTML = `
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3215014361489762"
-                 data-ad-slot="3333333333"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-          `;
-          container.appendChild(ad);
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        }
-      });
+      document.querySelectorAll(".lang-btns button").forEach(b => b.classList.remove("active"));
+      document.getElementById(lang === "fa" ? "btnFarsi" : "btnEnglish").classList.add("active");
     }
 
-    document.getElementById("btnEnglish").addEventListener("click", () => renderLang("en"));
-    document.getElementById("btnFarsi").addEventListener("click", () => renderLang("fa"));
-    renderLang("en");
+    document.getElementById("btnEnglish").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnFarsi").addEventListener("click", () => setLang("fa"));
+    setLang("en");
   </script>
 </body>
 </html>
