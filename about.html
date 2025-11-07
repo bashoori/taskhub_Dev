@@ -21,6 +21,7 @@
       <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
+      <a href="tools.html">Tools</a>
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -31,8 +32,8 @@
           <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
         </button>
         <ul class="lang-menu">
-          <li><a href="index-en.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
-          <li><a href="index-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
+          <li><a href="about.html"><img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English</a></li>
+          <li><a href="about-fa.html"><img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی</a></li>
         </ul>
       </div>
       <a href="login.html" class="btn-primary get-started">Login</a>
@@ -41,38 +42,44 @@
 
   <!-- 🧠 About Section -->
   <main class="container" style="max-width: 1000px; padding: 3rem 1rem;">
-    <h1 style="font-size:2rem; font-weight:800; color:#1e3a8a; margin-bottom:1rem;">About Bita Digital Hub</h1>
+    <h1 style="font-size:2rem; font-weight:800; color:#1e3a8a; margin-bottom:1rem;">
+      About Bita Digital Hub
+    </h1>
 
     <p style="font-size:1.1rem; color:#475569; margin-bottom:2rem;">
       Blending data engineering, digital marketing, and automation into one practical space.
     </p>
 
     <p style="margin-bottom:1.2rem; color:#334155;">
-      <strong>Bita Digital Hub</strong> started as a place to share tools, templates, and projects built for real businesses — 
-      including healthcare, retail, and the public sector — and then expanded into online education and creator tools.
+      <strong>Bita Digital Hub</strong> began as a place to share tools, templates, and projects built for real-world use —
+      spanning healthcare, retail, and public services — before evolving into a space for online education and creator tools.
     </p>
 
     <p style="margin-bottom:1.2rem; color:#334155;">
-      We focus on systems that actually get used: data pipelines, lead-gen pages, dashboards, and AI-assist tools. 
-      Everything is documented, simple, and designed for people who don’t want to waste time rebuilding the same thing twice.
+      We focus on building systems that actually get used: data pipelines, lead-generation pages, dashboards, and AI-powered assistants.
+      Every solution is documented, simple, and crafted for those who prefer efficiency over reinvention.
     </p>
 
-    <h2 style="margin-top:2rem; color:#1e3a8a;">What makes us different</h2>
+    <h2 style="margin-top:2rem; color:#1e3a8a;">What Makes Us Different</h2>
     <ul style="margin-top:1rem; color:#334155; line-height:1.8;">
-      <li>Data mindset (reliable, repeatable, logged)</li>
-      <li>Marketing mindset (funnels, audience, monetization)</li>
-      <li>Teaching mindset (clear, step-by-step, bilingual)</li>
+      <li>Data mindset — reliable, repeatable, and logged</li>
+      <li>Marketing mindset — funnel-driven and scalable</li>
+      <li>Teaching mindset — clear, step-by-step, bilingual</li>
     </ul>
   </main>
 
   <!-- ⚫ Footer -->
   <footer class="footer">
     <div class="footer-container">
+      <!-- Column 1 -->
       <div class="footer-col">
         <div class="footer-logo">
           <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36">
           <h3>Bita Digital Hub</h3>
-          <p>Empowering creators and professionals with automation, analytics, and online-business solutions.</p>
+          <p>
+            Empowering creators and data-driven professionals with automation,
+            analytics, and online-business solutions.
+          </p>
           <div class="social-links">
             <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
             <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
@@ -81,6 +88,7 @@
         </div>
       </div>
 
+      <!-- Column 2 -->
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
@@ -88,10 +96,12 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="tools.html">Tools</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
+      <!-- Column 3 -->
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
@@ -101,11 +111,11 @@
         </ul>
       </div>
 
+      <!-- Column 4 -->
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><strong>Email:</strong> bitadigitalhub@gmail.com</li>
-          <li><strong>Phone:</strong> +1 (604) 724-6960</li>
           <li><strong>Location:</strong> Vancouver, Canada</li>
         </ul>
       </div>
@@ -125,15 +135,9 @@
     // 🌐 Language dropdown
     const langToggle = document.querySelector('.lang-toggle');
     const langMenu = document.querySelector('.lang-menu');
-
-    langToggle.addEventListener('click', () => {
-      langMenu.classList.toggle('show');
-    });
-
+    langToggle.addEventListener('click', () => langMenu.classList.toggle('show'));
     document.addEventListener('click', (e) => {
-      if (!langToggle.contains(e.target)) {
-        langMenu.classList.remove('show');
-      }
+      if (!langToggle.contains(e.target)) langMenu.classList.remove('show');
     });
   </script>
 </body>
