@@ -17,19 +17,25 @@
 </head>
 
 <body>
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="../assets/taskhub-logo.svg" alt="Logo" width="36" height="36" />
-      <a href="../index.html" class="brand">Bita Digital Hub</a>
-    </div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../privacy.html">Privacy</a>
-    </nav>
-  </header>
+  <!-- 🔗 Header Import -->
+  <div id="header"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html)
+      .catch(err => console.error("Header failed to load:", err));
+  </script>
 
+  <!-- 🧭 Brand Header (like screenshot) -->
+  <section class="brand-header">
+    <img src="../assets/taskhub-logo.svg" alt="BI Digital Hub Logo" class="brand-logo" />
+    <div class="brand-text">
+      <h1 class="brand-title">BI Digital Hub</h1>
+      <p class="brand-subtitle">Solutions Digitales Innovantes</p>
+    </div>
+  </section>
+
+  <!-- 🧰 Main Page Wrapper -->
   <div class="page-wrapper">
     <!-- 📢 Left Ad -->
     <aside class="ad-left">
@@ -44,7 +50,7 @@
     <!-- 🧰 Main Content -->
     <main class="container">
       <section class="tool-header">
-        <h1 id="title">File Converter 🔁</h1>
+        <h2 id="title">File Converter 🔁</h2>
         <p id="desc">Convert between PDF, Word, Excel, JPG, PNG, and TXT — fast, secure, and free.</p>
 
         <!-- 🌐 Language Switch -->
@@ -98,22 +104,7 @@
     </aside>
   </div>
 
-  <!-- 🧭 Footer -->
-  <footer>
-    <p>© 2025 <strong>Bita Digital Hub</strong> — Smart, Simple, Free Tools.</p>
-  </footer>
-
-  <!-- 📢 Sticky Ad -->
-  <div class="ad-sticky">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="5555555555"
-         data-ad-format="horizontal"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- ⚙️ Script -->
+  <!-- ⚙️ Conversion Script -->
   <script>
     const texts = {
       en: {
@@ -182,5 +173,15 @@
       reader.readAsArrayBuffer(file);
     });
   </script>
+
+  <!-- 🔗 Footer -->
+  <div id="footer"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html)
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
+
 </body>
 </html>
