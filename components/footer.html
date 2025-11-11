@@ -1,6 +1,6 @@
 <!-- =========================================================
 🦶 Footer Component – Bita Digital Hub
-Bilingual, Theme-ready, and Modular
+Clean, Bilingual-ready, and Modular (for one-page layout)
 ========================================================= -->
 
 <footer class="footer">
@@ -8,8 +8,8 @@ Bilingual, Theme-ready, and Modular
     
     <!-- 🔹 Column 1: Brand Info -->
     <div class="footer-col">
-      <h3 data-i18n="site.title">Bita Digital Hub</h3>
-      <p data-i18n="footer.description">
+      <h3>Bita Digital Hub</h3>
+      <p>
         Empowering creators and professionals with automation,
         analytics, and online-business solutions.
       </p>
@@ -17,44 +17,51 @@ Bilingual, Theme-ready, and Modular
       <div class="social-links">
         <a href="https://linkedin.com/in/bitaashoori" target="_blank">LinkedIn</a>
         <a href="https://youtube.com/@bitadigital" target="_blank">YouTube</a>
-        <a href="https://instagram.com/bitadigitalhub" target="_blank">Instagram</a>
+        <a href="https://instagram.com/bitadigitalmarketer" target="_blank">Instagram</a>
       </div>
     </div>
 
-    <!-- 🔹 Column 2: Explore -->
+    <!-- 🔹 Column 2: Quick Links -->
     <div class="footer-col">
-      <h4 data-i18n="footer.explore">Explore</h4>
+      <h4>Explore</h4>
       <ul>
-        <li><a href="tools.html" data-i18n="nav.tools">Tools</a></li>
-        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
-        <li><a href="sources.html" data-i18n="footer.sources">Sources</a></li>
-        <li><a href="franchise.html" data-i18n="footer.franchise">Franchise</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
-    <!-- 🔹 Column 3: Contact -->
+    <!-- 🔹 Column 3: Contact Info -->
     <div class="footer-col">
-      <h4 data-i18n="nav.contact">Contact</h4>
+      <h4>Contact</h4>
       <ul>
-        <li>
-          <strong data-i18n="footer.emailLabel">Email:</strong>
-          <span>contact@bitadigitalhub.com</span>
-        </li>
-        <li>
-          <strong data-i18n="footer.locationLabel">Location:</strong>
-          <span data-i18n="footer.locationValue">Vancouver, Canada</span>
-        </li>
+        <li><strong>Email:</strong> contact@bitadigitalhub.com</li>
+        <li><strong>Location:</strong> Vancouver, Canada</li>
       </ul>
     </div>
   </div>
 
   <!-- 🔹 Footer Bottom -->
   <div class="footer-bottom">
-    <span data-i18n="footer.rights">© 2025 Bita Digital Hub. All rights reserved.</span>
+    <span>© 2025 Bita Digital Hub. All rights reserved.</span>
     <div class="footer-links">
-      <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-      <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
-      <a href="cookies.html" data-i18n="footer.cookies">Cookie Policy</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms</a>
+      <a href="#cookies">Cookies</a>
     </div>
   </div>
 </footer>
+
+<!-- 🔁 Footer Script -->
+<script>
+  // Smooth scrolling for footer links
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.footer a[href^="#"]')) {
+      e.preventDefault();
+      const target = document.querySelector(e.target.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
