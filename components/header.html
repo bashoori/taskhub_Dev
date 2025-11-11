@@ -1,41 +1,81 @@
-<!-- =========================================================
-🧭 Modern Header / Navbar – Bita Digital Hub
-Fixed alignment, balanced spacing, and polished language switch
-========================================================= -->
-
+<!-- 🧭 Header / Navbar Component -->
 <header class="navbar">
-  <div class="nav-container">
+  <div class="nav-left">
+    <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" width="36" height="36" />
+    <div class="brand-group">
+      <a href="index.html" class="brand">Bita Digital Hub</a>
+    </div>
+  </div>
 
-    <!-- 🔹 Left: Logo + Brand -->
-    <a href="index.html" class="brand-group">
-      <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
-      <div class="brand-text">
-        <span class="brand-title" data-i18n="site.title">Bita Digital Hub</span>
-        <span class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</span>
+  <!-- 🌐 Navigation -->
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+
+    <!-- 🧰 Tools Dropdown -->
+    <div class="dropdown">
+      <a href="tools.html" class="dropbtn">Tools ▾</a>
+      <div class="dropdown-content">
+        <a href="tools/social-audit.html">Social Media Audit</a>
+        <a href="tools/url-shortener.html">URL Shortener</a>
+        <a href="tools/qr-generator.html">QR Generator</a>
+        <a href="tools/file-converter.html">File Converter</a>
+        <hr style="border:none; border-top:1px solid var(--border); margin:6px 0;">
+        <a href="telegram-bots.html"><strong>🤖 Telegram Bots</strong> <span style="color:#2563eb; font-size:0.85rem;">NEW</span></a>
       </div>
-    </a>
-
-    <!-- 🔹 Center: Navigation -->
-    <nav class="nav-links">
-      <a href="index.html" data-i18n="nav.home" class="active">Home</a>
-      <a href="about.html" data-i18n="nav.about">About</a>
-      <a href="services.html" data-i18n="nav.services">Services</a>
-      <a href="tools.html" data-i18n="nav.tools">Tools</a>
-      <a href="courses.html" data-i18n="nav.courses">Courses</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
-    </nav>
-
-    <!-- 🔹 Right: Language + Login -->
-    <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-toggle">
-          <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
-        </button>
-        
-      </div>
-      <a href="login.html" class="btn-primary get-started">Login</a>
     </div>
 
-      
+    <a href="services.html">Services</a>
+    <a href="sources.html">Sources</a>
+    <a href="franchise.html">Franchise</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- 🔧 Actions -->
+  <div class="nav-actions">
+    <!-- 🌍 Language Dropdown -->
+    <div class="lang-switch">
+      <button class="lang-toggle">
+        <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English ▾
+      </button>
+      <ul class="lang-menu">
+        <li>
+          <a href="index.html">
+            <img src="https://flagcdn.com/16x12/gb.png" alt="English flag" /> English
+          </a>
+        </li>
+        <li>
+          <a href="index-fa.html">
+            <img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="login.html" class="btn-primary get-started">Login</a>
   </div>
 </header>
+
+<!-- 🔁 Header Script -->
+<script>
+  // 🌐 Language Dropdown
+  const langToggle = document.querySelector('.lang-toggle');
+  const langMenu = document.querySelector('.lang-menu');
+  langToggle?.addEventListener('click', () => langMenu.classList.toggle('show'));
+  document.addEventListener('click', (e) => {
+    if (!langToggle?.contains(e.target)) langMenu.classList.remove('show');
+  });
+
+  // 🌍 Auto-redirect for Persian users
+  const userLang = navigator.language || navigator.userLanguage;
+  if (userLang && userLang.toLowerCase().startsWith('fa')) {
+    window.location.href = "index-fa.html";
+  }
+
+  // 🟢 Highlight Active Page Link
+  const currentPage = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
