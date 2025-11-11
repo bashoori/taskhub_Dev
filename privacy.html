@@ -1,108 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="privacy">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Bita Digital Hub</title>
-  <meta name="description" content="Learn how Bita Digital Hub collects, uses, and protects your personal data — including analytics, forms, and cookies." />
+  <meta name="description" content="Privacy Policy for Bita Digital Hub — learn how we protect your data and respect your privacy." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding-top: 80px;
+      background: #f9fafb;
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+    }
+
+    .privacy-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: #ffffff;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #1e3a8a;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: #0f172a;
+    }
+
+    p {
+      color: #475569;
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      color: #475569;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 
 <body>
-  <!-- 🔗 Header -->
-  <div id="header"></div>
+  <div id="header-placeholder"></div>
   <script>
     fetch("components/header.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header").innerHTML = html)
-      .catch(err => console.error("Header failed to load:", err));
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
-  <!-- 🌟 Hero -->
-  <main>
-    <section class="hero-section">
-      <div class="hero-badge">🔒 Privacy & Transparency</div>
-      <h1 class="hero-title">Privacy Policy</h1>
-      <p class="hero-subtitle">
-        Your privacy matters to us. This page explains what information we collect, how we use it, 
-        and how you can control your data when using Bita Digital Hub.
-      </p>
-    </section>
+  <main class="privacy-container">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: November 2025</p>
 
-    <!-- 📘 Policy Content -->
-    <section class="container" style="margin-top:3rem; max-width:900px;">
-      <h2 class="section-title">1. Information We Collect</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        We may collect personal information that you voluntarily provide through contact forms, 
-        newsletter sign-ups, or when using our digital tools. This can include your name, email address, and messages you send us.
-      </p>
+    <h2>1. Introduction</h2>
+    <p>
+      At <strong>Bita Digital Hub</strong>, we value your privacy and are committed to protecting your personal data.
+      This Privacy Policy explains how we collect, use, and safeguard the information you provide when visiting our website or using our services.
+    </p>
 
-      <h2 class="section-title" style="margin-top:2rem;">2. How We Use Your Information</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        We use your data only to respond to inquiries, improve our website, and provide relevant content or services.  
-        We do not sell, rent, or share your personal information with third parties.
-      </p>
+    <h2>2. Information We Collect</h2>
+    <p>We may collect the following types of information:</p>
+    <ul>
+      <li>Personal details (such as your name, email, and phone number) provided via forms.</li>
+      <li>Technical data including IP address, browser type, and analytics cookies.</li>
+      <li>Project and service information voluntarily shared for consultation or collaboration.</li>
+    </ul>
 
-      <h2 class="section-title" style="margin-top:2rem;">3. Cookies & Analytics</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        Our website uses cookies and Google Analytics to understand how visitors interact with the site.  
-        These tools help us measure performance, optimize content, and enhance user experience.  
-        You can disable cookies anytime in your browser settings.
-      </p>
+    <h2>3. How We Use Your Data</h2>
+    <p>Your data helps us provide and improve our services, including:</p>
+    <ul>
+      <li>Responding to your inquiries or requests.</li>
+      <li>Sending relevant updates, newsletters, or resources.</li>
+      <li>Improving website functionality and user experience.</li>
+    </ul>
 
-      <h2 class="section-title" style="margin-top:2rem;">4. Google AdSense & Affiliate Links</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        Bita Digital Hub participates in advertising and affiliate programs, including Google AdSense.  
-        Ads or affiliate links may use cookies to serve relevant content.  
-        Clicking these links may result in commissions at no additional cost to you.
-      </p>
+    <h2>4. Data Protection</h2>
+    <p>
+      We adopt industry-standard security measures to protect your personal information against unauthorized access or misuse.
+      However, please note that no internet transmission is 100% secure.
+    </p>
 
-      <h2 class="section-title" style="margin-top:2rem;">5. Data Security</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        We use secure hosting (HTTPS) and regularly monitor our systems to protect your data.  
-        However, no system is completely secure — by using this site, you acknowledge that online data transmission carries some risk.
-      </p>
+    <h2>5. Cookies</h2>
+    <p>
+      Our website uses cookies for analytics and optimization.  
+      You can disable cookies in your browser settings if you prefer.
+    </p>
 
-      <h2 class="section-title" style="margin-top:2rem;">6. Your Rights</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        You have the right to request access, correction, or deletion of your personal information.  
-        To make a request, contact us directly via the email below.
-      </p>
+    <h2>6. Third-Party Services</h2>
+    <p>
+      We may use trusted third-party platforms (like Google Analytics or FormSubmit) for analytics or communication.
+      These providers follow their own privacy policies.
+    </p>
 
-      <h2 class="section-title" style="margin-top:2rem;">7. Contact Us</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        If you have questions about this Privacy Policy or how we handle your data, please contact us at:<br />
-        <strong>Email:</strong> <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a><br />
-        <strong>Location:</strong> Vancouver, Canada
-      </p>
+    <h2>7. Your Rights</h2>
+    <p>
+      You can request access, correction, or deletion of your personal data at any time by contacting us at  
+      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>.
+    </p>
 
-      <h2 class="section-title" style="margin-top:2rem;">8. Updates to This Policy</h2>
-      <p style="color:var(--text-mid); line-height:1.8;">
-        This Privacy Policy may be updated periodically to reflect new features, tools, or legal requirements.  
-        The latest version will always be available on this page, with the updated date shown below.
-      </p>
-
-      <p style="text-align:right; margin-top:1.5rem; font-size:0.9rem; color:gray;">
-        Last updated: November 2025
-      </p>
-    </section>
-
-    <!-- 💬 CTA -->
-    <section class="contact-section">
-      <h2>Have a Privacy Concern?</h2>
-      <p>We’re here to ensure your experience with Bita Digital Hub is safe and transparent.</p>
-      <a href="contact.html" class="btn-primary">Contact Support</a>
-    </section>
+    <h2>8. Updates to This Policy</h2>
+    <p>
+      This Privacy Policy may be updated periodically. We encourage you to review it regularly to stay informed about how we protect your data.
+    </p>
   </main>
 
-  <!-- 🔗 Footer -->
-  <div id="footer"></div>
+  <div id="footer-placeholder"></div>
   <script>
-    fetch("components/footer.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("footer").innerHTML = html)
-      .catch(err => console.error("Footer failed to load:", err));
-  </script>
-</body>
-</html>
+    fetch("components/f

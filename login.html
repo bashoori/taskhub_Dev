@@ -1,180 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="login">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | Bita Digital Hub</title>
-  <meta name="description" content="Log in to Bita Digital Hub to access your personalized dashboard, digital tools, and premium automation resources." />
+  <meta name="description" content="Login to your Bita Digital Hub account to access courses, automation tools, and dashboards." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/taskhub-logo.svg" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
   <style>
-    /* ---------- Login Page Styles ---------- */
-    .login-container {
-      max-width: 400px;
+    body {
+      margin: 0;
+      padding-top: 80px;
+      background: #f9fafb;
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+    }
+
+    .login-section {
+      max-width: 420px;
       margin: 4rem auto;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
       padding: 2.5rem;
-      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.08);
       text-align: center;
     }
 
-    .login-container h2 {
-      color: var(--primary-blue);
-      margin-bottom: 1rem;
-      font-weight: 800;
+    .login-section h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
     }
 
-    .login-container p {
-      color: var(--text-mid);
-      margin-bottom: 2rem;
+    .login-section p {
+      color: #475569;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
     }
 
-    .login-form label {
-      display: block;
+    .form-group {
       text-align: left;
-      margin-bottom: 0.3rem;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-
-    .login-form input {
-      width: 100%;
-      padding: 0.75rem 1rem;
       margin-bottom: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-size: 1rem;
     }
 
-    .login-form button {
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-group input {
       width: 100%;
       padding: 0.8rem;
-      background-color: var(--primary-blue);
-      color: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #f9fafb;
+    }
+
+    .primary-btn {
+      width: 100%;
+      background: #1e3a8a;
+      color: #fff;
+      padding: 0.9rem;
       border: none;
-      border-radius: 45px;
+      border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .login-form button:hover {
-      background-color: var(--primary-cyan);
-    }
+    .primary-btn:hover { background: #2563eb; }
 
-    .login-footer {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      color: var(--text-mid);
-    }
-
-    .login-footer a {
-      color: var(--primary-blue);
+    .alt-link {
+      margin-top: 1rem;
+      display: block;
+      font-size: 0.9rem;
+      color: #2563eb;
       text-decoration: none;
-      font-weight: 500;
     }
 
-    .login-footer a:hover {
-      text-decoration: underline;
-    }
-
-    .or-divider {
-      margin: 2rem 0 1rem;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-
-    .social-login {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .social-login a {
-      display: inline-block;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 1.2rem;
-      color: var(--text-dark);
-      background: var(--bg-light);
-      font-weight: 500;
-      transition: all 0.25s ease;
-    }
-
-    .social-login a:hover {
-      background: var(--primary-blue);
-      color: var(--white);
-      border-color: var(--primary-blue);
-    }
-
-    .adspace {
-      text-align: center;
-      color: gray;
-      margin: 3rem 0;
-    }
+    .alt-link:hover { text-decoration: underline; }
   </style>
 </head>
 
 <body>
-  <!-- 🔗 Header -->
-  <div id="header"></div>
+  <div id="header-placeholder"></div>
   <script>
     fetch("components/header.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header").innerHTML = html)
-      .catch(err => console.error("Header failed to load:", err));
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
-  <!-- 🌟 Hero -->
-  <main>
-    <section class="hero-section">
-      <div class="hero-badge">🔐 Member Access</div>
-      <h1 class="hero-title">Login to Your Account</h1>
-      <p class="hero-subtitle">
-        Access your personalized dashboard, saved tools, and premium digital resources.
-      </p>
-    </section>
+  <section class="login-section">
+    <h1>Welcome Back</h1>
+    <p>Log in to access your dashboard and digital tools.</p>
 
-    <!-- 🧭 Login Form -->
-    <section>
-      <div class="login-container">
-        <h2>Welcome Back</h2>
-        <p>Please sign in to continue.</p>
-
-        <form class="login-form" action="#" method="POST">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password" required />
-
-          <button type="submit">Login</button>
-        </form>
-
-        <div class="login-footer">
-          <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
-        </div>
-
-        <div class="or-divider">Or sign in with</div>
-        <div class="social-login">
-          <a href="#">Google</a>
-        </div>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
       </div>
-    </section>
 
-    <!-- 💰 AdSense -->
-    <div class="adspace">(Ad space – insert your AdSense code here)</div>
-  </main>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="••••••••" />
+      </div>
 
-  <!-- 🔗 Footer -->
-  <div id="footer"></div>
+      <button type="submit" class="primary-btn">Login</button>
+
+      <a href="#" class="alt-link">Forgot your password?</a>
+      <a href="#" class="alt-link">Create a new account</a>
+    </form>
+  </section>
+
+  <div id="footer-placeholder"></div>
   <script>
     fetch("components/footer.html")
       .then(res => res.text())
-      .then(html => document.getElementById("footer").innerHTML = html)
-      .catch(err => console.error("Footer failed to load:", err));
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 </body>
 </html>
