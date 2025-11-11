@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZIP & Unzip Tool | Bita Digital Hub</title>
-  <meta name="description" content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
+  <meta name="description"
+        content="Compress or extract ZIP files instantly — safe, simple, and fast tool by Bita Digital Hub." />
 
   <!-- 🌈 Unified Styles -->
   <link rel="icon" type="image/svg+xml" href="../assets/taskhub-logo.svg" />
@@ -14,15 +15,22 @@
   <link rel="stylesheet" href="../css/responsive.css" />
 
   <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+          crossorigin="anonymous"></script>
 
   <!-- 📦 JSZip -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 
 <body>
-  <!-- 🧭 Shared Header -->
+  <!-- 🧭 Minimal Header (Tools only) -->
   <div id="header-placeholder"></div>
+  <script>
+    fetch("../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html)
+      .catch(err => console.error("Header load error:", err));
+  </script>
 
   <!-- 🌐 Brand Section -->
   <section class="brand-header center">
@@ -50,11 +58,11 @@
 
     <!-- Tool Core -->
     <section class="tool-center">
-      <div class="tool-card">
+      <div class="tool-card gradient-gray">
         <h2>ZIP & Unzip Files 📦</h2>
         <p>Compress or extract ZIP files instantly — safe, simple, and fast.</p>
 
-        <!-- 🌐 Language Switch -->
+        <!-- 🌐 Language Buttons -->
         <div class="lang-btns">
           <button id="btnEnglish" class="active">English</button>
           <button id="btnFarsi">فارسی</button>
@@ -93,11 +101,17 @@
     </aside>
   </main>
 
-  <!-- 🦶 Shared Footer -->
-  <div id="footer-placeholder"></div>
+  <!-- 🦶 Simple Footer -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("../components/footer-tools.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("footer-placeholder").innerHTML = html)
+    .catch(err => console.error("Footer load error:", err));
+</script>
+
 
   <!-- 📜 Scripts -->
-  <script src="../js/script.js"></script>
   <script src="../js/zip-main.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </body>
