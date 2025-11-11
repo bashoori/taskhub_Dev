@@ -1,10 +1,10 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition v4)
+🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition v5)
 Author: Bita Ashoori
-Clean, Responsive, and Unified
+Elegant • Unified • Responsive
 ========================================================= */
 
-/* ---------- Theme Variables ---------- */
+/* ---------- THEME VARIABLES ---------- */
 :root {
   --primary: #1e3a8a;
   --primary-hover: #2563eb;
@@ -16,7 +16,7 @@ Clean, Responsive, and Unified
   --border: #e2e8f0;
 }
 
-/* ---------- Base ---------- */
+/* ---------- BASE ---------- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -32,13 +32,13 @@ img {
 }
 
 /* =========================================================
-🧭 HEADER / NAVBAR (Full Width + Fixed)
+🧭 HEADER / NAVBAR (Full Width, Fixed)
 ========================================================= */
 .navbar.modern {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   background: var(--white);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   z-index: 1000;
@@ -71,7 +71,6 @@ img {
 .brand-info .tagline {
   font-size: 0.85rem;
   color: var(--text-mid);
-  margin: 0;
 }
 
 /* --- Navigation Links --- */
@@ -134,7 +133,6 @@ img {
   list-style: none;
   padding: 0.4rem 0;
   width: 160px;
-  z-index: 2000;
 }
 
 .lang-menu.show {
@@ -149,7 +147,6 @@ img {
   color: #334155;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: background 0.2s ease;
 }
 
 .lang-menu li a:hover {
@@ -200,7 +197,7 @@ img {
 }
 
 /* =========================================================
-✨ HERO SECTION
+✨ HERO
 ========================================================= */
 .hero {
   background: linear-gradient(to bottom, #eef2ff, #fff);
@@ -223,7 +220,7 @@ img {
   line-height: 1.6;
 }
 
-/* --- Hero Buttons --- */
+/* --- Buttons --- */
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -270,16 +267,26 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   align-items: center;
-  text-align: left;
 }
 
 .about-card {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
   color: var(--white);
-  padding: 2rem;
-  border-radius: 16px;
+  padding: 3rem 2rem;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-icon img {
+  width: 72px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
 }
 
 /* =========================================================
@@ -295,38 +302,29 @@ img {
 .card {
   padding: 2rem 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.gradient-blue {
-  background: linear-gradient(145deg, #edf3ff, #f5f8ff);
-  border-left: 5px solid #2563eb;
-}
-
-.gradient-green {
-  background: linear-gradient(145deg, #ecfdf5, #f6fff9);
-  border-left: 5px solid #16a34a;
-}
-
-.gradient-yellow {
-  background: linear-gradient(145deg, #fff9eb, #fffdf5);
-  border-left: 5px solid #f59e0b;
-}
-
-.gradient-pink {
-  background: linear-gradient(145deg, #fdf2f8, #fff5f9);
-  border-left: 5px solid #db2777;
-}
+/* --- Pastel Gradients --- */
+.gradient-blue { background: linear-gradient(145deg, #edf3ff, #f5f8ff); border-left: 5px solid #2563eb; }
+.gradient-green { background: linear-gradient(145deg, #ecfdf5, #f6fff9); border-left: 5px solid #16a34a; }
+.gradient-yellow { background: linear-gradient(145deg, #fff9eb, #fffdf5); border-left: 5px solid #f59e0b; }
+.gradient-pink { background: linear-gradient(145deg, #fdf2f8, #fff5f9); border-left: 5px solid #db2777; }
+.gradient-orange { background: linear-gradient(145deg, #fff7ed, #fffaf3); border-left: 5px solid #fb923c; }
+.gradient-cyan { background: linear-gradient(145deg, #ecfeff, #f0f9ff); border-left: 5px solid #06b6d4; }
+.gradient-purple { background: linear-gradient(145deg, #f5f3ff, #faf5ff); border-left: 5px solid #8b5cf6; }
+.gradient-red { background: linear-gradient(145deg, #ffe4e6, #fff7f7); border-left: 5px solid #ef4444; }
+.gradient-gray { background: linear-gradient(145deg, #f3f4f6, #ffffff); border-left: 5px solid #64748b; }
 
 /* =========================================================
-📩 CONTACT FORM (Fixed Width)
+📩 CONTACT FORM
 ========================================================= */
 .contact-form {
   background: var(--white);
@@ -399,7 +397,7 @@ img {
 }
 
 /* =========================================================
-🦶 FOOTER (Unified)
+🦶 FOOTER
 ========================================================= */
 .footer.dark {
   background: #0f172a;
@@ -472,15 +470,9 @@ img {
     transition: all 0.3s ease;
   }
 
-  .menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translateY(7px);
-  }
-  .menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-7px);
-  }
+  .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translateY(-7px); }
 
   .nav-links {
     display: none;
@@ -493,7 +485,6 @@ img {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-top: 1px solid var(--border);
     animation: slideDown 0.3s ease forwards;
-    z-index: 999;
   }
 
   .nav-links.show {
@@ -501,14 +492,8 @@ img {
   }
 
   @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav-links a {
@@ -517,16 +502,6 @@ img {
     border-bottom: 1px solid #f1f5f9;
   }
 
-  .nav-links a:hover {
-    background: #f8fafc;
-    color: var(--primary);
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .contact-form {
-    padding: 1.8rem 1.2rem;
-  }
+  .cta-buttons { flex-direction: column; }
+  .contact-form { padding: 1.8rem 1.2rem; }
 }
