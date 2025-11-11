@@ -1,5 +1,5 @@
 /* =========================================================
-🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition)
+🌐 Bita Digital Hub – Global Stylesheet (Pastel Edition, v2)
 Author: Bita Ashoori
 ========================================================= */
 
@@ -38,7 +38,7 @@ img {
   max-width: 1300px;
   margin: 0 auto;
   background: var(--white);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +51,6 @@ img {
   transition: all 0.3s ease;
 }
 
-/* --- Brand --- */
 .nav-left {
   flex: 1;
   display: flex;
@@ -61,7 +60,7 @@ img {
 
 .brand-info .brand {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--primary);
   text-decoration: none;
 }
@@ -122,11 +121,6 @@ img {
   background: #e2e8f0;
 }
 
-.lang-toggle img {
-  width: 18px;
-  height: 12px;
-}
-
 .lang-menu {
   display: none;
   position: absolute;
@@ -162,22 +156,6 @@ img {
   color: var(--primary);
 }
 
-/* 🚀 Get Started Button */
-.btn-primary.get-started {
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.7rem 1.4rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  white-space: nowrap;
-}
-
-.btn-primary.get-started:hover {
-  background: var(--primary-hover);
-}
-
 /* =========================================================
 🏠 MAIN SECTIONS
 ========================================================= */
@@ -200,14 +178,17 @@ img {
 
 .section-sub {
   color: var(--text-mid);
-  margin-bottom: 2rem;
-  font-size: 1rem;
+  margin-bottom: 2.2rem;
+  font-size: 1.05rem;
 }
 
-/* Hero */
+/* =========================================================
+✨ HERO SECTION
+========================================================= */
 .hero {
   background: linear-gradient(to bottom, #eef2ff, #fff);
   padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 
 .hero h1 {
@@ -221,6 +202,58 @@ img {
   max-width: 600px;
   margin: 1rem auto;
   color: var(--text-mid);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- Hero Buttons --- */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  border: 2px solid var(--primary);
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
 }
 
 /* =========================================================
@@ -244,7 +277,7 @@ img {
 }
 
 /* =========================================================
-💎 CARDS (Services / Courses / Tools)
+💎 CARDS (Pastel Edition)
 ========================================================= */
 .cards,
 .tools-grid {
@@ -256,7 +289,7 @@ img {
 .card {
   padding: 2rem 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -267,19 +300,21 @@ img {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* 🎨 Pastel Gradient Themes */
 .gradient-blue {
-  background: linear-gradient(145deg, #e8f1ff, #f3f8ff);
-  border-left: 5px solid #1d4ed8;
+  background: linear-gradient(145deg, #edf3ff, #f5f8ff);
+  border-left: 5px solid #2563eb;
 }
+
 .gradient-green {
   background: linear-gradient(145deg, #ecfdf5, #f6fff9);
   border-left: 5px solid #16a34a;
 }
+
 .gradient-yellow {
-  background: linear-gradient(145deg, #fff7ed, #fffaf3);
+  background: linear-gradient(145deg, #fff9eb, #fffdf5);
   border-left: 5px solid #f59e0b;
 }
+
 .gradient-pink {
   background: linear-gradient(145deg, #fdf2f8, #fff5f9);
   border-left: 5px solid #db2777;
@@ -298,8 +333,80 @@ img {
 }
 
 .card .card-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+/* =========================================================
+📩 CONTACT FORM (Modern Two-Column Layout)
+========================================================= */
+.contact-form {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-dark);
+  background: #f9fafb;
+  margin-bottom: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 130px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.contact-form button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 1rem 1.6rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
 /* =========================================================
@@ -358,9 +465,11 @@ img {
   .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translateY(7px);
   }
+
   .menu-toggle.open span:nth-child(2) {
     opacity: 0;
   }
+
   .menu-toggle.open span:nth-child(3) {
     transform: rotate(-45deg) translateY(-7px);
   }
@@ -403,15 +512,5 @@ img {
   .nav-links a:hover {
     background: #f8fafc;
     color: var(--primary);
-  }
-
-  .card {
-    padding: 1.6rem;
-  }
-
-  .card-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 1.5rem;
   }
 }
