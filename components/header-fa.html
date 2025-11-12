@@ -1,0 +1,314 @@
+<!-- =========================================================
+🧭 بیتا دیجیتال هاب – هدر واکنش‌گرا مدرن (نسخه ۴)
+هماهنگ با برند، دارای منوی دو‌زبانه و نسخه موبایل
+========================================================= -->
+
+<header class="navbar" dir="ltr">
+  <div class="nav-inner">
+    <!-- 🔹 Brand -->
+    <div class="nav-left">
+      <a href="index-fa.html#home" class="brand-link">
+        <img src="assets/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" class="brand-logo" />
+        <div class="brand-info">
+          <h1 class="brand-title">بیتا دیجیتال هاب</h1>
+          <p class="brand-tagline">یاد بگیر، بساز، خودکار کن، موفق شو.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- 🔹 Navigation -->
+    <nav class="nav-links" aria-label="منوی اصلی">
+      <a href="index-fa.html#home" class="active">خانه</a>
+      <a href="index-fa.html#about">درباره ما</a>
+      <a href="index-fa.html#tools">ابزارها</a>
+      <a href="index-fa.html#services">خدمات</a>
+      <a href="index-fa.html#courses">دوره‌ها</a>
+      <a href="index-fa.html#contact">تماس</a>
+    </nav>
+
+    <!-- 🔹 Actions -->
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <button class="lang-toggle" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+          <img src="https://flagcdn.com/16x12/ir.png" alt="Persian flag" /> فارسی ▾
+        </button>
+        <ul class="lang-menu" id="lang-menu" role="listbox">
+          <li><a href="index.html">English 🇬🇧</a></li>
+          <li><a href="index-fa.html">فارسی 🇮🇷</a></li>
+        </ul>
+      </div>
+      <!-- <a href="contact.html" class="btn-primary get-started">ورود</a>-->
+    </div>
+
+    <!-- ☰ Mobile Menu Toggle -->
+    <button class="menu-toggle" aria-label="باز کردن منو">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================================
+🔧 رفتار هدر
+========================================================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🌍 Language Dropdown
+    const langBtn = document.getElementById("lang-btn");
+    const langMenu = document.getElementById("lang-menu");
+    if (langBtn && langMenu) {
+      langBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langMenu.classList.toggle("show");
+        langBtn.setAttribute("aria-expanded", langMenu.classList.contains("show"));
+      });
+      document.addEventListener("click", (e) => {
+        if (!langBtn.contains(e.target)) {
+          langMenu.classList.remove("show");
+          langBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    // 📱 Mobile Menu Toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        menuToggle.classList.toggle("open");
+      });
+    }
+
+    // 🌀 Smooth Scroll (in-page only)
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+          navLinks.classList.remove("show");
+          menuToggle.classList.remove("open");
+        }
+      });
+    });
+  });
+</script>
+
+<!-- =========================================================
+🎨 CSS هدر
+========================================================= -->
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  direction: ltr; /* keep visual alignment same as English */
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  margin-right: 10px;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Estedad", "Vazirmatn", sans-serif;
+}
+
+.brand-tagline {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* ---------- Navigation ---------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+  font-family: "Vazirmatn", sans-serif;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1e3a8a;
+}
+
+/* ---------- Actions ---------- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.btn-primary:hover {
+  background: #152b6b;
+}
+
+/* ---------- Language Switch ---------- */
+.lang-switch {
+  position: relative;
+}
+
+.lang-toggle {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  list-style: none;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: none;
+  min-width: 140px;
+  padding: 0.3rem 0;
+  z-index: 50;
+}
+
+.lang-menu.show {
+  display: block;
+}
+
+.lang-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.lang-menu li a:hover {
+  background: #f1f5f9;
+}
+
+/* ---------- Mobile Menu ---------- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+}
+</style>

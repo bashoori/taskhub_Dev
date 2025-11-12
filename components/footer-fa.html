@@ -1,0 +1,243 @@
+<!-- =========================================================
+🦶 کامپوننت فوتر – بیتا دیجیتال هاب (نسخه تیره، v2)
+طراحی منظم، هماهنگی با راست‌چین و دسترسی بالا
+========================================================= -->
+
+<footer class="footer dark" dir="rtl">
+  <div class="footer-container">
+    <!-- 🔹 برند و مأموریت -->
+    <div class="footer-col brand">
+      <div class="footer-logo">
+        <img src="assets/taskhub-logo.svg" alt="لوگوی بیتا دیجیتال هاب" width="40" height="40" />
+        <div>
+          <h3>بیتا دیجیتال هاب</h3>
+          <p>تحول دیجیتال</p>
+        </div>
+      </div>
+      <p class="footer-desc">
+        توانمندسازی افراد و کسب‌وکارها با داده، هوش مصنوعی و اتوماسیون —
+        برای ساخت سیستم‌هایی که هر روز هوشمندتر می‌شوند.
+      </p>
+
+      <!-- 🌐 شبکه‌های اجتماعی -->
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/bitaashoori" target="_blank" rel="noopener" aria-label="لینکدین">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://youtube.com/@bitadigital" target="_blank" rel="noopener" aria-label="یوتیوب">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://instagram.com/bitadigitalhub" target="_blank" rel="noopener" aria-label="اینستاگرام">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 🔹 لینک‌های سریع -->
+    <div class="footer-col">
+      <h4>لینک‌های سریع</h4>
+      <ul>
+        <li><a href="#home">خانه</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="#courses">دوره‌ها</a></li>
+        <li><a href="#contact">تماس</a></li>
+      </ul>
+    </div>
+
+    <!-- 🔹 خدمات -->
+    <div class="footer-col">
+      <h4>خدمات ما</h4>
+      <ul>
+        <li>برندسازی شخصی با هوش مصنوعی</li>
+        <li>طراحی و ساخت وب‌سایت</li>
+        <li>تحلیل داده و داشبورد مدیریتی</li>
+        <li>ربات‌های تلگرام</li>
+        <li>راه‌اندازی فرنچایز آنلاین</li>
+      </ul>
+    </div>
+
+    <!-- 🔹 اطلاعات تماس -->
+    <div class="footer-col">
+      <h4>اطلاعات تماس</h4>
+      <ul class="contact-info">
+        <li><i class="fas fa-envelope"></i> contact@bitadigitalhub.com</li>
+        <li><i class="fas fa-map-marker-alt"></i> ونکوور، کانادا</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 🔹 بخش پایینی فوتر -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© ۲۰۲۵ بیتا دیجیتال هاب. تمامی حقوق محفوظ است.</span>
+      <div class="footer-links">
+        <a href="#privacy">سیاست حفظ حریم خصوصی</a>
+        <a href="#terms">شرایط استفاده</a>
+        <a href="#cookies">سیاست کوکی‌ها</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+📦 وابستگی‌ها
+========================================================= -->
+<script src="https://kit.fontawesome.com/4c45a6b4c1.js" crossorigin="anonymous"></script>
+
+<script>
+  // اسکرول نرم برای لینک‌های داخلی فوتر
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.footer a[href^="#"]')) {
+      e.preventDefault();
+      const target = document.querySelector(e.target.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
+<!-- =========================================================
+🎨 استایل پیشنهادی (در فایل CSS اصلی قرار گیرد)
+========================================================= -->
+<style>
+.footer.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "Vazirmatn", "Estedad", sans-serif;
+  padding: 4rem 1rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  direction: rtl;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #cbd5e1;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #60a5fa;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-logo p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.footer-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  max-width: 300px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-icons a {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #60a5fa;
+}
+
+/* ---------- Footer Bottom ---------- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-inner span {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links a {
+    margin: 0 0.5rem;
+  }
+
+  .footer-desc {
+    margin: 0 auto 1.5rem;
+  }
+}
+</style>
