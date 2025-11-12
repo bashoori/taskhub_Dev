@@ -113,7 +113,7 @@
   <!-- 🧭 هدر -->
   <div id="header-placeholder"></div>
   <script>
-    fetch("components/header-fa.html")
+    fetch("components/header.html")
       .then(res => res.text())
       .then(html => { document.getElementById("header-placeholder").innerHTML = html; })
       .catch(console.error);
@@ -208,7 +208,7 @@
   <!-- 🦶 فوتر -->
   <div id="footer-placeholder"></div>
   <script>
-    fetch("components/footer-fa.html")
+    fetch("components/footer.html")
       .then(res => res.text())
       .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
       .then(() => lucide.createIcons())
