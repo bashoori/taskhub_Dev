@@ -17,13 +17,12 @@
 </head>
 
 <body>
-  <!-- 🧭 Header -->
+ <!-- Header -->
   <div id="header-placeholder"></div>
   <script>
-    fetch("../components/header.html")
+    fetch("../components/header-tools.html")
       .then(res => res.text())
-      .then(html => { document.getElementById("header-placeholder").innerHTML = html; })
-      .catch(console.error);
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
   <!-- 📝 ARTICLE CONTENT -->
@@ -214,13 +213,12 @@
     </article>
   </main>
 
-  <!-- 🦶 Footer -->
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
   <script>
-    fetch("../components/footer.html")
+    fetch("../components/footer-tools.html")
       .then(res => res.text())
-      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
-      .catch(console.error);
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
   </script>
 </body>
 </html>
