@@ -79,12 +79,12 @@
 
 <body>
 
-  <!-- Header -->
+<!-- Header -->
   <div id="header-placeholder"></div>
   <script>
-    fetch("../components/header.html")
+    fetch("../components/header-tools.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+      .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
   </script>
 
   <section class="article-container">
@@ -169,12 +169,14 @@
 
   </section>
 
-  <!-- Footer -->
+ <!-- 🦶 Footer -->
   <div id="footer-placeholder"></div>
   <script>
-    fetch("../components/footer.html")
+    fetch("components/footer.html")
       .then(res => res.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+      .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+      .then(() => lucide.createIcons())
+      .catch(console.error);
   </script>
 
 </body>
