@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-page="blog">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>بلاگ | بیتا دیجیتال هاب</title>
+
+  <meta name="description"
+        content="آخرین مقالات در حوزه کسب‌وکار آنلاین، بازاریابی دیجیتال، اتوماسیون و ابزارهای هوش مصنوعی. کمک به شما برای یادگیری، ساخت و رشد یک بیزنس آنلاین موفق." />
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+
+    body {
+      direction: rtl;
+      font-family: "Vazirmatn", sans-serif;
+      text-align: right;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-top: 6rem;
+      margin-bottom: 3rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .blog-header p {
+      color: #475569;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0.5rem auto 0;
+      line-height: 1.8;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .blog-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+      text-decoration: none;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.3rem 1.3rem 1.6rem;
+    }
+
+    .blog-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .blog-card p {
+      color: #475569;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("../components/header-tools-fa.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- BLOG PAGE MAIN CONTENT -->
+<section>
+  <div class="blog-header">
+    <h1>آخرین مقالات</h1>
+    <p>آموزش‌ها، تحلیل‌ها و نکاتی برای ساخت، رشد و اتوماسیون بیزنس آنلاین در سال ۲۰۲۵.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- ARTICLE 1 -->
+    <a href="start-online-business-2025-fa.html" class="blog-card">
+      <img src="../assets/start-online-business-hero.jpg" alt="شروع کسب‌وکار آنلاین ۲۰۲۵" />
+      <div class="card-body">
+        <h3>چطور در سال ۲۰۲۵ یک کسب‌وکار آنلاین راه‌اندازی کنیم؟</h3>
+        <p>راهنمای کامل و مرحله‌به‌مرحله برای ساخت یک بیزنس سودآور با کمک هوش مصنوعی و اتوماسیون.</p>
+      </div>
+    </a>
+
+    <!-- ARTICLE 2 -->
+    <a href="ai-tools-small-business-2025-fa.html" class="blog-card">
+      <img src="../assets/ai-business-tools.jpg" alt="ابزارهای هوش مصنوعی برای کسب‌وکارهای کوچک" />
+      <div class="card-body">
+        <h3>چرا ابزارهای هوش مصنوعی برای کسب‌وکارهای کوچک ضروری شده‌اند؟</h3>
+        <p>چطور هوش مصنوعی باعث صرفه‌جویی زمانی، کاهش هزینه و رشد سریع‌تر کسب‌وکار می‌شود.</p>
+      </div>
+    </a>
+
+    <!-- ARTICLE 3 -->
+    <a href="digital-marketing-strategies-2025-fa.html" class="blog-card">
+      <img src="../assets/digital-marketing-2025.jpg" alt="استراتژی‌های بازاریابی دیجیتال ۲۰۲۵" />
+      <div class="card-body">
+        <h3>بهترین استراتژی‌های بازاریابی دیجیتال برای مبتدی‌ها در ۲۰۲۵</h3>
+        <p>ساده‌ترین و مؤثرترین روش‌ها برای رشد سریع در شبکه‌های اجتماعی، سئو و تولید محتوا.</p>
+      </div>
+    </a>
+
+    <!-- ARTICLE 4 -->
+    <a href="marketing-skills-2025-fa.html" class="blog-card">
+      <img src="../assets/marketing-skills-2025.jpg" alt="مهارت‌های بازاریابی دیجیتال ۲۰۲۵" />
+      <div class="card-body">
+        <h3>مهارت‌های ضروری بازاریابی دیجیتال که در ۲۰۲۵ باید بلد باشید</h3>
+        <p>یادگیری مهارت‌هایی که آینده کاری شما را تضمین می‌کنند — از سئو تا AI و اتوماسیون.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("../components/footer-tools-fa.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+</body>
+</html>
