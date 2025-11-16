@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-page="blog">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blog | Bita Digital Hub</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/theme.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+
+  <style>
+    body {
+      background: #f8fafc;
+    }
+
+    .blog-header {
+      max-width: 850px;
+      margin: 6rem auto 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .blog-header p {
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+
+    .blog-grid {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.18s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 1.4rem;
+    }
+
+    .blog-card-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .blog-card-content p {
+      font-size: 0.98rem;
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-content a {
+      display: inline-block;
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .blog-card-content a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("./components/header-tools.html")
+    .then(res => res.text())
+    .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
+</script>
+
+<!-- BLOG TITLE -->
+<section class="blog-header">
+  <h1>Latest Articles</h1>
+  <p>Explore guides, tutorials, and insights to help you build and grow your online business.</p>
+</section>
+
+<!-- BLOG CARDS -->
+<section class="blog-grid">
+
+  <!-- CARD 1 -->
+  <div class="blog-card">
+    <img src="./assets/ai-business-tools.jpg" alt="AI Tools 2025">
+    <div class="blog-card-content">
+      <h3>Why AI Tools Are Essential for Small Businesses in 2025</h3>
+      <p>Learn how AI automation, analytics, and assistants help small businesses save time, cut costs, and grow.</p>
+      <a href="./articles/ai-tools-small-business.html">Read more →</a>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="blog-card">
+    <img src="./assets/start-online-business-hero.jpg" alt="Start an Online Business">
+    <div class="blog-card-content">
+      <h3>How to Start an Online Business in 2025</h3>
+      <p>A beginner-friendly guide to launching a profitable digital business using AI and automation.</p>
+      <a href="./articles/start-online-business.html">Read more →</a>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="blog-card">
+    <img src="./assets/digital-marketing-2025.jpg" alt="Digital Marketing 2025">
+    <div class="blog-card-content">
+      <h3>The Best Digital Marketing Strategies for Beginners in 2025</h3>
+      <p>Discover the most effective, beginner-friendly marketing strategies to grow your audience.</p>
+      <a href="./articles/digital-marketing-strategies-2025.html">Read more →</a>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="blog-card">
+    <img src="./assets/marketing-skills-2025.jpg" alt="Digital Marketing Skills 2025">
+    <div class="blog-card-content">
+      <h3>Essential Digital Marketing Skills for 2025</h3>
+      <p>The key skills you need—from SEO to AI—to stay competitive and grow online in 2025.</p>
+      <a href="./articles/marketing-skills-2025.html">Read more →</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("./components/footer-tools.html")
+    .then(res => res.text())
+    .then(html => { document.getElementById("footer-placeholder").innerHTML = html; });
+</script>
+
+</body>
+</html>
