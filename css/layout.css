@@ -1,27 +1,23 @@
-/* -------------------------------------
-   LAYOUT.CSS — GLOBAL PAGE STRUCTURE
--------------------------------------- */
+/* =======================
+   LAYOUT.CSS
+======================= */
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-section {
-  padding: 4rem 0;
+.section {
+  padding: 4rem 1rem;
 }
 
-.section-title {
+.section-header {
   text-align: center;
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--text-mid);
   margin-bottom: 2rem;
+}
+
+#latest-articles {
+  margin-top: 6rem;
+  padding-top: 2rem;
 }
