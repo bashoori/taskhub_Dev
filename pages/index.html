@@ -6,38 +6,44 @@
 
   <title>Bita Digital Hub | Build • Automate • Earn Online</title>
   <meta name="description"
-        content="Empowering creators and businesses with automation, AI, and data-driven systems. Discover tools, resources, and services to build and grow your online business." />
+    content="Empowering creators and businesses with automation, AI systems, and data-driven growth. Discover tools, articles, courses, and services to build and grow your online business." />
 
-  <!-- Styles -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
   <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
 
   <!-- Scripts -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/script.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding-top: 72px; /* exact height of new header */
+      font-family: "Poppins", sans-serif;
+      background: #f9fafb;
+      color: #0f172a;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ========================= HEADER ========================= -->
 <div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
-</script>
 
 
-<!-- HERO -->
+<!-- ========================= HERO ========================= -->
 <section id="home" class="section hero">
   <h1>Helping You Build, Automate & Earn Online</h1>
+
   <p>
-    Tools, automation systems, and AI-powered workflows for creators,
-    solopreneurs, and small businesses.
+    Bita Digital Hub empowers creators and businesses to automate, scale,
+    and grow using data, cloud, and AI-powered systems.
   </p>
 
   <div class="cta-buttons">
@@ -47,43 +53,47 @@
 </section>
 
 
-<!-- ABOUT -->
+<!-- ========================= ABOUT ========================= -->
 <section id="about" class="section about light">
   <h2>Welcome to Bita Digital Hub</h2>
   <p>
-    Our mission is to help individuals and businesses automate, scale, and thrive
-    using data-driven strategy and modern AI tools.
+    We believe in the power of digital systems. Our mission is simple:
+    help individuals and businesses automate, scale, and thrive using
+    data-driven strategy and modern AI tools.
   </p>
   <p>— Bita Ashoori, CEO & Founder</p>
 </section>
 
 
-<!-- LATEST ARTICLES -->
-<section class="latest-articles">
+<!-- ========================= LATEST ARTICLES ========================= -->
+<section class="section latest-articles">
   <h2 class="section-title">Latest Articles</h2>
   <p class="section-sub">Insights to help you start and grow your online business</p>
 
-  <div class="card-grid">
+  <div class="latest-grid">
 
-    <a href="/pages/blog/start-online-business.html" class="card">
+    <!-- Article 1 -->
+    <a href="/pages/blog/start-online-business.html" class="latest-card">
       <img src="/pages/blog/image/start-online-business.jpg" alt="Start Online Business 2025">
-      <div class="content">
+      <div class="text">
         <h3>How to Start a Successful Online Business in 2025</h3>
-        <p>Learn the essential steps for launching a profitable online business — even as a beginner.</p>
+        <p>Learn essential steps for launching a profitable online business — even as a beginner.</p>
       </div>
     </a>
 
-    <a href="/pages/blog/ai-automation-solopreneurs-2025.html" class="card">
+    <!-- Article 2 -->
+    <a href="/pages/blog/ai-automation-solopreneurs-2025.html" class="latest-card">
       <img src="/pages/blog/image/ai-automation.jpg" alt="AI Automation for Solopreneurs">
-      <div class="content">
+      <div class="text">
         <h3>The Rise of AI Automation for Solopreneurs in 2025</h3>
-        <p>How AI is transforming workflows and helping creators scale faster.</p>
+        <p>Discover how AI is transforming workflows and helping creators scale faster.</p>
       </div>
     </a>
 
-    <a href="/pages/blog/ai-business-tools.html" class="card">
+    <!-- Article 3 -->
+    <a href="/pages/blog/ai-business-tools.html" class="latest-card">
       <img src="/pages/blog/image/ai-business-tools.jpg" alt="AI Tools for Business">
-      <div class="content">
+      <div class="text">
         <h3>Top AI Tools Small Business Owners Should Use in 2025</h3>
         <p>The must-have AI tools every business owner needs to improve operations and grow faster.</p>
       </div>
@@ -97,56 +107,56 @@
 </section>
 
 
-<!-- TOOLS -->
+<!-- ========================= TOOLS ========================= -->
 <section id="tools" class="section tools light">
   <h2>Free Tools</h2>
   <p class="section-sub">AI and automation tools to power your productivity</p>
 
-  <div class="card-grid">
+  <div class="content-grid">
 
-    <a href="/pages/tools/password-generator.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="shield"></i></div>
-      <div class="content">
+    <a href="/tools/password-generator.html" class="content-card accent-blue">
+      <div class="content-icon"><i data-lucide="shield"></i></div>
+      <div class="content-text">
         <h3>Password Generator</h3>
         <p>Create secure, custom passwords instantly.</p>
       </div>
     </a>
 
-    <a href="/pages/tools/file-converter.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="file"></i></div>
-      <div class="content">
+    <a href="/tools/file-converter.html" class="content-card accent-pink">
+      <div class="content-icon"><i data-lucide="file"></i></div>
+      <div class="content-text">
         <h3>File Converter</h3>
-        <p>Convert PDFs, documents, and data files effortlessly.</p>
+        <p>Transform PDFs, documents, and data files effortlessly.</p>
       </div>
     </a>
 
-    <a href="/pages/tools/csv-cleaner.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="table"></i></div>
-      <div class="content">
+    <a href="/tools/csv-cleaner.html" class="content-card accent-cyan">
+      <div class="content-icon"><i data-lucide="table"></i></div>
+      <div class="content-text">
         <h3>CSV Cleaner</h3>
-        <p>Format and clean CSV files automatically.</p>
+        <p>Automatically clean and format CSV files.</p>
       </div>
     </a>
 
-    <a href="/pages/tools/zip-unzip.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="archive"></i></div>
-      <div class="content">
+    <a href="/tools/zip-unzip.html" class="content-card accent-gray">
+      <div class="content-icon"><i data-lucide="archive"></i></div>
+      <div class="content-text">
         <h3>Zip / UnZip</h3>
-        <p>Compress and extract files easily.</p>
+        <p>Compress and extract files instantly.</p>
       </div>
     </a>
 
-    <a href="/pages/tools/url-shortener.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="link-2"></i></div>
-      <div class="content">
+    <a href="/tools/url-shortener.html" class="content-card accent-green">
+      <div class="content-icon"><i data-lucide="link-2"></i></div>
+      <div class="content-text">
         <h3>URL Shortener</h3>
-        <p>Create optimized trackable short links.</p>
+        <p>Manage and track optimized short links.</p>
       </div>
     </a>
 
-    <a href="/pages/tools/qr-generator.html" class="card tool-card">
-      <div class="tool-icon"><i data-lucide="qr-code"></i></div>
-      <div class="content">
+    <a href="/tools/qr-generator.html" class="content-card accent-yellow">
+      <div class="content-icon"><i data-lucide="qr-code"></i></div>
+      <div class="content-text">
         <h3>QR Generator</h3>
         <p>Create custom QR codes in seconds.</p>
       </div>
@@ -156,34 +166,34 @@
 </section>
 
 
-<!-- SERVICES -->
+<!-- ========================= SERVICES ========================= -->
 <section id="services" class="section">
   <h2>Our Services</h2>
   <p class="section-sub">Complete solutions for your digital transformation</p>
 
-  <div class="card-grid">
+  <div class="latest-grid">
 
-    <a href="/pages/services/website-creation.html" class="card">
+    <a href="/pages/services/website-creation.html" class="latest-card">
       <img src="/assets/placeholders/service-web.svg" alt="Website Services">
-      <div class="content">
+      <div class="text">
         <h3>Website Creation</h3>
-        <p>Responsive, optimized websites designed for performance and clarity.</p>
+        <p>Responsive, optimized websites built for performance and clarity.</p>
       </div>
     </a>
 
-    <a href="/pages/services/data-analytics.html" class="card">
-      <img src="/assets/placeholders/service-analytics.svg" alt="Data & Analytics Service">
-      <div class="content">
+    <a href="/pages/services/data-analytics.html" class="latest-card">
+      <img src="/assets/placeholders/service-analytics.svg" alt="Data Analytics">
+      <div class="text">
         <h3>Data & Analytics</h3>
-        <p>Turn raw data into dashboards and valuable insights.</p>
+        <p>Turn raw data into actionable insights with dashboards and reports.</p>
       </div>
     </a>
 
-    <a href="/pages/services/telegram-bots.html" class="card">
+    <a href="/pages/services/telegram-bots.html" class="latest-card">
       <img src="/assets/placeholders/service-bot.svg" alt="Automation Bots">
-      <div class="content">
+      <div class="text">
         <h3>Telegram Robots</h3>
-        <p>Automate lead generation and customer engagement with smart bots.</p>
+        <p>Automate customer engagement and lead collection with smart bots.</p>
       </div>
     </a>
 
@@ -191,61 +201,69 @@
 </section>
 
 
-<!-- COURSES -->
+<!-- ========================= COURSES ========================= -->
 <section id="courses" class="section light">
   <h2>Courses & Learning</h2>
-  <p class="section-sub">Grow your skills in the digital economy</p>
+  <p class="section-sub">Grow your skills and business in the digital economy</p>
 
-  <div class="card-grid">
+  <div class="content-grid">
 
-    <a class="card tool-card">
-      <div class="tool-icon"><i data-lucide="book-open"></i></div>
-      <div class="content">
+    <div class="content-card accent-green">
+      <div class="content-icon"><i data-lucide="book-open"></i></div>
+      <div class="content-text">
         <h3>Free Online Courses</h3>
-        <p>Beginner-friendly training in AI, data, and digital marketing.</p>
+        <p>Beginner-friendly training for AI, data, and digital marketing.</p>
       </div>
-    </a>
+    </div>
 
-    <a class="card tool-card">
-      <div class="tool-icon"><i data-lucide="megaphone"></i></div>
-      <div class="content">
+    <div class="content-card accent-blue">
+      <div class="content-icon"><i data-lucide="megaphone"></i></div>
+      <div class="content-text">
         <h3>Digital Marketing Mastery</h3>
-        <p>Learn how to build a brand and attract customers online.</p>
+        <p>Learn how to grow your brand and attract customers.</p>
       </div>
-    </a>
+    </div>
 
-    <a class="card tool-card">
-      <div class="tool-icon"><i data-lucide="briefcase"></i></div>
-      <div class="content">
+    <div class="content-card accent-pink">
+      <div class="content-icon"><i data-lucide="briefcase"></i></div>
+      <div class="content-text">
         <h3>Online Franchise System</h3>
-        <p>Launch your own business with automation-ready frameworks.</p>
+        <p>Start your own business with automation-ready models.</p>
       </div>
-    </a>
+    </div>
 
+  </div>
+
+  <div class="cta-buttons" style="margin-top:2rem;">
+    <a href="#contact" class="btn primary">Make an Appointment</a>
   </div>
 </section>
 
 
-<!-- CONTACT -->
+<!-- ========================= CONTACT ========================= -->
 <section id="contact" class="section contact light">
   <h2>Contact Us</h2>
   <p class="section-sub">Let’s build something amazing together</p>
 
-  <form class="contact-form" action="https://formsubmit.co/contact@bitadigitalhub.com" method="POST">
+  <form class="contact-form"
+    action="https://formsubmit.co/contact@bitadigitalhub.com"
+    method="POST">
+
     <div class="form-grid">
-      <input type="text" name="name" placeholder="Full Name *" required />
-      <input type="email" name="email" placeholder="Email Address *" required />
+      <input type="text" name="name" placeholder="Full Name *" required>
+      <input type="email" name="email" placeholder="Email Address *" required>
     </div>
 
     <div class="form-grid">
-      <input type="text" name="company" placeholder="Company (optional)" />
-      <input type="text" name="phone" placeholder="Phone" />
+      <input type="text" name="company" placeholder="Company (optional)">
+      <input type="text" name="phone" placeholder="Phone">
     </div>
 
     <textarea name="message" placeholder="Tell us about your project..." required></textarea>
 
     <button type="submit" class="btn primary">Send Message</button>
 
+    <!-- hidden fields -->
     <input type="hidden" name="_subject" value="New Contact Form Submission - Bita Digital Hub">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
@@ -255,14 +273,8 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- ========================= FOOTER ========================= -->
 <div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
-    .then(() => lucide.createIcons());
-</script>
 
 </body>
 </html>
