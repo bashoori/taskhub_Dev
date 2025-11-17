@@ -21,7 +21,7 @@
 <!-- Header -->
 <div id="header-placeholder"></div>
 <script>
-  fetch("../components/header-tools.html")
+  fetch("/components/header-tools.html")
     .then(res => res.text())
     .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
 </script>
@@ -105,7 +105,7 @@
 
     <p style="font-size:0.95rem; color:#64748b;">
       Want more guides like this? Explore the tools and resources on
-      <a href="../index.html" style="color:#2563eb; text-decoration:none;">Bita Digital Hub</a>.
+      <a href="pages/index.html#home" style="color:#2563eb; text-decoration:none;">Bita Digital Hub</a>.
     </p>
 
     <div class="cta-buttons" style="margin-top:2rem;">
