@@ -70,7 +70,7 @@
   <!-- 🔗 Header -->
   <div id="header"></div>
   <script>
-    fetch("components/header.html")
+    fetch("/components/header.html")
       .then(res => res.text())
       .then(html => document.getElementById("header").innerHTML = html)
       .catch(err => console.error("Header failed to load:", err));

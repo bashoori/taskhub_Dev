@@ -104,7 +104,7 @@
 <!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
-  fetch("../components/header-blog.html")
+  fetch("/components/header-blog.")
     .then(res => res.text())
     .then(html => { document.getElementById("header-placeholder").innerHTML = html; });
 </script>
