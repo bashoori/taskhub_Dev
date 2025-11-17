@@ -1,19 +1,38 @@
-/* ============================================
-   COMPONENTS.CSS — Modern Global UI System
-   Clean • Minimal • Professional • SEO Friendly
-============================================ */
+/* ============================================================
+   COMPONENTS.CSS — Global UI System (Pro Edition)
+   Clean • Scalable • Minimal • SEO Friendly • Mobile First
+============================================================ */
 
-/* -------------------------------------------
-   GLOBAL NAVBAR (Desktop + Mobile)
--------------------------------------------- */
+/* ------------------------------------------------------------
+   GLOBAL VARIABLES  (Colors, Shadows, Radius)
+------------------------------------------------------------ */
+:root {
+  --primary: #1e3a8a;
+  --primary-hover: #2563eb;
+  --text-dark: #0f172a;
+  --text-mid: #475569;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+
+  --radius-md: 10px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(15,23,42,0.06);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.08);
+  --shadow-lg: 0 8px 22px rgba(15,23,42,0.12);
+}
+
+/* ============================================================
+   NAVBAR — Modern, Clean, Professional
+============================================================ */
 .main-header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 72px;
-  background: #ffffff;
+  background: var(--white);
   border-bottom: 1px solid #f1f5f9;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  box-shadow: var(--shadow-sm);
   z-index: 1000;
 }
 
@@ -27,58 +46,66 @@
   justify-content: space-between;
 }
 
-/* Brand */
+/* ---------- Brand ---------- */
 .brand-link {
+  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
+  gap: 0.65rem;
 }
 
 .brand-logo {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
 }
 
 .brand-name {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--primary);
 }
 
-/* Desktop Navigation */
+.brand-tagline {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: -2px;
+  white-space: nowrap;
+}
+
+/* ---------- Desktop Navigation ---------- */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .nav-links a {
-  color: #475569;
+  color: var(--text-mid);
   font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
   transition: color .25s ease;
 }
 
-.nav-links a:hover {
-  color: #1e3a8a;
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
 }
 
-/* Contact Button */
+/* ---------- Contact CTA ---------- */
 .nav-links .contact-btn {
-  padding: 0.55rem 1.1rem;
-  background: #1e3a8a;
+  background: var(--primary);
   color: #fff !important;
-  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-md);
   font-weight: 600;
 }
 
 .nav-links .contact-btn:hover {
-  background: #2563eb;
+  background: var(--primary-hover);
 }
 
-/* Mobile Toggle */
+/* ---------- Mobile Toggle ---------- */
 .menu-toggle {
   display: none;
   background: none;
@@ -89,24 +116,24 @@
 .menu-toggle i {
   width: 26px;
   height: 26px;
-  color: #0f172a;
+  color: var(--text-dark);
 }
 
-/* Mobile Navigation */
+/* ---------- Mobile Menu ---------- */
 @media (max-width: 900px) {
   .nav-links {
     position: absolute;
+    right: 1rem;
     top: 72px;
-    right: 0;
     width: 220px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.2rem;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.2rem;
-    border-radius: 12px;
-    background: #ffffff;
     gap: 1rem;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    display: none;
   }
 
   .nav-links.show {
@@ -116,50 +143,67 @@
   .menu-toggle {
     display: block;
   }
+
+  .brand-tagline {
+    display: none;
+  }
 }
 
-/* -------------------------------------------
-   BUTTONS (Universal)
--------------------------------------------- */
+/* ============================================================
+   UNIVERSAL BUTTON SYSTEM
+============================================================ */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   font-weight: 600;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
   transition: all .25s ease;
 }
 
+/* Primary */
 .btn.primary {
-  background: #1e3a8a;
-  color: #ffffff;
+  background: var(--primary);
+  color: #fff;
 }
 
 .btn.primary:hover {
-  background: #2563eb;
+  background: var(--primary-hover);
   transform: translateY(-2px);
 }
 
+/* Outline */
 .btn.outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
   background: transparent;
-  border: 2px solid #1e3a8a;
-  color: #1e3a8a;
 }
 
 .btn.outline:hover {
-  background: #1e3a8a;
-  color: #ffffff;
+  background: var(--primary);
+  color: #fff;
 }
 
-/* -------------------------------------------
-   FOOTER (Global Dark Footer)
--------------------------------------------- */
+/* Back Button */
+.btn-back-home {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-back-home:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ============================================================
+   FOOTER — Global Dark Footer (Professional)
+============================================================ */
 .footer.dark {
+  margin-top: 4rem;
+  padding: 4rem 2rem;
   background: #0f172a;
   color: #cbd5e1;
-  padding: 4rem 2rem;
-  margin-top: 4rem;
 }
 
 .footer-container {
@@ -170,16 +214,14 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-/* Footer Titles */
 .footer-container h4 {
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Footer Links */
 .footer-container a {
-  color: #cbd5e1;
   text-decoration: none;
+  color: #cbd5e1;
   transition: color .25s ease;
 }
 
@@ -187,11 +229,11 @@
   color: #ffffff;
 }
 
-/* Footer Bottom */
+/* Footer bottom */
 .footer-bottom {
+  text-align: center;
+  padding-top: 1.3rem;
   border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 2rem;
-  padding-top: 1.2rem;
-  text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
