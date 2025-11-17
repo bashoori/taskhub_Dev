@@ -1,14 +1,44 @@
-/* -------------------------------------
-   HOME.CSS — ONLY FOR HOME PAGE
--------------------------------------- */
+/* =======================
+   HOME.CSS
+======================= */
 
-[data-page="home"] .articles-grid {
+/* HERO */
+.hero {
+  background: #f8fafc;
+  text-align: center;
+  padding: 7rem 2rem 6rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: auto;
+}
+
+/* HOME BLOG PREVIEW */
+.home-blog-preview {
+  padding: 4rem 1rem;
+  background: #f8fafc;
+}
+
+.blog-container {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.blog-preview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-[data-page="home"] .article-card img {
-  height: 180px;
-  object-fit: cover;
+.blog-preview-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-md);
 }
