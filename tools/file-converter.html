@@ -1,20 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>File Converter | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Convert files instantly — PDF to JPG, PNG to JPG, and more. Fast and simple online file converter." />
+        content="Convert images and documents instantly — JPG ↔ PNG ↔ PDF. Simple and fast online file converter." />
 
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/tools.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+
+  <style>
+    .tools-page { padding-top: 5rem; }
+
+    .tool-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 1000px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .ad-side { display: none !important; }
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+    }
+
+    .tool-wrapper {
+      background: #ffffff;
+      padding: 2.2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+    }
+  </style>
 </head>
 
 <body class="tools-page">
 
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
 fetch("../../components/header-tools.html")
@@ -22,15 +60,19 @@ fetch("../../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN TOOL GRID -->
 <main class="tool-layout">
 
+  <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="1111111111"
          data-ad-format="vertical"></ins>
   </aside>
 
+  <!-- TOOL -->
   <section class="tool-wrapper">
 
     <h2 class="tool-title">File Converter</h2>
@@ -38,7 +80,7 @@ fetch("../../components/header-tools.html")
       Convert images and documents instantly — JPG ↔ PNG ↔ PDF.
     </p>
 
-    <label class="tool-label">Upload file:</label>
+    <label class="tool-label" for="fileInput">Upload file:</label>
     <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.pdf" class="tool-input" />
 
     <label class="tool-label" style="margin-top:1rem;">Convert to:</label>
@@ -51,11 +93,14 @@ fetch("../../components/header-tools.html")
     <button class="tool-btn" onclick="convertFile()">Convert</button>
 
     <div id="resultBox" class="output-box" style="display:none;">
+      <p><strong>Your file is ready:</strong></p>
       <a id="downloadConverted" class="tool-btn" download="converted">Download File</a>
     </div>
 
+    <!-- IN-CONTENT AD -->
     <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block"
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
            data-ad-client="ca-pub-3215014361489762"
            data-ad-slot="2222222222"
            data-ad-format="auto"></ins>
@@ -63,8 +108,10 @@ fetch("../../components/header-tools.html")
 
   </section>
 
+  <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="3333333333"
          data-ad-format="vertical"></ins>
@@ -72,6 +119,7 @@ fetch("../../components/header-tools.html")
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
 fetch("../../components/footer-tools.html")
@@ -79,24 +127,32 @@ fetch("../../components/footer-tools.html")
 .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
+<!-- FILE CONVERSION SCRIPT -->
 <script>
 function convertFile() {
-  let file = document.getElementById("fileInput").files[0];
-  let format = document.getElementById("format").value;
-  if (!file) return;
+  const file = document.getElementById("fileInput").files[0];
+  const format = document.getElementById("format").value;
 
-  let reader = new FileReader();
+  if (!file) {
+    alert("Please upload a file first.");
+    return;
+  }
+
+  const reader = new FileReader();
+
   reader.onload = function(e) {
     let blob;
 
+    // Convert PDF → other formats (placeholder logic)
     if (format === "pdf") {
       blob = new Blob([e.target.result], { type: "application/pdf" });
     } else {
       blob = new Blob([e.target.result], { type: "image/" + format });
     }
 
-    let url = URL.createObjectURL(blob);
-    let link = document.getElementById("downloadConverted");
+    const url = URL.createObjectURL(blob);
+
+    const link = document.getElementById("downloadConverted");
     link.href = url;
     link.download = "converted." + format;
 
@@ -107,7 +163,10 @@ function convertFile() {
 }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-crossorigin="anonymous"></script>
+<!-- ADSENSE -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+  crossorigin="anonymous"></script>
+
 </body>
 </html>

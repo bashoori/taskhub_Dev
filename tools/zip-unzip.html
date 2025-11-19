@@ -1,52 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zip & Unzip Tool | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Compress and extract ZIP files instantly — fast, secure, and fully browser-based. No upload needed." />
+        content="Compress and extract ZIP files instantly — fast, secure, and fully browser-based. No upload required." />
 
+  <!-- Styles -->
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/components.css">
   <link rel="stylesheet" href="../../css/tools.css">
 
+  <!-- JSZip Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <style>
+    .tools-page { padding-top: 5rem; }
+
+    .tool-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 1000px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .ad-side     { display: none !important; }
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+    }
+
+    h3.tool-subtitle {
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 2rem;
+    }
+
+    #output a {
+      color: #1e3a8a;
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+  </style>
 </head>
 
 <body class="tools-page">
 
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
 fetch("../../components/header-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("header-placeholder").innerHTML = html);
+  .then(res => res.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN TOOL LAYOUT -->
 <main class="tool-layout">
 
+  <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="1111111111"
-         data-ad-format="vertical"></ins>
+         data-ad-format="vertical">
+    </ins>
   </aside>
 
+  <!-- TOOL WRAPPER -->
   <section class="tool-wrapper">
 
     <h2 class="tool-title">Zip / UnZip Tool</h2>
-    <p class="tool-description">Compress multiple files into a ZIP, or extract a ZIP archive instantly.</p>
+    <p class="tool-description">Compress multiple files into a ZIP archive, or extract ZIP files instantly — all inside your browser.</p>
 
-    <h3 style="margin-bottom:1rem;">Create ZIP:</h3>
+    <!-- ZIP CREATION -->
+    <h3 class="tool-subtitle">Create ZIP:</h3>
 
     <input id="zipFiles" type="file" multiple class="tool-input" />
 
     <button class="tool-btn" onclick="createZip()">Create ZIP</button>
 
-    <hr style="margin:2rem 0;border:none;border-top:1px solid #e2e8f0;">
+    <hr style="margin:2.2rem 0; border:none; border-top:1px solid #e2e8f0;">
 
-    <h3 style="margin-bottom:1rem;">Unzip File:</h3>
+    <!-- UNZIP -->
+    <h3 class="tool-subtitle">Unzip File:</h3>
 
     <input id="unzipFile" type="file" accept=".zip" class="tool-input" />
 
@@ -54,8 +109,10 @@ fetch("../../components/header-tools.html")
 
     <div id="output" class="output-box" style="display:none;"></div>
 
+    <!-- In-content Ad -->
     <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block"
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
            data-ad-client="ca-pub-3215014361489762"
            data-ad-slot="2222222222"
            data-ad-format="auto"></ins>
@@ -63,8 +120,10 @@ fetch("../../components/header-tools.html")
 
   </section>
 
+  <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="3333333333"
          data-ad-format="vertical"></ins>
@@ -72,55 +131,58 @@ fetch("../../components/header-tools.html")
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
 fetch("../../components/footer-tools.html")
-.then(res => res.text())
-.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  .then(res => res.text())
+  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
+<!-- ZIP / UNZIP LOGIC -->
 <script>
-// ZIP CREATION
+// CREATE ZIP
 function createZip() {
-  let files = document.getElementById("zipFiles").files;
+  const files = document.getElementById("zipFiles").files;
   if (!files.length) return;
 
-  let zip = new JSZip();
-  for (let f of files) {
-    zip.file(f.name, f);
-  }
+  const zip = new JSZip();
+  for (const f of files) zip.file(f.name, f);
 
   zip.generateAsync({ type: "blob" }).then(blob => {
-    let url = URL.createObjectURL(blob);
-    let a = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
     a.href = url;
     a.download = "compressed.zip";
     a.click();
   });
 }
 
-// UNZIP
+// EXTRACT ZIP
 function unzipFile() {
-  let file = document.getElementById("unzipFile").files[0];
+  const file = document.getElementById("unzipFile").files[0];
   if (!file) return;
 
   JSZip.loadAsync(file).then(zip => {
-    let output = document.getElementById("output");
+    const output = document.getElementById("output");
     output.style.display = "block";
     output.innerHTML = "<strong>Extracted files:</strong><br><br>";
 
-    Object.keys(zip.files).forEach(filename => {
-      zip.files[filename].async("blob").then(content => {
-        let url = URL.createObjectURL(content);
-        output.innerHTML += `<a href="${url}" download="${filename}">${filename}</a><br>`;
+    Object.keys(zip.files).forEach(name => {
+      zip.files[name].async("blob").then(blob => {
+        const url = URL.createObjectURL(blob);
+        output.innerHTML += `<a href="${url}" download="${name}">${name}</a>`;
       });
     });
   });
 }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-crossorigin="anonymous"></script>
+<!-- GOOGLE ADS LOADER -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+  crossorigin="anonymous">
+</script>
 
 </body>
 </html>

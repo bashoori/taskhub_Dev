@@ -1,18 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QR Code Generator | Bita Digital Hub</title>
-  <meta name="description" content="Generate clean, high-quality QR codes instantly for business, marketing, and personal use." />
 
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/tools.css">
+  <meta name="description"
+        content="Generate custom, high-quality QR codes instantly — ideal for business, marketing, social media, and personal use." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+
+  <style>
+    .tools-page { padding-top: 5rem; }
+
+    .tool-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 1000px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .ad-side { display: none !important; }
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+    }
+
+    #qrBox img {
+      width: 220px;
+      height: 220px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body class="tools-page">
 
+<!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
 fetch("../../components/header-tools.html")
@@ -20,36 +59,51 @@ fetch("../../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN LAYOUT -->
 <main class="tool-layout">
 
+  <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="1111111111"
          data-ad-format="vertical"></ins>
   </aside>
 
+  <!-- TOOL WRAPPER -->
   <section class="tool-wrapper">
+
     <h2 class="tool-title">QR Code Generator</h2>
-    <p class="tool-description">Generate custom QR codes instantly — perfect for business cards, marketing, and personal use.</p>
+    <p class="tool-description">
+      Generate custom QR codes instantly — perfect for marketing, business cards, social media, and personal use.
+    </p>
 
     <label class="tool-label">Enter text or URL:</label>
-    <input id="qrInput" type="text" class="tool-input" placeholder="https://example.com" />
+    <input id="qrInput" type="text" class="tool-input"
+           placeholder="https://example.com" />
 
     <button class="tool-btn" onclick="generateQR()">Generate QR</button>
 
-    <div id="qrBox" class="output-box" style="display:none; text-align:center;"></div>
-
-    <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block"
-          data-ad-client="ca-pub-3215014361489762"
-          data-ad-slot="2222222222"
-          data-ad-format="auto"></ins>
+    <div id="qrBox" class="output-box" style="display:none; text-align:center;">
+      <!-- QR result appears here -->
     </div>
+
+    <!-- IN-CONTENT AD -->
+    <div class="ad-in-content">
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
+    </div>
+
   </section>
 
+  <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="3333333333"
          data-ad-format="vertical"></ins>
@@ -57,6 +111,7 @@ fetch("../../components/header-tools.html")
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
 fetch("../../components/footer-tools.html")
@@ -64,19 +119,30 @@ fetch("../../components/footer-tools.html")
 .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
+<!-- QR LOGIC -->
 <script>
 function generateQR() {
-  let text = document.getElementById("qrInput").value.trim();
+  const text = document.getElementById("qrInput").value.trim();
   if (!text) return;
 
-  let qrImage = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}`;
+  const qrURL =
+    `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}`;
 
-  document.getElementById("qrBox").style.display = "block";
-  document.getElementById("qrBox").innerHTML =
-    `<img src="${qrImage}" style="width:220px;height:220px;"><br><br>${text}`;
+  const qrBox = document.getElementById("qrBox");
+  qrBox.style.display = "block";
+
+  qrBox.innerHTML = `
+    <img src="${qrURL}" alt="QR Code">
+    <br><br>
+    <p style="font-size:0.9rem;color:#475569;">${text}</p>
+  `;
 }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762" crossorigin="anonymous"></script>
+<!-- ADSENSE -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+  crossorigin="anonymous"></script>
+
 </body>
 </html>

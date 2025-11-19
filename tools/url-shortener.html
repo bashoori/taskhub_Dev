@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>URL Shortener | Bita Digital Hub</title>
-  <meta name="description" content="Shorten long URLs instantly. Fast, simple, trackable link shortening for marketing & business." />
 
+  <meta name="description"
+        content="Shorten long URLs instantly — clean, fast, and trackable short links for business, marketing, and social media." />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/components.css">
   <link rel="stylesheet" href="../../css/tools.css">
+
+  <style>
+    .tools-page { padding-top: 5rem; }
+
+    .tool-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 1000px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .ad-side     { display: none !important; }
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+    }
+
+    #resultBox a {
+      color: #1e3a8a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body class="tools-page">
@@ -21,46 +59,52 @@ fetch("../../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN LAYOUT -->
 <main class="tool-layout">
 
   <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="1111111111"
-         data-ad-format="vertical">
-    </ins>
+         data-ad-format="vertical"></ins>
   </aside>
 
-  <!-- CENTER TOOL -->
+  <!-- TOOL WRAPPER -->
   <section class="tool-wrapper">
 
     <h2 class="tool-title">URL Shortener</h2>
-    <p class="tool-description">Shorten long links instantly — clean, trackable, ideal for marketing and business use.</p>
+    <p class="tool-description">
+      Shorten long URLs instantly — clean, trackable, and perfect for marketing campaigns, social media, and business use.
+    </p>
 
     <label class="tool-label">Enter your URL:</label>
-    <input id="longUrl" type="text" class="tool-input" placeholder="https://example.com/page..." />
+    <input id="longUrl" type="text" class="tool-input"
+           placeholder="https://example.com/page..." />
 
     <button class="tool-btn" onclick="shortenURL()">Shorten URL</button>
 
     <div id="resultBox" class="output-box" style="display:none;"></div>
 
+    <!-- IN-CONTENT AD -->
     <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block;text-align:center;"
-          data-ad-client="ca-pub-3215014361489762"
-          data-ad-slot="2222222222"
-          data-ad-format="auto">
-      </ins>
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
     </div>
+
   </section>
 
   <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="3333333333"
-         data-ad-format="vertical">
-    </ins>
+         data-ad-format="vertical"></ins>
   </aside>
 
 </main>
@@ -73,20 +117,28 @@ fetch("../../components/footer-tools.html")
 .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
+<!-- SHORTENER LOGIC -->
 <script>
 function shortenURL() {
-  let longUrl = document.getElementById("longUrl").value.trim();
+  const longUrl = document.getElementById("longUrl").value.trim();
   if (!longUrl) return;
 
-  let fakeShort = "https://bit.ly/" + Math.random().toString(36).substring(2,8);
-  
-  let box = document.getElementById("resultBox");
+  // Fake short link (for demo / local use)
+  const shortLink = "https://bit.ly/" + Math.random().toString(36).substring(2, 8);
+
+  const box = document.getElementById("resultBox");
   box.style.display = "block";
-  box.innerHTML = `<strong>Shortened URL:</strong><br><a href="${longUrl}" target="_blank">${fakeShort}</a>`;
+  box.innerHTML = `
+    <strong>Shortened URL:</strong><br>
+    <a href="${longUrl}" target="_blank">${shortLink}</a>
+  `;
 }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-crossorigin="anonymous"></script>
+<!-- AdSense Loader -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+  crossorigin="anonymous"></script>
+
 </body>
 </html>
