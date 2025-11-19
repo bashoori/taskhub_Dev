@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>آغاز کسب‌وکار آنلاین | بیتا</title>
-  <meta name="description" content="شروع یک کسب‌وکار آنلاین پرسود از صفر — آموزش، راهنمایی و سیستم آماده برای ساخت درآمد دلاری.">
+  
+  <title>کوچینگ کسب‌وکار آنلاین | بیتا</title>
+  <meta name="description" content="کوچینگ تخصصی برای ساخت کسب‌وکار آنلاین قدرتمند، درآمد پایدار و برندسازی شخصی. مسیر روشن برای رشد فردی و مالی.">
 
   <!-- FONT -->
   <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.0/fonts/web/Vazirmatn.css" rel="stylesheet">
@@ -14,19 +14,20 @@
     body {
       margin: 0;
       font-family: "Vazirmatn", sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      background: #FDFDFD;
+      color: #0A1A2F;
     }
 
     /* HEADER */
     header {
       width: 100%;
-      padding: 1.2rem 2rem;
-      background: white;
+      padding: 1.3rem 2rem;
+      background: #0A1A2F;
+      color: white;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #e2e8f0;
+      z-index: 20;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
     }
 
     .header-wrapper {
@@ -38,52 +39,59 @@
     }
 
     .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #1e3a8a;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #D4AF37;
     }
 
     /* HERO */
     .hero {
+      padding: 6rem 1rem 4rem;
       text-align: center;
-      padding: 5rem 1rem 4rem;
-      background: linear-gradient(to bottom, #ffffff, #eef2ff);
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 26, 47, 0.95),
+        rgba(10, 26, 47, 0.85)
+      ),
+      url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress') center/cover;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 2.4rem;
+      font-size: 2.7rem;
       font-weight: 900;
       margin-bottom: 1rem;
-      color: #0f172a;
+      line-height: 1.4;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       max-width: 650px;
       margin: 0 auto 2rem;
-      color: #475569;
-      line-height: 1.9;
+      line-height: 2.1;
+      opacity: 0.95;
     }
 
     .cta-btn {
-      padding: 1rem 2.5rem;
-      background: #1e3a8a;
-      color: white;
+      padding: 1rem 2.7rem;
+      background: #D4AF37;
+      color: #0A1A2F;
+      border-radius: 12px;
       font-size: 1.1rem;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 1rem;
+      font-weight: 800;
       text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(212,175,55,.4);
       transition: .3s;
-      font-weight: 700;
     }
     .cta-btn:hover {
-      background: #3346c8;
+      background: #b8942f;
+      transform: translateY(-3px);
     }
 
     /* FEATURES */
     .features {
-      padding: 4rem 1rem;
+      padding: 5rem 1rem;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -91,31 +99,40 @@
     .features-grid {
       display: grid;
       gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .feature-box {
       background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 20px;
+      padding: 2.2rem;
+      border: 1px solid #ececec;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.06);
       text-align: center;
-    }
-    .feature-box h3 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-      color: #1e293b;
-    }
-    .feature-box p {
-      color: #475569;
-      line-height: 1.8;
+      transition: .3s;
     }
 
-    /* ABOUT */
+    .feature-box:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: #D4AF37;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0A1A2F;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ABOUT SECTION */
     .about {
-      padding: 4rem 1rem 5rem;
-      background: #f1f5f9;
+      padding: 5rem 1rem 6rem;
+      background: #F8F9FB;
     }
 
     .about-inner {
@@ -128,35 +145,67 @@
     }
 
     .about img {
-      width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 280px;
+      width: 360px;
+      border-radius: 22px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
 
     .about-text h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 900;
+      color: #0A1A2F;
       margin-bottom: 1rem;
     }
 
     .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.9;
+      font-size: 1.15rem;
+      line-height: 2;
+      color: #3c4b5f;
+      margin-bottom: 1.5rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #0A1A2F;
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
       color: #475569;
+      margin-bottom: 2rem;
+    }
+
+    .contact form {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .contact input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #d4d4d4;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      background: white;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      background: #0f172a;
-      color: white;
-      margin-top: 2rem;
+      padding: 2rem;
+      background: #0A1A2F;
+      color: #D4AF37;
+      font-weight: 600;
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -166,36 +215,42 @@
 <!-- HEADER -->
 <header>
   <div class="header-wrapper">
-    <div class="logo">بیتا دیجیتال هاب</div>
+    <div class="logo">Bita Coaching</div>
   </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
-  <h1>کسب‌وکار آنلاین خودت را همین امروز شروع کن</h1>
+  <h1>نسخه قدرتمندترِ تو اینجاست</h1>
   <p>
-    یاد بگیر چطور بدون تجربه قبلی، با سیستم درست و مهارت‌های دیجیتال مارکتینگ، 
-    یک کسب‌وکار پرسود بسازی و درآمد دلاری داشته باشی — از هرجای دنیا.
+    اگر آماده‌ای درآمدت، هویتت، و مسیر آینده‌ات را ارتقا بدهی…  
+    اینجا همان جایی است که یک کوچ کنارت می‌ایستد، تا حرفه‌ای بسازی، رشد کنی و نتیجه ببینی.
   </p>
-
-  <a href="#contact" class="cta-btn">شروع رایگان</a>
+  <a href="#contact" class="cta-btn">می‌خواهم تغییر کنم</a>
 </section>
 
 <!-- FEATURES -->
 <section class="features">
   <div class="features-grid">
+
     <div class="feature-box">
-      <h3>سیستم آماده</h3>
-      <p>تمام ابزارها، آموزش‌ها و قالب‌هایی که برای شروع نیاز داری در یک سیستم یکپارچه.</p>
+      <div class="feature-icon">✨</div>
+      <h3>کوچینگ اختصاصی</h3>
+      <p>برنامه‌ای طراحی می‌کنم که مخصوص خودت باشد؛ نه تکراری، نه عمومی.</p>
     </div>
+
     <div class="feature-box">
-      <h3>آموزش مرحله به مرحله</h3>
-      <p>از صفر تا ساخت اولین درآمدت — کاملاً قدم به قدم و قابل اجرا.</p>
+      <div class="feature-icon">🚀</div>
+      <h3>ساخت درآمد پایدار</h3>
+      <p>با روش‌هایی که امتحان‌شده و واقعی هستند، نه تئوری‌های خسته‌کننده.</p>
     </div>
+
     <div class="feature-box">
-      <h3>بدون نیاز به تجربه</h3>
-      <p>برای شروع لازم نیست تکنیکال باشی؛ من کنارت هستم تا مسیر را ساده کنم.</p>
+      <div class="feature-icon">🎯</div>
+      <h3>تمرکز روی رشد فردی + مالی</h3>
+      <p>موفقیت فقط پول نیست. تو باید رشد کنی تا نتیجه‌ات رشد کند.</p>
     </div>
+
   </div>
 </section>
 
@@ -203,37 +258,35 @@
 <section class="about">
   <div class="about-inner">
 
-    <img src="https://bitadigitalhub.com/assets/bita-profile.jpg" alt="Bita" />
+    <img src="https://bitadigitalhub.com/assets/bita-profile.jpg" alt="Bita">
 
     <div class="about-text">
-      <h2>سلام، من بیتا هستم</h2>
+      <h2>من بیتا هستم؛ کوچ رشد کسب‌وکار آنلاین</h2>
       <p>
-        متخصص دیجیتال مارکتینگ و مربی ساخت کسب‌وکار آنلاین.  
-        سال‌هاست به افراد کمک می‌کنم آنلاین درآمد بسازند و مسیر جدیدی برای زندگی‌شان بسازند.  
-        اگر می‌خواهی یک کسب‌وکار واقعی، پایدار و قابل رشد داشته باشی — اینجا بهترین نقطه شروع است.
+        سال‌هاست با افراد مختلف کار می‌کنم تا مسیر حرفه‌ای خودشان را بسازند.
+        اینجا خبری از شعار نیست؛ برنامه‌ریزی هوشمند، سیستم‌سازی،  
+        ساخت درآمد واقعی و رشد ذهنیت… این‌ها پایهٔ کار ماست.
       </p>
-
-      <a href="#contact" class="cta-btn">می‌خوام شروع کنم</a>
+      <a href="#contact" class="cta-btn">برای کوچینگ اقدام کن</a>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="hero" style="background:#ffffff;">
-  <h2 style="font-size:2rem; font-weight:900;">همین حالا ثبت‌نام کن</h2>
-  <p>برای شروع، ایمیلت را بنویس تا اولین قدم را با هم برداریم.</p>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>اولین قدم را بردار</h2>
+  <p>ایمیلت را وارد کن تا یک قدم به نسخه حرفه‌ای‌تر خودت نزدیک‌تر شوی.</p>
 
-  <form action="https://formsubmit.co/YOUR_EMAIL" method="POST" style="max-width:400px; margin:0 auto;">
+  <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
     <input type="hidden" name="_next" value="https://bitadigitalhub.com/thank-you.html">
-    <input type="email" name="email" required placeholder="ایمیل شما"
-           style="width:100%;padding:1rem;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:1rem;font-size:1rem;">
-    <button type="submit" class="cta-btn" style="width:100%;">ثبت‌نام</button>
+    <input type="email" name="email" placeholder="ایمیل شما..." required>
+    <button type="submit" class="cta-btn" style="width:100%;">ارسال</button>
   </form>
 </section>
 
 <footer>
-  © 2025 بساختهٔ بیتا دیجیتال هاب
+  ساخت توسط بیتا دیجیتال هاب © 2025
 </footer>
 
 </body>
