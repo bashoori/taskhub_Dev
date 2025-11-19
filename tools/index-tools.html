@@ -1,113 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="tools.meta.title">Free Digital Tools | Bita Digital Hub</title>
-  <meta name="description" content="Free AI-powered tools by Bita Digital Hub — from QR generation to SEO analysis, social audits, and file conversion for digital creators." />
-  
-  <!-- 🌈 Unified Styles -->
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-  <link rel="icon" type="image/png" href="assets/taskhub-logo.png" />
 
-  <!-- 💰 Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-          crossorigin="anonymous"></script>
+  <title>Free Digital Tools | Bita Digital Hub</title>
+  <meta name="description"
+        content="Free online tools by Bita Digital Hub — QR generator, URL shortener, CSV cleaner, file converter, password generator, ZIP tools and more." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/tools-directory.css" /> <!-- New directory style -->
+
+  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
+
+  <!-- Google Adsense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .tools-header {
+      padding-top: 7rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .tools-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .tools-header p {
+      color: #475569;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .tools-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.4rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .tool-card {
+      background: #ffffff;
+      padding: 1.8rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+    }
+
+    .tool-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .tool-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .share-section {
+      text-align: center;
+      margin: 4rem auto 5rem;
+      max-width: 700px;
+    }
+
+    .share-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .share-section p {
+      color: #475569;
+      margin-bottom: 1.2rem;
+    }
+
+    .share-buttons a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+      background: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .share-buttons a:hover {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      background: #eef2ff;
+      margin-top: 3rem;
+    }
+
+    .contact-cta h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-cta p {
+      color: #475569;
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+    }
+
+    .contact-cta a {
+      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .contact-cta a:hover {
+      background: #2563eb;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 🧭 Shared Header -->
-  <div id="header"></div>
 
-  <!-- 🌐 Brand Section -->
-  <section class="brand-header center">
-    <img src="assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
-    <div class="brand-text">
-      <h1 class="brand-title" data-i18n="site.title">Bita Digital Hub</h1>
-      <p class="brand-subtitle" data-i18n="site.subtitle">Empowering Digital Growth</p>
-    </div>
-  </section>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../components/header-tools.html")
+  .then(r => r.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
-  <!-- 🌟 Hero Section -->
-  <section class="hero-section">
-    <div class="hero-badge" data-i18n="tools.hero.badge">🧰 AI & Productivity Tools</div>
-    <h1 class="hero-title" data-i18n="tools.hero.title">Free Tools for Digital Creators</h1>
-    <p class="hero-subtitle" data-i18n="tools.hero.desc">
-      Simplify your workflow with our free online tools — from QR generation to SEO analysis and file conversion.
-    </p>
-  </section>
+<!-- TOOLS PAGE HEADER -->
+<section class="tools-header">
+  <h1>Free Tools for Digital Creators</h1>
+  <p>Simplify your work with powerful online tools — from QR generation and file conversion to spreadsheets and automation helpers.</p>
+</section>
 
-  <!-- 🧩 Tools Grid -->
-  <main class="container" style="margin-top:3rem;">
-    <h2 class="section-title" data-i18n="tools.section.title">Explore Our Tools</h2>
-    <div class="lang-btns">
-      <button id="btnEnglish" data-lang="en" class="active">English</button>
-      <button id="btnFarsi" data-lang="fa">فارسی</button>
-    </div>
+<!-- TOOLS GRID -->
+<section class="tools-grid">
 
-    <div class="tool-grid">
-      <a class="tool-card" href="tools/qr-generator.html">
-        <h3 data-i18n="tools.qr.title">QR Code Generator</h3>
-        <p data-i18n="tools.qr.desc">Create custom QR codes instantly for links, text, or contact info.</p>
-      </a>
+  <a class="tool-card" href="password-generator.html">
+    <h3>Password Generator</h3>
+    <p>Create secure, custom passwords instantly.</p>
+  </a>
 
-      <a class="tool-card" href="tools/url-shortener.html">
-        <h3 data-i18n="tools.shortener.title">URL Shortener</h3>
-        <p data-i18n="tools.shortener.desc">Turn long links into short, trackable URLs. Perfect for campaigns and social media.</p>
-      </a>
+  <a class="tool-card" href="file-converter.html">
+    <h3>File Converter</h3>
+    <p>Convert JPG, PNG, PDF files instantly — fast and simple.</p>
+  </a>
 
-      <a class="tool-card" href="tools/file-converter.html">
-        <h3 data-i18n="tools.converter.title">File Converter</h3>
-        <p data-i18n="tools.converter.desc">Convert files easily — PDF ↔ Word, PNG ↔ JPG, and more.</p>
-      </a>
+  <a class="tool-card" href="csv-cleaner.html">
+    <h3>CSV Cleaner</h3>
+    <p>Clean CSV files — remove empty rows, spaces, and errors.</p>
+  </a>
 
-      <a class="tool-card" href="tools/csv-cleaner.html">
-        <h3 data-i18n="tools.csv.title">CSV & Excel Cleaner</h3>
-        <p data-i18n="tools.csv.desc">Upload and clean spreadsheets — remove duplicates, spaces, and empty rows.</p>
-      </a>
+  <a class="tool-card" href="qr-generator.html">
+    <h3>QR Generator</h3>
+    <p>Create clean, downloadable QR codes for any link or text.</p>
+  </a>
 
-      <a class="tool-card" href="tools/password-generator.html">
-        <h3 data-i18n="tools.password.title">Password Generator</h3>
-        <p data-i18n="tools.password.desc">Generate strong, secure passwords instantly — customizable and safe.</p>
-      </a>
+  <a class="tool-card" href="url-shortener.html">
+    <h3>URL Shortener</h3>
+    <p>Shorten long links instantly — clean and trackable.</p>
+  </a>
 
-      <a class="tool-card" href="tools/audio-transcriber.html">
-        <h3 data-i18n="tools.audio.title">Audio Transcriber</h3>
-        <p data-i18n="tools.audio.desc">Upload an audio file (.mp3 or .wav) and get instant transcription.</p>
-      </a>
+  <a class="tool-card" href="zip-unzip.html">
+    <h3>ZIP / UnZIP</h3>
+    <p>Compress or extract ZIP files inside your browser.</p>
+  </a>
 
-      <a class="tool-card" href="tools/zip-unzip.html">
-        <h3 data-i18n="tools.zip.title">ZIP & Unzip Files</h3>
-        <p data-i18n="tools.zip.desc">Compress or extract ZIP files instantly — simple, secure, and fast.</p>
-      </a>
-    </div>
-  </main>
+</section>
 
-  <!-- 📣 Share Section -->
-  <section class="container" style="margin-top:3rem; text-align:center;">
-    <h2 class="section-title" data-i18n="tools.share.title">Share These Tools</h2>
-    <p data-i18n="tools.share.desc">Help more creators and entrepreneurs discover these free tools.</p>
-    <div class="share-buttons">
-      <a href="https://t.me/share/url?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on Telegram</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bitadigitalhub.com/tools" target="_blank" class="btn-secondary">Share on LinkedIn</a>
-      <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank" class="btn-secondary">Share on X</a>
-    </div>
-  </section>
+<!-- SHARE SECTION -->
+<section class="share-section">
+  <h2>Share These Tools</h2>
+  <p>Help other creators discover free tools that support productivity and business growth.</p>
 
-  <!-- 💬 CTA -->
-  <section class="contact-section">
-    <h2 data-i18n="tools.cta.title">Need a Custom Tool or Integration?</h2>
-    <p data-i18n="tools.cta.desc">We build custom automation tools and dashboards for creators, agencies, and startups.</p>
-    <a href="contact.html" class="btn-primary" data-i18n="tools.cta.button">Request a Custom Build</a>
-  </section>
+  <div class="share-buttons">
+    <a href="https://t.me/share/url?url=https://bitadigitalhub.com/tools" target="_blank">Telegram</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bitadigitalhub.com/tools" target="_blank">LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank">Share on X</a>
+  </div>
+</section>
 
-  <!-- 🦶 Footer -->
-  <div id="footer"></div>
+<!-- CTA -->
+<section class="contact-cta">
+  <h2>Need a Custom Automation Tool?</h2>
+  <p>We build dashboards, bots, and automation workflows for creators, solopreneurs, and online businesses.</p>
+  <a href="../pages/contact.html">Request a Custom Build</a>
+</section>
 
-  <!-- 📜 Scripts -->
-  <script type="module" src="js/main.js"></script>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../components/footer-tools.html")
+  .then(r => r.text())
+  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
 </body>
 </html>
