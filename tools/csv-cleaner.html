@@ -49,6 +49,41 @@
       border-radius: 18px;
       box-shadow: 0 8px 25px rgba(15,23,42,0.06);
     }
+
+    /* New AdSense content section */
+    .content-section {
+      max-width: 800px;
+      margin: 3rem auto 4rem;
+      background: #ffffff;
+      padding: 2rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      line-height: 1.7;
+      color: #334155;
+      font-size: 1rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .content-section h3 {
+      margin-top: 1.6rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .content-section ul {
+      padding-left: 1.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .content-section li { margin-bottom: 0.5rem; }
+
   </style>
 </head>
 
@@ -102,6 +137,71 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
+    <!-- ==================================
+         NEW CONTENT FOR GOOGLE ADSENSE
+         ================================== -->
+    <div class="content-section">
+
+      <h2>About This CSV Cleaner Tool</h2>
+      <p>
+        CSV files are widely used in data analysis, business reporting, CRM
+        exports, e-commerce platforms, and automation workflows. But when CSV
+        files contain empty rows, unwanted whitespace, inconsistent formatting,
+        or accidental blank columns, they can break automations or cause errors
+        during import. This CSV Cleaner helps you fix these issues instantly —
+        right inside your browser.
+      </p>
+
+      <h3>What This Tool Can Fix</h3>
+      <ul>
+        <li>Removes empty rows automatically</li>
+        <li>Eliminates trailing and leading spaces</li>
+        <li>Fixes accidental blank lines in exported files</li>
+        <li>Prepares messy CSVs for Excel, Google Sheets, Power BI, or Python</li>
+      </ul>
+
+      <h3>Why Clean CSV Files?</h3>
+      <p>
+        Clean data is essential for dashboards, analytics, and systems like
+        Airtable, Zapier, Shopify, and Notion. Even a single blank row can
+        break an automation or cause a failed import. Cleaning your data ensures:
+      </p>
+      <ul>
+        <li>Better compatibility with software and tools</li>
+        <li>More accurate analysis and reporting</li>
+        <li>Fewer errors during upload or import</li>
+        <li>Smoother data processing in Python, R, or SQL</li>
+      </ul>
+
+      <h3>Is My CSV File Private?</h3>
+      <p>
+        Yes — your data never leaves your device. This CSV Cleaner processes
+        everything directly in your browser using JavaScript. No servers are
+        involved, and your data is never uploaded or stored anywhere.
+      </p>
+
+      <h3>Common Use Cases</h3>
+      <ul>
+        <li>Fixing exports from CRMs and email marketing platforms</li>
+        <li>Cleaning Shopify or WooCommerce product CSVs</li>
+        <li>Preparing files for Power BI, Tableau, or Excel</li>
+        <li>Removing blank rows from scraped datasets</li>
+        <li>Cleaning CSVs before uploading into apps like Zapier or Make</li>
+      </ul>
+
+      <h3>FAQ</h3>
+
+      <h4>Does this tool upload my CSV anywhere?</h4>
+      <p>No — everything happens locally on your computer.</p>
+
+      <h4>Can this tool fix delimiter issues?</h4>
+      <p>Advanced delimiter cleaning will be added soon.</p>
+
+      <h4>Can I clean huge CSV files?</h4>
+      <p>Most files up to 20–30 MB work fine depending on your browser.</p>
+
+    </div>
+
   </section>
 
   <!-- RIGHT AD -->
@@ -138,14 +238,12 @@ function cleanCSV() {
   reader.onload = function(e) {
     let content = e.target.result;
 
-    // Clean CSV:
     let cleaned = content
       .split("\n")
       .map(line => line.trim())
       .filter(line => line !== "")
       .join("\n");
 
-    // Create downloadable file:
     let blob = new Blob([cleaned], { type: "text/csv" });
     let url = URL.createObjectURL(blob);
 

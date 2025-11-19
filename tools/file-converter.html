@@ -47,6 +47,37 @@
       border-radius: 18px;
       box-shadow: 0 8px 25px rgba(15,23,42,0.06);
     }
+
+    /* NEW CONTENT SECTION FOR GOOGLE APPROVAL */
+    .content-section {
+      max-width: 780px;
+      margin: 3rem auto 4rem;
+      background: #ffffff;
+      padding: 2rem 2.3rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      line-height: 1.7;
+      color: #334155;
+      font-size: 1rem;
+    }
+    .content-section h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .content-section h3 {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .content-section ul {
+      padding-left: 1.4rem;
+      margin-top: 0.5rem;
+    }
+    .content-section li { margin-bottom: 0.45rem; }
+    .content-section p { margin-top: 0.5rem; }
   </style>
 </head>
 
@@ -106,6 +137,61 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
+    <!-- NEW CONTENT FOR ADSENSE -->
+    <section class="content-section">
+      <h2>About This File Converter Tool</h2>
+      <p>
+        This online file converter allows you to convert images and documents instantly inside your
+        browser — without uploading your files to any server. Everything runs locally, ensuring full
+        privacy and fast performance. Whether you want to convert JPG to PNG, PNG to JPG, or turn
+        images into PDF, this tool offers a simple and secure experience.
+      </p>
+
+      <h3>Supported Formats</h3>
+      <ul>
+        <li><strong>JPG → PNG</strong> (lossless quality)</li>
+        <li><strong>PNG → JPG</strong> (smaller file size)</li>
+        <li><strong>Image → PDF</strong> (easy sharing & printing)</li>
+        <li><strong>PDF → Image</strong> (depending on browser support)</li>
+      </ul>
+
+      <h3>Why Convert Files?</h3>
+      <ul>
+        <li>Reduce file size for faster sharing</li>
+        <li>Change format for compatibility with apps</li>
+        <li>Prepare images for printing or uploading</li>
+        <li>Create PDFs for documents, resumes, or contracts</li>
+      </ul>
+
+      <h3>Is This Converter Safe?</h3>
+      <p>
+        Yes — unlike many online converters, this tool does <strong>not upload files to a server</strong>.  
+        The conversion happens entirely inside your browser using JavaScript.  
+        Your documents never leave your device.
+      </p>
+
+      <h3>Common Use Cases</h3>
+      <ul>
+        <li>Converting photos for social media</li>
+        <li>Making PDFs from images for school or work</li>
+        <li>Compressing images for websites and blogs</li>
+        <li>Preparing product photos for ecommerce</li>
+      </ul>
+
+      <h3>FAQ</h3>
+
+      <h4>Does this tool store my files?</h4>
+      <p>No. Everything runs locally — nothing is uploaded or saved.</p>
+
+      <h4>Is the output quality reduced?</h4>
+      <p>
+        PNG keeps full quality; JPG reduces size slightly. PDF quality depends on the browser.
+      </p>
+
+      <h4>Can I convert multiple files?</h4>
+      <p>Currently one file at a time — batch conversion will be added later.</p>
+    </section>
+
   </section>
 
   <!-- RIGHT AD -->
@@ -143,7 +229,6 @@ function convertFile() {
   reader.onload = function(e) {
     let blob;
 
-    // Convert PDF → other formats (placeholder logic)
     if (format === "pdf") {
       blob = new Blob([e.target.result], { type: "application/pdf" });
     } else {

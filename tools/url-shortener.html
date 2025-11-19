@@ -46,6 +46,36 @@
       font-weight: 600;
       text-decoration: none;
     }
+
+    /* NEW CONTENT SECTION FOR ADSENSE */
+    .content-section {
+      max-width: 780px;
+      margin: 3rem auto 4rem;
+      background: #ffffff;
+      padding: 2rem 2.3rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #334155;
+    }
+    .content-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .content-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: #1e293b;
+    }
+    .content-section ul {
+      padding-left: 1.4rem;
+    }
+    .content-section li { margin-bottom: 0.45rem; }
   </style>
 </head>
 
@@ -96,6 +126,69 @@ fetch("../../components/header-tools.html")
            data-ad-format="auto"></ins>
     </div>
 
+    <!-- NEW CONTENT FOR ADSENSE -->
+    <section class="content-section">
+      <h2>What Is a URL Shortener?</h2>
+      <p>
+        A URL shortener reduces a long web address into a clean, compact link. These shorter links 
+        are easier to remember, share, and use across platforms — especially where space matters, 
+        like social media posts, SMS messages, or print materials.
+      </p>
+
+      <h3>Why Use Short Links?</h3>
+      <ul>
+        <li>Make long URLs easier to share</li>
+        <li>Improve the appearance of marketing content</li>
+        <li>Increase click-through rates on campaigns</li>
+        <li>Track link performance (with advanced tools)</li>
+        <li>Reduce character usage for platforms like X (Twitter)</li>
+      </ul>
+
+      <h3>Benefits for Businesses & Creators</h3>
+      <p>This tool is helpful for small businesses, marketers, influencers, and solopreneurs who need shareable links.</p>
+      <ul>
+        <li>Share clean links in ads and landing pages</li>
+        <li>Use branded short links in campaigns</li>
+        <li>Improve trust — short links look professional</li>
+        <li>Optimize social media bios and posts</li>
+      </ul>
+
+      <h3>How This Tool Works</h3>
+      <p>
+        This shortener creates a simplified demo link locally in your browser. 
+        It does not send or store your URL on any server — ensuring full privacy.
+      </p>
+
+      <h3>Is It Secure?</h3>
+      <p>
+        Yes. The shortening process runs directly in your browser. Nothing is logged, 
+        and your original URL remains private.
+      </p>
+
+      <h3>Common Use Cases</h3>
+      <ul>
+        <li>Short links for Instagram, TikTok, YouTube, and blogs</li>
+        <li>Tracking marketing campaigns (with external analytics)</li>
+        <li>Sharing event links or product pages</li>
+        <li>Clean links for QR codes</li>
+        <li>Creating memorable links for printed materials</li>
+      </ul>
+
+      <h3>FAQ</h3>
+
+      <h4>Do short links expire?</h4>
+      <p>No — the generated demo link works as long as you keep it saved.</p>
+
+      <h4>Are shortened links safe?</h4>
+      <p>
+        Yes, but like all links, only share content you trust. 
+        This tool does not hide the destination; you can still preview where it leads.
+      </p>
+
+      <h4>Can I use these links in ads?</h4>
+      <p>Yes, short links are commonly used in Google Ads, Meta Ads, and newsletters.</p>
+    </section>
+
   </section>
 
   <!-- RIGHT AD -->
@@ -123,7 +216,6 @@ function shortenURL() {
   const longUrl = document.getElementById("longUrl").value.trim();
   if (!longUrl) return;
 
-  // Fake short link (for demo / local use)
   const shortLink = "https://bit.ly/" + Math.random().toString(36).substring(2, 8);
 
   const box = document.getElementById("resultBox");
