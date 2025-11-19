@@ -1,7 +1,7 @@
 <header class="tools-navbar">
   <div class="nav-inner">
 
-    <!-- Logo -->
+    <!-- Logo + Branding -->
     <a href="/" class="brand-link">
       <img src="/assets/taskhub-logo.svg" alt="Bita Digital Hub Logo" class="brand-logo" />
       <div class="brand-info">
@@ -10,14 +10,16 @@
       </div>
     </a>
 
-    <!-- Back Button -->
+    <!-- Right-side Button -->
     <nav class="nav-links" id="tools-nav-links">
       <a href="/" class="btn-primary small-btn">Back to Home</a>
     </nav>
 
-    <!-- Mobile Toggle -->
+    <!-- Mobile Menu Toggle -->
     <button class="menu-toggle" id="tools-menu-toggle">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
   </div>
@@ -36,28 +38,27 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <style>
-/* ==================================
-   TOOLS HEADER – Clean + Minimal
-================================== */
+/* =========================================
+   TOOLS HEADER – Clean, Minimal, Fixed
+========================================= */
 
 .tools-navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
   height: 72px;
+  background: #ffffff;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .nav-inner {
   max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
   width: 100%;
-
+  margin: 0 auto;
+  padding: 0 1.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   color: #64748b;
 }
 
-/* Buttons */
+/* Button */
 .small-btn {
   background: #1e3a8a;
   color: #fff !important;
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   text-decoration: none !important;
 }
 
-/* Desktop */
+/* Desktop Navigation */
 .nav-links {
   display: flex;
   align-items: center;
@@ -106,18 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Mobile Toggle */
 .menu-toggle {
   display: none;
-  border: none;
   background: transparent;
+  border: none;
   cursor: pointer;
   flex-direction: column;
   gap: 4px;
+  padding: 4px;
 }
 
 .menu-toggle span {
   width: 24px;
   height: 2px;
   background: #0f172a;
-  transition: .3s;
+  transition: 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -130,7 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* Mobile */
+/* ========================
+      MOBILE RESPONSIVE
+======================== */
 @media (max-width: 900px) {
 
   .brand-info .tagline {
@@ -143,14 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   .nav-links {
     position: absolute;
-    right: 0;
     top: 72px;
-    background: #ffffff;
+    right: 0;
+    width: 180px;
     padding: 1rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     display: none;
     flex-direction: column;
-    width: 180px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    gap: 0.75rem;
   }
 
   .nav-links.show {
