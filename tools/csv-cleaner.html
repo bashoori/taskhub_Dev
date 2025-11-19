@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSV Cleaner | Bita Digital Hub</title>
 
+  <title>CSV Cleaner | Bita Digital Hub</title>
   <meta name="description"
         content="Clean and fix CSV files instantly — remove empty rows, whitespace, and formatting issues. Free online CSV cleanup tool." />
 
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/tools.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+
+  <style>
+    /* Fix spacing under fixed header */
+    .tools-page { padding-top: 5rem; }
+
+    .tool-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 1000px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .ad-side { display: none !important; }
+    }
+
+    .ad-side {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .ad-side ins.adsbygoogle {
+      width: 160px;
+      height: 600px;
+    }
+
+    /* Tool box styling */
+    .tool-wrapper {
+      background: #ffffff;
+      padding: 2.2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(15,23,42,0.06);
+    }
+  </style>
 </head>
 
 <body class="tools-page">
@@ -23,26 +62,28 @@ fetch("../../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
+<!-- MAIN GRID -->
 <main class="tool-layout">
 
   <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="1111111111"
          data-ad-format="vertical"></ins>
   </aside>
 
-  <!-- TOOL WRAPPER -->
+  <!-- TOOL CONTENT -->
   <section class="tool-wrapper">
 
     <h2 class="tool-title">CSV Cleaner</h2>
     <p class="tool-description">
-      Fix broken CSV files automatically — remove empty lines, trim spaces,
-      and clean formatting issues instantly.
+      Fix messy CSV files instantly — remove empty rows, trim spaces,
+      and clean formatting issues with one click.
     </p>
 
-    <label class="tool-label">Upload CSV file:</label>
+    <label class="tool-label" for="csvFile">Upload CSV file:</label>
     <input id="csvFile" type="file" accept=".csv" class="tool-input" />
 
     <button class="tool-btn" onclick="cleanCSV()">Clean CSV</button>
@@ -52,18 +93,21 @@ fetch("../../components/header-tools.html")
       <a id="downloadLink" class="tool-btn" download="cleaned.csv">Download Cleaned File</a>
     </div>
 
+    <!-- In-content AD -->
     <div class="ad-in-content">
-      <ins class="adsbygoogle" style="display:block"
-          data-ad-client="ca-pub-3215014361489762"
-          data-ad-slot="2222222222"
-          data-ad-format="auto"></ins>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3215014361489762"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"></ins>
     </div>
 
   </section>
 
   <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle" style="display:block"
+    <ins class="adsbygoogle"
+         style="display:block"
          data-ad-client="ca-pub-3215014361489762"
          data-ad-slot="3333333333"
          data-ad-format="vertical"></ins>
@@ -79,20 +123,29 @@ fetch("../../components/footer-tools.html")
 .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
+<!-- CSV CLEANER SCRIPT -->
 <script>
 function cleanCSV() {
   const fileInput = document.getElementById("csvFile");
-  if (!fileInput.files.length) return;
+
+  if (!fileInput.files.length) {
+    alert("Please upload a CSV file first.");
+    return;
+  }
 
   const reader = new FileReader();
-  reader.onload = function(e) {
-    let lines = e.target.result.split("\n");
 
-    let cleaned = lines
-      .map(x => x.trim())
-      .filter(x => x !== "")
+  reader.onload = function(e) {
+    let content = e.target.result;
+
+    // Clean CSV:
+    let cleaned = content
+      .split("\n")
+      .map(line => line.trim())
+      .filter(line => line !== "")
       .join("\n");
 
+    // Create downloadable file:
     let blob = new Blob([cleaned], { type: "text/csv" });
     let url = URL.createObjectURL(blob);
 
@@ -104,7 +157,10 @@ function cleanCSV() {
 }
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-crossorigin="anonymous"></script>
+<!-- Google Adsense -->
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
+  crossorigin="anonymous"></script>
+
 </body>
 </html>
