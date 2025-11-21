@@ -1,51 +1,168 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تست شخصیت کسب‌وکار آنلاین</title>
+
+  <title>تست شخصیت کسب‌وکار آنلاین | Bita Digital Hub</title>
+  <meta name="description"
+        content="تست شخصیت کسب‌وکار آنلاین — کشف کنید کدام مدل درآمد آنلاین برای شما مناسب‌تر است: تولید محتوا، افیلیت مارکتینگ، مدرس/کوچ، یا محصول دیجیتال." />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* فاصله زیر هدر ثابت */
+    .tools-page { padding-top: 5rem; }
+
+    /* شبیه‌سازی Box ابزار برای تست */
+    .test-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.4rem;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .test-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      text-align: center;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .test-subtitle {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* سوال */
+    .question-box {
+      background: #f8fafc;
+      padding: 1.4rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .question-text {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+
+    .options button {
+      width: 100%;
+      text-align: right;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      background: #e2e8f0;
+      border: none;
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background: #cbd5e1;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      border-radius: 8px;
+      transition: width 0.4s ease;
+    }
+
+    .result-box {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .result-box h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.9rem 1.6rem;
+      background: linear-gradient(90deg,#06b6d4,#3b82f6);
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  </style>
 </head>
 
-<body>
+<body class="tools-page">
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
+
+<main>
   <div class="test-container">
 
-    <!-- عنوان -->
-    <header class="test-header">
-      <h1>تست شخصیت کسب‌وکار آنلاین</h1>
-      <p>
-        با پاسخ دادن به ۳۰ سؤال کوتاه، ببینید کدام مدل کسب‌وکار آنلاین برای شما
-        مناسب‌تر است: <strong>محتواساز، افیلیت مارکتر، مربی/مشاور یا سازنده محصول دیجیتال</strong>.
-      </p>
-    </header>
+    <h1 class="test-title">تست شخصیت کسب‌وکار آنلاین</h1>
+    <p class="test-subtitle">
+      با پاسخ دادن به ۳۰ سؤال کوتاه، کشف کنید مناسب‌ترین مسیر درآمد آنلاین برای شما چیست و چه نوع کسب‌وکاری با شخصیت شما هماهنگ‌تر است.
+    </p>
 
     <!-- Progress Bar -->
-    <div class="progress-wrapper">
-      <span id="progress-text">سؤال 1 از 30</span>
-      <div class="progress-bar">
-        <div id="progress-fill"></div>
-      </div>
-    </div>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
 
     <!-- Question Box -->
-    <div id="question-box">
-      <!-- JS will insert questions here -->
+    <div id="questionBox" class="question-box">
+      <p id="questionText" class="question-text"></p>
+      <div id="options" class="options"></div>
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="navigation">
-      <button id="prev-btn" class="btn gray" disabled>سؤال قبلی</button>
-      <button id="next-btn" class="btn primary">سؤال بعدی</button>
+    <!-- Result -->
+    <div id="resultBox" class="result-box" style="display:none;">
+      <h2 id="resultTitle"></h2>
+      <p id="resultDescription"></p>
+      <a href="/dfy" class="cta-btn">می‌خوای براساس شخصیتت یه سیستم درآمد آماده بسازم؟</a>
     </div>
-
-    <!-- Footer note -->
-    <footer class="test-footer">
-      <p>این تست صرفاً برای خودشناسی و انتخاب مسیر مناسب در کسب‌وکار آنلاین است.</p>
-    </footer>
 
   </div>
+</main>
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+<!-- Test Script -->
+<script src="script.js"></script>
+
 </body>
 </html>
