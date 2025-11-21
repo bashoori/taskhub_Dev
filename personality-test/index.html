@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>تست شخصیت کسب‌وکار آنلاین | معرفی تست</title>
+  <meta name="description"
+        content="این تست به شما کمک می‌کند مناسب‌ترین مدل درآمدزایی اینترنتی را بر اساس شخصیت شما کشف کند.">
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("../../components/header-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
+
+<section class="test-explain">
+  <h1>قبل از شروع تست…</h1>
+  <p>
+    این تست به شما نشان می‌دهد کدام مدل از کسب‌وکارهای آنلاین با شخصیت، توانایی‌ها
+    و سبک کار شما بیشترین هماهنگی را دارد — و کدام مسیر شانس بیشتری دارد
+    که شما را سریع‌تر به درآمد برساند.
+  </p>
+
+  <h2>در این تست چه چیزهایی سنجیده می‌شود؟</h2>
+  <ul>
+    <li>تیپ عملکرد شما (تحلیل‌گر، سازنده، کریتور، اجراکننده)</li>
+    <li>نحوه تصمیم‌گیری و واکنش شما در کارهای آنلاین</li>
+    <li>سطح ریسک‌پذیری و علاقه به ساختن یا اجرا کردن</li>
+    <li>توانایی تمرکز، خلاقیت یا سیستم‌سازی</li>
+  </ul>
+
+  <h2>بعد از تست چه چیزی دریافت می‌کنید؟</h2>
+  <ul>
+    <li>مدل کسب‌وکار مناسب شما</li>
+    <li>تحلیل شخصیتی مخصوص شخصیت شما</li>
+    <li>نقاط قوت و مسیر سریع برای شروع</li>
+    <li>پیشنهاد ابزارها و مسیر یادگیری</li>
+  </ul>
+
+  <div class="center">
+    <a href="questions.html" class="start-btn">شروع تست</a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("../../components/footer-tools.html")
+.then(res => res.text())
+.then(html => document.getElementById("footer-placeholder").innerHTML = html);
+</script>
+
+</body>
+</html>
