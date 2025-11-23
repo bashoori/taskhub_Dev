@@ -237,3 +237,9 @@
   margin-top: 2rem;
   font-size: 0.88rem;
 }
+
+/* move titles to center  */
+.section-title {
+  text-align: center !important;
+}
+
