@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | Bita Digital Hub</title>
 
-<!-- Global Styles -->
 <link rel="stylesheet" href="../css/style.css" />
 <link rel="stylesheet" href="../css/components.css" />
 <link rel="stylesheet" href="../css/tools.css" />
@@ -26,12 +25,18 @@ h1, h2 { color:#0f172a; }
 <body class="tools-page">
 
 <!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-fetch("../components/header-tools.html")
-  .then(res => res.text())
-  .then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
+<header class="main-header">
+  <div class="nav-inner">
+    <a href="/" class="brand-link">
+      <img src="/assets/logo.svg" class="brand-logo" alt="Logo">
+      <div>
+        <div class="brand-name">Bita Digital Hub</div>
+        <div class="brand-tagline">Learn. Build. Automate. Succeed.</div>
+      </div>
+    </a>
+    <a href="/" class="btn btn-back-home">Back to Home</a>
+  </div>
+</header>
 
 
 <h1>Privacy Policy</h1>
@@ -67,41 +72,36 @@ Input data is handled locally in your browser whenever possible.
 <h2>4. Third-Party Services</h2>
 <p>We may use:</p>
 <ul>
-  <li><strong>Google Analytics</strong> — for anonymous traffic insights</li>
-  <li><strong>Google AdSense</strong> — to show ads and measure ad performance</li>
-  <li><strong>Cloudflare</strong> — for security, performance, and DDoS protection</li>
+  <li>Google Analytics</li>
+  <li>Google AdSense</li>
+  <li>Cloudflare</li>
 </ul>
-
-<p>These services may collect cookies or usage data according to their own policies.</p>
 
 <h2>5. Cookies</h2>
 <p>
-We use cookies to improve your experience. You can disable cookies in your browser settings, although some features may not work properly.
+We use cookies to improve your experience. You can disable cookies in your browser settings.
 </p>
 
 <h2>6. GDPR & CCPA Rights</h2>
-<p>Depending on your location, you may have the right to:</p>
+<p>You may have the right to:</p>
 <ul>
   <li>Access your personal data</li>
-  <li>Request deletion of data</li>
-  <li>Opt out of cookie-based tracking</li>
-  <li>Request correction of inaccurate data</li>
+  <li>Request deletion</li>
+  <li>Opt out of tracking</li>
+  <li>Request correction</li>
 </ul>
 
 <h2>7. Links to Third-Party Sites</h2>
-<p>
-Our site may contain external links. We are not responsible for the privacy practices or content of third-party websites.
-</p>
+<p>We are not responsible for external sites linked from this website.</p>
 
-<h2>8. Updates to This Policy</h2>
+<h2>8. Updates</h2>
 <p>
-We may update this Privacy Policy occasionally. The revised date will always appear at the top of this page.
+We may update this Policy occasionally.
 </p>
 
 <h2>9. Contact Us</h2>
 <p>
-If you have any questions, email us at:  
-<strong>info@bitadigitalhub.com</strong>
+Email: <strong>info@bitadigitalhub.com</strong>
 </p>
 
 <!-- FOOTER -->
