@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | Bita Digital Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Bita Digital Hub</title>
 
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/components.css" />
-<link rel="stylesheet" href="../css/tools.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/tools.css" />
 
-<style>
-body { 
-  font-family: Arial, sans-serif; 
-  padding: 2rem; 
-  max-width: 900px; 
-  margin: auto; 
-  line-height: 1.7; 
-  color:#333; 
-}
-h1, h2 { color:#0f172a; }
-</style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+      color: #333;
+    }
+    h1, h2 { color: #0f172a; }
+  </style>
 </head>
 
 <body class="tools-page">
 
 <!-- HEADER -->
-<header class="main-header">
-  <div class="nav-inner">
-    <a href="/" class="brand-link">
-      <img src="/assets/logo.svg" class="brand-logo" alt="Logo">
-      <div>
-        <div class="brand-name">Bita Digital Hub</div>
-        <div class="brand-tagline">Learn. Build. Automate. Succeed.</div>
-      </div>
-    </a>
-    <a href="/" class="btn btn-back-home">Back to Home</a>
-  </div>
-</header>
+<div id="header-placeholder"></div>
+<script>
+fetch("./components/header-tools.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
 
 <h1>Privacy Policy</h1>
@@ -107,7 +101,7 @@ Email: <strong>info@bitadigitalhub.com</strong>
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../components/footer-tools.html")
+fetch("./components/footer-tools.html")
   .then(res => res.text())
   .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
