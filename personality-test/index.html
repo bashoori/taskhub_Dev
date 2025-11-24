@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,12 +8,76 @@
   <meta name="description"
         content="این تست به شما کمک می‌کند مناسب‌ترین مدل درآمدزایی اینترنتی را بر اساس شخصیت شما کشف کند.">
 
+  <!-- Global Styles -->
   <link rel="stylesheet" href="../../css/style.css" />
   <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+
+  <style>
+    /* فاصله محافظ زیر هدر ثابت */
+    .tools-page {
+      padding-top: 5rem;
+      background: #f8fafc;
+    }
+
+    /* باکس اصلی تست */
+    .test-wrapper {
+      max-width: 850px;
+      margin: 2rem auto 3rem;
+      padding: 2.4rem;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      line-height: 1.85;
+      color: #334155;
+    }
+
+    .test-wrapper h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .test-wrapper h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+    }
+
+    .test-wrapper ul {
+      padding-right: 1.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .start-btn {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+    .start-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+
 </head>
 
-<body>
+<body class="tools-page">
 
 <!-- HEADER -->
 <div id="header-placeholder"></div>
@@ -23,8 +87,11 @@ fetch("../../components/header-tools.html")
 .then(html => document.getElementById("header-placeholder").innerHTML = html);
 </script>
 
-<section class="test-explain">
+<!-- MAIN BOX -->
+<div class="test-wrapper">
+
   <h1>قبل از شروع تست…</h1>
+
   <p>
     این تست به شما نشان می‌دهد کدام مدل از کسب‌وکارهای آنلاین با شخصیت، توانایی‌ها
     و سبک کار شما بیشترین هماهنگی را دارد — و کدام مسیر شانس بیشتری دارد
@@ -51,7 +118,7 @@ fetch("../../components/header-tools.html")
     <a href="questions.html" class="start-btn">شروع تست</a>
   </div>
 
-</section>
+</div>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
