@@ -1,0 +1,230 @@
+/* =========================================
+   PAGE WRAPPER + GENERAL TYPOGRAPHY
+========================================= */
+.service-page section {
+  padding: 4rem 0;
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+.service-page .container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.service-page h1,
+.service-page h2,
+.service-page h3,
+.service-page h4 {
+  font-weight: 700;
+  color: #0b1f3a;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.service-hero {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.service-hero-img {
+  width: 100%;
+  max-width: 680px;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.service-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.service-hero .subtitle {
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+  color: #444;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #1a73e8;
+  color: white;
+  padding: 0.85rem 1.8rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+
+.btn-primary:hover {
+  background: #1259b3;
+}
+
+
+/* =========================================
+   OVERVIEW
+========================================= */
+.service-overview h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-overview p {
+  color: #444;
+  max-width: 780px;
+}
+
+
+/* =========================================
+   FEATURES GRID
+========================================= */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-item p {
+  color: #555;
+}
+
+
+/* =========================================
+   WHY IT MATTERS
+========================================= */
+.why-it-matters p {
+  color: #444;
+  max-width: 820px;
+}
+
+
+/* =========================================
+   PRICING SECTION
+========================================= */
+.pricing-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.pricing-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid #e5e8ec;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pricing-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.pricing-box .price {
+  font-size: 1.6rem;
+  color: #1a73e8;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.pricing-box .price span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.pricing-box ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-box ul li {
+  margin-bottom: 0.55rem;
+  color: #444;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 2px solid #1a73e8;
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
+  color: #1a73e8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.btn-outline:hover {
+  background: #1a73e8;
+  color: #fff;
+}
+
+
+/* =========================================
+   FAQ SECTION
+========================================= */
+.faq-item {
+  margin-bottom: 1.8rem;
+}
+
+.faq-item h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.faq-item p {
+  color: #555;
+}
+
+
+/* =========================================
+   CTA SECTION (BOTTOM)
+========================================= */
+.cta {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
