@@ -193,3 +193,15 @@
     <a href="/contact" class="btn-primary">Get Started Today</a>
   </div>
 </section>
+
+
+  <!-- Footer -->
+<div id="footer-placeholder"></div>
+
+  <script>
+    fetch("../components/footer-tools.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      });
+  </script>
