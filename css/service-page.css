@@ -273,3 +273,41 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+/* =========================================
+   DESKTOP FIXES
+========================================= */
+@media (min-width: 1024px) {
+
+  /* Reduce huge top padding */
+  .service-hero {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Make hero image smaller and less dominant */
+  .service-hero-img {
+    max-width: 620px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Make H1 more balanced on desktop */
+  .service-hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Subtitle narrower + better line height */
+  .service-hero .subtitle {
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: 0 auto 1.8rem;
+    line-height: 1.5;
+  }
+
+  /* Better spacing below button */
+  .btn-primary {
+    margin-bottom: 0.4rem;
+  }
+}
