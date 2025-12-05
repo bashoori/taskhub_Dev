@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph (Social Media Preview) -->
   <meta property="og:title" content="Bita Digital Hub | Build • Automate • Earn Online" />
   <meta property="og:description" content="Tools, automations, and data-driven resources to help you build and grow online." />
   <meta property="og:image" content="https://bitadigitalhub.com/assets/b-logo.jpg" />
@@ -36,7 +36,7 @@
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/js/script.js" defer></script>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: Organization Logo for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,7 +47,7 @@
   }
   </script>
 
-  <!-- Inline styles -->
+  <!-- Inline styles specific to this page -->
   <style>
     body {
       margin: 0;
@@ -158,53 +158,41 @@
     }
 
     @media (max-width: 640px) {
-      .form-row { flex-direction: column; }
+      .form-row {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <!-- HEADER -->
   <div id="header-placeholder"></div>
-  <script>
-  fetch("/components/header-tools.html")
-    .then(res => res.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
-  </script>
 
-  <!-- HERO (Upgraded AI-Startup Hero) -->
+  <!-- HERO -->
   <section id="home" class="section hero">
-    <h1 style="max-width: 820px; margin: 0 auto; font-size: 2.8rem; font-weight: 800; text-align: center;">
-      Build, Optimize, and Grow Your Online Business — Powered by AI
-    </h1>
-
-    <p style="max-width: 760px; margin: 1.2rem auto 0; font-size: 1.2rem; color: #475569; text-align: center; line-height: 1.7;">
-      Bita Digital Hub is an AI-first platform that helps creators and entrepreneurs launch smarter,
-      automate repetitive work, and scale their digital presence with intelligent tools and workflows.
+    <h1>Helping You Build, Automate &amp; Earn Online</h1>
+    <p>
+      Bita Digital Hub empowers creators and businesses to automate, scale, and grow using data, cloud, and AI-powered
+      systems.
     </p>
 
+    <div class="cta-buttons">
+      <a href="https://www.bitaashoori.com" target="_blank" class="btn primary">Start Your Online Business</a>
+      <a href="personality-test/intro.html" target="_blank" class="btn primary">آموزش و ساخت بیزنس آنلاین پایدار</a>
+    </div>
+
     <div class="cta-buttons" style="margin-top: 2rem; text-align: center;">
-      <a href="/tools/index-tools.html" class="btn primary">Explore Tools</a>
-      <a href="/pages/product/product.html" class="btn primary">See the Platform</a>
-    </div>
-
-    <div class="cta-buttons" style="margin-top: 1.8rem; text-align: center;">
-      <a href="#contact" class="btn outline">Book a Strategy Call</a>
-    </div>
-
-    <div style="margin-top: 3rem; text-align:center; color:#64748b; font-size:0.95rem;">
-      Trusted by creators, small businesses, and early-stage entrepreneurs.
+      <a href="#contact" class="btn outline">Book a Call</a>
     </div>
   </section>
 
-  <!-- BLOG -->
+  <!-- LATEST ARTICLES -->
   <section id="blog" class="section latest-articles">
     <h2 class="section-title">Latest Articles</h2>
     <p class="section-sub">Insights to help you start and grow your online business</p>
 
     <div class="articles-grid">
-
       <a href="/blog/start-online-business.html" class="article-card">
         <div class="card-image">
           <img src="/blog/image/start-online-business.jpg" alt="Online Business" />
@@ -234,7 +222,6 @@
           <p>Beginner-friendly strategies for building online presence and visibility.</p>
         </div>
       </a>
-
     </div>
 
     <div class="cta-buttons" style="margin-top: 2rem; text-align: center;">
@@ -242,13 +229,12 @@
     </div>
   </section>
 
-  <!-- TOOLS -->
+  <!-- FREE TOOLS -->
   <section id="tools" class="section tools-section">
     <h2 class="section-title">Online Tools</h2>
     <p class="section-sub">Online tools to help you work smarter</p>
 
     <div class="tools-grid">
-
       <a href="/tools/password-generator.html" class="tool-card">
         <div class="tool-icon"><i data-lucide="shield"></i></div>
         <h3>Password Generator</h3>
@@ -284,7 +270,6 @@
         <h3>URL Shortener</h3>
         <p>Track, shorten, and manage your links.</p>
       </a>
-
     </div>
 
     <div class="cta-buttons" style="margin-top: 2rem; text-align: center;">
@@ -292,58 +277,58 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section services-section">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">Complete solutions for your digital transformation</p>
+ <!-- SERVICES -->
+<section id="services" class="section services-section">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Complete solutions for your digital transformation</p>
 
-    <div class="services-grid">
+  <div class="services-grid">
 
-      <div class="service-card"> 
-        <img src="/services/images/online-biz.jpg" alt="Digital Marketing" />
-        <h3>Learn Digital Marketing & Earn Money Online</h3>
-        <p>
-          Master practical digital marketing skills and build real online income 
-          using proven strategies, content systems, and automation tools.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <img src="/services/images/data-analytics.jpg" alt="Data Analytics" />
-        <h3>Data &amp; Analytics</h3>
-        <p>Turn raw data into actionable insights.</p>
-      </div>
-
-      <div class="service-card">
-        <img src="/services/images/telegram-bot.jpg" alt="Telegram Bots" />
-        <h3>Telegram Bots</h3>
-        <p>Automate customer engagement and lead collection.</p>
-      </div>
-
-      <div class="service-card">
-        <img src="/services/images/website-design.jpg" alt="Website Design Service" />
-        <h3>Website Design & Development</h3>
-        <p>
-          Get a fast, modern, mobile-friendly website fully designed and built for you — 
-          optimized for branding, marketing, and conversions.
-        </p>
-      </div>
-
-      <a href="/services/google-business-profile-optimization.html" class="service-card">
-        <img src="/services/images/google-business.jpg" alt="Google Business Profile Optimization" />
-        <h3>Google Business Profile Optimization</h3>
-        <p>
-          Fully optimize your Google Business Profile, including photos, descriptions, 
-          categories, reviews, and local SEO, so your business gets discovered by more local customers.
-        </p>
-      </a>
-
+    <div class="service-card">
+      <img src="/services/images/online-biz.jpg" alt="Digital Marketing" />
+      <h3>Learn Digital Marketing & Earn Money Online</h3>
+      <p>
+        Master practical digital marketing skills and build real online income 
+        using proven strategies, content systems, and automation tools.
+      </p>
     </div>
 
-    <div class="cta-buttons" style="margin-top: 2rem; text-align: center;">
-      <a href="#contact" class="btn primary">Contact Me</a>
+    <div class="service-card">
+      <img src="/services/images/data-analytics.jpg" alt="Data Analytics" />
+      <h3>Data &amp; Analytics</h3>
+      <p>Turn raw data into actionable insights.</p>
     </div>
-  </section>
+
+    <div class="service-card">
+      <img src="/services/images/telegram-bot.jpg" alt="Telegram Bots" />
+      <h3>Telegram Bots</h3>
+      <p>Automate customer engagement and lead collection.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="/services/images/website-design.jpg" alt="Website Design Service" />
+      <h3>Website Design & Development</h3>
+      <p>
+        Get a fast, modern, mobile-friendly website fully designed and built for you —
+        optimized for branding, marketing, and conversions.
+      </p>
+    </div>
+
+    <a href="/services/google-business-profile-optimization.html" class="service-card">
+      <img src="/services/images/google-business.jpg" alt="Google Business Profile Optimization" />
+      <h3>Google Business Profile Optimization</h3>
+      <p>
+        Fully optimize your Google Business Profile, including photos, descriptions, categories,
+        reviews, and local SEO, so your business gets discovered by more local customers.
+      </p>
+    </a>
+
+  </div>
+
+  <div class="cta-buttons" style="margin-top: 2rem; text-align: center;">
+    <a href="#contact" class="btn primary">Contact Me</a>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
@@ -381,11 +366,5 @@
 
   <!-- FOOTER -->
   <div id="footer-placeholder"></div>
-  <script>
-  fetch("/components/footer-tools.html")
-    .then(res => res.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
-  </script>
-
 </body>
 </html>
