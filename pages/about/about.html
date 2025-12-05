@@ -5,13 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bita Digital Hub</title>
 
-  <!-- Adjust stylesheet path if needed -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="../../assets/css/style.css" />
+
   <meta
     name="description"
     content="Bita Digital Hub is an AI-first platform that helps entrepreneurs build and grow online businesses with smart, integrated tools."
   />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+    }
+
+    /* Fix header overlap */
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 6.5rem 1.5rem 4rem; /* Top padding increased */
+    }
+
+    .section {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      color: #475569;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem auto 2.4rem;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .feature-list li {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.9rem 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+
+    .signature {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #475569;
+    }
+
+    @media (max-width: 640px) {
+      .page-wrapper {
+        padding-top: 7rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -19,138 +100,108 @@
   <script>
     fetch("../../components/header-tools.html")
       .then(res => res.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+      .then(html => (document.getElementById("header-placeholder").innerHTML = html));
   </script>
 
-  <main class="page-wrapper about-wrapper">
+  <main class="page-wrapper">
 
-    <!-- HERO / INTRO -->
-    <section class="section about-hero">
-      <div class="container">
-        <h1>About Bita Digital Hub</h1>
-        <p class="tagline">
-          AI-first tools to build, manage, and grow your online business — all in one place.
-        </p>
-        <p class="intro-text">
-          Bita Digital Hub is an AI-powered platform designed for entrepreneurs, creators, and small
-          businesses who want to grow online without getting lost in tech, tools, and complexity.
-          We build practical tools that automate repetitive work, so you can focus on strategy,
-          customers, and real growth.
-        </p>
-      </div>
+    <!-- INTRO -->
+    <section class="section">
+      <h1>About Bita Digital Hub</h1>
+      <p class="tagline">AI-first tools to build, manage, and grow your online business — all in one place.</p>
+      <p class="intro-text">
+        Bita Digital Hub is an AI-powered platform designed for entrepreneurs, creators, and small
+        businesses who want to grow online without getting lost in tech, tools, and complexity.
+        We build practical tools that automate repetitive work, so you can focus on strategy,
+        customers, and real growth.
+      </p>
     </section>
 
     <!-- MISSION -->
-    <section class="section about-mission">
-      <div class="container">
-        <h2>Our Mission</h2>
-        <p>
-          Our mission is simple: make it possible for anyone, anywhere, to start and grow a real
-          online business — without needing a big team, a huge budget, or deep technical skills.
-        </p>
-        <p>
-          Every tool we build removes friction and replaces complexity with clarity and speed.
-        </p>
-      </div>
+    <section class="section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is simple: make it possible for anyone, anywhere, to start and grow a real
+        online business — without needing a big team, a huge budget, or deep technical skills.
+      </p>
+      <p>Every tool we build removes friction and replaces complexity with clarity and speed.</p>
     </section>
 
-    <!-- WHAT WE BUILD -->
-    <section class="section about-platform">
-      <div class="container">
-        <h2>What We’re Building</h2>
-        <p>
-          Bita Digital Hub is evolving into a unified AI-driven platform for online business
-          operations. Today, the platform includes a growing set of focused tools, such as:
-        </p>
+    <!-- PLATFORM -->
+    <section class="section">
+      <h2>What We’re Building</h2>
+      <p>
+        Bita Digital Hub is evolving into a unified AI-driven platform for online business
+        operations. Today, the platform includes a growing set of focused tools:
+      </p>
 
-        <ul class="feature-list">
-          <li><strong>File & content utilities</strong> for creators and online entrepreneurs.</li>
-          <li><strong>Website and SEO helpers</strong> that improve visibility and site quality.</li>
-          <li><strong>Business & decision tools</strong> that support smarter choices before launching offers.</li>
-        </ul>
+      <ul class="feature-list">
+        <li><strong>File & content utilities</strong> for creators and online entrepreneurs.</li>
+        <li><strong>Website and SEO helpers</strong> to improve visibility and quality.</li>
+        <li><strong>Business & decision tools</strong> that support smarter choices.</li>
+      </ul>
 
-        <p>
-          These tools act as the foundation for a more advanced system — an AI-assisted teammate for
-          your business.
-        </p>
-      </div>
+      <p>These tools form the foundation of a more advanced AI-assisted business system.</p>
     </section>
 
     <!-- WHY AI-FIRST -->
-    <section class="section about-ai">
-      <div class="container">
-        <h2>Why AI-First?</h2>
-        <p>
-          Online businesses run on repetitive tasks: content rewriting, landing page tweaks,
-          analytics checks, and decision-making based on scattered data.
-        </p>
-        <p>
-          Bita Digital Hub is being developed as an <strong>AI-first platform</strong>:
-        </p>
+    <section class="section">
+      <h2>Why AI-First?</h2>
+      <p>
+        Online businesses run on repetitive tasks: content rewriting, page tweaks, analytics checks,
+        and decision-making based on scattered data.
+      </p>
+      <p>Bita Digital Hub is being developed as an <strong>AI-first platform</strong>:</p>
 
-        <ul class="feature-list">
-          <li>Automating repetitive workflows instead of simply speeding them up.</li>
-          <li>Improving content quality and consistency across your online presence.</li>
-          <li>Turning scattered metrics into simple, actionable business signals.</li>
-        </ul>
+      <ul class="feature-list">
+        <li>Automating repetitive workflows instead of just accelerating them.</li>
+        <li>Improving content quality and consistency across your online presence.</li>
+        <li>Turning scattered metrics into simple, actionable business signals.</li>
+      </ul>
 
-        <p>
-          The goal is not to replace the entrepreneur — it’s to amplify them.
-        </p>
-      </div>
+      <p>The goal is not to replace the entrepreneur — it’s to amplify them.</p>
     </section>
 
-    <!-- WHO IT'S FOR -->
-    <section class="section about-audience">
-      <div class="container">
-        <h2>Who We Serve</h2>
-        <p>Bita Digital Hub is built for people who want to build something of their own online:</p>
+    <!-- AUDIENCE -->
+    <section class="section">
+      <h2>Who We Serve</h2>
+      <p>Bita Digital Hub is built for people who want to build something of their own online:</p>
 
-        <ul class="feature-list">
-          <li>Solo founders and creators launching new offers.</li>
-          <li>Small businesses transitioning into digital.</li>
-          <li>Freelancers and consultants needing fast, effective tools for themselves and clients.</li>
-        </ul>
+      <ul class="feature-list">
+        <li>Solo founders and creators launching new offers.</li>
+        <li>Small businesses transitioning into digital.</li>
+        <li>Freelancers and consultants needing effective tools for their workflow.</li>
+      </ul>
 
-        <p>
-          If you're juggling limited time, energy, and budget, this platform is crafted for you.
-        </p>
-      </div>
+      <p>If you're juggling limited time, energy, and budget, this platform is crafted for you.</p>
     </section>
 
     <!-- ROADMAP -->
-    <section class="section about-roadmap">
-      <div class="container">
-        <h2>Where We’re Going</h2>
-        <p>
-          The current tools are just the beginning. Our roadmap includes:
-        </p>
-        <ul class="feature-list">
-          <li><strong>AI-assisted content and funnel workflows</strong> for faster execution.</li>
-          <li><strong>Simple dashboards</strong> highlighting metrics that matter.</li>
-          <li><strong>Pro accounts and APIs</strong> for advanced users and integrations.</li>
-        </ul>
-        <p>
-          We're also moving towards cloud-native scalability to grow with our users.
-        </p>
-      </div>
+    <section class="section">
+      <h2>Where We’re Going</h2>
+      <p>The current tools are just the beginning. Our roadmap includes:</p>
+
+      <ul class="feature-list">
+        <li><strong>AI-assisted content and funnel workflows</strong> for faster execution.</li>
+        <li><strong>Simple dashboards</strong> to highlight the metrics that matter most.</li>
+        <li><strong>Pro accounts and APIs</strong> for advanced customization & integrations.</li>
+      </ul>
+
+      <p>We’re also moving toward a cloud-native architecture to scale with our users.</p>
     </section>
 
-    <!-- FOUNDER NOTE -->
-    <section class="section about-founder">
-      <div class="container">
-        <h2>A Note from the Founder</h2>
-        <p>
-          Bita Digital Hub was born from a simple observation: many people fail to launch or grow
-          online businesses not because of lack of talent, but because the tools are overwhelming.
-        </p>
-        <p>
-          With a background in data engineering, I started this platform to close that gap —
-          building tools that create clarity, automate complexity, and support real progress.
-        </p>
-
-        <p class="signature">– Bita, Founder of Bita Digital Hub</p>
-      </div>
+    <!-- FOUNDER -->
+    <section class="section">
+      <h2>A Note from the Founder</h2>
+      <p>
+        Bita Digital Hub was born from a simple observation: people struggle to start and grow online
+        businesses not because they lack talent, but because the tools are overwhelming.
+      </p>
+      <p>
+        With a background in data engineering, I created this platform to close that gap — building tools
+        that create clarity, automate complexity, and support real progress.
+      </p>
+      <p class="signature">– Bita, Founder of Bita Digital Hub</p>
     </section>
 
   </main>
@@ -160,7 +211,7 @@
   <script>
     fetch("../../components/footer.html")
       .then(res => res.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
   </script>
 
 </body>

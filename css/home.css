@@ -154,8 +154,12 @@
 /* اگر کارت ابزار img نداشته باشه،
    padding کمی بیشتر می‌شه تا بالای کارت خالی نباشه */
 .latest-card.tool-card .text {
-  padding-top: 1.1rem;
+  padding-top: 2rem;
 }
+.hero {
+  padding-top: 5rem; /* or 6.5rem if you want more space */
+}
+
 
 /* آیکون در بالا، شبیه تصویر کوچک */
 .tool-icon {
@@ -378,3 +382,4 @@
     grid-template-columns: 1fr;
   }
 }
+
