@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Design & Development | Bita Digital Hub</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
+  <link rel="stylesheet" href="/css/service-page.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+fetch("/components/header-tools.html")
+  .then(res => res.text())
+  .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<!-- HERO SECTION -->
+<section class="service-hero">
+  <div class="container">
+
+    <!-- HERO IMAGE -->
+    <img 
+      src="/services/images/website-design.jpg"
+      alt="Website Design and Development"
+      class="service-hero-img"
+    />
+
+    <h1>Website Design & Development</h1>
+
+    <p class="subtitle">
+      Get a fast, modern, mobile-friendly website fully designed and built for your business —
+      optimized for branding, marketing, and conversions.
+    </p>
+
+    <a href="/contact" class="btn-primary">Get Started</a>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="service-overview">
+  <div class="container">
+    <h2>What This Service Does</h2>
+
+    <p>
+      Your website is the foundation of your online presence. Whether you're a local business,
+      creator, consultant, or e-commerce brand, you need a site that loads fast, looks modern,
+      and converts visitors into customers.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="service-features">
+  <div class="container">
+    <h2>What You Get</h2>
+
+    <div class="feature-grid">
+
+      <div class="feature-item">
+        <h3>Modern Custom Design</h3>
+        <p>Clean, beautiful layouts built for your niche, branding, and business goals.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Fully Responsive</h3>
+        <p>Your website will look perfect on mobile, tablet, and desktop devices.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>High-Speed Performance</h3>
+        <p>Optimized loading times to improve SEO and user experience.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>SEO-Ready Structure</h3>
+        <p>Meta tags, headers, URLs, and content structure optimized for search engines.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>E-commerce Ready</h3>
+        <p>Optional online store setup with payments, products, shipping, and more.</p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Easy to Manage</h3>
+        <p>Edit your content anytime using Hostinger, WordPress, or your preferred platform.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section class="why-it-matters">
+  <div class="container">
+    <h2>Why This Matters</h2>
+    <p>
+      A professional website instantly builds trust. Customers judge your business in seconds —
+      a fast, modern site dramatically increases leads, bookings, and sales.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <h2>Pricing</h2>
+
+    <div class="pricing-wrapper">
+
+      <div class="pricing-box">
+        <h3>Starter Website</h3>
+        <p class="price">$299 CAD <span>one-time</span></p>
+        <ul>
+          <li>Up to 3 pages</li>
+          <li>Custom design</li>
+          <li>Mobile responsive</li>
+          <li>SEO-ready template</li>
+          <li>Fast turnaround</li>
+        </ul>
+        <a href="/contact" class="btn-primary">Start Now</a>
+      </div>
+
+      <div class="pricing-box">
+        <h3>Business Website</h3>
+        <p class="price">$499 CAD <span>one-time</span></p>
+        <ul>
+          <li>Up to 6 pages</li>
+          <li>Brand-aligned custom design</li>
+          <li>Contact forms + integrations</li>
+          <li>Speed optimization</li>
+          <li>Hosting setup included</li>
+        </ul>
+        <a href="/contact" class="btn-outline">Choose Plan</a>
+      </div>
+
+      <div class="pricing-box">
+        <h3>E-commerce Website</h3>
+        <p class="price">$799 CAD <span>one-time</span></p>
+        <ul>
+          <li>Full online shop setup</li>
+          <li>Payments + products configured</li>
+          <li>Mobile-optimized storefront</li>
+          <li>SEO + performance improvements</li>
+          <li>Training session included</li>
+        </ul>
+        <a href="/contact" class="btn-outline">Build My Store</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Build Your New Website?</h2>
+    <p>Your business deserves a website that looks great and converts visitors into customers.</p>
+    <a href="/contact" class="btn-primary">Get Started Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+fetch("/components/footer-tools.html")
+  .then(res => res.text())
+  .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
+
+</body>
+</html>
