@@ -154,7 +154,7 @@
 /* اگر کارت ابزار img نداشته باشه،
    padding کمی بیشتر می‌شه تا بالای کارت خالی نباشه */
 .latest-card.tool-card .text {
-  padding-top: 1.1rem;
+  padding-top: 2rem;
 }
 
 /* آیکون در بالا، شبیه تصویر کوچک */
