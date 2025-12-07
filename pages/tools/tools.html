@@ -8,13 +8,13 @@
   <meta name="description"
         content="Online Tools by Bita Digital Hub — QR generator, URL shortener, CSV cleaner, file converter, password generator, ZIP tools and more." />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/tools-directory.css" />
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/tools-directory.css" />
 
-  <link rel="icon" type="image/png" href="../assets/taskhub-logo.png" />
+  <link rel="icon" type="image/png" href="/assets/taskhub-logo.png" />
 
   <!-- Google Adsense -->
   <script async
@@ -27,13 +27,14 @@
       font-family: "Poppins", sans-serif;
       background: #f8fafc;
       color: #0f172a;
-      padding-top: 80px; /* same offset as blog */
+      padding-top: 120px; /* Matches global header height */
     }
 
     .tools-header {
       text-align: center;
       max-width: 800px;
       margin: 0 auto 3rem;
+      padding: 0 1rem;
     }
 
     .tools-header h1 {
@@ -89,6 +90,7 @@
       text-align: center;
       margin: 4rem auto 5rem;
       max-width: 700px;
+      padding: 0 1rem;
     }
 
     .share-buttons a {
@@ -143,12 +145,14 @@
 
 <body>
 
-<!-- GLOBAL HEADER (same as index + blog + services) -->
+<!-- GLOBAL HEADER -->
 <div id="header-placeholder"></div>
 <script>
 fetch("/components/header.html")
   .then(r => r.text())
-  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  .then(html => {
+    document.getElementById("header-placeholder").innerHTML = html;
+  });
 </script>
 
 <!-- PAGE HEADER -->
@@ -201,16 +205,17 @@ fetch("/components/header.html")
     <a href="https://t.me/share/url?url=https://bitadigitalhub.com/tools" target="_blank">Telegram</a>
     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bitadigitalhub.com/tools" target="_blank">LinkedIn</a>
     <a href="https://twitter.com/intent/tweet?url=https://bitadigitalhub.com/tools&text=Try%20these%20free%20digital%20tools!" target="_blank">Share on X</a>
-    <a href="https://www.instagram.com/" class="share-btn" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
   </div>
-
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 <section class="contact-cta">
   <h2>Need a Custom Automation Tool?</h2>
-  <p>We build dashboards, bots, and automation workflows for creators, solopreneurs, and online businesses.</p>
-  <a href="./contact.html">Request a Custom Build</a>
+  <p>
+    We build dashboards, bots, and automation workflows for creators, solopreneurs, and online businesses.
+  </p>
+  <a href="/pages/contact/contact.html">Request a Custom Build</a>
 </section>
 
 <!-- FOOTER -->
