@@ -12,6 +12,11 @@
         content="Explore the Bita Digital Hub AI-first platform — smart tools, automated workflows, and a unified system for building and growing your online business." />
 
   <style>
+    /* GLOBAL PAGE WRAPPER SPACING (fix for fixed header) */
+    main.wrapper {
+      padding-top: 7rem; /* ensures space below header */
+    }
+
     .wrapper {
       max-width: 1100px;
       margin: 0 auto;
@@ -23,13 +28,19 @@
     h1, h2, h3 {
       color: #0f172a;
       margin-bottom: .75rem;
+      text-align: center;
     }
 
-    .intro, .section-intro {
+    .intro,
+    .section-intro {
       max-width: 750px;
       margin: 0 auto 2rem;
       color: #334155;
       text-align: center;
+    }
+
+    .section-block {
+      margin-top: 3rem;
     }
 
     .card-block {
@@ -37,7 +48,7 @@
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 2rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
     }
 
     .center-img {
@@ -65,23 +76,23 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <div id="header-placeholder"></div>
 
   <script>
-    fetch("../components/header-tools.html")
+    fetch("../../components/header-tools.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("header-placeholder").innerHTML = html;
       });
   </script>
-  
-  
+
+  <!-- MAIN CONTENT -->
   <main class="wrapper">
 
     <!-- HERO -->
     <section>
-      <h1 class="text-center">AI-First Tools for Modern Online Businesses</h1>
+      <h1>AI-First Tools for Modern Online Businesses</h1>
 
       <p class="intro">
         A unified platform designed to help entrepreneurs, freelancers, and creators automate manual work,
@@ -99,7 +110,7 @@
 
     <!-- VALUE PROPOSITION -->
     <section class="section-block">
-      <h2 class="text-center">A Smarter Way to Build Your Online Business</h2>
+      <h2>A Smarter Way to Build Your Online Business</h2>
 
       <p class="section-intro">
         The digital world moves fast — but most tools slow you down.
@@ -132,7 +143,7 @@
 
     <!-- FEATURE BLOCKS -->
     <section class="section-block">
-      <h2 class="text-center">Powerful Tools — Unified Experience</h2>
+      <h2>Powerful Tools — Unified Experience</h2>
 
       <div class="card-block">
         <h3>AI-Enhanced File & Content Tools</h3>
@@ -140,7 +151,6 @@
           Convert, clean, rewrite, or analyze content quickly. Everything runs fast,
           inside your browser or cloud.
         </p>
-
         <div class="center-img">
           <img src="../../assets/images/product/illustration-file-tools.png" alt="File Tools" />
         </div>
@@ -151,7 +161,6 @@
         <p>
           Improve rankings, structure content, and automate fixes — perfect for freelancers and small businesses.
         </p>
-
         <div class="center-img">
           <img src="../../assets/images/product/illustration-seo.png" alt="SEO Tools" />
         </div>
@@ -162,7 +171,6 @@
         <p>
           Validate ideas, test assumptions, and plan operations using AI-guided support.
         </p>
-
         <div class="center-img">
           <img src="../../assets/images/product/illustration-decisions.png" alt="Decision Tools" />
         </div>
@@ -171,7 +179,7 @@
 
     <!-- AI WORKFLOW -->
     <section class="section-block">
-      <h2 class="text-center">How the AI Workflow Works</h2>
+      <h2>How the AI Workflow Works</h2>
 
       <p class="section-intro">
         Every tool is connected by a lightweight AI layer that adapts to your goals and workflow.
@@ -196,7 +204,6 @@
       <p class="section-intro">
         Join thousands of entrepreneurs saving hours every week with AI-powered tools.
       </p>
-
       <a href="../signup/signup.html" class="btn primary">Create Your Free Account</a>
     </div>
 
@@ -207,7 +214,7 @@
   <script>
     fetch("../../components/footer.html")
       .then(res => res.text())
-      .then(html => (document.getElementById('footer-placeholder').innerHTML = html));
+      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
   </script>
 
 </body>
