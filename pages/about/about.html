@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="about">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bita Digital Hub</title>
 
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
 
   <style>
+    body {
+      margin: 0;
+      background: #f8fafc;
+      padding-top: 120px; /* Matches Tools page header spacing */
+      font-family: "Poppins", sans-serif;
+      color: #0f172a;
+    }
+
     .about-wrapper {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
       max-width: 1100px;
       margin: 0 auto;
+      padding: 2rem 1.5rem;
       line-height: 1.7;
-      color: #333;
     }
 
     h1, h2, h3 {
-      color: #0f172a;
-      margin-bottom: 0.5rem;
       font-weight: 800;
+      margin-bottom: .75rem;
+      color: #0f172a;
     }
 
     .intro {
       color: #475569;
       margin-bottom: 2rem;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       max-width: 850px;
     }
 
@@ -35,13 +43,12 @@
       margin-top: 2.5rem;
     }
 
-    /* Same card style as Roadmap */
     .card-block {
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     ul { padding-left: 18px; }
@@ -50,21 +57,24 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- GLOBAL HEADER -->
 <div id="header-placeholder"></div>
 <script>
-fetch("../../components/header-tools.html")
-  .then(res => res.text())
-  .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+fetch("/components/header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("header-placeholder").innerHTML = html;
+  });
 </script>
 
-
+<!-- MAIN CONTENT -->
 <div class="about-wrapper">
 
   <h1>About Bita Digital Hub</h1>
+
   <p class="intro">
-    Bita Digital Hub is an AI-powered system designed for creators, entrepreneurs, and small businesses
-    who want to grow online without drowning in tech, tools, or complexity.
+    Bita Digital Hub is an AI-powered system designed for creators, entrepreneurs, and small
+    businesses who want to grow online without drowning in tech, tools, or complexity.
   </p>
 
   <!-- Mission -->
@@ -87,7 +97,7 @@ fetch("../../components/header-tools.html")
       <h2>What We’re Building</h2>
       <p>
         Bita Digital Hub is evolving into a unified AI-driven platform for online business operations.
-        Today, the platform includes tools for:
+        Today, the platform includes:
       </p>
       <ul>
         <li>AI rewriting & content utilities</li>
@@ -114,9 +124,9 @@ fetch("../../components/header-tools.html")
 
       <p>Bita Digital Hub is being developed as an AI-first platform:</p>
       <ul>
-        <li>Automating workflows, not just speeding them up</li>
+        <li>Automating workflows — not just speeding them up</li>
         <li>Ensuring consistent content quality</li>
-        <li>Turning scattered metrics into simple, actionable insights</li>
+        <li>Turning scattered metrics into simple insights</li>
       </ul>
 
       <p>The goal isn’t to replace the entrepreneur — it’s to amplify them.</p>
@@ -129,9 +139,9 @@ fetch("../../components/header-tools.html")
       <h2>Who We Serve</h2>
       <p>This platform is built for people who want to build something real online:</p>
       <ul>
-        <li>Solo founders and creators launching new offers</li>
+        <li>Solo founders & creators launching new offers</li>
         <li>Small businesses transitioning to digital</li>
-        <li>Freelancers and consultants needing stronger tools</li>
+        <li>Freelancers & consultants needing stronger tools</li>
       </ul>
       <p>
         If you're juggling limited time, energy, and budget — this platform is crafted for you.
@@ -139,14 +149,21 @@ fetch("../../components/header-tools.html")
     </div>
   </section>
 
-  <!-- Where We're Going -->
+  <!-- Future Vision -->
   <section class="section-block">
     <div class="card-block">
       <h2>Where We’re Going</h2>
       <p>
-        The current tools are only the beginning. Our long-term vision includes
-        AI-powered workflows, customizable automation systems, creator dashboards,
-        and data-driven business insights — all inside one unified platform.
+        The current tools are only the beginning. Our long-term vision includes:
+      </p>
+      <ul>
+        <li>AI-powered workflows</li>
+        <li>Customizable automation systems</li>
+        <li>Unified creator dashboards</li>
+        <li>Data-driven business intelligence</li>
+      </ul>
+      <p>
+        All inside one seamless platform.
       </p>
     </div>
   </section>
@@ -156,9 +173,11 @@ fetch("../../components/header-tools.html")
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../../components/footer-tools.html")
-  .then(res => res.text())
-  .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+fetch("/components/footer.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("footer-placeholder").innerHTML = html;
+  });
 </script>
 
 </body>
