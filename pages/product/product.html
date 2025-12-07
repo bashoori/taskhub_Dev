@@ -65,14 +65,18 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <div id="header-placeholder"></div>
-  <script>
-    fetch("../../components/header-tools.html")
-      .then(res => res.text())
-      .then(html => (document.getElementById('header-placeholder').innerHTML = html));
-  </script>
 
+  <script>
+    fetch("../components/header-tools.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+  </script>
+  
+  
   <main class="wrapper">
 
     <!-- HERO -->
