@@ -1,47 +1,184 @@
-/* =======================
-   BLOG.CSS
-======================= */
+/* ============================================================
+   BLOG.CSS — Palette 2 Applied
+   Indigo Branding + Gradient Accents + Modern Blog UI
+============================================================ */
 
+/* -------------------------------
+   BLOG HEADER
+-------------------------------- */
 .blog-header {
   text-align: center;
-  margin-top: 7rem;
-  margin-bottom: 2rem;
+  margin-top: calc(var(--nav-height) + 3rem);
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .blog-header {
+    margin-top: calc(var(--mobile-nav-height) + 3rem);
+  }
 }
 
 .blog-header h1 {
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.blog-header h1 .accent {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .blog-header p {
-  color: var(--text-mid);
+  color: var(--text-soft);
   max-width: 760px;
-  margin: auto;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.65;
 }
+
+
+/* ============================================================
+   BLOG GRID
+============================================================ */
 
 .blog-grid {
   max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  margin: 0 auto;
   padding: 2rem 1rem 4rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.2rem;
 }
 
+@media (max-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   BLOG CARD
+============================================================ */
+
 .blog-card {
-  background: #fff;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
 }
 
 .blog-card img {
   width: 100%;
   height: 190px;
   object-fit: cover;
+  background: #e5e7eb;
+}
+
+
+/* ============================================================
+   CARD CONTENT
+============================================================ */
+
+.blog-card .content {
+  padding: 1.3rem 1.2rem 1.6rem;
 }
 
 .blog-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.32rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.blog-card p {
+  font-size: 0.97rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.blog-card .meta {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+
+/* ============================================================
+   SINGLE BLOG ARTICLE PAGE (if used)
+============================================================ */
+
+.blog-article-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.blog-article-wrapper h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.25;
+}
+
+.blog-article-wrapper .meta {
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.blog-article-wrapper p {
+  font-size: 1.08rem;
+  color: var(--text-main);
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+
+.blog-article-wrapper img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 2rem 0;
+}
+
+
+/* ============================================================
+   MOBILE OPTIMIZATION
+============================================================ */
+
+@media (max-width: 480px) {
+  .blog-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .blog-card img {
+    height: 160px;
+  }
+
+  .blog-card h3 {
+    font-size: 1.22rem;
+  }
 }

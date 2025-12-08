@@ -1,292 +1,95 @@
-/* -----------------------------------
-   BITA DIGITAL HUB — DESIGN SYSTEM
-   Unified Tokens, Layout, Components
------------------------------------ */
-
-/* -----------------------------------
-   1. TOKENS: Colors, Radius, Shadows
------------------------------------ */
+/* ============================================
+   SYSTEM.CSS — Global Tokens + Base Layout
+   Palette 2 (Blue + Cyan)
+============================================ */
 
 :root {
-  /* Brand */
-  --brand-primary: #1e3a8a;
-  --brand-secondary: #2563eb;
-  --brand-accent: #f97316;
+  /* Brand Colors */
+  --primary: #1e3a8a;
+  --primary-light: #2563eb;
+  --accent: #38bdf8;
 
   /* Text */
-  --text-main: #0f172a;
-  --text-soft: #475569;
-  --text-muted: #64748b;
+  --text-dark: #0f172a;
+  --text-mid: #475569;
+  --text-light: #94a3b8;
 
   /* Background */
-  --bg-main: #ffffff;
-  --bg-soft: #f8fafc;
-  --bg-section: #f9fafb;
-  --bg-highlight: #eff6ff;
+  --bg-main: #f9fafb;
+  --bg-white: #ffffff;
+  --bg-soft: #f1f5f9;
 
   /* Borders */
-  --border-light: #e2e8f0;
+  --border: #e2e8f0;
 
   /* Radius */
-  --radius-s: 6px;
-  --radius-m: 10px;
-  --radius-l: 14px;
-  --radius-xl: 18px;
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 18px;
 
   /* Shadows */
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
-  --shadow-strong: 0 12px 30px rgba(37, 99, 235, 0.12);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-md: 0 6px 14px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 26px rgba(0,0,0,0.14);
 
-  /* Spacing Scale */
+  /* Layout spacing scale */
   --space-xs: 0.4rem;
-  --space-s: 0.8rem;
-  --space-m: 1.5rem;
-  --space-l: 2rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.2rem;
   --space-xl: 3rem;
-  --space-xxl: 4rem;
+  --space-xxl: 4.5rem;
 
-  /* Layout Sizes */
-  --max-content: 1120px;
+  /* Readability width */
   --max-text: 820px;
+  --max-page: 1280px;
+
+  /* Mobile nav height */
+  --mobile-nav-height: 330px;
 }
 
-/* -----------------------------------
-   2. BASE TYPOGRAPHY
------------------------------------ */
+/* ============================================
+   BASE TYPOGRAPHY
+============================================ */
 
 body {
   margin: 0;
-  padding: 0;
   font-family: "Poppins", sans-serif;
   background: var(--bg-main);
-  color: var(--text-main);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
+  color: var(--text-dark);
   font-weight: 700;
-  margin-bottom: var(--space-s);
-  color: var(--text-main);
+  margin-bottom: var(--space-sm);
 }
 
-h1 { font-size: 2.3rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.28rem; }
-h4 { font-size: 1.1rem; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.15rem; }
 
-p, li {
-  font-size: 1.05rem;
+p {
   line-height: 1.7;
-  color: var(--text-soft);
+  color: var(--text-mid);
+  font-size: 1.05rem;
 }
 
-/* -----------------------------------
-   3. GLOBAL PAGE LAYOUT
------------------------------------ */
-
-.page-wrapper {
-  max-width: var(--max-text);
-  margin: 0 auto;
-  padding: calc(var(--space-xxl) + 2.5rem) var(--space-m) var(--space-xxl);
-}
-
-.section {
-  padding: var(--space-xxl) var(--space-m);
-  max-width: var(--max-content);
-  margin: 0 auto;
-  text-align: center;
-}
-
-.section-sm {
-  padding: var(--space-xl) var(--space-m);
-}
-
-/* -----------------------------------
-   4. HERO COMPONENTS
------------------------------------ */
-
-.hero {
-  padding: calc(var(--space-xxl) + 3rem) var(--space-m) var(--space-xl);
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  max-width: 720px;
-  margin: 0 auto var(--space-m);
-}
-
-.hero p {
-  max-width: 720px;
-  margin: 0 auto var(--space-m);
-  font-size: 1.15rem;
-}
-
-/* -----------------------------------
-   5. BUTTON SYSTEM
------------------------------------ */
-
-.btn {
-  display: inline-block;
-  padding: 0.85rem 1.6rem;
-  border-radius: 999px;
-  font-weight: 600;
+a {
+  color: inherit;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.2s ease;
-  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.btn-primary {
-  background: var(--brand-primary);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--brand-secondary);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 1px solid var(--brand-primary);
-  color: var(--brand-primary);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--bg-highlight);
-  transform: translateY(-2px);
-}
-
-/* -----------------------------------
-   6. CARDS (Tools, Blog, Pricing, Services)
------------------------------------ */
-
-.card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-l);
-  padding: var(--space-m);
-  box-shadow: var(--shadow-soft);
-  transition: 0.2s ease;
-  text-align: left;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-strong);
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: var(--space-s);
-}
-
-.card-text {
-  color: var(--text-muted);
-}
-
-/* -----------------------------------
-   7. GRID SYSTEM
------------------------------------ */
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: var(--space-m);
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-m);
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-m);
-}
-
-/* -----------------------------------
-   8. FEATURE LISTS (About, Product, Roadmap)
------------------------------------ */
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-m) auto var(--space-xl);
-  max-width: 700px;
-  text-align: left;
-}
-
-.feature-list li {
-  background: var(--bg-soft);
-  border: 1px solid var(--border-light);
-  padding: var(--space-s) var(--space-m);
-  border-radius: var(--radius-m);
-  margin-bottom: var(--space-xs);
-  position: relative;
-  color: var(--text-main);
-  padding-left: 2.1rem;
-  font-size: 1rem;
-}
-
-.feature-list li::before {
-  content: "✓";
-  position: absolute;
-  top: 0.72rem;
-  left: 0.9rem;
-  font-size: 0.9rem;
-  color: var(--brand-secondary);
-}
-
-/* -----------------------------------
-   9. FORMS (Contact, Onboarding)
------------------------------------ */
-
-.form-control {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-m);
-  border: 1px solid var(--border-light);
-  background: #fff;
-  font-size: 1rem;
-  transition: 0.2s ease;
-}
-
-.form-control:focus {
-  border-color: var(--brand-secondary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-  outline: none;
-}
-
-textarea.form-control {
-  min-height: 150px;
-}
-
-/* -----------------------------------
-   10. UTILITIES
------------------------------------ */
-
+/* Utility classes */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 
-.mt-s { margin-top: var(--space-s); }
-.mt-m { margin-top: var(--space-m); }
-.mt-l { margin-top: var(--space-l); }
-.mb-s { margin-bottom: var(--space-s); }
-.mb-m { margin-bottom: var(--space-m); }
-.mb-l { margin-bottom: var(--space-l); }
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
 
 .hidden { display: none !important; }
-
-/* -----------------------------------
-   11. RESPONSIVE RULES
------------------------------------ */
-
-@media (max-width: 640px) {
-  .page-wrapper { padding-top: calc(var(--space-xxl) + 3rem); }
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1.05rem; }
-}

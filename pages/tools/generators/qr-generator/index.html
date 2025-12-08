@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QR Code Generator | Bita Digital Hub</title>
+  <meta name="description"
+        content="Generate high-quality QR codes for links, profiles, or campaigns. Download as PNG for printing or sharing." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+
+  <!-- QR library (if not already in header.html) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body class="tools-page">
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="tool-title">QR Code Generator</h1>
+      <p class="tool-description">
+        Turn any URL or text into a scannable QR code. Perfect for social profiles,
+        business cards, posters, and menus.
+      </p>
+
+      <label class="tool-label">Text or URL</label>
+      <input id="qr-input" class="tool-input" placeholder="https://bitadigitalhub.com" />
+
+      <label class="tool-label" style="margin-top:1rem;">Size</label>
+      <select id="qr-size" class="tool-select">
+        <option value="200">200px</option>
+        <option value="300">300px</option>
+        <option value="400" selected>400px</option>
+      </select>
+
+      <button id="qr-generate" class="tool-btn" style="margin-top:1rem;">Generate QR</button>
+
+      <div id="qr-status" class="output-box" style="margin-top:1rem;"></div>
+
+      <div id="qr-box" style="margin-top:1.5rem; text-align:center;"></div>
+
+      <button id="qr-download" class="tool-btn" style="display:none; margin-top:1.5rem;">
+        Download PNG
+      </button>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/qr.js" defer></script>
+</body>
+</html>

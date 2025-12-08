@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Resizer Pro | Bita Digital Hub</title>
+  <meta name="description"
+        content="Advanced image resizer: resize by width, height, or percentage, change format (JPG/PNG/WEBP), and control quality for web or print." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+<body class="tools-page">
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="tool-title">Image Resizer Pro</h1>
+      <p class="tool-description">
+        Resize and optimize images for web, social media, or print.
+        Choose width, height, or percentage, change format, and control quality —
+        all in your browser.
+      </p>
+
+      <!-- STEP 1: FILE -->
+      <label class="tool-label">Select image</label>
+      <input id="pro-img-file" type="file" accept="image/*" class="tool-input" />
+
+      <div id="pro-img-meta" class="output-box" style="margin-top:1rem;">
+        Original size will appear here after upload.
+      </div>
+
+      <!-- STEP 2: MODE -->
+      <label class="tool-label" style="margin-top:1rem;">Resize mode</label>
+      <div class="checkbox-row">
+        <input type="radio" name="resize-mode" id="mode-width" value="width" checked />
+        <label for="mode-width">By width (px)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="radio" name="resize-mode" id="mode-height" value="height" />
+        <label for="mode-height">By height (px)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="radio" name="resize-mode" id="mode-percent" value="percent" />
+        <label for="mode-percent">By percentage (%)</label>
+      </div>
+
+      <div style="display:flex; gap:0.8rem; margin-top:0.7rem;">
+        <div style="flex:1;">
+          <label class="tool-label">Width</label>
+          <input id="pro-width" type="number" class="tool-input" placeholder="e.g. 1200" />
+        </div>
+        <div style="flex:1;">
+          <label class="tool-label">Height</label>
+          <input id="pro-height" type="number" class="tool-input" placeholder="auto if ratio kept" />
+        </div>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="pro-keep-ratio" checked />
+        <label for="pro-keep-ratio">Keep aspect ratio</label>
+      </div>
+
+      <!-- FORMAT + QUALITY -->
+      <div style="display:flex; gap:0.8rem; margin-top:0.9rem;">
+        <div style="flex:1;">
+          <label class="tool-label">Output format</label>
+          <select id="pro-format" class="tool-select">
+            <option value="jpg">JPG (smaller, good for web)</option>
+            <option value="png">PNG (lossless)</option>
+            <option value="webp">WEBP (modern, very small)</option>
+          </select>
+        </div>
+        <div style="flex:1;">
+          <label class="tool-label">Quality (%)</label>
+          <input id="pro-quality" type="range" min="40" max="100" value="85" />
+          <span id="pro-quality-label" style="font-size:0.9rem; color:#64748b;">85%</span>
+        </div>
+      </div>
+
+      <button id="pro-resize-btn" class="tool-btn" style="margin-top:1rem;">
+        Resize &amp; Optimize
+      </button>
+
+      <div id="pro-status" class="output-box" style="margin-top:1rem;"></div>
+
+      <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem;">
+        <div>
+          <span class="tool-label" style="display:block; margin-bottom:0.4rem;">Original</span>
+          <img id="pro-img-preview" style="max-width:100%; border-radius:12px; display:none;" />
+        </div>
+        <div>
+          <span class="tool-label" style="display:block; margin-bottom:0.4rem;">Resized / Optimized</span>
+          <img id="pro-img-result" style="max-width:100%; border-radius:12px; display:none;" />
+        </div>
+      </div>
+
+      <button id="pro-download" class="tool-btn"
+              style="display:none; margin-top:1.2rem;">
+        Download optimized image
+      </button>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/image-resizer-pro.js" defer></script>
+</body>
+</html>

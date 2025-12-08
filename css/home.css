@@ -1,28 +1,43 @@
-/* =======================
-   HOME.CSS – Homepage UI
-   (Hero + Card Sections)
-======================= */
+/* ============================================================
+   HOME.CSS — Palette 2 Brand Edition
+   Modern, Gradient Accent, Indigo Primary
+============================================================ */
 
-/* ---------- HERO SECTION ---------- */
+/* -------------------------------
+   HERO SECTION
+-------------------------------- */
 .hero {
-  background: #f8fafc;
+  background: var(--bg-soft);
   text-align: center;
-  padding: 6rem 1.5rem 4rem;
+  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--mobile-nav-height) + 3rem);
+  }
 }
 
 .hero h1 {
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--text-main);
   margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero h1 .accent {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  color: #334155;
+  max-width: 760px;
+  margin: 0 auto 2.2rem;
+  color: var(--text-soft);
   line-height: 1.7;
-  font-size: 1.04rem;
+  font-size: 1.15rem;
 }
 
 .hero .cta-buttons {
@@ -32,50 +47,66 @@
   flex-wrap: wrap;
 }
 
-/* ==============================
-   SECTIONS WITH CARDS (3 COLUMNS)
-   Used for:
-   - Latest Articles
-   - Tools
-   - Services
-   - Courses
-============================== */
+.hero .btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
 
-/* Section title + subtitle (already used در index) */
+.hero .btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.hero .btn-accent {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.hero .btn-accent:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   SECTIONS GENERAL STYLES
+============================================================ */
+
 .section-title {
   font-size: 2.1rem;
   font-weight: 800;
   margin-bottom: 0.6rem;
-  color: #0f172a;
+  color: var(--text-main);
 }
 
 .section-sub {
-  color: #475569;
+  color: var(--text-soft);
   font-size: 1rem;
   max-width: 760px;
   margin: 0 auto 2.2rem;
   line-height: 1.6;
 }
 
-/* Slight spacing for the latest-articles section */
 .latest-articles {
-  margin-top: 3rem;  /* کمترش کردیم که فاصله از هدر زیاد نباشه */
+  margin-top: 3rem;
   text-align: center;
 }
 
-/* ---------- CARD GRID (3 columns) ---------- */
+
+/* ============================================================
+   CARD GRID — 3 Columns (Latest Articles / Tools / Services)
+============================================================ */
 
 .latest-grid {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
-/* Responsive breakpoints */
 @media (max-width: 992px) {
   .latest-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -88,7 +119,10 @@
   }
 }
 
-/* ---------- CARD BASE ---------- */
+
+/* ============================================================
+   CARD BASE STYLE (Shared by all sections)
+============================================================ */
 
 .latest-card {
   display: block;
@@ -97,29 +131,34 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #e2e8f0;
 
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
 .latest-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
-  border-color: #cbd5f5;
+  transform: translateY(-6px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
 }
 
-/* ---------- IMAGE ON TOP (Articles & Services) ---------- */
+
+/* ============================================================
+   CARD IMAGE (Articles + Services)
+============================================================ */
 
 .latest-card img {
-  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;      /* نسبت ثابت → کارت‌ها هم‌قد می‌شن */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   background: #e5e7eb;
 }
 
-/* ---------- CARD TEXT ---------- */
+
+/* ============================================================
+   CARD TEXT
+============================================================ */
 
 .latest-card .text {
   padding: 1.3rem 1.2rem 1.5rem;
@@ -127,259 +166,180 @@
 }
 
 .latest-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 0.5rem;
-  color: #0f172a;
+  margin-bottom: 0.55rem;
+  color: var(--primary);
   line-height: 1.4;
 }
 
 .latest-card p {
   margin: 0;
-  color: #475569;
-  font-size: 0.95rem;
+  color: var(--text-soft);
+  font-size: 0.98rem;
   line-height: 1.6;
 }
 
-/* ==============================
-   TOOL CARDS (ICON-ONLY VARIANT)
-   اگر برای Tools فقط از آیکون استفاده کنی
-   می‌تونی از همین ساختار استفاده کنی بدون <img>
-============================== */
+
+/* ============================================================
+   TOOL CARDS (Without Images)
+============================================================ */
 
 .latest-card.tool-card {
   text-align: left;
 }
 
-/* اگر کارت ابزار img نداشته باشه،
-   padding کمی بیشتر می‌شه تا بالای کارت خالی نباشه */
 .latest-card.tool-card .text {
-  padding-top: 2rem;
-}
-.hero {
-  padding-top: 5rem; /* or 6.5rem if you want more space */
-}
-
-
-/* آیکون در بالا، شبیه تصویر کوچک */
-.tool-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.1rem 1.2rem 0.4rem;
-}
-
-.tool-icon i {
-  width: 24px;
-  height: 24px;
-}
-
-/* =======================
-   ARTICLES — Option A Grid
-======================= */
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.article-card {
-  display: block;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.article-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
-}
-
-/* Image Wrapper */
-.card-image img {
-  width: 100%;
-  height: 210px;          /* ثابت و تمیز */
-  object-fit: cover;      /* کراپ طبیعی */
-  background: #eef2f7;
-}
-
-/* Text */
-.card-content {
-  padding: 1.3rem 1.2rem 1.6rem;
-}
-
-.card-content h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-  color: #0f172a;
-  line-height: 1.35;
-}
-
-.card-content p {
-  color: #475569;
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .articles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .articles-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card-image img {
-    height: 180px;
-  }
-}
-
-
-/* =======================
-   TOOLS GRID
-======================= */
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  justify-content: center;
-}
-
-.tool-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
-  color: #0f172a;
-}
-
-.tool-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+  padding-top: 1.8rem;
 }
 
 .tool-icon {
   width: 56px;
   height: 56px;
-  background: #f1f5f9;
   border-radius: 50%;
-  margin: 0 auto 1rem;
+  background: var(--bg-highlight);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1.1rem 1.2rem 0.6rem;
 }
 
 .tool-icon i {
-  width: 28px;
-  height: 28px;
-  color: #1e3a8a;
+  width: 26px;
+  height: 26px;
+  color: var(--primary);
 }
 
-.tools-grid h3 {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: 700;
+
+/* ============================================================
+   ARTICLES GRID (Alternative layout)
+============================================================ */
+
+.articles-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
 }
 
-.tools-grid p {
-  color: #475569;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-}
-
-/* Responsive */
 @media (max-width: 992px) {
-  .tools-grid {
+  .articles-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .tools-grid {
+  .articles-grid {
     grid-template-columns: 1fr;
   }
 }
 
+.article-card {
+  display: block;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
 
-/* =======================
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #eef2f7;
+}
+
+.card-content {
+  padding: 1.3rem 1.2rem 1.6rem;
+}
+
+.card-content h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.card-content p {
+  color: var(--text-mid);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
    SERVICES GRID
-======================= */
+============================================================ */
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.2rem;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  text-align: left;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+  transition: .25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
 }
 
 .service-card img {
   width: 100%;
-  height: 210px;
+  height: 190px;
+  border-radius: 14px;
   object-fit: cover;
+  margin-bottom: 1.1rem;
 }
 
 .service-card h3 {
-  padding: 1rem 1.2rem 0.4rem;
-  font-size: 1.25rem;
+  font-size: 1.32rem;
   font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.55rem;
 }
 
 .service-card p {
-  padding: 0 1.2rem 1.4rem;
-  color: #475569;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
+  color: var(--text-soft);
+  line-height: 1.6;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+/* ============================================================
+   RESPONSIVE FIXES
+============================================================ */
+
+@media (max-width: 480px) {
+  .latest-card img {
+    height: 160px;
+  }
+  h1.hero-title {
+    font-size: 2rem;
+  }
+  .hero p {
+    padding: 0 1rem;
   }
 }
-
-@media (max-width: 640px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-

@@ -1,69 +1,76 @@
-/* =========================================================
-   TOOLS.CSS – Bita Digital Hub v6.0
-   Fix: Remove extra top/bottom space on all Tools pages
-========================================================= */
+/* ============================================================
+   TOOLS.CSS — Palette 2 Applied
+   Modern SaaS Tool UI (Indigo + Gradient Accent)
+============================================================ */
 
-/* -------------------------
-   GLOBAL PAGE BASE
-------------------------- */
-
+/* Page base settings */
 .tools-page {
-  background: #f8fafc;
-  padding-top: 4rem !important;   /* Reduced gap under header */
-  padding-bottom: 2rem !important; /* Prevent huge bottom space */
+  background: var(--bg-soft);
+  padding-top: calc(var(--nav-height) + 2rem) !important;
+  padding-bottom: 2.5rem !important;
   min-height: auto !important;
 }
 
+@media(max-width: 900px) {
+  .tools-page {
+    padding-top: calc(var(--mobile-nav-height) + 1.8rem) !important;
+  }
+}
 
-/* -------------------------
-   MAIN TOOL CARD
-------------------------- */
+
+/* ============================================================
+   MAIN TOOL CONTAINER
+============================================================ */
 
 .tool-wrapper {
-  max-width: 850px;
-  margin: 1.5rem auto 2.5rem;   /* FIX: reduce top & bottom space */
+  max-width: 860px;
+  margin: 1.8rem auto 2.8rem;
   padding: 2rem;
+
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  transition: box-shadow .25s ease;
+  border-radius: 20px;
+
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+
+  transition: box-shadow .25s ease, transform .25s ease;
 }
 
 .tool-wrapper:hover {
-  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
 
-/* -------------------------
+/* ============================================================
    TITLE + DESCRIPTION
-------------------------- */
+============================================================ */
 
 .tool-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 800;
+  color: var(--primary);
   margin-bottom: 0.6rem;
-  color: #0f172a;
 }
 
 .tool-description {
   text-align: center;
-  font-size: 1.03rem;
-  color: #475569;
-  margin-bottom: 1.8rem;   /* smaller */
+  font-size: 1.05rem;
+  color: var(--text-soft);
   max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
 }
 
 
-/* -------------------------
-   FORM ELEMENTS
-------------------------- */
+/* ============================================================
+   LABELS & INPUTS
+============================================================ */
 
 .tool-label {
   font-weight: 600;
-  color: #0f172a;
+  color: var(--text-dark);
   margin-bottom: 0.4rem;
   display: block;
 }
@@ -71,79 +78,93 @@
 .tool-input,
 .tool-select {
   width: 100%;
-  padding: 0.6rem 0.9rem;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  background: #fff;
+
   font-size: 1rem;
-  color: #0f172a;
-  background: #ffffff;
-  outline: none;
-  transition: border-color .2s ease;
+  color: var(--text-dark);
+
+  transition: border-color .25s ease, box-shadow .25s ease;
 }
 
 .tool-input:focus,
 .tool-select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+  outline: none;
 }
 
 
-/* Checkbox */
+/* Checkbox rows */
 .checkbox-row {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  margin: 0.6rem 0;
+  margin: 0.7rem 0;
 }
 
 .checkbox-row label {
+  color: var(--text-mid);
   font-size: 0.95rem;
-  color: #334155;
 }
 
 
-/* -------------------------
-   MAIN BUTTON
-------------------------- */
+/* ============================================================
+   MAIN TOOL BUTTON (CTA)
+============================================================ */
 
 .tool-btn {
   width: 100%;
-  padding: 0.75rem 1.2rem;
-  background: #1e3a8a;
+  padding: 0.9rem 1.2rem;
+
+  background: var(--accent-gradient);
   color: #ffffff;
-  font-size: 1.05rem;
+
+  font-size: 1.07rem;
   font-weight: 600;
-  border-radius: 10px;
+
+  border-radius: 12px;
   border: none;
+
   cursor: pointer;
-  transition: background .25s ease, transform .2s ease;
+  transition: .25s ease, transform .25s ease;
+  box-shadow: var(--shadow-md);
 }
 
 .tool-btn:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
 
-/* -------------------------
+/* ============================================================
    OUTPUT BOX
-------------------------- */
+============================================================ */
 
 .output-box {
-  margin-top: 1.5rem;
-  padding: 1rem 1.2rem;
+  margin-top: 1.8rem;
+  padding: 1.3rem 1.2rem;
+
   background: #f1f5f9;
-  border-radius: 12px;
+  border-radius: 14px;
+
   font-size: 1.05rem;
-  color: #0f172a;
-  border: 1px solid #e2e8f0;
-  word-break: break-all;
+  color: var(--text-dark);
+
+  border: 1px solid var(--border-light);
+  word-break: break-word;
+  line-height: 1.55;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 
-/* -------------------------
-   ADS
-------------------------- */
+/* ============================================================
+   AD PLACEMENTS
+============================================================ */
 
 .ad-side {
   display: flex;
@@ -164,32 +185,34 @@
 }
 
 .ad-in-content {
-  margin: 1.8rem auto 0; /* smaller */
+  margin: 2rem auto 0;
   text-align: center;
 }
 
 
-/* -------------------------
-   MOBILE
-------------------------- */
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 
 @media (max-width: 768px) {
 
-  .tools-page {
-    padding-top: 3.5rem !important;
-  }
-
   .tool-wrapper {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     margin-bottom: 2rem;
-    padding: 1.8rem;
+    padding: 1.7rem;
   }
 
   .tool-title {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
   }
 
   .tool-description {
+    font-size: 0.98rem;
     margin-bottom: 1.6rem;
+  }
+
+  .tool-btn {
+    font-size: 1.02rem;
+    padding: 0.75rem 1.1rem;
   }
 }

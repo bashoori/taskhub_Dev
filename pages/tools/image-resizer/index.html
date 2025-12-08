@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Image Resizer | Bita Digital Hub</title>
+  <meta name="description"
+        content="Resize images in seconds. Upload a photo, choose a new width, and download the resized image. All done in your browser." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+<body class="tools-page">
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="tool-title">Free Image Resizer</h1>
+      <p class="tool-description">
+        Upload an image, choose a new width, and download a lighter, web-friendly version.
+        Everything runs locally in your browser — nothing is uploaded to any server.
+      </p>
+
+      <!-- STEP 1: FILE -->
+      <label class="tool-label">Select image</label>
+      <input id="img-file" type="file" accept="image/*" class="tool-input" />
+
+      <!-- ORIGINAL INFO -->
+      <div id="img-meta" class="output-box" style="margin-top:1rem;">
+        Upload an image to see its original size.
+      </div>
+
+      <!-- STEP 2: TARGET WIDTH -->
+      <label class="tool-label" style="margin-top:1rem;">New width (pixels)</label>
+      <input id="img-width" type="number" class="tool-input" min="100" max="4000" placeholder="e.g. 1200" />
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="keep-ratio" checked />
+        <label for="keep-ratio">Keep aspect ratio (recommended)</label>
+      </div>
+
+      <button id="resize-btn" class="tool-btn" style="margin-top:1rem;">
+        Resize Image
+      </button>
+
+      <!-- STATUS + PREVIEW -->
+      <div id="resize-status" class="output-box" style="margin-top:1rem;"></div>
+
+      <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem;">
+        <div>
+          <span class="tool-label" style="display:block; margin-bottom:0.4rem;">Preview</span>
+          <img id="img-preview" style="max-width:100%; border-radius:12px; display:none;" />
+        </div>
+
+        <div>
+          <span class="tool-label" style="display:block; margin-bottom:0.4rem;">Resized image</span>
+          <img id="img-result" style="max-width:100%; border-radius:12px; display:none;" />
+        </div>
+      </div>
+
+      <button id="download-resized" class="tool-btn"
+              style="display:none; margin-top:1.2rem;">
+        Download resized image
+      </button>
+
+      <p style="margin-top:1.4rem; font-size:0.9rem; color:#64748b;">
+        Tip: For most websites, widths between 800–1600px are more than enough.
+      </p>
+    </div>
+
+    <!-- OPTIONAL: AdSense block زیر ابزار -->
+    <div class="ad-in-content">
+      <!-- adsense code -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/image-resizer.js" defer></script>
+</body>
+</html>

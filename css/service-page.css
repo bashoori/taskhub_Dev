@@ -1,19 +1,22 @@
-/* =========================================
-   BASE (MOBILE FIRST)
-========================================= */
+/* ============================================================
+   SERVICE PAGE — Design System Edition (Bita Digital Hub v2.0)
+   Fully tokenized + SaaS landing style + unified UI
+============================================================ */
 
-.service-page section {
-  padding: 2.5rem 0;
-  font-family: "Inter", sans-serif;
-  color: #1a1a1a;
-  line-height: 1.7;
+/* -------------------------------
+   BASE LAYOUT
+------------------------------- */
+
+.service-page {
+  background: var(--bg-soft);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
 }
 
 .service-page .container {
-  width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 var(--space-m);
 }
 
 .service-page h1,
@@ -21,335 +24,250 @@
 .service-page h3,
 .service-page h4 {
   font-weight: 700;
-  color: #0b1f3a;
+  color: var(--text-main);
 }
 
 
-/* =========================================
-   HERO (MOBILE FIRST)
-========================================= */
+/* -------------------------------
+   HERO SECTION
+------------------------------- */
 
 .service-hero {
   text-align: center;
-  padding-top: 3rem;
+  margin-bottom: var(--space-xxl);
 }
 
 .service-hero-img {
   width: 100%;
-  max-width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1.5rem;
+  max-width: 680px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  margin: 0 auto var(--space-l);
+  display: block;
 }
 
 .service-hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+  font-size: 2.4rem;
+  margin-bottom: var(--space-xs);
 }
 
 .service-hero .subtitle {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-  padding: 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  max-width: 720px;
+  margin: 0 auto var(--space-m);
+  line-height: 1.6;
 }
 
-.btn-primary {
+
+/* Primary CTA */
+.service-hero .btn-primary {
   display: inline-block;
-  padding: 0.75rem 1.6rem;
-  background: #1a73e8;
-  color: white;
+  background: var(--brand-primary);
+  padding: 0.85rem 1.8rem;
+  color: #fff;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: var(--radius-m);
   text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.25s ease;
+  transition: 0.25s ease;
 }
 
-.btn-primary:hover {
-  background: #1259b3;
+.service-hero .btn-primary:hover {
+  background: var(--brand-secondary);
+  transform: translateY(-2px);
 }
 
 
-/* =========================================
+/* -------------------------------
    OVERVIEW
-========================================= */
+------------------------------- */
 
 .service-overview h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-s);
 }
 
 .service-overview p {
-  color: #444;
+  color: var(--text-soft);
+  margin-bottom: var(--space-l);
+  line-height: 1.7;
 }
 
 
-/* =========================================
-   FEATURES GRID (MOBILE FIRST)
-========================================= */
+/* -------------------------------
+   FEATURES GRID
+------------------------------- */
 
 .feature-grid {
   display: grid;
-  grid-template-columns: 1fr; /* MOBILE: single column */
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-l);
 }
 
 .feature-item {
-  background: #fff;
-  padding: 1.25rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s, box-shadow 0.25s;
+  background: var(--bg-main);
+  padding: var(--space-l);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+
+  transition: 0.25s ease;
 }
 
 .feature-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
 }
 
 .feature-item h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
 }
 
 .feature-item p {
-  color: #555;
+  color: var(--text-muted);
 }
 
 
-/* =========================================
-   WHY IT MATTERS
-========================================= */
+/* -------------------------------
+   “WHY IT MATTERS” SECTION
+------------------------------- */
 
 .why-it-matters p {
-  color: #444;
+  color: var(--text-soft);
+  line-height: 1.7;
 }
 
 
-/* =========================================
-   PRICING (MOBILE FIRST)
-========================================= */
+/* -------------------------------
+   PRICING
+------------------------------- */
 
 .pricing-wrapper {
   display: grid;
-  grid-template-columns: 1fr; /* MOBILE: one column */
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-xl);
 }
 
 .pricing-box {
-  background: #fff;
-  padding: 1.6rem;
-  border-radius: 16px;
-  border: 1px solid #e5e8ec;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s, box-shadow 0.25s;
+  background: var(--bg-main);
+  padding: var(--space-xl) var(--space-l);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s ease;
 }
 
 .pricing-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
 }
 
 .pricing-box h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
 }
 
 .pricing-box .price {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #1a73e8;
-  margin-bottom: 1rem;
-}
-
-.pricing-box .price span {
-  font-size: 0.85rem;
-  color: #666;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  margin-bottom: var(--space-m);
 }
 
 .pricing-box ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  margin-bottom: var(--space-l);
 }
 
 .pricing-box ul li {
+  color: var(--text-soft);
   margin-bottom: 0.45rem;
-  color: #444;
 }
 
-.btn-outline {
+
+/* CTA Button */
+.pricing-box .btn-outline {
   display: inline-block;
-  border: 2px solid #1a73e8;
-  padding: 0.65rem 1.4rem;
-  border-radius: 10px;
-  color: #1a73e8;
+  border: 2px solid var(--brand-primary);
+  padding: 0.75rem 1.6rem;
+  color: var(--brand-primary);
+  border-radius: var(--radius-m);
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.25s ease;
+  transition: 0.25s;
 }
 
-.btn-outline:hover {
-  background: #1a73e8;
-  color: white;
+.pricing-box .btn-outline:hover {
+  background: var(--brand-primary);
+  color: #fff;
 }
 
 
-/* =========================================
+/* -------------------------------
    FAQ
-========================================= */
+------------------------------- */
 
 .faq-item {
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--space-l);
 }
 
 .faq-item h4 {
-  font-size: 1.05rem;
-  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
 }
 
 .faq-item p {
-  color: #555;
+  color: var(--text-soft);
 }
 
 
-/* =========================================
-   CTA (BOTTOM)
-========================================= */
+/* -------------------------------
+   BOTTOM CTA SECTION
+------------------------------- */
 
 .cta {
   text-align: center;
-  padding: 3rem 0;
+  margin-top: var(--space-xxl);
 }
 
 .cta h2 {
-  font-size: 1.7rem;
-  margin-bottom: 0.7rem;
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
 }
 
 .cta p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  max-width: 600px;
+  margin: 0 auto var(--space-m);
+}
+
+.cta .btn-primary {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-l);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.cta .btn-primary:hover {
+  background: var(--brand-secondary);
 }
 
 
-/* =========================================
-   TABLET & DESKTOP BREAKPOINTS
-========================================= */
+/* -------------------------------------------
+   RESPONSIVE
+------------------------------------------- */
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
   .service-hero h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
-
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .pricing-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
-
-@media (min-width: 1024px) {
-  .service-hero {
-    padding-top: 5rem;
-  }
-
-  .service-hero h1 {
-    font-size: 3rem;
-  }
-
-  .service-hero .subtitle {
-    font-size: 1.2rem;
-    max-width: 650px;
-    margin: 0 auto 2rem;
-  }
-
-  .feature-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-/* =========================================
-   DESKTOP FIXES
-========================================= */
-@media (min-width: 1024px) {
-
-  /* Reduce huge top padding */
-  .service-hero {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-  }
-
-  /* Make hero image smaller and less dominant */
-  .service-hero-img {
-    max-width: 620px;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Make H1 more balanced on desktop */
-  .service-hero h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.6rem;
-  }
-
-  /* Subtitle narrower + better line height */
-  .service-hero .subtitle {
-    font-size: 1.15rem;
-    max-width: 680px;
-    margin: 0 auto 1.8rem;
-    line-height: 1.5;
-  }
-
-  /* Better spacing below button */
-  .btn-primary {
-    margin-bottom: 0.4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-
-  .service-hero {
-    text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-hero-img {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-}
-
-/* Center hero image */
-.service-hero-img {
-  display: block;
-  margin: 0 auto;        /* centers the image */
-  max-width: 700px;      /* limits oversized width */
-  width: 100%;
-  height: auto;
-}
-
-/* For larger desktops, ensure spacing is balanced */
-@media (min-width: 1024px) {
-  .service-hero .container {
-    text-align: center;
-    max-width: 900px;
-  }
-
-  .service-hero-img {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-

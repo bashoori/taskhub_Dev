@@ -1,20 +1,47 @@
-/* =======================
-   RESPONSIVE.CSS
-======================= */
+/* =========================================================
+   RESPONSIVE.CSS — Unified with Design System
+   Clean, minimal, mobile-first improvements
+========================================================= */
 
+/* ============================
+   GLOBAL BREAKPOINTS
+============================ */
+
+/* Medium screens */
 @media (max-width: 900px) {
-  .nav-actions { display: none; }
-  .blog-grid {
-    grid-template-columns: 1fr;
+  .nav-actions {
+    display: none;
   }
+
+  .blog-grid,
   .blog-preview-grid {
     grid-template-columns: 1fr;
   }
 }
-/* MOBILE FIXES */
+
+/* Mobile Layout */
+@media (max-width: 640px) {
+
+  /* HERO */
+  .hero {
+    padding-top: var(--space-xxl) !important;
+  }
+
+  .hero h1 {
+    font-size: 2rem !important;
+    line-height: 1.3;
+    margin-bottom: var(--space-s);
+  }
+
+  .hero p {
+    padding: 0 var(--space-s);
+  }
+}
+
+/* XS Screens */
 @media (max-width: 480px) {
   .latest-card {
-    border-radius: 14px;
+    border-radius: var(--radius-l);
   }
 
   .latest-card img {
@@ -22,21 +49,17 @@
   }
 
   h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    padding: 0 1rem;
+    font-size: 1.8rem;
   }
 }
 
-/* =============================
-   CONTACT SECTION – PROFESSIONAL
-============================= */
+/* ==================================================
+   CONTACT SECTION — Responsive Adjustments
+================================================== */
 
 .contact-section {
-  background: #f8fafc;
-  padding: 5rem 1.5rem;
+  background: var(--bg-soft);
+  padding: var(--space-xxl) var(--space-m);
   text-align: center;
 }
 
@@ -46,32 +69,32 @@
 }
 
 .contact-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: var(--space-xs);
 }
 
 .contact-subtitle {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl);
 }
 
 /* FORM */
 .contact-form {
-  background: #ffffff;
-  padding: 2.5rem;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  background: var(--bg-main);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: var(--space-m);
 }
 
 .form-row {
   display: flex;
-  gap: 1.2rem;
+  gap: var(--space-m);
 }
 
 .form-row input {
@@ -81,34 +104,29 @@
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #cbd5e1;
+  padding: 1rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border-light);
   font-size: 1rem;
-  background: #fdfdfd;
+  background: var(--bg-main);
   transition: 0.25s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #1e3a8a;
-  box-shadow: 0 0 0 3px rgba(30,58,138,0.15);
+  border-color: var(--brand-secondary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
   outline: none;
-}
-
-.contact-form textarea {
-  min-height: 140px;
-  resize: vertical;
 }
 
 /* BUTTON */
 .btn-submit {
   width: 100%;
-  padding: 1.1rem;
-  background: #1e3a8a;
+  padding: 1rem;
+  background: var(--brand-primary);
   color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-m);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -116,27 +134,19 @@
 }
 
 .btn-submit:hover {
-  background: #0f1f53;
+  background: var(--brand-secondary);
 }
 
-/* Mobile */
+/* Mobile form fix */
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
   }
 }
 
+/* Small Mobile Fix */
 @media (max-width: 640px) {
-  .hero {
-    padding-top: 7rem !important;
-  }
-
-  .hero h1 {
-    font-size: 2rem !important;
-    line-height: 1.3;
-  }
-
   .contact-section {
-    padding-top: 6rem !important;
+    padding-top: var(--space-xxl) !important;
   }
 }

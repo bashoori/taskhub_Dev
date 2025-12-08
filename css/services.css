@@ -1,6 +1,15 @@
-/* ==================================
+/* ============================================================
+   SERVICES.CSS — Palette 2 Applied
+   Indigo Primary + Pink/Orange Accent + Modern SaaS UI
+============================================================ */
+
+/* Root colors automatically inherited from system.css */
+
+
+/* ============================================================
    SERVICES GRID LAYOUT
-================================== */
+============================================================ */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -10,30 +19,36 @@
 }
 
 
-/* ==================================
+/* ============================================================
    SERVICE CARD
-================================== */
+============================================================ */
+
 .service-card {
   background: #ffffff;
   border-radius: 18px;
-  padding: 1.75rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
+
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
 }
 
 
-/* ==================================
+/* ============================================================
    SERVICE CARD IMAGE
-================================== */
+============================================================ */
+
 .service-card img {
   width: 100%;
   height: 190px;
@@ -43,37 +58,192 @@
 }
 
 
-/* ==================================
+/* ============================================================
    CARD TITLE
-================================== */
+============================================================ */
+
 .service-card h3 {
-  font-size: 1.32rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #0d1b2a;
-  margin-bottom: 0.55rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
 }
 
 
-/* ==================================
+/* ============================================================
    CARD DESCRIPTION
-================================== */
+============================================================ */
+
 .service-card p {
-  font-size: 0.97rem;
-  color: #444;
+  font-size: 1rem;
+  color: var(--text-soft);
   line-height: 1.6;
   flex-grow: 1;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
 }
 
 
-/* ==================================
-   RESPONSIVE BREAKPOINTS
-================================== */
-@media (max-width: 768px) {
-  .services-grid {
-    gap: 1.6rem;
-  }
+/* ============================================================
+   CTA / LEARN MORE BUTTON STYLES (Optional if used inside cards)
+============================================================ */
 
+.service-card .btn-learn {
+  margin-top: auto;
+  display: inline-block;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius-md);
+
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.service-card .btn-learn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================================
+   FULL SERVICE PAGE (Optional Hero Section on service-page.css)
+============================================================ */
+
+.service-page h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.service-page h3 {
+  color: var(--primary);
+}
+
+.service-overview p,
+.why-it-matters p,
+.feature-item p {
+  color: var(--text-soft);
+}
+
+
+/* ============================================================
+   FEATURE GRID inside service details
+============================================================ */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.7rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  background: #ffffff;
+  padding: 1.4rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: .28s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-item h3 {
+  font-size: 1.18rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+
+/* ============================================================
+   PRICING BOXES (Inside service details)
+============================================================ */
+
+.pricing-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.pricing-box {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: .28s ease;
+}
+
+.pricing-box:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-box h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.pricing-box .price {
+  font-size: 1.45rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.pricing-box ul li {
+  color: var(--text-soft);
+  margin-bottom: 0.45rem;
+}
+
+.pricing-box .btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-md);
+  display: inline-block;
+  margin-top: 1rem;
+  transition: .25s ease;
+}
+
+.pricing-box .btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* ============================================================
+   FAQ
+============================================================ */
+
+.faq-item h4 {
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.faq-item p {
+  color: var(--text-soft);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 768px) {
   .service-card {
     padding: 1.4rem;
   }
@@ -83,10 +253,10 @@
   }
 
   .service-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.22rem;
   }
 
   .service-card p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
   }
 }

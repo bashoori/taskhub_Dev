@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSV Cleaner | Bita Digital Hub</title>
+  <meta name="description"
+        content="Clean CSV files: remove empty rows, trim extra spaces, and prepare your data for import into Excel, Power BI, or databases." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+<body class="tools-page">
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="tool-title">CSV Cleaner</h1>
+      <p class="tool-description">
+        Paste your CSV export, clean empty rows and extra spaces, then download
+        a ready-to-import CSV for Excel, Power BI, or databases.
+      </p>
+
+      <label class="tool-label">Raw CSV data</label>
+      <textarea id="csv-input" class="tool-input" rows="10"
+        placeholder="Paste your CSV text here..."></textarea>
+
+      <button id="csv-clean" class="tool-btn" style="margin-top:1rem;">
+        Clean CSV
+      </button>
+
+      <div id="csv-status" class="output-box" style="margin-top:1rem;"></div>
+
+      <label class="tool-label" style="margin-top:1.2rem;">Cleaned CSV</label>
+      <textarea id="csv-output" class="tool-input" rows="10"></textarea>
+
+      <button id="csv-download" class="tool-btn"
+        style="display:none; margin-top:1rem;">
+        Download Clean CSV
+      </button>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/csv.js" defer></script>
+</body>
+</html>

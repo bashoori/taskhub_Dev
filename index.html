@@ -4,330 +4,341 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bita Digital Hub | Build • Automate • Earn Online</title>
-  <meta name="description" content="Empowering creators and businesses with AI automation, smart tools, and data-driven systems to build and grow online." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Bita Digital Hub | Build • Automate • Earn Online" />
-  <meta property="og:description" content="Tools, automations, and data-driven resources to help you build and grow online." />
-  <meta property="og:image" content="https://bitadigitalhub.com/assets/b-logo.jpg" />
-  <meta property="og:url" content="https://bitadigitalhub.com" />
+  <title>Bita Digital Hub | Free Tools & Smart Business Solutions</title>
+  <meta name="description" content="Free business tools, automation utilities, AI generators, and digital services to help you grow faster.">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/theme.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
 
-  <!-- Icons + Scripts -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="/js/script.js" defer></script>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Bita Digital Hub",
-    "url": "https://bitadigitalhub.com",
-    "logo": "https://bitadigitalhub.com/assets/b-logo.jpg"
-  }
-  </script>
-
-  <!-- Custom Page Styles -->
-  <style>
-    body {
-      background: #f9fafb;
-      font-family: "Poppins", sans-serif;
-      color: #0f172a;
-      margin: 0;
-    }
-
-    /* HERO */
-    .hero-container {
-      padding-top: 6rem; /* space below header */
-    }
-
-    .hero-banner {
-      background: #1e3a8a;
-      color: #ffffff;
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto 2.5rem;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(30, 58, 138, 0.25);
-    }
-
-    .hero-banner h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin: 0;
-    }
-
-    .hero-subtitle {
-      max-width: 760px;
-      margin: 1rem auto 0;
-      font-size: 1.2rem;
-      color: #475569;
-      text-align: center;
-      line-height: 1.7;
-    }
-
-    .cta-row {
-      text-align: center;
-      margin-top: 2.2rem;
-    }
-
-    /* Contact Section Styles (unchanged but clean) */
-    .contact-section {
-      background: #f9fafb;
-      padding: 4rem 1.5rem;
-    }
-    .contact-container {
-      max-width: 780px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact-title {
-      font-size: 2.3rem;
-      font-weight: 800;
-      margin-bottom: .5rem;
-    }
-    .contact-form {
-      background: #ffffff;
-      padding: 2.2rem;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-    }
-    .form-row {
-      display: flex;
-      gap: 1rem;
-    }
-    .form-row input,
-    textarea {
-      width: 100%;
-      padding: .95rem 1rem;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      background: #f8fafc;
-      font-size: 1rem;
-    }
-    textarea {
-      height: 170px;
-      margin-top: 1rem;
-      resize: vertical;
-    }
-    .btn-submit {
-      width: 100%;
-      margin-top: 1.3rem;
-      background: #1e3a8a;
-      color: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    @media (max-width: 640px) {
-      .form-row { flex-direction: column; }
-    }
-  </style>
+  <!-- Scripts -->
+  <script src="/js/core/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header-tools.html")
-      .then(res => res.text())
-      .then(html => (document.getElementById("header-placeholder").innerHTML = html));
-  </script>
+<!-- ========================= HEADER ========================= -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
 
-  <!-- HERO -->
-  <section class="section hero-container">
-    <div class="hero-banner">
-      <h1>Build, Optimize, and Grow Your Online Business — Powered by AI</h1>
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>The Smart Hub for Tools, Automation & Business Growth</h1>
+      <p>Use free online tools, automate workflows, and build a modern digital presence — all in one place.</p>
+
+      <a href="/pages/tools/tools.html" class="btn primary">Explore Free Tools</a>
     </div>
 
-    <p class="hero-subtitle">
-      Bita Digital Hub is an AI-first platform that helps creators and entrepreneurs launch smarter,
-      automate repetitive work, and scale their digital presence with intelligent tools and workflows.
-    </p>
-
-    <div class="cta-row">
-      <a href="/pages/tools/tools.html" class="btn primary">Explore Tools</a>
-      <a href="/pages/product/product.html" class="btn primary">See the Platform</a>
+    <div class="hero-img-box">
+      <img src="/assets/onboarding/signup-hero.png" alt="Bita Digital Hub" class="hero-img"/>
     </div>
-
-    <div class="cta-row" style="margin-top:1.5rem;">
-      <a href="https://calendly.com/bitadigital/30min" class="btn outline">Book a Strategy Call</a>
-    </div>
-
-    <p style="text-align:center; margin-top:2.5rem; color:#64748b;">
-      Trusted by creators, small businesses, and early-stage entrepreneurs.
-    </p>
-  </section>
-
-
-  <!-- BLOG -->
-<section id="blog" class="section">
-  <h2 class="section-title">Latest Articles</h2>
-  <p class="section-sub">Insights to help you start and grow your online business</p>
-
-  <div class="services-grid" style="margin-top: 2rem;">
-
-    <a href="/pages/blog/start-online-business.html" class="service-card" style="text-align:center;">
-      <img src="/pages/blog/image/start-online-business.jpg" alt="Online Business" />
-      <h3>How to Start a Successful Online Business in 2025</h3>
-      <p style="color:#475569; font-size:0.95rem; margin-top:0.5rem;">
-        Practical steps for launching a profitable online business.
-      </p>
-    </a>
-
-    <a href="/pages/blog/ai-automation-solopreneurs-2025.html" class="service-card" style="text-align:center;">
-      <img src="/pages/blog/image/the-rise-of-AI.jpg" alt="AI Automation" />
-      <h3>The Rise of AI Automation for Solopreneurs</h3>
-      <p style="color:#475569; font-size:0.95rem; margin-top:0.5rem;">
-        How AI transforms workflows for small creators.
-      </p>
-    </a>
-
-    <a href="/pages/blog/digital-marketing-strategies-2025.html" class="service-card" style="text-align:center;">
-      <img src="/pages/blog/image/best-digital-marketing-strategies.jpg" alt="Digital Marketing" />
-      <h3>Digital Marketing Strategies for 2025</h3>
-      <p style="color:#475569; font-size:0.95rem; margin-top:0.5rem;">
-        Beginner-friendly visibility and growth techniques.
-      </p>
-    </a>
-
-  </div>
-
-  <div class="cta-row" style="margin-top:2.5rem;">
-    <a href="/pages/blog/blog.html" class="btn primary">View All Articles</a>
   </div>
 </section>
 
+<!-- ========================= SERVICES ========================= -->
+<section class="section" id="services">
+  <h2 class="section-title">Digital Services</h2>
+  <p class="section-subtitle">Modern solutions for small businesses, creators, and entrepreneurs.</p>
 
-  <!-- TOOLS -->
-  <section id="tools" class="section">
-    <h2 class="section-title">Online Tools</h2>
-    <p class="section-sub">Online tools to help you work smarter</p>
-
-    <div class="tools-grid">
-
-      <a href="/pages/tools/password-generator.html" class="tool-card">
-        <i data-lucide="shield"></i>
-        <h3>Password Generator</h3>
-      </a>
-
-      <a href="/pages/tools/file-converter.html" class="tool-card">
-        <i data-lucide="file"></i>
-        <h3>File Converter</h3>
-      </a>
-
-      <a href="/pages/tools/csv-cleaner.html" class="tool-card">
-        <i data-lucide="table"></i>
-        <h3>CSV Cleaner</h3>
-      </a>
-
-      <a href="/pages/tools/qr-generator.html" class="tool-card">
-        <i data-lucide="scan"></i>
-        <h3>QR Generator</h3>
-      </a>
-
-      <a href="/pages/tools/zip-unzip.html" class="tool-card">
-        <i data-lucide="folder-archive"></i>
-        <h3>Zip / UnZip</h3>
-      </a>
-
-      <a href="/pages/tools/url-shortener.html" class="tool-card">
-        <i data-lucide="link"></i>
-        <h3>URL Shortener</h3>
-      </a>
-    </div>
-
-    <div class="cta-row">
-      <a href="/pages/tools/tools.html" class="btn primary">View All Free Tools</a>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section" style="text-align:center;">
-    <h2 class="section-title">Our Services and Products</h2>
-    <p class="section-sub">Complete solutions for your digital transformation</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="/pages/product/images/online-biz.jpg" />
-        <h3>Learn Digital Marketing & Earn Money Online</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="/pages/product/images/data-analytics.jpg" />
-        <h3>Data & Analytics</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="/pages/product/images/telegram-bot.jpg" />
-        <h3>Telegram Bots</h3>
-      </div>
-
-      <div class="service-card">
-        <img src="/pages/product/images/website-design.jpg" />
+  <div class="card-grid">
+    <!-- Web Design -->
+    <a class="card" href="/pages/services/web.html">
+      <img src="/assets/placeholders/service-web.svg" alt="Website Design" class="service-img" />
+      <div class="content">
         <h3>Website Design</h3>
+        <p>Beautiful, fast, mobile-first websites that grow with your business.</p>
       </div>
+    </a>
 
-      <a href="/pages/product/google-business-profile-optimization.html" class="service-card" style="text-align:center;">
-        <img src="/pages/product/images/google-business.jpg" />
-        <h3>Google Business Profile Optimization</h3>
-      </a>
+    <!-- Automation -->
+    <a class="card" href="/pages/services/automation.html">
+      <img src="/assets/placeholders/service-analytics.svg" alt="Automation" class="service-img" />
+      <div class="content">
+        <h3>Automation Workflows</h3>
+        <p>Smart automations with n8n, cloud scripts, and AI-powered agents.</p>
+      </div>
+    </a>
+
+    <!-- AI Tools -->
+    <a class="card" href="/pages/services/ai.html">
+      <img src="/assets/placeholders/service-bot.svg" alt="AI Services" class="service-img" />
+      <div class="content">
+        <h3>AI Setup & Integrations</h3>
+        <p>Custom AI tools, chatbots, and assistants for your business.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ========================= FREE TOOLS ========================= -->
+<section class="section" id="tools">
+  <h2 class="section-title">Free Online Tools</h2>
+  <p class="section-subtitle">Simple tools that save time, reduce manual work, and help your business run smoother.</p>
+
+  <div class="card-grid">
+
+    <!-- URL Shortener -->
+    <a class="card tool-card" href="/pages/tools/url/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/link-icon.svg" alt="Shorten URL"/>
+      </div>
+      <div class="content">
+        <h3>URL Shortener</h3>
+        <p>Shorten long URLs instantly with a clean, shareable link.</p>
+      </div>
+    </a>
+
+    <!-- QR Generator -->
+    <a class="card tool-card" href="/pages/tools/generators/qr/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/ai-tool-icon.svg" alt="QR Generator"/>
+      </div>
+      <div class="content">
+        <h3>QR Generator</h3>
+        <p>Create custom QR codes for menus, forms, and business pages.</p>
+      </div>
+    </a>
+
+    <!-- Password Generator -->
+    <a class="card tool-card" href="/pages/tools/password-generator/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/password-icon.svg" alt="Password Generator"/>
+      </div>
+      <div class="content">
+        <h3>Password Generator</h3>
+        <p>Generate strong, secure passwords in one click.</p>
+      </div>
+    </a>
+
+    <!-- CSV Cleaner -->
+    <a class="card tool-card" href="/pages/tools/csv-to-json/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/csv-icon.svg" alt="CSV Cleaner"/>
+      </div>
+      <div class="content">
+        <h3>CSV Cleaner</h3>
+        <p>Clean, format, and convert CSV files with zero effort.</p>
+      </div>
+    </a>
+
+    <!-- File Converter -->
+    <a class="card tool-card" href="/pages/tools/image-converter/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/file-icon.svg" alt="File Converter"/>
+      </div>
+      <div class="content">
+        <h3>File Converter</h3>
+        <p>Convert images instantly — JPG, PNG, WebP, and more.</p>
+      </div>
+    </a>
+
+    <!-- ZIP / UNZIP -->
+    <a class="card tool-card" href="/pages/tools/zip/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/zip-icon.svg" alt="Zip Tools"/>
+      </div>
+      <div class="content">
+        <h3>Zip / Unzip</h3>
+        <p>Compress and extract files directly in your browser.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ========================= CTA ========================= -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Grow Smarter with Better Tools</h2>
+    <p>Join thousands using Bita Digital Hub to simplify work and build online success.</p>
+    <a href="/pages/signup/index.html" class="btn primary">Get Started Free</a>
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bita Digital Hub | Free Tools & Smart Business Solutions</title>
+  <meta name="description" content="Free business tools, automation utilities, AI generators, and digital services to help you grow faster.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Scripts -->
+  <script src="/js/core/script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ========================= HEADER ========================= -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+</script>
+
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>The Smart Hub for Tools, Automation & Business Growth</h1>
+      <p>Use free online tools, automate workflows, and build a modern digital presence — all in one place.</p>
+
+      <a href="/pages/tools/tools.html" class="btn primary">Explore Free Tools</a>
     </div>
 
-    <div class="cta-row">
-      <a href="/pages/product/product.html" class="btn primary">View All Services/Products</a>
+    <div class="hero-img-box">
+      <img src="/assets/onboarding/signup-hero.png" alt="Bita Digital Hub" class="hero-img"/>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact-section">
-    <div class="contact-container">
-      <h2 class="contact-title">Contact Us</h2>
-      <p class="contact-subtitle">Let’s build something amazing together.</p>
+<!-- ========================= SERVICES ========================= -->
+<section class="section" id="services">
+  <h2 class="section-title">Digital Services</h2>
+  <p class="section-subtitle">Modern solutions for small businesses, creators, and entrepreneurs.</p>
 
-      <form
-        class="contact-form"
-        action="https://formsubmit.co/contact@bitadigitalhub.com"
-        method="POST"
-      >
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Full Name *" required />
-          <input type="email" name="email" placeholder="Email Address *" required />
-        </div>
+  <div class="card-grid">
+    <!-- Web Design -->
+    <a class="card" href="/pages/services/web.html">
+      <img src="/assets/placeholders/service-web.svg" alt="Website Design" class="service-img" />
+      <div class="content">
+        <h3>Website Design</h3>
+        <p>Beautiful, fast, mobile-first websites that grow with your business.</p>
+      </div>
+    </a>
 
-        <div class="form-row">
-          <input type="text" name="company" placeholder="Company (optional)" />
-          <input type="text" name="phone" placeholder="Phone" />
-        </div>
+    <!-- Automation -->
+    <a class="card" href="/pages/services/automation.html">
+      <img src="/assets/placeholders/service-analytics.svg" alt="Automation" class="service-img" />
+      <div class="content">
+        <h3>Automation Workflows</h3>
+        <p>Smart automations with n8n, cloud scripts, and AI-powered agents.</p>
+      </div>
+    </a>
 
-        <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+    <!-- AI Tools -->
+    <a class="card" href="/pages/services/ai.html">
+      <img src="/assets/placeholders/service-bot.svg" alt="AI Services" class="service-img" />
+      <div class="content">
+        <h3>AI Setup & Integrations</h3>
+        <p>Custom AI tools, chatbots, and assistants for your business.</p>
+      </div>
+    </a>
+  </div>
+</section>
 
-        <button type="submit" class="btn-submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- ========================= FREE TOOLS ========================= -->
+<section class="section" id="tools">
+  <h2 class="section-title">Free Online Tools</h2>
+  <p class="section-subtitle">Simple tools that save time, reduce manual work, and help your business run smoother.</p>
 
-  <!-- FOOTER -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer-tools.html")
-      .then(res => res.text())
-      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
-  </script>
+  <div class="card-grid">
+
+    <!-- URL Shortener -->
+    <a class="card tool-card" href="/pages/tools/url/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/link-icon.svg" alt="Shorten URL"/>
+      </div>
+      <div class="content">
+        <h3>URL Shortener</h3>
+        <p>Shorten long URLs instantly with a clean, shareable link.</p>
+      </div>
+    </a>
+
+    <!-- QR Generator -->
+    <a class="card tool-card" href="/pages/tools/generators/qr/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/ai-tool-icon.svg" alt="QR Generator"/>
+      </div>
+      <div class="content">
+        <h3>QR Generator</h3>
+        <p>Create custom QR codes for menus, forms, and business pages.</p>
+      </div>
+    </a>
+
+    <!-- Password Generator -->
+    <a class="card tool-card" href="/pages/tools/password-generator/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/password-icon.svg" alt="Password Generator"/>
+      </div>
+      <div class="content">
+        <h3>Password Generator</h3>
+        <p>Generate strong, secure passwords in one click.</p>
+      </div>
+    </a>
+
+    <!-- CSV Cleaner -->
+    <a class="card tool-card" href="/pages/tools/csv-to-json/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/csv-icon.svg" alt="CSV Cleaner"/>
+      </div>
+      <div class="content">
+        <h3>CSV Cleaner</h3>
+        <p>Clean, format, and convert CSV files with zero effort.</p>
+      </div>
+    </a>
+
+    <!-- File Converter -->
+    <a class="card tool-card" href="/pages/tools/image-converter/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/file-icon.svg" alt="File Converter"/>
+      </div>
+      <div class="content">
+        <h3>File Converter</h3>
+        <p>Convert images instantly — JPG, PNG, WebP, and more.</p>
+      </div>
+    </a>
+
+    <!-- ZIP / UNZIP -->
+    <a class="card tool-card" href="/pages/tools/zip/index.html">
+      <div class="tool-icon">
+        <img src="/assets/placeholders/zip-icon.svg" alt="Zip Tools"/>
+      </div>
+      <div class="content">
+        <h3>Zip / Unzip</h3>
+        <p>Compress and extract files directly in your browser.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ========================= CTA ========================= -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Grow Smarter with Better Tools</h2>
+    <p>Join thousands using Bita Digital Hub to simplify work and build online success.</p>
+    <a href="/pages/signup/index.html" class="btn primary">Get Started Free</a>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
+
+</body>
+</html>
+
+<!-- ========================= FOOTER ========================= -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+</script>
 
 </body>
 </html>

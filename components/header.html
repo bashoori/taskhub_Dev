@@ -1,31 +1,37 @@
+<!-- ============================
+     HEADER (Minimal Slide Navbar)
+============================ -->
+
 <header class="main-header">
   <div class="nav-inner">
 
-    <!-- Brand / Logo -->
+    <!-- Brand -->
     <a href="/" class="brand-link">
-      <img 
-        src="/assets/taskhub-logo.svg" 
-        alt="Bita Digital Hub Logo" 
-        class="brand-logo" 
-      />
+      <img src="/assets/logo.svg" class="brand-logo" alt="Bita Digital Hub">
       <span class="brand-name">Bita Digital Hub</span>
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="nav-links" id="main-nav">
-      <a href="/#home">Home</a>
-      <a href="/pages/about/about.html">About</a>
-      <a href="/pages/tools/tools.html">Tools</a>
-      <a href="/pages/product/product.html">Products/Services</a>
-      <a href="/pages/blog/blog.html">Blog</a>
-      <a href="/pages/roadmap/roadmap.html">Roadmap</a>
-      <a href="/#contact" class="contact-btn">Contact</a>
+    <!-- Desktop Nav -->
+    <nav class="nav-links">
+      <a href="/blog/">Blog</a>
+      <a href="/tools/">Tools</a>
+      <a href="/services/">Services</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" class="contact-btn">Contact</a>
     </nav>
 
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle" aria-label="Toggle Menu">
       <i data-lucide="menu"></i>
     </button>
-
   </div>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/blog/">Blog</a>
+    <a href="/tools/">Tools</a>
+    <a href="/services/">Services</a>
+    <a href="/about/">About</a>
+    <a href="/contact/" class="contact-btn">Contact</a>
+  </nav>
 </header>

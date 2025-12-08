@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Generator | Bita Digital Hub</title>
+  <meta name="description"
+        content="Generate secure random passwords with custom length and character sets. Strong password generator by Bita Digital Hub." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+<body class="tools-page">
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+      <h1 class="tool-title">Password Generator</h1>
+      <p class="tool-description">
+        Create strong, random passwords for your accounts. Nothing is stored or sent —
+        everything is generated locally in your browser.
+      </p>
+
+      <label class="tool-label">Password length</label>
+      <input id="pwd-length" class="tool-input" type="number" min="6" max="64" value="12" />
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="pwd-lower" checked />
+        <label for="pwd-lower">Lowercase letters (a-z)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="pwd-upper" checked />
+        <label for="pwd-upper">Uppercase letters (A-Z)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="pwd-number" checked />
+        <label for="pwd-number">Numbers (0-9)</label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="pwd-symbol" />
+        <label for="pwd-symbol">Symbols (!@#$...)</label>
+      </div>
+
+      <button id="pwd-generate" class="tool-btn" style="margin-top:1rem;">
+        Generate Password
+      </button>
+
+      <div id="pwd-strength" class="output-box" style="margin-top:1rem;"></div>
+
+      <label class="tool-label" style="margin-top:1rem;">Generated password</label>
+      <input id="pwd-output" class="tool-input" readonly />
+
+      <button id="pwd-copy" class="tool-btn" style="display:none; margin-top:1rem;">
+        Copy
+      </button>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <script src="/js/core/script.js" defer></script>
+  <script src="/js/tools/password.js" defer></script>
+</body>
+</html>

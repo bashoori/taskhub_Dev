@@ -1,64 +1,68 @@
-/* ============================================
-   UNIVERSAL CARD SYSTEM — MODERN CLEAN DESIGN
-   Used for: Articles, Tools, Services, Courses
-=============================================== */
+/* ============================================================
+   CARDS.CSS — Universal Card System (Palette 2 Brand)
+   Supports:
+   - Standard Image Cards (blog, services)
+   - Tool Cards (icon-based)
+   - Mini Cards
+   - Horizontal Cards
+   - Featured Cards
+   - Carousel Cards
+============================================================ */
 
-/* GRID WRAPPER */
+
+/* ============================================================
+   GRID WRAPPER
+============================================================ */
+
 .card-grid {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
   gap: 2rem;
-}
-
-/* Desktop Layout */
-.card-grid {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* Tablet */
 @media (max-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ============================================
-   BASE CARD
-=============================================== */
+
+/* ============================================================
+   STANDARD CARD (Blog, Articles, Services, Courses)
+============================================================ */
 
 .card {
   display: block;
-  background: #ffffff;
-  border-radius: 18px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
 }
-
-/* ============================================
-   IMAGE CARDS (Articles & Services)
-=============================================== */
 
 .card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  background: #eef2f7;
+  background: #e5e7eb;
 }
 
 .card .content {
@@ -66,34 +70,34 @@
 }
 
 .card h3 {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--primary);
+  line-height: 1.35;
   margin-bottom: 0.55rem;
-  line-height: 1.4;
 }
 
 .card p {
-  color: #475569;
+  color: var(--text-soft);
   font-size: 0.95rem;
   line-height: 1.55;
 }
 
-/* ============================================
+
+/* ============================================================
    TOOL CARDS (Icon-Based)
-=============================================== */
+============================================================ */
 
 .tool-card img {
-  display: none; /* No photos for tool cards */
+  display: none; /* remove image slot */
 }
 
-/* Icon container */
 .tool-icon {
-  height: 64px;
-  width: 64px;
-  margin: 1.3rem auto 1rem;
+  height: 68px;
+  width: 68px;
+  margin: 1.4rem auto 1rem;
+  background: var(--accent-light);
   border-radius: 50%;
-  background: #f1f5f9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,22 +106,206 @@
 .tool-icon svg {
   height: 30px;
   width: 30px;
-  stroke-width: 1.6;
+  stroke: var(--primary);
+  stroke-width: 1.8;
 }
 
-/* Text for tool cards */
 .tool-card .content {
   padding: 1rem 1.5rem 1.8rem;
   text-align: center;
 }
 
-/* ============================================
-   SMALL BORDER ACCENTS (Optional, Clean)
-=============================================== */
 
-.card-accent-blue { border-top: 4px solid #3b82f6; }
-.card-accent-green { border-top: 4px solid #10b981; }
-.card-accent-pink { border-top: 4px solid #ec4899; }
-.card-accent-purple { border-top: 4px solid #8b5cf6; }
-.card-accent-orange { border-top: 4px solid #f97316; }
-.card-accent-yellow { border-top: 4px solid #facc15; }
+/* ============================================================
+   MINI CARDS (compact UI elements)
+============================================================ */
+
+.mini-card-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.mini-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mini-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.mini-card p {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  color: var(--text-soft);
+}
+
+
+/* ============================================================
+   HORIZONTAL CARDS
+============================================================ */
+
+.h-card {
+  display: flex;
+  gap: 1.4rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.h-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.h-card img {
+  width: 150px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+}
+
+.h-card .content {
+  flex: 1;
+}
+
+.h-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.h-card p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+  .h-card {
+    flex-direction: column;
+  }
+  .h-card img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+
+/* ============================================================
+   FEATURED LARGE CARD — HERO FEATURED CONTENT
+============================================================ */
+
+.featured-card {
+  background: var(--white);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.14);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.featured-card .content {
+  padding: 2rem;
+}
+
+.featured-card h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.featured-card p {
+  font-size: 1.1rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   CAROUSEL — Touch-friendly sliding cards
+============================================================ */
+
+.carousel {
+  display: flex;
+  gap: 1.4rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  min-width: 280px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease;
+  scroll-snap-align: start;
+}
+
+.carousel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.carousel-card p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   OPTIONAL BORDER ACCENTS
+============================================================ */
+
+.card-accent-blue    { border-top: 4px solid #3b82f6; }
+.card-accent-green   { border-top: 4px solid #10b981; }
+.card-accent-pink    { border-top: 4px solid #ec4899; }
+.card-accent-purple  { border-top: 4px solid #8b5cf6; }
+.card-accent-orange  { border-top: 4px solid #f97316; }
+.card-accent-yellow  { border-top: 4px solid #facc15; }
