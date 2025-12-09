@@ -254,3 +254,43 @@
 
   padding: 6rem 1rem; /* makes it breathing and centered */
 }
+
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.footer-logo span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
