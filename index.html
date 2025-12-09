@@ -20,7 +20,7 @@
 <body>
 
 <!-- ============================
-     HEADER
+     GLOBAL HEADER
 ============================ -->
 <div id="header-placeholder"></div>
 <script>
@@ -31,45 +31,46 @@
 
 
 
-<!-- ============================
-     NEON HERO (3 FEATURE CARDS)
-============================ -->
-<section class="hero neon-hero">
+<!-- ============================================================
+     CLEAN SAAS HERO (3 MINI FEATURE CARDS)
+============================================================ -->
+<section class="hero clean-hero">
   <div class="container hero-container">
 
-    <h1 class="neon-title">Powerful Free Tools for Your Daily Work</h1>
-    <p class="neon-subtitle">
-      Instantly generate QR codes, write with AI, clean CSVs, convert files,
-      shorten URLs and more — all in one simple workspace.
-    </p>
+    <!-- Left Text -->
+    <div class="hero-text">
+      <h1 class="hero-title">Powerful Free Tools for Your Daily Work</h1>
 
-    <!-- Three Feature Cards -->
-    <div class="hero-feature-row">
+      <p class="hero-sub">
+        Instantly generate QR codes, clean CSV files, convert images, 
+        shorten URLs, create strong passwords and more — all in one clean workspace.
+      </p>
 
-      <!-- QR Tool -->
-      <a href="/pages/tools/generators/qr-generator/" class="hero-card">
-        <div class="hero-icon">🔳</div>
-        <h3>QR Code Generator</h3>
-      </a>
-
-      <!-- AI Writer -->
-      <a href="/pages/tools/generators/password-generator/" class="hero-card hero-card-center">
-        <div class="hero-icon">🖊️</div>
-        <h3>AI Writer</h3>
-      </a>
-
-      <!-- SEO Tool -->
-      <a href="/pages/tools/utilities/csv-cleaner/" class="hero-card">
-        <div class="hero-icon">📈</div>
-        <h3>SEO Optimizer</h3>
-      </a>
-
+      <div class="hero-buttons">
+        <a href="/pages/tools/tools.html" class="btn primary">Explore Tools</a>
+        <a href="/pages/product/product.html" class="btn outline">View Services</a>
+      </div>
     </div>
 
-    <!-- CTA Buttons -->
-    <div class="hero-buttons">
-      <a href="/pages/tools/tools.html" class="btn primary">Explore All Tools</a>
-      <a href="/pages/product/product.html" class="btn outline">View Services</a>
+
+    <!-- Right Visual Block -->
+    <div class="hero-feature-box">
+
+      <a class="hero-mini-card" href="/pages/tools/generators/qr-generator/">
+        <div class="mini-icon">📱</div>
+        <span>QR Generator</span>
+      </a>
+
+      <a class="hero-mini-card" href="/pages/tools/generators/password-generator/">
+        <div class="mini-icon">🔐</div>
+        <span>Password Maker</span>
+      </a>
+
+      <a class="hero-mini-card" href="/pages/tools/utilities/csv-cleaner/">
+        <div class="mini-icon">🧹</div>
+        <span>CSV Cleaner</span>
+      </a>
+
     </div>
 
   </div>
@@ -77,9 +78,9 @@
 
 
 
-<!-- ============================
+<!-- ============================================================
      POPULAR TOOLS
-============================ -->
+============================================================ -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Popular Tools</h2>
@@ -114,7 +115,7 @@
         <div class="tool-icon"><span>🧹</span></div>
         <div class="content">
           <h3>CSV Cleaner</h3>
-          <p>Remove blanks, trim spaces, normalize data fast.</p>
+          <p>Remove blanks, trim spaces and normalize data fast.</p>
         </div>
       </a>
 
@@ -122,7 +123,7 @@
         <div class="tool-icon"><span>📱</span></div>
         <div class="content">
           <h3>QR Generator</h3>
-          <p>Create QR codes for menus, profiles, campaigns, and more.</p>
+          <p>Create QR codes for menus, profiles, campaigns and more.</p>
         </div>
       </a>
 
@@ -132,15 +133,15 @@
 
 
 
-<!-- ============================
+<!-- ============================================================
      CTA SECTION
-============================ -->
+============================================================ -->
 <section class="section">
   <div class="container text-center">
     <h2>Everything you need — in one clean workspace</h2>
     <p>
       Fast, simple, private. No login. No tracking. Built for creators,
-      marketers, small businesses, students, and developers.
+      marketers, small businesses, students and developers.
     </p>
 
     <a href="/pages/tools/tools.html" class="btn outline">Browse All Tools</a>
@@ -149,9 +150,9 @@
 
 
 
-<!-- ============================
+<!-- ============================================================
      FOOTER
-============================ -->
+============================================================ -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
