@@ -1,144 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ============================================
+     HEADER — Minimal SaaS Navigation (Palette 2)
+=============================================== -->
 
-  <title>Bita Digital Hub – Free Online Tools & AI Utilities</title>
-  <meta name="description"
-        content="Free online tools for productivity — URL shortener, file converter, CSV cleaner, QR generator, password generator, and more. Fast, secure, no login." />
+<header class="main-header">
+  <div class="nav-inner">
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-  <link rel="stylesheet" href="/css/cards.css" />
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="/js/core/script.js" defer></script>
-</head>
-
-<body>
-
-<!-- ============================
-     HEADER
-============================ -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
-
-
-
-<!-- ============================
-     HERO SECTION
-============================ -->
-<section class="hero">
-  <div class="container">
-
-    <h1 class="hero-title">
-      Free Online Tools for a Faster, Smarter Workflow
-    </h1>
-
-    <p class="hero-subtitle">
-      Convert files, clean CSVs, generate passwords, shorten URLs, create QR codes,
-      and more — all in one clean, private, fast workspace.
-    </p>
-
-    <a href="/pages/tools/tools.html" class="btn primary hero-cta">
-      Explore All Tools
+    <!-- Brand -->
+    <a href="/" class="brand-link">
+      <span class="brand-emoji">⚡</span>
+      <span class="brand-name">Bita Digital Hub</span>
     </a>
 
-    <img src="/assets/images/trans-web.png"
-         alt="Free tools illustration"
-         class="hero-image" />
+    <!-- Desktop Navigation -->
+    <nav class="nav-links">
+      <a href="/pages/blog/blog.html">Blog</a>
+      <a href="/pages/tools/tools.html">Tools</a>
+      <a href="/pages/product/product.html">Services</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle" aria-label="Toggle Menu">
+      <i data-lucide="menu"></i>
+    </button>
   </div>
-</section>
 
-
-
-<!-- ============================
-     POPULAR TOOLS
-============================ -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Popular Tools</h2>
-    <p class="section-sub">Your most-used utilities — always fast, always free.</p>
-
-    <div class="card-grid">
-
-      <a href="/pages/tools/generators/url-shortener/" class="card">
-        <div class="tool-icon"><span>🔗</span></div>
-        <div class="content">
-          <h3>URL Shortener</h3>
-          <p>Create clean & trackable short links instantly.</p>
-        </div>
-      </a>
-
-      <a href="/pages/tools/converters/file-converter/" class="card">
-        <div class="tool-icon"><span>📁</span></div>
-        <div class="content">
-          <h3>File Converter</h3>
-          <p>Convert images, documents and media in seconds.</p>
-        </div>
-      </a>
-
-      <a href="/pages/tools/generators/password-generator/" class="card">
-        <div class="tool-icon"><span>🔐</span></div>
-        <div class="content">
-          <h3>Password Generator</h3>
-          <p>Create strong random passwords in one click.</p>
-        </div>
-      </a>
-
-      <a href="/pages/tools/utilities/csv-cleaner/" class="card">
-        <div class="tool-icon"><span>🧹</span></div>
-        <div class="content">
-          <h3>CSV Cleaner</h3>
-          <p>Remove blanks, fix encoding & clean messy datasets.</p>
-        </div>
-      </a>
-
-      <a href="/pages/tools/generators/qr-generator/" class="card">
-        <div class="tool-icon"><span>📱</span></div>
-        <div class="content">
-          <h3>QR Generator</h3>
-          <p>Create QR codes for menus, profiles, and campaigns.</p>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ============================
-     CTA — Productivity Message
-============================ -->
-<section class="section">
-  <div class="container text-center">
-    <h2 class="cta-title">Your Tools. Your Flow.</h2>
-    <p class="cta-sub">
-      No login. No ads (until AdSense approves). No tracking.  
-      Just fast tools for students, creators, freelancers, and businesses.
-    </p>
-
-    <a href="/pages/tools/tools.html" class="btn outline">Browse All Tools</a>
-  </div>
-</section>
-
-
-
-<!-- ============================
-     FOOTER (LOADED)
-============================ -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
-
-</body>
-</html>
+  <!-- Mobile Slide Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+      <a href="/pages/blog/blog.html">Blog</a>
+      <a href="/pages/tools/tools.html">Tools</a>
+      <a href="/pages/product/product.html">Services</a>
+      <a href="/pages/about/about.html">About</a>
+      <a href="/pages/contact/contact.html">Contact</a>
+  </nav>
+</header>
