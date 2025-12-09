@@ -256,3 +256,67 @@
   justify-content: center;
   gap: 1rem;
 }
+
+/* ============================================================
+   CLEAN SAAS HERO (Option A)
+============================================================ */
+
+.clean-hero {
+  background: #ffffff;
+  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
+}
+
+@media (max-width: 768px) {
+  .clean-hero {
+    padding-top: calc(var(--mobile-nav-height) + 2rem);
+  }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  color: var(--text-soft);
+  font-size: 1.15rem;
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  max-width: 520px;
+  width: 100%;
+  border-radius: 14px;
+}
