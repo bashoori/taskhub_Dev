@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bita Digital Hub – Free Online Tools & AI Utilities</title>
 
-  <meta name="description" content="Free online tools for file conversion, password generation, URL shortener, CSV cleaning, QR generator and more. Fast, clean, no login required." />
+  <meta name="description" content="Free online tools for file conversion, password generation, URL shortener, CSV cleaning, QR generation and more. Fast, clean, no login required." />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/home.css" />
@@ -16,55 +16,27 @@
 <body>
 
 <!-- ============================
-     HEADER (Minimal Slide Navbar)
+     LOAD HEADER FROM components/header.html
 ============================ -->
-<header class="main-header">
-  <div class="nav-inner">
-
-    <!-- Brand -->
-    <a href="/" class="brand-link">
-      <span class="brand-emoji">⚡</span>
-      <span class="brand-name">Bita Digital Hub</span>
-    </a>
-
-    <!-- Desktop Nav -->
-    <nav class="nav-links">
-      <a href="/pages/blog/blog.html">Blog</a>
-      <a href="/pages/tools/tools.html">Tools</a>
-      <a href="/pages/product/product.html">Services</a>
-      <a href="/pages/about/about.html">About</a>
-      <a href="/index.html">Home</a>
-      <a href="/pages/contact/contact.html">Contact</a>
-    </nav>
-
-    <!-- Mobile Toggle -->
-    <button class="menu-toggle" aria-label="Toggle Menu">
-      <i data-lucide="menu"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Drawer -->
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="/pages/blog/blog.html">Blog</a>
-    <a href="/pages/tools/tools.html">Tools</a>
-    <a href="/pages/product/product.html">Services</a>
-    <a href="/pages/about/about.html">About</a>
-    <a href="/index.html">Home</a>
-    <a href="/pages/contact/contact.html">Contact</a>
-  </nav>
-</header>
-
-
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(r => r.text())
+    .then(html => document.getElementById("header-placeholder").innerHTML = html);
+</script>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="container">
     <h1>Powerful Free Tools for Your Daily Work</h1>
-    <p>Instant, private, free utilities for converting files, generating passwords, creating QR codes, cleaning CSVs, and more — all in one place.</p>
+    <p>
+      Instant, private, free utilities for converting files, generating passwords,
+      creating QR codes, cleaning CSVs, and more — all in one place.
+    </p>
 
     <a href="/pages/tools/tools.html" class="btn primary">Explore All Tools</a>
 
-    <img src="/assets/images/online-biz.jpg" alt="Tools illustration" class="hero-image">
+    <img src="/assets/images/trans-web.png" alt="Tools illustration" class="hero-image">
   </div>
 </section>
 
@@ -77,8 +49,7 @@
 
     <div class="card-grid">
       
-      <!-- URL Shortener -->
-      <a href="/pages/tools/url/index.html" class="card">
+      <a href="/pages/tools/generators/url-shortener/" class="card">
         <div class="tool-icon"><span>🔗</span></div>
         <div class="content">
           <h3>URL Shortener</h3>
@@ -86,8 +57,7 @@
         </div>
       </a>
 
-      <!-- File Converter -->
-      <a href="/pages/tools/converters/file-converter/index.html" class="card">
+      <a href="/pages/tools/converters/file-converter/" class="card">
         <div class="tool-icon"><span>📁</span></div>
         <div class="content">
           <h3>File Converter</h3>
@@ -95,8 +65,7 @@
         </div>
       </a>
 
-      <!-- Password Generator -->
-      <a href="/pages/tools/generators/password-generator/index.html" class="card">
+      <a href="/pages/tools/generators/password-generator/" class="card">
         <div class="tool-icon"><span>🔐</span></div>
         <div class="content">
           <h3>Password Generator</h3>
@@ -104,17 +73,15 @@
         </div>
       </a>
 
-      <!-- CSV Cleaner -->
-      <a href="/pages/tools/utilities/csv-cleaner/index.html" class="card">
+      <a href="/pages/tools/utilities/csv-cleaner/" class="card">
         <div class="tool-icon"><span>🧹</span></div>
         <div class="content">
           <h3>CSV Cleaner</h3>
-          <p>Remove duplicates, fix encoding, normalize data fast.</p>
+          <p>Remove duplicates, fix encoding, and normalize data fast.</p>
         </div>
       </a>
 
-      <!-- QR Generator -->
-      <a href="/pages/tools/generators/qr-generator/index.html" class="card">
+      <a href="/pages/tools/generators/qr-generator/" class="card">
         <div class="tool-icon"><span>📱</span></div>
         <div class="content">
           <h3>QR Generator</h3>
@@ -132,18 +99,21 @@
 <section class="section">
   <div class="container text-center">
     <h2>Everything you need — in one clean workspace</h2>
-    <p>Fast, simple, private. No login. No tracking. Built for creators, marketers, small businesses, students, and developers.</p>
+    <p>
+      Fast, simple, private. No login. No tracking.
+      Built for creators, marketers, small businesses, students, and developers.
+    </p>
     <a href="/pages/tools/tools.html" class="btn outline">Browse All Tools</a>
   </div>
 </section>
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= LOAD FOOTER ================= -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
-    .then(res => res.text())
+    .then(r => r.text())
     .then(html => document.getElementById("footer-placeholder").innerHTML = html);
 </script>
 
