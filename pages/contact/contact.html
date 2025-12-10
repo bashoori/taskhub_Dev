@@ -4,132 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Contact Us | Bita Digital Hub</title>
+  <title>Contact | Bita Digital Hub</title>
 
   <meta name="description"
-        content="Get in touch with Bita Digital Hub. Whether you have questions, need support, or want to collaborate, we’re here to help." />
+        content="Contact Bita Digital Hub for support, collaboration, business inquiries, or tool assistance. We're here to help." />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
 
-  <style>
-    /* Layout spacing below sticky header */
-    .page-wrapper {
-      padding-top: 140px;
-      padding-bottom: 80px;
-    }
-
-    .contact-container {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 0 1.5rem;
-    }
-
-    .contact-title {
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 12px;
-    }
-
-    .contact-subtitle {
-      max-width: 650px;
-      font-size: 1.15rem;
-      color: #475569;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    /* Contact Card */
-    .contact-card {
-      background: #ffffff;
-      padding: 2.8rem;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.08);
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-      animation: fadeUp 0.45s ease-out;
-    }
-
-    /* Form fields */
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-      color: #0f172a;
-      font-size: 1.05rem;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #2563eb;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-
-    /* Button */
-    .contact-btn {
-      width: 100%;
-      padding: 1rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      background: #1e3a8a;
-      color: #ffffff;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: 0.25s ease;
-    }
-
-    .contact-btn:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
-    }
-
-    /* Animation */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 480px) {
-      .contact-card {
-        padding: 2rem;
-      }
-      .contact-title {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -142,43 +27,37 @@
     .then(html => (document.getElementById("header-placeholder").innerHTML = html));
 </script>
 
-<!-- MAIN -->
-<main class="page-wrapper">
+<!-- ======================= HERO ======================= -->
+<section class="contact-hero">
+  <h1>Contact Us</h1>
+  <p>
+    Have a question, need support, or want to collaborate?  
+    Send us a message and we’ll get back to you as soon as possible.
+  </p>
+</section>
 
+<!-- ======================= CONTACT FORM ======================= -->
+<section class="contact-section">
   <div class="contact-container">
 
-    <h1 class="contact-title">Contact Us</h1>
-    <p class="contact-subtitle">
-      Have a question, a suggestion, or need help with one of our tools?
-      Send us a message and we’ll respond as soon as possible.
-    </p>
+    <form class="contact-form" action="/pages/contact/contact-success.html" method="POST">
 
-    <div class="contact-card">
-      <form action="#" method="POST" class="contact-form">
+      <!-- Name + Email (Side-by-side desktop) -->
+      <div class="form-row">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Email Address" required />
+      </div>
 
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input id="name" type="text" placeholder="Enter your name" required />
-        </div>
+      <!-- Message -->
+      <textarea id="message" name="message" placeholder="Your Message..." required></textarea>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="your@email.com" required />
-        </div>
+      <!-- Button -->
+      <button type="submit" class="btn-submit">Send Message</button>
 
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" placeholder="Write your message..." required></textarea>
-        </div>
-
-        <button type="submit" class="contact-btn">Send Message</button>
-
-      </form>
-    </div>
+    </form>
 
   </div>
-
-</main>
+</section>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
