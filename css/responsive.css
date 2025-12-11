@@ -187,3 +187,14 @@
     padding-top: 12px !important;
   }
 }
+
+@media (max-width: 640px) {
+  .contact-hero {
+    padding-top: 5rem; /* Fix hero spacing on iPhone */
+  }
+
+  .contact-form {
+    margin-top: 1.5rem;
+    padding: 1.8rem;
+  }
+}

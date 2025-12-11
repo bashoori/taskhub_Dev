@@ -23,7 +23,9 @@
 <script>
   fetch("/components/header.html")
     .then(res => res.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+    .then(html => { 
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
 </script>
 
 <!-- HERO -->
@@ -31,48 +33,55 @@
   <h1>Contact Us</h1>
   <p>
     Have a question, need support, or want to collaborate?  
-    Send us a message — we usually respond within 24 hours.
+    Send us a message — we usually reply within 24 hours.
   </p>
 </section>
 
-<!-- CONTACT FORM -->
+<!-- FORM -->
 <section class="contact-section">
   <div class="contact-container">
 
-    <form class="contact-form" action="/pages/contact/contact-success.html" method="POST" autocomplete="on">
+    <form class="contact-form" 
+          action="/pages/contact/contact-success.html" 
+          method="POST" 
+          autocomplete="on">
 
+      <!-- NAME + EMAIL -->
       <div class="form-row">
-        <label class="sr-only" for="name">Your Name</label>
+
+        <label for="name" class="sr-only">Your Name</label>
         <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          placeholder="Your Name" 
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your Name"
           aria-label="Your Name"
-          required 
+          required
         />
 
-        <label class="sr-only" for="email">Email Address</label>
+        <label for="email" class="sr-only">Email Address</label>
         <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Email Address" 
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email Address"
           aria-label="Email Address"
           autocomplete="email"
-          required 
+          required
         />
       </div>
 
-      <label class="sr-only" for="message">Your Message</label>
-      <textarea 
-        id="message" 
-        name="message" 
-        placeholder="Your Message..." 
+      <!-- MESSAGE -->
+      <label for="message" class="sr-only">Your Message</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Your Message..."
         aria-label="Your Message"
         required
       ></textarea>
 
+      <!-- BUTTON -->
       <div class="form-actions">
         <button type="submit" class="btn-submit">Send Message</button>
       </div>
@@ -87,7 +96,9 @@
 <script>
   fetch("/components/footer.html")
     .then(res => res.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+    .then(html => { 
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
 </script>
 
 </body>
