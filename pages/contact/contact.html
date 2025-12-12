@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Contact | Bita Digital Hub</title>
-
   <meta
     name="description"
-    content="Contact Bita Digital Hub for support, questions, or collaboration opportunities."
+    content="Contact Bita Digital Hub for support, questions, or collaboration."
   />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
 </head>
 
 <body>
@@ -30,35 +29,36 @@
   </script>
 
   <!-- =========================
-        CONTACT
+        CONTACT CARD
   ========================== -->
-  <main class="page-wrapper contact-page">
+  <main class="auth-page">
 
-    <section class="contact-card">
+    <section class="auth-card contact-card">
 
-      <!-- Optional illustration space -->
-      <div class="contact-illustration" aria-hidden="true"></div>
+      <!-- Illustration placeholder -->
+      <div class="auth-illustration">
+        <!-- optional SVG or icon later -->
+      </div>
 
-      <h1 class="contact-title">Contact Us</h1>
+      <h1 class="auth-title">Contact Us</h1>
 
-      <p class="contact-subtitle">
+      <p class="auth-subtitle">
         Have a question, need support, or want to collaborate?
         Send us a message and we’ll reply within 24 hours.
       </p>
 
       <form
-        class="contact-form"
+        class="auth-form"
         method="POST"
         action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
       >
 
-        <!-- Honeypot (spam protection) -->
+        <!-- Honeypot -->
         <input
           type="text"
           name="company"
           tabindex="-1"
           autocomplete="off"
-          aria-hidden="true"
           style="display:none"
         />
 
@@ -83,13 +83,13 @@
           required
         ></textarea>
 
-        <button type="submit" class="btn primary contact-btn">
+        <button type="submit" class="btn primary auth-btn">
           Send Message
         </button>
 
       </form>
 
-      <p class="contact-footer-text">
+      <p class="auth-footer-text">
         Prefer email?
         <a href="mailto:contact@bitadigitalhub.com">
           contact@bitadigitalhub.com
