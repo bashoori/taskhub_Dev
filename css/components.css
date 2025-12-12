@@ -1,7 +1,7 @@
 /* =========================================================
    COMPONENTS.CSS
    Header · Navigation · Buttons · CTA · Footer
-   Palette: Blue / Cyan (Bita Digital Hub)
+   Palette: Blue / Cyan — Bita Digital Hub
 ========================================================= */
 
 /* =========================
@@ -56,6 +56,7 @@
 }
 
 /* Brand */
+
 .brand-link {
   display: flex;
   align-items: center;
@@ -74,18 +75,20 @@
   color: var(--primary);
 }
 
-/* Desktop Nav */
+/* Desktop Navigation */
+
 .nav-links {
   display: flex;
-  gap: 1.4rem;
   align-items: center;
+  gap: 1.4rem;
 }
 
 .nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none;
   color: var(--text-mid);
-  font-weight: 500;
-  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -94,6 +97,7 @@
 }
 
 /* Mobile Toggle */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -131,6 +135,7 @@
     flex-direction: column;
     padding: 0 1.4rem;
     transition: height 0.28s ease;
+    z-index: 999;
   }
 
   .mobile-nav.open {
@@ -140,8 +145,9 @@
   .mobile-nav a {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border);
-    color: var(--text-dark);
     text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
   }
 
   .mobile-nav a:last-child {
@@ -165,12 +171,12 @@
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .btn.primary {
   background: var(--primary);
-  color: #fff;
+  color: #ffffff;
 }
 
 .btn.primary:hover {
@@ -179,16 +185,20 @@
 }
 
 /* =========================
-   CTA SECTION (FIXED)
+   CTA SECTION (TIGHT + FIXED)
 ========================= */
 
 .cta-section {
   max-width: 900px;
-  margin: 4rem auto 3rem;
+  margin: 2.5rem auto 3rem; /* reduced top gap */
   padding: 3rem 2rem;
   background: #f1f5ff;
   border-radius: 22px;
   text-align: center;
+}
+
+.tools-page .cta-section {
+  margin-top: 2.2rem; /* tool → CTA spacing fix */
 }
 
 .cta-section h2 {
@@ -214,7 +224,6 @@
 }
 
 .cta-button {
-  display: inline-block;
   background: var(--primary);
   color: #ffffff;
   padding: 0.9rem 2.4rem;
@@ -222,15 +231,18 @@
   font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .cta-button:hover {
   background: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
 .cta-link {
   color: var(--primary);
   font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -258,16 +270,17 @@
 
 .footer h4 {
   color: #ffffff;
-  margin-bottom: 0.6rem;
   font-size: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer a {
   display: block;
-  color: #cbd5e1;
-  text-decoration: none;
   font-size: 0.95rem;
   margin-bottom: 0.4rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer a:hover {
