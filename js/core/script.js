@@ -1,28 +1,55 @@
 /* ============================================
-   CORE SCRIPT — Minimal Slide Mobile Nav
+   CORE SCRIPT — Mobile Navigation Controller
 ============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const mobileNav = document.querySelector("#mobileNav");
+  const openBtn = document.getElementById("openMenu");
+  const closeBtn = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuLinks = document.querySelectorAll(".mobile-nav a");
 
-  if (!toggle || !mobileNav) return;
+  if (!openBtn || !closeBtn || !mobileMenu) return;
 
-  toggle.addEventListener("click", () => {
-    const isOpen = mobileNav.classList.toggle("open");
+  const openMenu = () => {
+    mobileMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+  };
 
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  const closeMenu = () => {
+    mobileMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  };
+
+  openBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openMenu();
   });
 
-  // Close menu if clicked outside
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeMenu();
+  });
+
+  // Close when clicking a nav link
+  menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close when clicking outside menu
   document.addEventListener("click", (e) => {
     if (
-      mobileNav.classList.contains("open") &&
-      !mobileNav.contains(e.target) &&
-      !toggle.contains(e.target)
+      mobileMenu.classList.contains("active") &&
+      !mobileMenu.contains(e.target) &&
+      !openBtn.contains(e.target)
     ) {
-      mobileNav.classList.remove("open");
-      document.body.style.overflow = "auto";
+      closeMenu();
+    }
+  });
+
+  // Optional: Close on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
     }
   });
 });

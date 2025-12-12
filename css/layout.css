@@ -1,25 +1,34 @@
 /* ============================================
-   LAYOUT.CSS — Containers, Sections, Page Layout
+   LAYOUT.CSS — Core Containers & Page Structure
 ============================================ */
 
+/* Global container */
 .container {
+  width: 100%;
   max-width: var(--max-page);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
+/* Sections */
 .section {
-  padding: var(--space-xxl) 0;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
 }
 
 .section-sm {
-  padding: var(--space-lg) 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
+/* Section headers */
 .section-header {
-  text-align: center;
   max-width: var(--max-text);
   margin: 0 auto var(--space-lg);
+  text-align: center;
 }
 
 .section-header h2 {
@@ -30,11 +39,86 @@
 .section-header p {
   color: var(--text-mid);
   font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-/* Hero wrapper spacing */
+/* Page wrapper (accounts for fixed header) */
 .page-wrapper {
+  width: 100%;
   max-width: var(--max-text);
-  margin: 0 auto;
-  padding: calc(70px + var(--space-xl)) 1.5rem var(--space-xxl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: calc(var(--header-height, 70px) + var(--space-xl));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: var(--space-xxl);
+  box-sizing: border-box;
 }
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .container,
+  .page-wrapper,
+  .section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+/* ============================================================
+   FOOTER LAYOUT
+============================================================ */
+
+.site-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col a {
+  display: block;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-nav {
+    grid-template-columns: 1fr;
+  }
+}
+
