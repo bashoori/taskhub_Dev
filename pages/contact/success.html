@@ -3,131 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Message Sent | Bita Digital Hub</title>
+  <meta name="description" content="Your message has been sent successfully." />
 
-  <meta name="description"
-        content="Your message has been sent successfully. We will get back to you soon." />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/system.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
-
-  <style>
-    .page-wrapper {
-      padding-top: 140px;
-      padding-bottom: 80px;
-    }
-
-    .success-container {
-      max-width: 540px;
-      margin: 0 auto;
-      padding: 2.8rem;
-      text-align: center;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      box-shadow: 0 22px 45px rgba(15,23,42,0.08);
-      animation: fadeUp 0.45s ease-out;
-    }
-
-    .success-icon {
-      width: 110px;
-      margin-bottom: 1.6rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .success-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 0.6rem;
-    }
-
-    .success-subtitle {
-      font-size: 1.08rem;
-      color: #475569;
-      line-height: 1.65;
-      max-width: 420px;
-      margin: 0 auto 2rem;
-    }
-
-    .cta-btn {
-      background: #1e3a8a;
-      padding: 0.95rem 1.6rem;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1.08rem;
-      font-weight: 600;
-      display: inline-block;
-      transition: 0.25s ease;
-    }
-
-    .cta-btn:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 480px) {
-      .success-container {
-        padding: 2rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => (document.getElementById("header-placeholder").innerHTML = html));
-</script>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => (document.getElementById("header-placeholder").innerHTML = html));
+  </script>
 
-<!-- MAIN -->
-<main class="page-wrapper">
+  <main class="page-wrapper" style="max-width: 900px; margin: 0 auto;">
+    <section style="text-align:center; padding: 5rem 1.5rem 2rem;">
+      <h1 style="font-size:2.2rem; margin-bottom:0.8rem;">Message Sent ✅</h1>
+      <p style="color:#475569; max-width:640px; margin:0 auto 2rem; line-height:1.7;">
+        Thanks for reaching out. We received your message and usually reply within 24 hours.
+      </p>
 
-  <div class="success-container">
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a class="btn primary" href="/pages/contact/contact.html">Back to Contact</a>
+        <a class="btn outline" href="/pages/tools/tools.html">Explore Tools</a>
+      </div>
+    </section>
+  </main>
 
-    <img
-      src="/assets/images/onboarding/thankyou.png"
-      alt="Success checkmark icon"
-      class="success-icon"
-    />
-
-    <h1 class="success-title">Message Sent!</h1>
-
-    <p class="success-subtitle">
-      Thank you for reaching out.  
-      We’ve received your message and will get back to you as soon as possible.
-    </p>
-
-    <a href="/index.html" class="cta-btn">Return to Home</a>
-
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
-</script>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => (document.getElementById("footer-placeholder").innerHTML = html));
+  </script>
 
 </body>
 </html>
