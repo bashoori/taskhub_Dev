@@ -2,80 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Image Converter | Bita Digital Hub</title>
-  <meta name="description"
-        content="Convert images between PNG, JPG, and WebP right in your browser. No upload, no tracking." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Image Converter | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Convert images between PNG, JPG, and WebP directly in your browser. No uploads, no tracking, full privacy."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
+
 <body class="tools-page">
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
+
+  <div class="tool-wrapper">
+
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
       <h1 class="tool-title">Image Converter</h1>
       <p class="tool-description">
-        Convert images between PNG, JPG, and WebP formats. All conversion
-        happens directly in your browser for maximum privacy.
+        Convert images between PNG, JPG, and WebP formats.
+        All processing happens locally in your browser for maximum privacy.
       </p>
+    </header>
 
-      <label class="tool-label">Select image file</label>
-      <input type="file" id="file-input" class="tool-input" accept="image/*" />
+    <!-- FILE INPUT -->
+    <div class="tool-field">
+      <label for="file-input" class="tool-label">
+        Select image file
+      </label>
+      <input
+        type="file"
+        id="file-input"
+        class="tool-input"
+        accept="image/*"
+      />
+    </div>
 
-      <label class="tool-label" style="margin-top:1rem;">Output format</label>
+    <!-- FORMAT SELECT -->
+    <div class="tool-field">
+      <label for="file-format" class="tool-label">
+        Output format
+      </label>
       <select id="file-format" class="tool-select">
         <option value="png">PNG</option>
         <option value="jpg">JPG</option>
         <option value="webp">WEBP</option>
       </select>
-
-      <button id="file-convert" class="tool-btn" style="margin-top:1rem;">
-        Convert
-      </button>
-
-      <div id="file-status" class="output-box" style="margin-top:1rem;"></div>
-
-      <img id="file-preview"
-           style="max-width:100%; margin-top:1.5rem; display:none;" />
-
-      <button id="file-download" class="tool-btn"
-              style="display:none; margin-top:1.5rem;">
-        Download Converted Image
-      </button>
-
-      <!-- CTA -->
-      <section class="cta-section">
-        <h2>Get Weekly Marketing Tools and Insights</h2>
-        <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-        <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-        <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
-      </section>
-
-
-
     </div>
-  </main>
 
+    <!-- ACTION -->
+    <button id="file-convert" class="tool-btn">
+      Convert Image
+    </button>
 
+    <!-- STATUS -->
+    <div
+      id="file-status"
+      class="output-box"
+      aria-live="polite"
+    ></div>
 
+    <!-- PREVIEW -->
+    <div class="tool-preview">
+      <img
+        id="file-preview"
+        alt="Converted image preview"
+        style="display: none;"
+      />
+    </div>
 
+    <!-- DOWNLOAD -->
+    <button
+      id="file-download"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Download Converted Image
+    </button>
 
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Get Weekly Marketing Tools and Insights</h2>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
+      </p>
 
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/file-converter.js" defer></script>
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/file-converter.js" defer></script>
+
 </body>
 </html>

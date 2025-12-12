@@ -2,77 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QR Code Generator | Bita Digital Hub</title>
-  <meta name="description"
-        content="Generate high-quality QR codes for links, profiles, or campaigns. Download as PNG for printing or sharing." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>QR Code Generator | Bita Digital Hub</title>
+  <meta
+    name="description"
+    content="Generate high-quality QR codes for links, profiles, or campaigns. Download as PNG for printing or sharing."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 
-  <!-- QR library (if not already in header.html) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <!-- QR Library -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    defer
+  ></script>
 </head>
+
 <body class="tools-page">
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
+
+  <div class="tool-wrapper">
+
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
       <h1 class="tool-title">QR Code Generator</h1>
       <p class="tool-description">
-        Turn any URL or text into a scannable QR code. Perfect for social profiles,
-        business cards, posters, and menus.
+        Turn any URL or text into a scannable QR code.
+        Ideal for social profiles, business cards, posters, and menus.
       </p>
+    </header>
 
-      <label class="tool-label">Text or URL</label>
-      <input id="qr-input" class="tool-input" placeholder="https://bitadigitalhub.com" />
+    <!-- INPUT -->
+    <div class="tool-field">
+      <label for="qr-input" class="tool-label">Text or URL</label>
+      <input
+        id="qr-input"
+        class="tool-input"
+        type="text"
+        placeholder="https://bitadigitalhub.com"
+        autocomplete="off"
+      />
+    </div>
 
-      <label class="tool-label" style="margin-top:1rem;">Size</label>
+    <!-- SIZE SELECT -->
+    <div class="tool-field">
+      <label for="qr-size" class="tool-label">Size</label>
       <select id="qr-size" class="tool-select">
         <option value="200">200px</option>
         <option value="300">300px</option>
         <option value="400" selected>400px</option>
       </select>
+    </div>
 
-      <button id="qr-generate" class="tool-btn" style="margin-top:1rem;">Generate QR</button>
+    <!-- ACTION -->
+    <button id="qr-generate" class="tool-btn">
+      Generate QR Code
+    </button>
 
-      <div id="qr-status" class="output-box" style="margin-top:1rem;"></div>
+    <!-- STATUS / ERROR -->
+    <div id="qr-status" class="output-box" aria-live="polite"></div>
 
-      <div id="qr-box" style="margin-top:1.5rem; text-align:center;"></div>
+    <!-- QR OUTPUT -->
+    <div id="qr-box" class="qr-output"></div>
 
-      <button id="qr-download" class="tool-btn" style="display:none; margin-top:1.5rem;">
-        Download PNG
-      </button>
+    <!-- DOWNLOAD -->
+    <button
+      id="qr-download"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Download PNG
+    </button>
 
-
-        <!-- CTA -->
+    <!-- CTA -->
     <section class="cta-section">
       <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-      <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-      <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
+      </p>
+
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
+        </a>
+      </div>
     </section>
 
-    
-    </div>
-  </main>
+  </div>
+</main>
 
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
-  
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/qr.js" defer></script>
 
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/qr.js" defer></script>
 </body>
 </html>

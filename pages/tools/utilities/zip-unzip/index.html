@@ -3,94 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Zip & Unzip Tool | Bita Digital Hub</title>
 
-  <meta name="description"
-        content="Compress and extract ZIP files instantly — fast, secure, and fully browser-based. No upload required." />
+  <meta
+    name="description"
+    content="Compress and extract ZIP files instantly — fast, secure, and fully browser-based. No upload required."
+  />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/tools.css">
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/tools.css" />
+  <link rel="stylesheet" href="../../css/tools-zip.css" />
 
-  <!-- JSZip Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
-  <style>
-    .tools-page { padding-top: 5rem; }
-
-    .tool-layout {
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-      display: grid;
-      grid-template-columns: 160px 1fr 160px;
-      gap: 1.5rem;
-    }
-
-    @media(max-width: 1000px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .ad-side     { display: none !important; }
-    }
-
-    .ad-side {
-      display: flex;
-      justify-content: center;
-      padding-top: 1rem;
-    }
-
-    .ad-side ins.adsbygoogle {
-      width: 160px;
-      height: 600px;
-    }
-
-    h3.tool-subtitle {
-      margin-bottom: 0.8rem;
-      color: #0f172a;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 2rem;
-    }
-
-    #output a {
-      color: #1e3a8a;
-      font-weight: 600;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    /* NEW CONTENT SECTION FOR ADSENSE */
-    .content-section {
-      max-width: 780px;
-      margin: 3rem auto 4rem;
-      background: #ffffff;
-      padding: 2rem 2rem 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      line-height: 1.65;
-      font-size: 1rem;
-      color: #334155;
-    }
-    .content-section h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
-    .content-section h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-top: 1.4rem;
-      margin-bottom: 0.6rem;
-      color: #1e293b;
-    }
-    .content-section ul {
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .content-section li { margin-bottom: 0.4rem; }
-  </style>
+  <!-- JSZip -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+    defer
+  ></script>
 </head>
 
 <body class="tools-page">
@@ -98,118 +29,154 @@
 <!-- HEADER -->
 <div id="header-placeholder"></div>
 <script>
-fetch("../../components/header-tools.html")
-  .then(res => res.text())
-  .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  fetch("../../components/header-tools.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
 </script>
 
-<!-- MAIN TOOL LAYOUT -->
+<!-- MAIN -->
 <main class="tool-layout">
 
   <!-- LEFT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="1111111111"
-         data-ad-format="vertical">
-    </ins>
+    <ins
+      class="adsbygoogle"
+      data-ad-client="ca-pub-3215014361489762"
+      data-ad-slot="1111111111"
+      data-ad-format="vertical"
+    ></ins>
   </aside>
 
-  <!-- TOOL WRAPPER -->
+  <!-- TOOL -->
   <section class="tool-wrapper">
 
-    <h2 class="tool-title">Zip / UnZip Tool</h2>
-    <p class="tool-description">Compress multiple files into a ZIP archive, or extract ZIP files instantly — all inside your browser.</p>
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
+      <h1 class="tool-title">Zip / Unzip Tool</h1>
+      <p class="tool-description">
+        Compress multiple files into a ZIP archive or extract ZIP files instantly —
+        everything runs locally in your browser.
+      </p>
+    </header>
 
-    <!-- ZIP CREATION -->
-    <h3 class="tool-subtitle">Create ZIP:</h3>
+    <!-- CREATE ZIP -->
+    <section class="tool-section">
+      <h3 class="tool-subtitle">Create ZIP</h3>
 
-    <input id="zipFiles" type="file" multiple class="tool-input" />
+      <input
+        id="zipFiles"
+        type="file"
+        multiple
+        class="tool-input"
+      />
 
-    <button class="tool-btn" onclick="createZip()">Create ZIP</button>
+      <button
+        id="create-zip"
+        class="tool-btn"
+      >
+        Create ZIP
+      </button>
+    </section>
 
-    <hr style="margin:2.2rem 0; border:none; border-top:1px solid #e2e8f0;">
+    <hr class="tool-divider" />
 
     <!-- UNZIP -->
-    <h3 class="tool-subtitle">Unzip File:</h3>
+    <section class="tool-section">
+      <h3 class="tool-subtitle">Unzip File</h3>
 
-    <input id="unzipFile" type="file" accept=".zip" class="tool-input" />
+      <input
+        id="unzipFile"
+        type="file"
+        accept=".zip"
+        class="tool-input"
+      />
 
-    <button class="tool-btn" onclick="unzipFile()">Extract Files</button>
+      <button
+        id="extract-zip"
+        class="tool-btn"
+      >
+        Extract Files
+      </button>
 
-    <div id="output" class="output-box" style="display:none;"></div>
+      <div
+        id="output"
+        class="output-box"
+        aria-live="polite"
+        hidden
+      ></div>
+    </section>
 
-    <!-- In-content Ad -->
+    <!-- IN-CONTENT AD -->
     <div class="ad-in-content">
-      <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-client="ca-pub-3215014361489762"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"></ins>
+      <ins
+        class="adsbygoogle"
+        data-ad-client="ca-pub-3215014361489762"
+        data-ad-slot="2222222222"
+        data-ad-format="auto"
+      ></ins>
     </div>
 
-    <!-- NEW CONTENT SECTION FOR ADSENSE -->
+    <!-- CONTENT FOR ADSENSE / SEO -->
     <section class="content-section">
+
       <h2>What Is a ZIP File?</h2>
       <p>
-        A ZIP file is a compressed archive that groups multiple files or folders into one smaller file. 
-        It reduces file size and makes sharing, downloading, and storage more efficient.
+        A ZIP file is a compressed archive that bundles multiple files or folders
+        into one smaller file, making storage and sharing easier.
       </p>
 
       <h3>Why Use ZIP Compression?</h3>
       <ul>
         <li>Reduce file size for faster uploads and downloads</li>
-        <li>Organize multiple files into a single archive</li>
-        <li>Improve storage efficiency</li>
-        <li>Share large datasets more easily</li>
-        <li>Maintain folder structure when sharing projects</li>
+        <li>Group multiple files into a single archive</li>
+        <li>Maintain folder structure</li>
+        <li>Share projects more efficiently</li>
       </ul>
 
       <h3>What Can You Do With This Tool?</h3>
-      <p>This tool runs entirely inside your browser — no file upload required — meaning your files stay private.</p>
+      <p>
+        This tool runs entirely inside your browser, meaning your files never leave
+        your device.
+      </p>
+
       <ul>
-        <li>Create ZIP archives from any number of files</li>
+        <li>Create ZIP archives from multiple files</li>
         <li>Extract ZIP files instantly</li>
-        <li>Download contents individually</li>
+        <li>Download extracted files individually</li>
         <li>Works offline once loaded</li>
       </ul>
 
-      <h3>Is This ZIP Tool Secure?</h3>
+      <h3>Security & Privacy</h3>
       <p>
-        Yes. All compression and extraction happens locally in your browser using JavaScript (JSZip). 
-        Your files never leave your device, ensuring full privacy.
+        All compression and extraction happens locally using JavaScript (JSZip).
+        Your files remain private and are never uploaded.
       </p>
-
-      <h3>Common Uses</h3>
-      <ul>
-        <li>Compressing folders for sharing</li>
-        <li>Extracting downloaded ZIP archives</li>
-        <li>Bundling files for backup</li>
-        <li>Sending multiple documents via email</li>
-      </ul>
 
       <h3>FAQ</h3>
 
-      <h4>Do ZIP files reduce quality?</h4>
-      <p>No. ZIP compression is lossless and does not affect file quality.</p>
+      <h4>Does ZIP compression reduce quality?</h4>
+      <p>No. ZIP compression is lossless.</p>
 
-      <h4>Can I extract large ZIP files?</h4>
-      <p>Yes — as long as your browser has enough memory.</p>
+      <h4>Can I unzip large files?</h4>
+      <p>Yes, as long as your browser has sufficient memory.</p>
 
-      <h4>Is this tool free and unlimited?</h4>
-      <p>Yes. You can zip and unzip as many files as you want.</p>
+      <h4>Is this tool free?</h4>
+      <p>Yes. Unlimited and completely free.</p>
+
     </section>
 
   </section>
 
   <!-- RIGHT AD -->
   <aside class="ad-side">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3215014361489762"
-         data-ad-slot="3333333333"
-         data-ad-format="vertical"></ins>
+    <ins
+      class="adsbygoogle"
+      data-ad-client="ca-pub-3215014361489762"
+      data-ad-slot="3333333333"
+      data-ad-format="vertical"
+    ></ins>
   </aside>
 
 </main>
@@ -217,55 +184,23 @@ fetch("../../components/header-tools.html")
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
-fetch("../../components/footer-tools.html")
-  .then(res => res.text())
-  .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
-
-<!-- ZIP / UNZIP LOGIC -->
-<script>
-// CREATE ZIP
-function createZip() {
-  const files = document.getElementById("zipFiles").files;
-  if (!files.length) return;
-
-  const zip = new JSZip();
-  for (const f of files) zip.file(f.name, f);
-
-  zip.generateAsync({ type: "blob" }).then(blob => {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "compressed.zip";
-    a.click();
-  });
-}
-
-// EXTRACT ZIP
-function unzipFile() {
-  const file = document.getElementById("unzipFile").files[0];
-  if (!file) return;
-
-  JSZip.loadAsync(file).then(zip => {
-    const output = document.getElementById("output");
-    output.style.display = "block";
-    output.innerHTML = "<strong>Extracted files:</strong><br><br>";
-
-    Object.keys(zip.files).forEach(name => {
-      zip.files[name].async("blob").then(blob => {
-        const url = URL.createObjectURL(blob);
-        output.innerHTML += `<a href="${url}" download="${name}">${name}</a>`;
-      });
+  fetch("../../components/footer-tools.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
     });
-  });
-}
 </script>
 
-<!-- GOOGLE ADS LOADER -->
-<script async
+<!-- TOOL LOGIC -->
+<script src="../../js/core/script.js" defer></script>
+<script src="../../js/tools/zip.js" defer></script>
+
+<!-- ADSENSE -->
+<script
+  async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
-  crossorigin="anonymous">
-</script>
+  crossorigin="anonymous"
+></script>
 
 </body>
 </html>
