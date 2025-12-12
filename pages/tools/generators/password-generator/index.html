@@ -2,87 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Password Generator | Bita Digital Hub</title>
-  <meta name="description"
-        content="Generate secure random passwords with custom length and character sets. Strong password generator by Bita Digital Hub." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Password Generator | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Generate secure random passwords with custom length and character sets. Strong password generator by Bita Digital Hub."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
+
 <body class="tools-page">
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
+
+  <div class="tool-wrapper">
+
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
       <h1 class="tool-title">Password Generator</h1>
       <p class="tool-description">
-        Create strong, random passwords for your accounts. Nothing is stored or sent —
-        everything is generated locally in your browser.
+        Create strong, random passwords for your accounts.
+        Nothing is stored or sent — everything is generated locally in your browser.
       </p>
+    </header>
 
-      <label class="tool-label">Password length</label>
-      <input id="pwd-length" class="tool-input" type="number" min="6" max="64" value="12" />
+    <!-- PASSWORD LENGTH -->
+    <div class="tool-field">
+      <label for="pwd-length" class="tool-label">
+        Password length
+      </label>
+      <input
+        id="pwd-length"
+        class="tool-input"
+        type="number"
+        min="6"
+        max="64"
+        value="12"
+      />
+    </div>
+
+    <!-- OPTIONS -->
+    <fieldset class="tool-options">
+      <legend class="sr-only">Password options</legend>
 
       <div class="checkbox-row">
         <input type="checkbox" id="pwd-lower" checked />
-        <label for="pwd-lower">Lowercase letters (a-z)</label>
+        <label for="pwd-lower">Lowercase letters (a–z)</label>
       </div>
+
       <div class="checkbox-row">
         <input type="checkbox" id="pwd-upper" checked />
-        <label for="pwd-upper">Uppercase letters (A-Z)</label>
+        <label for="pwd-upper">Uppercase letters (A–Z)</label>
       </div>
+
       <div class="checkbox-row">
         <input type="checkbox" id="pwd-number" checked />
-        <label for="pwd-number">Numbers (0-9)</label>
+        <label for="pwd-number">Numbers (0–9)</label>
       </div>
+
       <div class="checkbox-row">
         <input type="checkbox" id="pwd-symbol" />
-        <label for="pwd-symbol">Symbols (!@#$...)</label>
+        <label for="pwd-symbol">Symbols (!@#$…)</label>
       </div>
+    </fieldset>
 
-      <button id="pwd-generate" class="tool-btn" style="margin-top:1rem;">
-        Generate Password
-      </button>
+    <!-- ACTION -->
+    <button id="pwd-generate" class="tool-btn">
+      Generate Password
+    </button>
 
-      <div id="pwd-strength" class="output-box" style="margin-top:1rem;"></div>
+    <!-- STRENGTH -->
+    <div
+      id="pwd-strength"
+      class="output-box"
+      aria-live="polite"
+    ></div>
 
-      <label class="tool-label" style="margin-top:1rem;">Generated password</label>
-      <input id="pwd-output" class="tool-input" readonly />
+    <!-- OUTPUT -->
+    <div class="tool-field">
+      <label for="pwd-output" class="tool-label">
+        Generated password
+      </label>
+      <input
+        id="pwd-output"
+        class="tool-input"
+        type="text"
+        readonly
+      />
+    </div>
 
-      <button id="pwd-copy" class="tool-btn" style="display:none; margin-top:1rem;">
-        Copy
-      </button>
-      </div>
+    <!-- COPY -->
+    <button
+      id="pwd-copy"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Copy
+    </button>
 
-      <!-- CTA -->
+    <!-- CTA -->
     <section class="cta-section">
       <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-      <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-      <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
+      </p>
+
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
+        </a>
+      </div>
     </section>
 
+  </div>
+</main>
 
-    
-  </main>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
-  
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/password.js" defer></script>
 
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
-
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/password.js" defer></script>
 </body>
 </html>

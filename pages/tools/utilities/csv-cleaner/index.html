@@ -2,74 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSV Cleaner | Bita Digital Hub</title>
-  <meta name="description"
-        content="Clean CSV files: remove empty rows, trim extra spaces, and prepare your data for import into Excel, Power BI, or databases." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>CSV Cleaner | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Clean CSV files by removing empty rows, trimming extra spaces, and preparing data for Excel, Power BI, or databases."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
+
 <body class="tools-page">
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
+
+  <div class="tool-wrapper">
+
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
       <h1 class="tool-title">CSV Cleaner</h1>
       <p class="tool-description">
-        Paste your CSV export, clean empty rows and extra spaces, then download
-        a ready-to-import CSV for Excel, Power BI, or databases.
+        Paste your CSV export, clean empty rows and extra spaces,
+        then download a ready-to-import CSV for Excel, Power BI, or databases.
       </p>
+    </header>
 
-      <label class="tool-label">Raw CSV data</label>
-      <textarea id="csv-input" class="tool-input" rows="10"
-        placeholder="Paste your CSV text here..."></textarea>
-
-      <button id="csv-clean" class="tool-btn" style="margin-top:1rem;">
-        Clean CSV
-      </button>
-
-      <div id="csv-status" class="output-box" style="margin-top:1rem;"></div>
-
-      <label class="tool-label" style="margin-top:1.2rem;">Cleaned CSV</label>
-      <textarea id="csv-output" class="tool-input" rows="10"></textarea>
-
-      <button id="csv-download" class="tool-btn"
-        style="display:none; margin-top:1rem;">
-        Download Clean CSV
-      </button>
+    <!-- RAW CSV -->
+    <div class="tool-field">
+      <label for="csv-input" class="tool-label">
+        Raw CSV data
+      </label>
+      <textarea
+        id="csv-input"
+        class="tool-input"
+        rows="10"
+        placeholder="Paste your CSV text here..."
+      ></textarea>
     </div>
-  </main>
 
+    <!-- ACTION -->
+    <button id="csv-clean" class="tool-btn">
+      Clean CSV
+    </button>
 
-  <!-- FOOT CTA -->
-    <footer class="blog-footer">
-      <p class="blog-footer-text">
-        Want more practical guides? Explore the tools and resources on
-        <a href="/" class="text-link">Bita Digital Hub</a>.
+    <!-- STATUS -->
+    <div
+      id="csv-status"
+      class="output-box"
+      aria-live="polite"
+    ></div>
+
+    <!-- CLEANED CSV -->
+    <div class="tool-field">
+      <label for="csv-output" class="tool-label">
+        Cleaned CSV
+      </label>
+      <textarea
+        id="csv-output"
+        class="tool-input"
+        rows="10"
+        readonly
+      ></textarea>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <button
+      id="csv-download"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Download Clean CSV
+    </button>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Get Weekly Marketing Tools and Insights</h2>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
       </p>
 
-      <div class="cta-buttons">
-        <a href="/pages/blog/blog.html" class="btn primary">
-          Back to Articles
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
         </a>
       </div>
-    </footer>
+    </section>
 
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
+  </div>
+</main>
 
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/csv.js" defer></script>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/csv.js" defer></script>
+
 </body>
 </html>

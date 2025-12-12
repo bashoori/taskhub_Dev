@@ -2,72 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Appointment Builder | Bita Digital Hub</title>
-  <meta name="description"
-        content="Create calendar-ready appointments with Google Calendar links and downloadable ICS files." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Appointment Builder | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Create calendar-ready appointments with Google Calendar links and downloadable ICS files."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
+
 <body class="tools-page">
 
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
+
+  <div class="tool-wrapper">
+
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
       <h1 class="tool-title">Appointment Builder</h1>
       <p class="tool-description">
-        Generate a calendar-ready event with one click. Get a Google Calendar link
-        and an ICS file for Apple or Outlook.
+        Generate a calendar-ready event in seconds.
+        Get a Google Calendar link and an ICS file for Apple Calendar or Outlook.
       </p>
+    </header>
 
-      <label class="tool-label">Title</label>
-      <input id="appt-title" class="tool-input" placeholder="e.g. Strategy Call" />
+    <!-- TITLE -->
+    <div class="tool-field">
+      <label for="appt-title" class="tool-label">
+        Event title
+      </label>
+      <input
+        id="appt-title"
+        class="tool-input"
+        type="text"
+        placeholder="e.g. Strategy Call"
+        autocomplete="off"
+      />
+    </div>
 
-      <label class="tool-label">Date</label>
-      <input id="appt-date" type="date" class="tool-input" />
+    <!-- DATE -->
+    <div class="tool-field">
+      <label for="appt-date" class="tool-label">
+        Date
+      </label>
+      <input
+        id="appt-date"
+        class="tool-input"
+        type="date"
+      />
+    </div>
 
-      <label class="tool-label">Time</label>
-      <input id="appt-time" type="time" class="tool-input" />
+    <!-- TIME -->
+    <div class="tool-field">
+      <label for="appt-time" class="tool-label">
+        Time
+      </label>
+      <input
+        id="appt-time"
+        class="tool-input"
+        type="time"
+      />
+    </div>
 
-      <button id="appt-generate" class="tool-btn" style="margin-top:1rem;">
-        Generate Appointment
-      </button>
+    <!-- ACTION -->
+    <button id="appt-generate" class="tool-btn">
+      Generate Appointment
+    </button>
 
-      <div id="output-box" class="output-box" style="margin-top:1rem;"></div>
+    <!-- OUTPUT -->
+    <div
+      id="output-box"
+      class="output-box"
+      aria-live="polite"
+    ></div>
 
-      <button id="download-ics" class="tool-btn"
-        style="display:none; margin-top:1rem;">
-        Download ICS File
-      </button>
+    <!-- DOWNLOAD -->
+    <button
+      id="download-ics"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Download ICS File
+    </button>
 
-
-      <!-- CTA -->
+    <!-- CTA -->
     <section class="cta-section">
       <h2>Get Weekly Marketing Tools and Insights</h2>
-      <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-      <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-      <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
+      </p>
+
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
+        </a>
+      </div>
     </section>
 
-    
-    </div>
-  </main>
+  </div>
+</main>
 
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/appointment.js" defer></script>
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/appointment.js" defer></script>
+
 </body>
 </html>

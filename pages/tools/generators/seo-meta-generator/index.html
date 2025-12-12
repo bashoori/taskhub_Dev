@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SEO Meta Description & Title Generator | Bita Digital Hub</title>
-
-  <meta name="description"
-        content="Generate SEO-ready meta titles and descriptions for blogs, landing pages, or product pages. Improve CTR and boost your Google visibility instantly." />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Main styling -->
+  <title>SEO Meta Title & Description Generator | Bita Digital Hub</title>
+
+  <meta
+    name="description"
+    content="Generate SEO-ready meta titles and descriptions for blogs, landing pages, or product pages. Improve CTR and boost Google visibility instantly."
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
   <link rel="stylesheet" href="/css/tools-seo.css" />
@@ -17,69 +19,100 @@
 
 <body class="tools-page">
 
-  <!-- HEADER -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch("/components/header.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("header-placeholder").innerHTML = html);
-  </script>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
 
-  <!-- MAIN TOOL -->
-  <main>
-    <div class="tool-wrapper">
+<!-- MAIN -->
+<main class="tool-main">
 
-      <!-- PAGE TITLE -->
-      <h1 class="tool-title">SEO Meta Description & Title Generator</h1>
+  <div class="tool-wrapper">
 
-      <!-- INTRO TEXT -->
+    <!-- TOOL HEADER -->
+    <header class="tool-header">
+      <h1 class="tool-title">SEO Meta Title & Description Generator</h1>
       <p class="tool-description">
-        Create optimized meta titles and descriptions in seconds.  
-        Enter your topic or keyword and get clean, SEO-friendly outputs for blogs, landing pages, and product pages.  
-        Everything runs directly in your browser.
+        Create optimized meta titles and descriptions in seconds.
+        Enter your topic or keyword and generate clean, SEO-friendly tags
+        for blogs, landing pages, and product pages — directly in your browser.
+      </p>
+    </header>
+
+    <!-- INPUT -->
+    <div class="tool-field">
+      <label for="seo-input" class="tool-label">
+        Topic or keyword
+      </label>
+      <input
+        id="seo-input"
+        class="tool-input"
+        type="text"
+        placeholder="e.g. How to build a website"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- ACTION -->
+    <button id="seo-generate" class="tool-btn">
+      Generate Meta Tags
+    </button>
+
+    <!-- OUTPUT -->
+    <div
+      id="seo-output"
+      class="output-box"
+      aria-live="polite"
+    ></div>
+
+    <!-- COPY -->
+    <button
+      id="seo-copy"
+      class="tool-btn"
+      style="display: none;"
+    >
+      Copy All
+    </button>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Get Weekly Marketing Tools and Insights</h2>
+      <p>
+        Join our newsletter for free tools, tutorials, strategies,
+        and digital marketing insights to grow your online business.
       </p>
 
-      <!-- INPUT FIELD -->
-      <label class="tool-label">Topic or keyword</label>
-      <input id="seo-input" class="tool-input" placeholder="e.g., How to build a website" />
+      <div class="cta-actions">
+        <a href="/pages/auth/signup.html" class="cta-button">
+          Join the Newsletter
+        </a>
+        <a href="/pages/tools/tools.html" class="cta-link">
+          Explore Free Tools →
+        </a>
+      </div>
+    </section>
 
-      <!-- GENERATE BUTTON -->
-      <button id="seo-generate" class="tool-btn" style="margin-top:1rem;">
-        Generate Meta Tags
-      </button>
+  </div>
+</main>
 
-      <!-- OUTPUT RESULTS -->
-      <div id="seo-output" class="output-box" style="margin-top:1.5rem;"></div>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
 
-      <!-- COPY BUTTON -->
-      <button id="seo-copy" class="tool-btn" style="display:none; margin-top:1.2rem;">
-        Copy All
-      </button>
-      
-        <!-- CTA -->
-      <section class="cta-section">
-        <h2>Get Weekly Marketing Tools and Insights</h2>
-        <p>Join our newsletter for free tools, tutorials, strategies, and digital marketing insights to grow your online business.</p>
-        <a href="/pages/auth/signup.html" class="cta-button">Join the Newsletter</a>
-        <a href="/pages/tools/tools.html" class="cta-link">Explore Free Tools →</a>
-      </section>
-
-    </div>
-  </main>
-
-
-    
-  <!-- FOOTER -->
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch("/components/footer.html")
-      .then(res => res.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-  </script>
-
-  <!-- JS -->
-  <script src="/js/core/script.js" defer></script>
-  <script src="/js/tools/seo-meta-generator.js" defer></script>
+<!-- SCRIPTS -->
+<script src="/js/core/script.js" defer></script>
+<script src="/js/tools/seo-meta-generator.js" defer></script>
 
 </body>
 </html>

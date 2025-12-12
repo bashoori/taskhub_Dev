@@ -7,7 +7,7 @@
   <title>Contact | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Get in touch with Bita Digital Hub for support, collaboration, partnership opportunities, or questions about our digital tools."
+    content="Get in touch with Bita Digital Hub for support, collaboration, or questions about our digital tools."
   />
 
   <!-- Styles -->
@@ -29,71 +29,79 @@
     });
 </script>
 
-<!-- HERO -->
-<section class="contact-hero">
-  <h1>Contact Us</h1>
-  <p>
-    Have a question, need support, or want to collaborate?
-    Send us a message — we usually reply within 24 hours.
-  </p>
-</section>
+<!-- PAGE WRAPPER -->
+<main class="page-wrapper">
 
-<!-- FORM -->
-<section class="contact-section">
-  <div class="contact-container">
+  <!-- HERO -->
+  <section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>
+      Have a question, need support, or want to collaborate?
+      Send us a message — we usually reply within 24 hours.
+    </p>
+  </section>
 
-    <form
-      class="contact-form"
-      action="/pages/contact/contact-success.html"
-      method="POST"
-      autocomplete="on"
-    >
+  <!-- FORM SECTION -->
+  <section class="contact-section">
+    <div class="contact-container">
 
-      <!-- NAME + EMAIL -->
-      <div class="form-row">
-        <label for="name" class="sr-only">Your Name</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Your Name"
-          aria-label="Your Name"
-          required
-        />
+      <form
+        class="contact-form"
+        action="/pages/contact/contact-success.html"
+        method="POST"
+        novalidate
+      >
 
-        <label for="email" class="sr-only">Email Address</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email Address"
-          aria-label="Email Address"
-          autocomplete="email"
-          required
-        />
-      </div>
+        <!-- NAME -->
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Jane Doe"
+            required
+          />
+        </div>
 
-      <!-- MESSAGE -->
-      <label for="message" class="sr-only">Your Message</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Your Message..."
-        aria-label="Your Message"
-        required
-      ></textarea>
+        <!-- EMAIL -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+        </div>
 
-      <!-- BUTTON -->
-      <div class="form-actions">
-        <button type="submit" class="btn-submit">
-          Send Message
-        </button>
-      </div>
+        <!-- MESSAGE -->
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us how we can help…"
+            required
+          ></textarea>
+        </div>
 
-    </form>
+        <!-- ACTION -->
+        <div class="form-actions">
+          <button type="submit" class="btn primary">
+            Send Message
+          </button>
+        </div>
 
-  </div>
-</section>
+      </form>
+
+    </div>
+  </section>
+
+</main>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
