@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Contact | Bita Digital Hub</title>
+
   <meta
     name="description"
-    content="Contact Bita Digital Hub for support, questions, or collaboration."
+    content="Contact Bita Digital Hub for support, questions, or collaboration opportunities."
   />
 
   <!-- Styles -->
@@ -18,93 +19,96 @@
 
 <body>
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("header-placeholder").innerHTML = html);
-</script>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("header-placeholder").innerHTML = html;
+      });
+  </script>
 
-<!-- MAIN -->
-<main class="page-wrapper auth-page">
+  <!-- =========================
+        CONTACT
+  ========================== -->
+  <main class="page-wrapper contact-page">
 
-  <section class="auth-card">
+    <section class="contact-card">
 
-    <!-- Optional illustration placeholder -->
-    <div class="auth-illustration">
-      <!-- you can place an SVG or image later -->
-    </div>
+      <!-- Optional illustration space -->
+      <div class="contact-illustration" aria-hidden="true"></div>
 
-    <h1 class="auth-title">Contact Us</h1>
+      <h1 class="contact-title">Contact Us</h1>
 
-    <p class="auth-subtitle">
-      Have a question or need support?
-      Send us a message and we’ll get back to you within 24 hours.
-    </p>
+      <p class="contact-subtitle">
+        Have a question, need support, or want to collaborate?
+        Send us a message and we’ll reply within 24 hours.
+      </p>
 
-    <form
-      class="auth-form"
-      method="POST"
-      action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
-    >
+      <form
+        class="contact-form"
+        method="POST"
+        action="https://script.google.com/macros/s/AKfycbyZXDE3xUjdhFlGJFhXeASDngvgrkjDAAx_VadSqa3Rp_nH3_ndGGmnkEkFl9RwQXhr8A/exec"
+      >
 
-      <!-- Honeypot -->
-      <input
-        type="text"
-        name="company"
-        tabindex="-1"
-        autocomplete="off"
-        style="display:none"
-      />
+        <!-- Honeypot (spam protection) -->
+        <input
+          type="text"
+          name="company"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="display:none"
+        />
 
-      <!-- Name -->
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        required
-      />
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          required
+        />
 
-      <!-- Email -->
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        required
-      />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        />
 
-      <!-- Message -->
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Your message"
-        required
-      ></textarea>
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your message"
+          required
+        ></textarea>
 
-      <!-- Submit -->
-      <button type="submit" class="btn primary auth-btn">
-        Send Message
-      </button>
+        <button type="submit" class="btn primary contact-btn">
+          Send Message
+        </button>
 
-    </form>
+      </form>
 
-    <p class="auth-footer-text">
-      Prefer email?
-      <a href="mailto:contact@bitadigitalhub.com">contact@bitadigitalhub.com</a>
-    </p>
+      <p class="contact-footer-text">
+        Prefer email?
+        <a href="mailto:contact@bitadigitalhub.com">
+          contact@bitadigitalhub.com
+        </a>
+      </p>
 
-  </section>
+    </section>
 
-</main>
+  </main>
 
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("footer-placeholder").innerHTML = html);
-</script>
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+      });
+  </script>
 
 </body>
 </html>
