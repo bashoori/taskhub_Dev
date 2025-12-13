@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram Bio & Description Generator | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Generate a clear Instagram bio and description in seconds. Built for clarity, not hype." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body class="tools-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+
+    <!-- =========================
+         TOOL CONTENT
+    ========================== -->
+    <div class="tool-wrapper">
+
+      <h1 class="tool-title">
+        Instagram Bio & Description Generator
+      </h1>
+
+      <p class="tool-description">
+        Write a clear Instagram bio and description that explains
+        what you do — without sounding generic or salesy.
+      </p>
+
+      <p class="tool-intro">
+        This tool helps you communicate your value in seconds.
+        No guessing. No fluff.
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <label for="about">
+          What do you do?
+        </label>
+        <input
+          type="text"
+          id="about"
+          placeholder="e.g. Freelance web designer, fitness coach, online shop"
+        />
+
+        <label for="audience">
+          Who is it for?
+        </label>
+        <input
+          type="text"
+          id="audience"
+          placeholder="e.g. small businesses, beginners, busy professionals"
+        />
+
+        <label for="tone">
+          Preferred tone (optional)
+        </label>
+        <input
+          type="text"
+          id="tone"
+          placeholder="e.g. friendly, professional, minimal"
+        />
+
+        <button class="btn primary" onclick="generateBio()">
+          Generate Bio & Description
+        </button>
+
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+        <h3>Your Instagram Bio</h3>
+        <p id="bioResult"></p>
+
+        <h3>Your Instagram Description</h3>
+        <p id="descResult"></p>
+
+        <button class="btn outline" onclick="copyText()">
+          Copy Text
+        </button>
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          Want to turn this into a real online presence?
+          <a href="/pages/learn/build-website.html">
+            Build your website in 30 minutes →
+          </a>
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE PLACEHOLDER
+      ========================== -->
+      <div class="ad-container">
+        <!-- Google AdSense -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+  <script>
+    function generateBio() {
+      const about = document.getElementById("about").value.trim();
+      const audience = document.getElementById("audience").value.trim();
+      const tone = document.getElementById("tone").value.trim() || "clear and simple";
+
+      if (!about || !audience) {
+        alert("Please fill in what you do and who it’s for.");
+        return;
+      }
+
+      document.getElementById("bioResult").innerText =
+        `${about} helping ${audience}. ${tone} content.`;
+
+      document.getElementById("descResult").innerText =
+        `I help ${audience} with ${about}. Follow for practical tips and clear ideas.`;
+
+      document.getElementById("output").style.display = "block";
+    }
+
+    function copyText() {
+      const text =
+        document.getElementById("bioResult").innerText +
+        "\n\n" +
+        document.getElementById("descResult").innerText;
+
+      navigator.clipboard.writeText(text);
+      alert("Copied to clipboard");
+    }
+  </script>
+
+  <!-- Google AdSense script (place once globally if possible) -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>
