@@ -2,141 +2,208 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>SEO Title & Description Generator | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Generate a clear SEO title and meta description for any page in seconds. Built for clarity, not guesswork." />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>SEO Meta Title & Description Generator | Bita Digital Hub</title>
-  <meta
-    name="description"
-    content="Generate SEO-ready meta titles and descriptions for blogs, landing pages, or product pages. Improve CTR and boost Google visibility instantly."
-  />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/tools.css" />
-  <link rel="stylesheet" href="/css/tools-seo.css" />
 </head>
 
 <body class="tools-page">
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("/components/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("header-placeholder").innerHTML = html;
-    });
-</script>
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
 
-<!-- MAIN -->
-<main class="tool-main">
+  <main>
+    <div class="tool-wrapper">
 
-  <!-- TOOL -->
-  <section class="tool-wrapper">
+      <h1 class="tool-title">SEO Title & Description Generator</h1>
 
-    <!-- HEADER -->
-    <header class="tool-header">
-      <h1 class="tool-title">
-        SEO Meta Title & Description Generator
-      </h1>
       <p class="tool-description">
-        Create optimized meta titles and descriptions in seconds.
-        Enter a topic or keyword and generate clean, SEO-friendly tags
-        for blogs, landing pages, and product pages — directly in your browser.
+        Generate an SEO title and meta description that both search engines
+        and real people understand.
       </p>
-    </header>
 
-    <!-- INPUT -->
-    <div class="tool-field">
-      <label for="seo-input" class="tool-label">
-        Topic or keyword
-      </label>
-      <input
-        id="seo-input"
-        class="tool-input"
-        type="text"
-        placeholder="e.g. How to build a website"
-        autocomplete="off"
-      />
+      <p class="tool-intro">
+        Fill in your page topic and a few details. You’ll get clean, usable text in seconds.
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <label for="topic">Page topic</label>
+        <input id="topic" type="text" placeholder="e.g. Emergency plumbing in Vancouver" />
+
+        <label for="keywords">Main keywords (optional)</label>
+        <input id="keywords" type="text" placeholder="e.g. plumber, 24/7, drain cleaning" />
+
+        <label for="brand">Brand name (optional)</label>
+        <input id="brand" type="text" placeholder="e.g. Bita Digital Hub" />
+
+        <label for="tone">Tone (optional)</label>
+        <select id="tone">
+          <option value="clear">Clear</option>
+          <option value="professional">Professional</option>
+          <option value="friendly">Friendly</option>
+          <option value="direct">Direct</option>
+        </select>
+
+        <button class="btn primary" type="button" onclick="generateSeo()">
+          Generate SEO Title & Description
+        </button>
+
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+
+        <h3>SEO Title</h3>
+        <p id="titleResult"></p>
+
+        <h3>Meta Description</h3>
+        <p id="descResult"></p>
+
+        <button class="btn outline" type="button" onclick="copySeo()">
+          Copy Text
+        </button>
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          Want to use this on a real website?
+          <a href="/pages/learn/build-website.html">Build your website in 30 minutes →</a>
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE PLACEHOLDER
+      ========================== -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
     </div>
+  </main>
 
-    <!-- ACTION -->
-    <button id="seo-generate" class="tool-btn">
-      Generate Meta Tags
-    </button>
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
 
-    <!-- OUTPUT -->
-    <div
-      id="seo-output"
-      class="output-box"
-      aria-live="polite"
-    ></div>
+  <!-- =========================
+       LOGIC
+  ========================== -->
+  <script>
+    function clampTitle(text) {
+      // Prefer ~50–60 chars. We'll hard-trim at 60.
+      return text.length > 60 ? text.slice(0, 57).trim() + "..." : text;
+    }
 
-    <!-- COPY -->
-    <button
-      id="seo-copy"
-      class="tool-btn"
-      style="display: none;"
-    >
-      Copy All
-    </button>
+    function clampDesc(text) {
+      // Prefer ~150–160 chars. We'll hard-trim at 160.
+      return text.length > 160 ? text.slice(0, 157).trim() + "..." : text;
+    }
 
-  </section>
+    function cleanWords(str) {
+      return (str || "")
+        .split(",")
+        .map(s => s.trim())
+        .filter(Boolean)
+        .slice(0, 6);
+    }
 
-  <!-- ADSENSE (BELOW TOOL — SAFE) -->
-  <div class="ad-in-content">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="YYYYYYYYYY"
-         data-ad-format="auto"
-         data-full-width-responsive="true">
-    </ins>
-  </div>
+    function generateSeo() {
+      const topic = document.getElementById("topic").value.trim();
+      const brand = document.getElementById("brand").value.trim();
+      const tone = document.getElementById("tone").value;
+      const keywords = cleanWords(document.getElementById("keywords").value);
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2>Get Weekly Marketing Tools and Insights</h2>
-    <p>
-      Join our newsletter for free tools, tutorials, strategies,
-      and digital marketing insights to grow your online business.
-    </p>
+      if (!topic) {
+        alert("Please enter a page topic.");
+        return;
+      }
 
-    <div class="cta-actions">
-      <a href="/pages/auth/signup.html" class="cta-button">
-        Join the Newsletter
-      </a>
+      const kwPhrase = keywords.length ? keywords.join(", ") : "";
 
-      <a href="/pages/tools/tools.html" class="cta-link">
-        Explore Free Tools →
-      </a>
-    </div>
-  </section>
+      // Title patterns by tone (simple, predictable, usable)
+      let rawTitle = "";
+      if (tone === "professional") rawTitle = `${topic}${brand ? " | " + brand : ""}`;
+      else if (tone === "friendly") rawTitle = `${topic} — Simple tips${brand ? " | " + brand : ""}`;
+      else if (tone === "direct") rawTitle = `${topic}${brand ? " | " + brand : ""}`;
+      else rawTitle = `${topic}${brand ? " | " + brand : ""}`;
 
-</main>
+      // Description base
+      let rawDesc = "";
+      if (tone === "professional") {
+        rawDesc = `Learn what to expect from ${topic}. Clear details, practical guidance, and next steps${brand ? " from " + brand : ""}.`;
+      } else if (tone === "friendly") {
+        rawDesc = `Need help with ${topic}? Here’s a clear, simple breakdown and what to do next${brand ? " — " + brand : ""}.`;
+      } else if (tone === "direct") {
+        rawDesc = `Get a clear overview of ${topic}. Key details, what matters, and what to do next${brand ? " — " + brand : ""}.`;
+      } else {
+        rawDesc = `A clear, practical overview of ${topic}. Understand the key points fast and take the next step${brand ? " — " + brand : ""}.`;
+      }
 
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-<script>
-  fetch("/components/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    });
-</script>
+      // If keywords provided, gently add them once (no spam)
+      if (kwPhrase) {
+        rawDesc = `${rawDesc} Keywords: ${kwPhrase}.`;
+      }
 
-<!-- CORE SCRIPTS -->
-<script src="/js/core/script.js" defer></script>
-<script src="/js/tools/seo-meta-generator.js" defer></script>
+      const finalTitle = clampTitle(rawTitle);
+      const finalDesc = clampDesc(rawDesc);
 
-<!-- ADSENSE LOADER -->
-<script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
-  crossorigin="anonymous">
-</script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+      document.getElementById("titleResult").innerText = finalTitle;
+      document.getElementById("descResult").innerText = finalDesc;
+
+      document.getElementById("output").style.display = "block";
+    }
+
+    function copySeo() {
+      const title = document.getElementById("titleResult").innerText;
+      const desc = document.getElementById("descResult").innerText;
+
+      const text = `SEO Title:\n${title}\n\nMeta Description:\n${desc}`;
+      navigator.clipboard.writeText(text);
+      alert("Copied to clipboard");
+    }
+  </script>
+
+  <!-- =========================
+       ADSENSE SCRIPT
+       (Keep one global include if you already load it site-wide)
+  ========================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
 </body>
 </html>
