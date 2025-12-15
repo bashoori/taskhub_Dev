@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><!-- TOOL NAME --> | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="<!-- ONE-LINE VALUE PROMISE -->" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body class="tools-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+
+      <!-- =========================
+           TITLE
+      ========================== -->
+      <h1 class="tool-title"><!-- TOOL NAME --></h1>
+
+      <p class="tool-description">
+        <!-- ONE-SENTENCE PROMISE -->
+      </p>
+
+      <p class="tool-intro">
+        <!-- SHORT EXPLANATION OF WHAT THIS TOOL DOES -->
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <!-- INPUTS START -->
+
+        <!-- Example -->
+        <!--
+        <label for="input1">What is this about?</label>
+        <input type="text" id="input1" placeholder="e.g. ..." />
+        -->
+
+        <!-- INPUTS END -->
+
+        <button class="btn primary" type="button" onclick="runTool()">
+          <!-- PRIMARY ACTION TEXT -->
+        </button>
+
+      </div>
+
+      <!-- =========================
+           USAGE EXAMPLE
+      ========================== -->
+      <div class="tool-example">
+        <h3>Example</h3>
+
+        <p><strong>Situation</strong><br>
+          <!-- WHEN WOULD SOMEONE USE THIS TOOL? -->
+        </p>
+
+        <p><strong>You enter</strong><br>
+          <!-- SAMPLE INPUT -->
+        </p>
+
+        <p><strong>You get</strong><br>
+          <!-- WHAT PROBLEM IS SOLVED -->
+        </p>
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+
+        <!-- OUTPUT CONTENT -->
+
+        <!-- Example -->
+        <!--
+        <h3>Result</h3>
+        <p id="result"></p>
+        -->
+
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          <!-- OPTIONAL NEXT TOOL LINK -->
+          <!-- e.g. Try the Hashtag Generator → -->
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE
+      ========================== -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <!-- =========================
+       TOOL LOGIC
+  ========================== -->
+  <script>
+    function runTool() {
+      // 1. Read inputs
+      // 2. Validate
+      // 3. Generate output
+      // 4. Show output
+    }
+  </script>
+
+  <!-- =========================
+       ADSENSE SCRIPT
+       Place once globally if possible
+  ========================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>

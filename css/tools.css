@@ -32,7 +32,6 @@
 
   background: #ffffff;
   border-radius: 18px;
-
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
 }
@@ -47,7 +46,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--text-main);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .tool-description {
@@ -55,7 +54,7 @@
   font-size: 1.05rem;
   color: var(--text-soft);
   max-width: 680px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   line-height: 1.65;
 }
 
@@ -68,7 +67,7 @@
 
 
 /* ============================================================
-   FORM ELEMENTS
+   TOOL CARD (FORM)
 ============================================================ */
 
 .tool-card {
@@ -96,7 +95,7 @@
   border-radius: 12px;
   border: 1px solid var(--border-light);
 
-  transition: border-color .2s ease, box-shadow .2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tool-card input:focus,
@@ -109,12 +108,40 @@
 
 
 /* ============================================================
-   ACTION BUTTON
+   PRIMARY ACTION
 ============================================================ */
 
 .tool-card .btn.primary {
-  margin-top: 0.5rem;
   width: 100%;
+  margin-top: 0.75rem;
+}
+
+
+/* ============================================================
+   USAGE EXAMPLE
+============================================================ */
+
+.tool-example {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+
+  background: var(--bg-soft);
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+}
+
+.tool-example h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.tool-example p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
 }
 
 
@@ -123,11 +150,11 @@
 ============================================================ */
 
 .tool-output {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .tool-output h3 {
-  margin: 1.5rem 0 0.5rem;
+  margin: 1.25rem 0 0.5rem;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-main);
@@ -140,6 +167,11 @@
   border: 1px solid var(--border-light);
   line-height: 1.6;
   word-break: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.tool-output .btn {
+  margin-bottom: 0.75rem;
 }
 
 
@@ -187,5 +219,9 @@
 
   .tool-description {
     font-size: 0.95rem;
+  }
+
+  .tool-example {
+    padding: 1.25rem;
   }
 }

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Social Media Content Idea Generator | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Never wonder what to post again. Generate clear, practical content ideas for social media in seconds." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body class="tools-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+
+      <!-- =========================
+           TITLE
+      ========================== -->
+      <h1 class="tool-title">Content Idea Generator</h1>
+
+      <p class="tool-description">
+        Know what to post before you open the app.
+      </p>
+
+      <p class="tool-intro">
+        Describe what you do and who it’s for. This tool gives you
+        clear content ideas you can actually use.
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <label for="role">What do you do?</label>
+        <input
+          type="text"
+          id="role"
+          placeholder="e.g. Fitness coach, web designer, online store"
+        />
+
+        <label for="audience">Who is it for?</label>
+        <input
+          type="text"
+          id="audience"
+          placeholder="e.g. busy professionals, small businesses"
+        />
+
+        <label for="platform">Platform</label>
+        <select id="platform">
+          <option value="Instagram">Instagram</option>
+          <option value="LinkedIn">LinkedIn</option>
+        </select>
+
+        <button class="btn primary" type="button" onclick="generateIdeas()">
+          Generate content ideas
+        </button>
+
+      </div>
+
+      <!-- =========================
+           USAGE EXAMPLE
+      ========================== -->
+      <div class="tool-example">
+        <h3>Example</h3>
+
+        <p><strong>Situation</strong><br>
+          You want to post consistently but don’t know what to share.
+        </p>
+
+        <p><strong>You enter</strong><br>
+          Fitness coach<br>
+          Busy professionals<br>
+          Instagram
+        </p>
+
+        <p><strong>You get</strong><br>
+          Clear post ideas you can use immediately instead of guessing.
+        </p>
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+
+        <h3>Educational ideas</h3>
+        <p id="educational"></p>
+
+        <h3>Behind-the-scenes ideas</h3>
+        <p id="bts"></p>
+
+        <h3>Promotional ideas</h3>
+        <p id="promo"></p>
+
+        <h3>Personal insight ideas</h3>
+        <p id="personal"></p>
+
+        <button class="btn outline" type="button" onclick="copyAll()">
+          Copy all ideas
+        </button>
+
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          Ready to write the post?
+          <a href="/pages/tools/instagram-caption-generator/">
+            Use the Caption Generator →
+          </a>
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE
+      ========================== -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <!-- =========================
+       TOOL LOGIC
+  ========================== -->
+  <script>
+    function generateIdeas() {
+      const role = document.getElementById("role").value.trim();
+      const audience = document.getElementById("audience").value.trim();
+      const platform = document.getElementById("platform").value;
+
+      if (!role || !audience) {
+        alert("Please enter what you do and who it’s for.");
+        return;
+      }
+
+      document.getElementById("educational").innerText =
+        `Explain a common mistake ${audience} make related to ${role}.\n` +
+        `Share one simple tip ${audience} can apply today.`;
+
+      document.getElementById("bts").innerText =
+        `Show what a typical day looks like as a ${role}.\n` +
+        `Share how you plan or prepare your work.`;
+
+      document.getElementById("promo").innerText =
+        `Explain how you help ${audience} as a ${role}.\n` +
+        `Share a result or outcome someone can expect.`;
+
+      document.getElementById("personal").innerText =
+        `Share why you chose to become a ${role}.\n` +
+        `Talk about a lesson you learned the hard way.`;
+
+      document.getElementById("output").style.display = "block";
+      document.getElementById("output").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function copyAll() {
+      const all =
+        document.getElementById("educational").innerText + "\n\n" +
+        document.getElementById("bts").innerText + "\n\n" +
+        document.getElementById("promo").innerText + "\n\n" +
+        document.getElementById("personal").innerText;
+
+      navigator.clipboard.writeText(all);
+      alert("Content ideas copied");
+    }
+  </script>
+
+  <!-- =========================
+       ADSENSE SCRIPT
+  ========================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>

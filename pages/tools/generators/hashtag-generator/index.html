@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram Hashtag Generator | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Generate relevant Instagram hashtags without guessing. Clean, focused hashtag sets you can use immediately." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body class="tools-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+
+      <!-- =========================
+           TITLE
+      ========================== -->
+      <h1 class="tool-title">Instagram Hashtag Generator</h1>
+
+      <p class="tool-description">
+        Use relevant hashtags without guessing.
+      </p>
+
+      <p class="tool-intro">
+        Enter your topic and niche to get a clean, balanced set of hashtags
+        that actually match your content.
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <label for="topic">Post topic</label>
+        <input
+          type="text"
+          id="topic"
+          placeholder="e.g. freelance web design"
+        />
+
+        <label for="niche">Niche (optional)</label>
+        <input
+          type="text"
+          id="niche"
+          placeholder="e.g. small businesses"
+        />
+
+        <button class="btn primary" type="button" onclick="generateHashtags()">
+          Generate hashtags
+        </button>
+
+      </div>
+
+      <!-- =========================
+           USAGE EXAMPLE
+      ========================== -->
+      <div class="tool-example">
+        <h3>Example</h3>
+
+        <p><strong>Situation</strong><br>
+          You’ve written a caption but aren’t sure which hashtags make sense.
+        </p>
+
+        <p><strong>You enter</strong><br>
+          Topic: Web design<br>
+          Niche: Freelancers
+        </p>
+
+        <p><strong>You get</strong><br>
+          A small, relevant set of hashtags that match your post and audience.
+        </p>
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+
+        <h3>Niche hashtags</h3>
+        <p id="nicheTags"></p>
+
+        <h3>Mid-size hashtags</h3>
+        <p id="midTags"></p>
+
+        <h3>Broad hashtags</h3>
+        <p id="broadTags"></p>
+
+        <button class="btn outline" type="button" onclick="copyAll()">
+          Copy all hashtags
+        </button>
+
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          Need help writing the caption too?
+          <a href="/pages/tools/instagram-caption-generator/">
+            Try the Caption Generator →
+          </a>
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE
+      ========================== -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <!-- =========================
+       TOOL LOGIC
+  ========================== -->
+  <script>
+    function generateHashtags() {
+      const topic = document.getElementById("topic").value.trim();
+      const niche = document.getElementById("niche").value.trim();
+
+      if (!topic) {
+        alert("Please enter a post topic.");
+        return;
+      }
+
+      const base = topic.replace(/\s+/g, "").toLowerCase();
+      const nicheBase = niche ? niche.replace(/\s+/g, "").toLowerCase() : "";
+
+      const nicheTags = [
+        `#${base}community`,
+        nicheBase ? `#${nicheBase}life` : `#${base}tips`,
+        nicheBase ? `#${nicheBase}business` : `#${base}daily`
+      ];
+
+      const midTags = [
+        `#${base}`,
+        `#${base}tips`,
+        `#${base}work`
+      ];
+
+      const broadTags = [
+        `#business`,
+        `#entrepreneur`,
+        `#onlinework`
+      ];
+
+      document.getElementById("nicheTags").innerText = nicheTags.join(" ");
+      document.getElementById("midTags").innerText = midTags.join(" ");
+      document.getElementById("broadTags").innerText = broadTags.join(" ");
+
+      document.getElementById("output").style.display = "block";
+      document.getElementById("output").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function copyAll() {
+      const all =
+        document.getElementById("nicheTags").innerText + "\n\n" +
+        document.getElementById("midTags").innerText + "\n\n" +
+        document.getElementById("broadTags").innerText;
+
+      navigator.clipboard.writeText(all);
+      alert("Hashtags copied");
+    }
+  </script>
+
+  <!-- =========================
+       ADSENSE SCRIPT
+  ========================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>
