@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,12 +12,15 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
@@ -27,22 +30,34 @@
     });
 </script>
 
-<!-- MAIN -->
-<main class="tool-main">
 
-  <!-- TOOL -->
+<!-- =========================
+     MAIN
+========================== -->
+<main class="tool-layout">
+
+  <!-- =========================
+       TOOL
+  ========================== -->
   <section class="tool-wrapper">
 
     <!-- TOOL HEADER -->
     <header class="tool-header">
       <h1 class="tool-title">Appointment Builder</h1>
+
       <p class="tool-description">
         Generate a calendar-ready event in seconds.
         Get a Google Calendar link and an ICS file for Apple Calendar or Outlook.
       </p>
+
+      <p class="tool-intro">
+        Use this tool when you need to schedule a meeting
+        and want something people can add to their calendar instantly.
+      </p>
     </header>
 
-    <!-- TITLE -->
+
+    <!-- EVENT TITLE -->
     <div class="tool-field">
       <label for="appt-title" class="tool-label">
         Event title
@@ -56,6 +71,7 @@
       />
     </div>
 
+
     <!-- DATE -->
     <div class="tool-field">
       <label for="appt-date" class="tool-label">
@@ -67,6 +83,7 @@
         type="date"
       />
     </div>
+
 
     <!-- TIME -->
     <div class="tool-field">
@@ -80,52 +97,97 @@
       />
     </div>
 
+
     <!-- ACTION -->
-    <button id="appt-generate" class="tool-btn">
+    <button id="appt-generate" class="tool-btn" type="button">
       Generate Appointment
     </button>
+
 
     <!-- OUTPUT -->
     <div
       id="output-box"
       class="output-box"
       aria-live="polite"
+      hidden
     ></div>
+
 
     <!-- DOWNLOAD -->
     <button
       id="download-ics"
       class="tool-btn"
+      type="button"
       style="display:none;"
     >
       Download ICS File
     </button>
 
+
+    <!-- =========================
+         USAGE EXAMPLE
+    ========================== -->
+    <div class="tool-example">
+
+      <h3>Example</h3>
+
+      <p><strong>You want</strong></p>
+      <p>
+        To schedule a call with a client and make it easy for them
+        to add it to Google Calendar or Outlook.
+      </p>
+
+      <p><strong>You enter</strong></p>
+      <p>
+        Event title: “Free Strategy Call”<br />
+        Date: June 10<br />
+        Time: 2:00 PM
+      </p>
+
+      <p><strong>You get</strong></p>
+      <p>
+        A Google Calendar link to share
+        and an ICS file you can send by email.
+      </p>
+
+      <p style="font-size:0.9rem; color:var(--text-mid); margin-top:1rem;">
+        No signup required. Everything is generated instantly.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         IN-CONTENT ADS
+    ========================== -->
+    <div class="ad-in-content">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXX"
+           data-ad-slot="YYYYYYYYYY"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
+      </ins>
+    </div>
+
   </section>
 
-  <!-- ADSENSE (SAFE POSITION) -->
-  <div class="ad-in-content">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="YYYYYYYYYY"
-         data-ad-format="auto"
-         data-full-width-responsive="true">
-    </ins>
-  </div>
 
-  <!-- CTA -->
+  <!-- =========================
+       CTA
+  ========================== -->
   <section class="cta-section">
-    <h2>Get Weekly Marketing Tools and Insights</h2>
+    <h2>Get Weekly Free Tools and Insights</h2>
     <p>
-      Join our newsletter for free tools, tutorials, strategies,
-      and digital marketing insights to grow your online business.
+      Join our newsletter to receive automation workflows,
+      AI tools, and practical strategies to grow your online business.
     </p>
 
     <div class="cta-actions">
       <a href="/pages/auth/signup.html" class="cta-button">
         Join the Newsletter
       </a>
+
       <a href="/pages/tools/tools.html" class="cta-link">
         Explore Free Tools →
       </a>
@@ -134,7 +196,10 @@
 
 </main>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
@@ -144,11 +209,16 @@
     });
 </script>
 
-<!-- CORE SCRIPTS -->
+
+<!-- =========================
+     CORE SCRIPTS
+========================== -->
 <script src="/js/core/script.js" defer></script>
 <script src="/js/tools/appointment.js" defer></script>
 
-<!-- ADSENSE LOADER -->
+<!-- =========================
+     ADSENSE
+========================== -->
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
   crossorigin="anonymous">

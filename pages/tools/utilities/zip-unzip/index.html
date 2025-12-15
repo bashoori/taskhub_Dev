@@ -7,7 +7,7 @@
   <title>Zip & Unzip Tool | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Compress and extract ZIP files instantly — fast, secure, and fully browser-based. No upload required."
+    content="Compress and extract ZIP files instantly. Fully browser-based, fast, and secure. No uploads, no installs."
   />
 
   <!-- Styles -->
@@ -25,7 +25,9 @@
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("../../components/header-tools.html")
@@ -35,10 +37,13 @@
     });
 </script>
 
-<!-- MAIN -->
+
+<!-- =========================
+     MAIN LAYOUT
+========================== -->
 <main class="tool-layout">
 
-  <!-- LEFT AD (OPTIONAL / DESKTOP ONLY) -->
+  <!-- LEFT AD (DESKTOP ONLY) -->
   <aside class="ad-side">
     <ins class="adsbygoogle"
          style="display:block"
@@ -48,19 +53,31 @@
     </ins>
   </aside>
 
-  <!-- TOOL -->
+
+  <!-- =========================
+       TOOL WRAPPER
+  ========================== -->
   <section class="tool-wrapper">
 
-    <!-- HEADER -->
+    <!-- TOOL HEADER -->
     <header class="tool-header">
-      <h1 class="tool-title">Zip / Unzip Tool</h1>
+      <h1 class="tool-title">Zip & Unzip Tool</h1>
+
       <p class="tool-description">
         Compress multiple files into a ZIP archive or extract ZIP files instantly.
-        Everything runs locally in your browser — your files never leave your device.
+        Everything runs locally in your browser.
+      </p>
+
+      <p class="tool-intro">
+        Use this tool to bundle files, reduce size,
+        or quickly extract ZIP archives without installing software.
       </p>
     </header>
 
-    <!-- CREATE ZIP -->
+
+    <!-- =========================
+         CREATE ZIP
+    ========================== -->
     <section class="tool-section">
       <h3 class="tool-subtitle">Create ZIP</h3>
 
@@ -74,6 +91,7 @@
       <button
         id="create-zip"
         class="tool-btn"
+        type="button"
       >
         Create ZIP
       </button>
@@ -81,7 +99,10 @@
 
     <hr class="tool-divider" />
 
-    <!-- UNZIP -->
+
+    <!-- =========================
+         UNZIP
+    ========================== -->
     <section class="tool-section">
       <h3 class="tool-subtitle">Unzip File</h3>
 
@@ -95,6 +116,7 @@
       <button
         id="extract-zip"
         class="tool-btn"
+        type="button"
       >
         Extract Files
       </button>
@@ -107,7 +129,41 @@
       ></div>
     </section>
 
-    <!-- IN-CONTENT ADSENSE -->
+
+    <!-- =========================
+         USAGE EXAMPLE
+    ========================== -->
+    <div class="tool-example">
+
+      <h3>Example</h3>
+
+      <p><strong>You want to</strong></p>
+      <p>
+        Send multiple project files to a client as a single download.
+      </p>
+
+      <p><strong>You do</strong></p>
+      <p>
+        Select your files → Click <strong>Create ZIP</strong>
+      </p>
+
+      <p><strong>You get</strong></p>
+      <p>
+        One ZIP file containing all selected files,
+        ready to download or share.
+      </p>
+
+      <p style="font-size:0.9rem; color:var(--text-mid); margin-top:1rem;">
+        All processing happens locally in your browser.
+        Your files never leave your device.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         IN-CONTENT ADS
+    ========================== -->
     <div class="ad-in-content">
       <ins class="adsbygoogle"
            style="display:block"
@@ -118,26 +174,29 @@
       </ins>
     </div>
 
-    <!-- CONTENT / SEO -->
+
+    <!-- =========================
+         CONTENT / SEO
+    ========================== -->
     <section class="content-section">
       <h2>What Is a ZIP File?</h2>
       <p>
         A ZIP file is a compressed archive that bundles multiple files or folders
-        into a single smaller file, making storage and sharing more efficient.
+        into a single file, making storage and sharing easier.
       </p>
 
       <h3>Why Use ZIP Compression?</h3>
       <ul>
-        <li>Reduce file size for faster uploads and downloads</li>
-        <li>Group multiple files into one archive</li>
-        <li>Maintain folder structure</li>
-        <li>Share projects more easily</li>
+        <li>Reduce file size for faster uploads</li>
+        <li>Combine multiple files into one archive</li>
+        <li>Preserve folder structure</li>
+        <li>Simplify sharing</li>
       </ul>
 
       <h3>Security & Privacy</h3>
       <p>
         This tool uses JavaScript (JSZip) to process files locally.
-        Your files are never uploaded to any server.
+        No files are uploaded or stored on any server.
       </p>
 
       <h3>FAQ</h3>
@@ -146,7 +205,7 @@
       <p>No. ZIP compression is completely lossless.</p>
 
       <h4>Can I unzip large files?</h4>
-      <p>Yes — as long as your browser has enough memory.</p>
+      <p>Yes, as long as your browser has enough memory.</p>
 
       <h4>Is this tool free?</h4>
       <p>Yes. Unlimited and free.</p>
@@ -154,7 +213,8 @@
 
   </section>
 
-  <!-- RIGHT AD (OPTIONAL / DESKTOP ONLY) -->
+
+  <!-- RIGHT AD (DESKTOP ONLY) -->
   <aside class="ad-side">
     <ins class="adsbygoogle"
          style="display:block"
@@ -166,7 +226,10 @@
 
 </main>
 
-<!-- CTA -->
+
+<!-- =========================
+     CTA
+========================== -->
 <section class="cta-section">
   <h2>Get Weekly Free Tools and Insights</h2>
   <p>
@@ -185,7 +248,10 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("../../components/footer-tools.html")
@@ -195,11 +261,16 @@
     });
 </script>
 
-<!-- CORE SCRIPTS -->
+
+<!-- =========================
+     CORE SCRIPTS
+========================== -->
 <script src="../../js/core/script.js" defer></script>
 <script src="../../js/tools/zip.js" defer></script>
 
-<!-- ADSENSE LOADER -->
+<!-- =========================
+     ADSENSE
+========================== -->
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215014361489762"
   crossorigin="anonymous">

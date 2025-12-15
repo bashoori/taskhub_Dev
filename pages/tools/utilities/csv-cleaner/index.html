@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="tools">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,17 +7,20 @@
   <title>CSV Cleaner | Bita Digital Hub</title>
   <meta
     name="description"
-    content="Clean CSV files by removing empty rows, trimming extra spaces, and preparing data for Excel, Power BI, or databases."
+    content="Clean CSV files by removing empty rows and extra spaces. Prepare data for Excel, Power BI, or databases in seconds."
   />
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/tools.css" />
 </head>
 
 <body class="tools-page">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================== -->
 <div id="header-placeholder"></div>
 <script>
   fetch("/components/header.html")
@@ -27,26 +30,41 @@
     });
 </script>
 
-<!-- MAIN -->
-<main class="tool-main">
 
-  <!-- TOOL -->
+<!-- =========================
+     MAIN
+========================== -->
+<main class="tool-layout">
+
+  <!-- =========================
+       TOOL WRAPPER
+  ========================== -->
   <section class="tool-wrapper">
 
-    <!-- HEADER -->
+    <!-- TOOL HEADER -->
     <header class="tool-header">
       <h1 class="tool-title">CSV Cleaner</h1>
+
       <p class="tool-description">
-        Paste your CSV export, clean empty rows and extra spaces,
-        then download a ready-to-import CSV for Excel, Power BI, or databases.
+        Clean CSV files by removing empty rows and extra spaces,
+        then download a ready-to-import file for Excel, Power BI, or databases.
+      </p>
+
+      <p class="tool-intro">
+        Use this tool when exported data is messy and you need
+        a clean, structured CSV before analysis or upload.
       </p>
     </header>
 
-    <!-- RAW CSV -->
+
+    <!-- =========================
+         RAW CSV INPUT
+    ========================== -->
     <div class="tool-field">
       <label for="csv-input" class="tool-label">
         Raw CSV data
       </label>
+
       <textarea
         id="csv-input"
         class="tool-input"
@@ -55,23 +73,30 @@
       ></textarea>
     </div>
 
+
     <!-- ACTION -->
-    <button id="csv-clean" class="tool-btn">
+    <button id="csv-clean" class="tool-btn" type="button">
       Clean CSV
     </button>
+
 
     <!-- STATUS -->
     <div
       id="csv-status"
       class="output-box"
       aria-live="polite"
+      hidden
     ></div>
 
-    <!-- CLEANED CSV -->
+
+    <!-- =========================
+         CLEANED CSV OUTPUT
+    ========================== -->
     <div class="tool-field">
       <label for="csv-output" class="tool-label">
         Cleaned CSV
       </label>
+
       <textarea
         id="csv-output"
         class="tool-input"
@@ -80,34 +105,74 @@
       ></textarea>
     </div>
 
+
     <!-- DOWNLOAD -->
     <button
       id="csv-download"
       class="tool-btn"
-      style="display: none;"
+      type="button"
+      style="display:none;"
     >
       Download Clean CSV
     </button>
 
+
+    <!-- =========================
+         USAGE EXAMPLE
+    ========================== -->
+    <div class="tool-example">
+
+      <h3>Example</h3>
+
+      <p><strong>You have</strong></p>
+      <p>
+        A CSV export from a form or analytics tool
+        with empty rows and inconsistent spacing.
+      </p>
+
+      <p><strong>You do</strong></p>
+      <p>
+        Paste the CSV → Click <strong>Clean CSV</strong>
+      </p>
+
+      <p><strong>You get</strong></p>
+      <p>
+        A clean CSV file with empty rows removed
+        and values trimmed — ready for Excel or Power BI.
+      </p>
+
+      <p style="font-size:0.9rem; color:var(--text-mid); margin-top:1rem;">
+        All processing happens in your browser.
+        No data is uploaded or stored.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         IN-CONTENT ADS
+    ========================== -->
+    <div class="ad-in-content">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXX"
+           data-ad-slot="YYYYYYYYYY"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
+      </ins>
+    </div>
+
   </section>
 
-  <!-- ADSENSE (BELOW TOOL — POLICY SAFE) -->
-  <div class="ad-in-content">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXXXXXXXX"
-         data-ad-slot="YYYYYYYYYY"
-         data-ad-format="auto"
-         data-full-width-responsive="true">
-    </ins>
-  </div>
 
-  <!-- CTA -->
+  <!-- =========================
+       CTA
+  ========================== -->
   <section class="cta-section">
-    <h2>Get Weekly Marketing Tools and Insights</h2>
+    <h2>Get Weekly Free Tools and Insights</h2>
     <p>
-      Join our newsletter for free tools, tutorials, strategies,
-      and digital marketing insights to grow your online business.
+      Join our newsletter to receive automation workflows,
+      AI tools, and practical strategies to grow your online business.
     </p>
 
     <div class="cta-actions">
@@ -123,7 +188,10 @@
 
 </main>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================== -->
 <div id="footer-placeholder"></div>
 <script>
   fetch("/components/footer.html")
@@ -133,11 +201,16 @@
     });
 </script>
 
-<!-- CORE SCRIPTS -->
+
+<!-- =========================
+     CORE SCRIPTS
+========================== -->
 <script src="/js/core/script.js" defer></script>
 <script src="/js/tools/csv.js" defer></script>
 
-<!-- ADSENSE LOADER -->
+<!-- =========================
+     ADSENSE
+========================== -->
 <script async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
   crossorigin="anonymous">
