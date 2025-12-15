@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram Caption Generator | Bita Digital Hub</title>
+
+  <meta name="description"
+        content="Write a caption people actually read. Generate 3 clean Instagram captions in seconds — no fluff, no guesswork." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tools.css" />
+</head>
+
+<body class="tools-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("/components/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("header-placeholder").innerHTML = html);
+  </script>
+
+  <main>
+    <div class="tool-wrapper">
+
+      <h1 class="tool-title">Instagram Caption Generator</h1>
+
+      <p class="tool-description">
+        Write a caption people actually read.
+      </p>
+
+      <p class="tool-intro">
+        Describe your post, pick a goal and tone, and get 3 clean captions you can copy instantly.
+      </p>
+
+      <!-- =========================
+           TOOL CARD
+      ========================== -->
+      <div class="tool-card">
+
+        <label for="topic">What is this post about?</label>
+        <input
+          type="text"
+          id="topic"
+          placeholder="e.g. Launching a freelance web design service"
+          maxlength="140"
+        />
+
+        <label for="goal">Goal</label>
+        <select id="goal">
+          <option value="educate">Educate</option>
+          <option value="announce">Announce</option>
+          <option value="sell">Sell</option>
+          <option value="personal">Personal</option>
+        </select>
+
+        <label for="tone">Tone (optional)</label>
+        <select id="tone">
+          <option value="clear" selected>Clear</option>
+          <option value="friendly">Friendly</option>
+          <option value="professional">Professional</option>
+          <option value="minimal">Minimal</option>
+        </select>
+
+        <button class="btn primary" type="button" onclick="generateCaptions()">
+          Generate captions
+        </button>
+
+      </div>
+
+      <!-- =========================
+           USAGE EXAMPLE
+      ========================== -->
+      <div class="tool-example">
+        <h3>Example</h3>
+
+        <p><strong>Situation</strong><br>
+          You’re posting about a new service, but don’t know how to explain it.
+        </p>
+
+        <p><strong>You enter</strong><br>
+          “Launching a freelance web design service”<br>
+          Goal: Sell &nbsp;&nbsp; Tone: Clear
+        </p>
+
+        <p><strong>You get</strong><br>
+          A short caption that explains the service without sounding pushy.
+        </p>
+      </div>
+
+      <!-- =========================
+           OUTPUT
+      ========================== -->
+      <div class="tool-output" id="output" style="display:none;">
+        <h3>Caption option 1</h3>
+        <p id="cap1"></p>
+        <button class="btn outline" type="button" onclick="copyOne('cap1')">Copy</button>
+
+        <h3>Caption option 2</h3>
+        <p id="cap2"></p>
+        <button class="btn outline" type="button" onclick="copyOne('cap2')">Copy</button>
+
+        <h3>Caption option 3</h3>
+        <p id="cap3"></p>
+        <button class="btn outline" type="button" onclick="copyOne('cap3')">Copy</button>
+
+        <button class="btn primary" type="button" style="margin-top:1rem;" onclick="copyAll()">
+          Copy all captions
+        </button>
+      </div>
+
+      <!-- =========================
+           NEXT STEP
+      ========================== -->
+      <div class="tool-next">
+        <p>
+          Want to improve discoverability too?
+          <a href="/pages/tools/hashtag-generator/">
+            Try the Hashtag Generator →
+          </a>
+        </p>
+      </div>
+
+      <!-- =========================
+           ADSENSE PLACEHOLDER
+      ========================== -->
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("/components/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+  </script>
+
+  <!-- =========================
+       TOOL LOGIC
+  ========================== -->
+  <script>
+    function cleanText(str) {
+      return (str || "").trim().replace(/\s+/g, " ");
+    }
+
+    function firstLetterUpper(str) {
+      if (!str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function generateCaptions() {
+      const topic = cleanText(document.getElementById("topic").value);
+      const goal = document.getElementById("goal").value;
+      const tone = document.getElementById("tone").value;
+
+      if (!topic) {
+        alert("Please describe what your post is about.");
+        return;
+      }
+
+      const t = firstLetterUpper(topic);
+      const captions = buildCaptions(t, goal, tone);
+
+      document.getElementById("cap1").innerText = captions[0];
+      document.getElementById("cap2").innerText = captions[1];
+      document.getElementById("cap3").innerText = captions[2];
+
+      document.getElementById("output").style.display = "block";
+      document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function buildCaptions(topic, goal, tone) {
+      const toneLine = {
+        clear: "",
+        friendly: "If you’re curious, happy to share more.",
+        professional: "If you’d like details, feel free to reach out.",
+        minimal: ""
+      };
+
+      const templates = {
+        educate: [
+          `${topic}. Here’s the simple takeaway: keep it clear, keep it practical, and focus on the next step.`,
+          `${topic}. One lesson I keep coming back to: clarity beats complexity every time.`,
+          `${topic}. Quick tip: explain what it is, who it’s for, and what changes after.`
+        ],
+        announce: [
+          `${topic}. Sharing this because it’s been in the works for a while — and it’s finally live.`,
+          `${topic}. New update: this is now available. Keeping it simple and useful.`,
+          `${topic}. This is happening. If you’ve been waiting for it, here it is.`
+        ],
+        sell: [
+          `${topic}. I help people get a clear, working result — without the overwhelm. ${toneLine[tone]}`.trim(),
+          `${topic}. If you want this done with clarity and speed, I can help. ${toneLine[tone]}`.trim(),
+          `${topic}. Built for people who want progress, not noise. ${toneLine[tone]}`.trim()
+        ],
+        personal: [
+          `${topic}. I used to overthink this — now I’m keeping it simple and moving forward.`,
+          `${topic}. Posting this as a small milestone. Consistency > perfection.`,
+          `${topic}. A reminder to myself: make it real first, refine it later.`
+        ]
+      };
+
+      if (tone === "minimal") {
+        const base = templates[goal].map(c => c.replace(/\s{2,}/g, " ").trim());
+        return base.map(c => c.replace(/If you.*$/i, "").trim());
+      }
+
+      return templates[goal].map(c => c.replace(/\s{2,}/g, " ").trim());
+    }
+
+    function copyOne(id) {
+      const text = document.getElementById(id).innerText;
+      if (!text) return;
+
+      navigator.clipboard.writeText(text);
+      alert("Copied");
+    }
+
+    function copyAll() {
+      const c1 = document.getElementById("cap1").innerText;
+      const c2 = document.getElementById("cap2").innerText;
+      const c3 = document.getElementById("cap3").innerText;
+
+      const all = [c1, c2, c3].filter(Boolean).join("\n\n");
+      if (!all) return;
+
+      navigator.clipboard.writeText(all);
+      alert("All captions copied");
+    }
+  </script>
+
+  <!-- =========================
+       ADSENSE SCRIPT
+       Place once globally if possible
+  ========================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>
