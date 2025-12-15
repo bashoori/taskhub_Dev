@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Services | Bita Digital Hub</title>
+  <meta
+    name="description"
+    content="Affordable digital services including website creation, landing pages, AI integration, and automations."
+  />
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="/js/core/script.js" defer></script>
+</head>
+
+<body class="tools-page">
+
+<!-- =========================
+     HEADER
+========================== -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
+
+<!-- =========================
+     PAGE INTRO
+========================== -->
+<section class="section text-center">
+  <div class="container">
+    <h1 class="tool-title">Services</h1>
+    <p class="tool-description">
+      Budget-friendly digital services to grow your online presence.
+    </p>
+  </div>
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================== -->
+<section class="section">
+  <div class="container">
+
+    <div class="card-grid">
+
+      <!-- Website Creation -->
+      <a class="card" href="#">
+        <div class="tool-icon icon-blue">
+          <i data-lucide="layout"></i>
+        </div>
+        <div class="content">
+          <h3>Website Creation</h3>
+          <p>
+            Fast, modern websites built for small businesses and solopreneurs.
+          </p>
+        </div>
+      </a>
+
+      <!-- Automation & AI -->
+      <a class="card" href="#">
+        <div class="tool-icon icon-purple">
+          <i data-lucide="cpu"></i>
+        </div>
+        <div class="content">
+          <h3>Automation & AI Setup</h3>
+          <p>
+            Reduce workload with AI assistants, workflows, and automations.
+          </p>
+        </div>
+      </a>
+
+      <!-- Funnels & Lead Pages -->
+      <a class="card" href="#">
+        <div class="tool-icon icon-green">
+          <i data-lucide="trending-up"></i>
+        </div>
+        <div class="content">
+          <h3>Funnels & Lead Pages</h3>
+          <p>
+            High-converting landing pages to capture more customers.
+          </p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("/components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  });
+</script>
+
+</body>
+</html>
