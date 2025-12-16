@@ -364,3 +364,8 @@
     padding: 2.2rem 1.2rem 1.6rem;
   }
 }
+.cta-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
